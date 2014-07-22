@@ -11,6 +11,9 @@ library(shinysky)
 
 shinyUI(navbarPage(theme = "united.css", title = "EpiQuant",inverse = T, footer=a(href="mailto:hetmanb@gmail.com", "Questions? Email Me"),
                    
+######################## *******************************  ************************************** ################
+#                                            NavTab for Source-Matrix                                           #
+######################## *******************************  ************************************** ################                   
                   tabPanel("SourceMatrix",
                       pageWithSidebar(                        
                         # Application title
@@ -41,7 +44,7 @@ shinyUI(navbarPage(theme = "united.css", title = "EpiQuant",inverse = T, footer=
                             tabPanel(title="Epi-Table",
                                      br(),
                                      shinysky::hotable("scoretable")
-#                                      dataTableOutput(outputId = "score_table")    
+#                                          
                             ),                            
                             tabPanel(title="Sum Heatmap",
                                      h3("Heatmap based on the source scorings and the penalty sliders from the sidebar"),
@@ -52,6 +55,9 @@ shinyUI(navbarPage(theme = "united.css", title = "EpiQuant",inverse = T, footer=
                                      plotOutput("source_heatmap", width=750, height=750))
                             )
                           ))),
+######################## *******************************  ************************************** ################
+#                                            NavTab for Epi-Matrix                                              #
+######################## *******************************  ************************************** ################
                    tabPanel("EpiMatrix",
                             pageWithSidebar(                              
                               # Application title
@@ -86,6 +92,9 @@ shinyUI(navbarPage(theme = "united.css", title = "EpiQuant",inverse = T, footer=
                                   )
                              )
                             ),
+######################## *******************************  ************************************** ################
+#                                            NavTab for CGF-Matrix                                              #
+######################## *******************************  ************************************** ################
                    tabPanel("CGFMatrix",
                             pageWithSidebar(
                               
@@ -113,6 +122,9 @@ shinyUI(navbarPage(theme = "united.css", title = "EpiQuant",inverse = T, footer=
                                 )
                               )
                             )),
+######################## *******************************  ************************************** ################
+#                                            NavTab for Comparisons                                             #
+######################## *******************************  ************************************** ################
                    tabPanel("Compare",
                             pageWithSidebar(
                               
