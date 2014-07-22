@@ -9,7 +9,7 @@ library(shiny)
 library(shinysky)
 
 
-shinyUI(navbarPage(theme = "united.css", title = "EpiQuant",inverse = T, footer=a(href="mailto:hetmanb@gmail.com", "Questions? Email Me"),
+shinyUI(navbarPage(fluid = T, theme = "united.css", title = shiny::a("EpiQuant", href = "http://38.media.tumblr.com/8566ef54aefe210f0706b8768a62ff5c/tumblr_n1jerwlYD21r66h7yo1_400.gif"), inverse = T, footer=a(href="mailto:hetmanb@gmail.com", "Questions? Email Me"),
                    
 ######################## *******************************  ************************************** ################
 #                                            NavTab for Source-Matrix                                           #
@@ -20,7 +20,7 @@ shinyUI(navbarPage(theme = "united.css", title = "EpiQuant",inverse = T, footer=
                         headerPanel("Source Analysis using Epi-Matrix"),   
                         # Sidebar with a slider input for number of observations
                         sidebarPanel(h4("Epi-Matrix"),
-                                     shinysky::shinyalert(id ="alert1", click.hide = T, auto.close.after = 5),
+                                     shinyalert(id ="alert1", click.hide = T, auto.close.after = 5),
                                      p("Epi-matrix is a method of coming up with pairwise similarity indices based solely on a subjective scoring matix"),
                                      p("First, you'll need to download the", shiny::a("template file.", href= "https://www.dropbox.com/s/4p1xa8fx5myxq45/epi-score.txt?dl=1")),
                                      br(), 
