@@ -7,9 +7,10 @@
 
 library(shiny)
 library(shinysky)
+# 
 
 
-shinyUI(navbarPage(fluid = T, theme = "united.css", title = shiny::a("EpiQuant", href = "https://github.com/hetmanb/EpiQuant/wiki"), inverse = T, footer=a(href="mailto:hetmanb@gmail.com", "Questions? Email Me"),
+shinyUI(navbarPage(fluid = T, title = shiny::a("EpiQuant", href = "https://github.com/hetmanb/EpiQuant/wiki"), theme = "united.css", inverse = T, footer=a(href="mailto:hetmanb@gmail.com", "Questions? Email Me"),
                    
 ######################## *******************************  ************************************** ################
 #                                            NavTab for Source-Matrix                                           #
@@ -20,7 +21,7 @@ shinyUI(navbarPage(fluid = T, theme = "united.css", title = shiny::a("EpiQuant",
                         headerPanel("Source Analysis using Epi-Matrix"),   
                         # Sidebar with a slider input for number of observations
                         sidebarPanel(h4("Epi-Matrix"),
-                                     shinyalert(id ="alert1", click.hide = T, auto.close.after = 5),
+                                     shinysky::shinyalert(id ="alert1", click.hide = T, auto.close.after = 5),                                    
                                      p("Epi-matrix is a method of coming up with pairwise similarity indices based solely on a subjective scoring matix"),
                                      p("First, you'll need to download the", shiny::a("template file.", href= "https://www.dropbox.com/s/4p1xa8fx5myxq45/epi-score.txt?dl=1")),
                                      br(), 
@@ -88,6 +89,7 @@ shinyUI(navbarPage(fluid = T, theme = "united.css", title = shiny::a("EpiQuant",
                                            downloadButton("downloadEpiData", "Download Similarity Data"),
                                            downloadButton("downloadEpiTable", "Download Similarity Table"),
                                            downloadButton("downloadEpiHeatmap", "Download Heatmap"),
+                                           busyIndicator("Processing...", wait = 500),
                                            plotOutput("EpiHeatmap", width=1000, height=1000)
                                   )
                              )

@@ -17,7 +17,6 @@ CompareMatrix <- function(cgf_data, epi_data) {
 }
 
 CompareDisplay <- function(m){
-  # casterd <- data.matrix(caster)
   heatcolor<- colorRampPalette(c("darkgreen","white","darkblue"))(512)  
   castermap <- heatmap.2(m, margins = c(10,10), col=heatcolor, trace='none',keysize=0.6, revC=TRUE)
   

@@ -16,12 +16,14 @@ source("cgf-helper.R")
 source("compare-helper.R")
 
 
+
+
 shinyServer(function(input, output, session) {
   
 
 ##################################################################################################
 ############################ Server functions for Source Matrix ##################################
-  observe({showshinyalert(session, "alert1","hey man!", 'warning' ) })
+  observe({showshinyalert(session, "alert1","Make sure to click 'Create Matrix' to show the heatmap!", 'danger' ) })
 
 # This code generates a table that changes depending on what is uploaded in the sidebar  
   output$scoretable <- renderHotable({  
@@ -47,7 +49,6 @@ shinyServer(function(input, output, session) {
     }
     source_heatmap(SourceMatrix(source_data=inFile, mod8=input$mod8, mod7=input$mod7))
   })
-
   
 ############ Download Handlers: #############################
   
@@ -182,15 +183,6 @@ shinyServer(function(input, output, session) {
     CompareMatrix(cgf_data=cgf_in, epi_data = epi_in)
     })
 
-# output$compare_heatmap <- renderTable({
-#     
-#     if (is.null(input$cgf_data)|is.null(input$epi_data)) {
-#       return(NULL)
-#     }
-#     compareheatmap()
-#   })
-
-  
   output$compare_heatmap <- renderPlot({
     if (is.null(input$cgf_data)|is.null(input$epi_data)) {
       return(NULL)
