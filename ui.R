@@ -9,7 +9,7 @@ library(shiny)
 library(shinysky)
 
 
-shinyUI(navbarPage(fluid = T, theme = "united.css", title = shiny::a("EpiQuant", href = "http://38.media.tumblr.com/8566ef54aefe210f0706b8768a62ff5c/tumblr_n1jerwlYD21r66h7yo1_400.gif"), inverse = T, footer=a(href="mailto:hetmanb@gmail.com", "Questions? Email Me"),
+shinyUI(navbarPage(fluid = T, theme = "united.css", title = shiny::a("EpiQuant", href = "https://github.com/hetmanb/EpiQuant/wiki"), inverse = T, footer=a(href="mailto:hetmanb@gmail.com", "Questions? Email Me"),
                    
 ######################## *******************************  ************************************** ################
 #                                            NavTab for Source-Matrix                                           #
