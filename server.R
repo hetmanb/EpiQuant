@@ -69,6 +69,31 @@ shinyServer(function(input, output, session) {
       source_heatmap(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7))
       dev.off()
     })
+#output variable for the jschord map:  
+  output$jschord <- reactive({
+      list(filepath = 'data/hair.csv',
+          color = c("#000000", "#FFDD89", "#957244", "#F26223")
+      )
+  })
+  output$chord <- renderUI(includeHTML("hair.html"))
+#   output$chord <- renderImage({
+#     # A temp file to save the output.
+#     # This file will be removed later by renderImage
+#     outfile <- tempfile(fileext='.svg')
+#     
+#     # Generate the SVG
+#     svg(outfile, width=800, height=600)
+#     includeHTML(path = 'www/hair.html')
+#     dev.off()
+#     
+#     # Return a list containing the filename
+#     list(src = outfile,
+#          contentType = 'image/svg',
+#          width = 800,
+#          height = 600,
+#          alt = "This is alternate text")
+#   }, deleteFile = TRUE)
+
 
 ##################################################################################################
 ############################ Server functions for EpiMatrix ######################################  

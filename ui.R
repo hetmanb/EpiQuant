@@ -7,10 +7,9 @@
 
 library(shiny)
 library(shinysky)
-# 
+#  theme = "united.css",
 
-
-shinyUI(navbarPage(fluid = T, title = shiny::a("EpiQuant", href = "https://github.com/hetmanb/EpiQuant/wiki"), theme = "united.css", inverse = T, footer=a(href="mailto:hetmanb@gmail.com", "Questions? Email Me"),
+shinyUI(navbarPage( fluid = T, title = shiny::a("EpiQuant", href = "https://github.com/hetmanb/EpiQuant/wiki"), inverse = T, footer=a(href="mailto:hetmanb@gmail.com", "Questions? Email Me"),
                    
 ######################## *******************************  ************************************** ################
 #                                            NavTab for Source-Matrix                                           #
@@ -20,7 +19,14 @@ shinyUI(navbarPage(fluid = T, title = shiny::a("EpiQuant", href = "https://githu
                         # Application title
                         headerPanel("Source Analysis using Epi-Matrix"),   
                         # Sidebar with a slider input for number of observations
-                        sidebarPanel(h4("Epi-Matrix"),
+                        sidebarPanel(
+                          tags$head(
+                          tags$script(src="lib/d3.js"),
+                          tags$script(src="lib/underscore.js"),
+                          tags$script(src="js/mapper.js"),
+                          tags$script(src = "js/chordtest2.js")),
+                          
+                          h4("Epi-Matrix"),
                                      shinysky::shinyalert(id ="alert1", click.hide = T, auto.close.after = 5),                                    
                                      p("Epi-matrix is a method of coming up with pairwise similarity indices based solely on a subjective scoring matix"),
                                      p("First, you'll need to download the", shiny::a("template file.", href= "https://www.dropbox.com/s/4p1xa8fx5myxq45/epi-score.txt?dl=1")),
@@ -45,7 +51,6 @@ shinyUI(navbarPage(fluid = T, title = shiny::a("EpiQuant", href = "https://githu
                             tabPanel(title="Epi-Table",
                                      br(),
                                      shinysky::hotable("scoretable")
-#                                          
                             ),                            
                             tabPanel(title="Sum Heatmap",
                                      h3("Heatmap based on the source scorings and the penalty sliders from the sidebar"),
@@ -53,8 +58,17 @@ shinyUI(navbarPage(fluid = T, title = shiny::a("EpiQuant", href = "https://githu
                                      downloadButton("downloadSourceMatrix", "Download Full Matrix File"),
                                      downloadButton("downloadSourcePairwise", "Download Pairwise File"),
                                      br(),
-                                     plotOutput("source_heatmap", width=750, height=750))
-                            )
+                                     plotOutput("source_heatmap", width=750, height=750)
+                                     
+                            ),
+                            tabPanel(title = "Chord Diagram", 
+                                      h4("This diagram shows the relationships between the sources that are at least 80% similar"), 
+                                      br(),
+                                      div(id = 'jschord', class = 'jschord')
+#                                       column(2, includeHTML(path = "hair.html")),
+                                     
+                                      )
+                                )
                           ))),
 ######################## *******************************  ************************************** ################
 #                                            NavTab for Epi-Matrix                                              #
@@ -78,8 +92,8 @@ shinyUI(navbarPage(fluid = T, title = shiny::a("EpiQuant", href = "https://githu
                                            h4("Make the following sliders add up to 1.0"),
                                            sliderInput(inputId="source_coeff", label="Coefficient for Source Factor", min=0.0, max=1.0, value=0.5, step=0.05),
                                            sliderInput(inputId="temp_coeff", label="Coefficient for Temporal Factor", min=0.0, max=1.0, value=0.3, step=0.05),
-                                           sliderInput(inputId="geog_coeff", label="Coefficient for Geographical Factor", min=0.0, max=1.0, value=0.2, step=0.05),
-                                           submitButton("Create Matrix", icon = NULL)
+                                           sliderInput(inputId="geog_coeff", label="Coefficient for Geographical Factor", min=0.0, max=1.0, value=0.2, step=0.05)
+                                           ,submitButton("Create Matrix", icon = NULL)
                                            ),
                               
                               
@@ -119,6 +133,7 @@ shinyUI(navbarPage(fluid = T, title = shiny::a("EpiQuant", href = "https://githu
                                            downloadButton("downloadCGFHeatmap", "Download CGF Heatmap"),
                                            downloadButton("downloadCGFTable", "Download CGF Similarity Data"),
                                            br(),
+                                           busyIndicator("Please wait... for datasets greater than 100, this can take a while", wait = 500),
                                            plotOutput("cgf_heatmap", width=1000, height=1000))
                                   
                                 )
@@ -153,6 +168,7 @@ shinyUI(navbarPage(fluid = T, title = shiny::a("EpiQuant", href = "https://githu
                                   tabPanel(title="Comparison Heatmap",
                                            h3("Heatmap based on the similarity scorings of your CGF Data versus the Epi Data"),
                                            br(),
+                                           busyIndicator("Processing...", wait = 500),
                                            plotOutput("compare_heatmap", width=1000, height=1000)
                                            )))))
 ))
