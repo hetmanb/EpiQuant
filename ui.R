@@ -7,9 +7,9 @@
 
 library(shiny)
 library(shinysky)
-#  theme = "united.css",
+#  
 
-shinyUI(navbarPage( fluid = T, title = shiny::a("EpiQuant", href = "https://github.com/hetmanb/EpiQuant/wiki"), inverse = T, footer=a(href="mailto:hetmanb@gmail.com", "Questions? Email Me"),
+shinyUI(navbarPage( theme = "united.css", fluid = T, title = shiny::a("EpiQuant", href = "https://github.com/hetmanb/EpiQuant/wiki"), inverse = T, footer=a(href="mailto:hetmanb@gmail.com", "Questions? Email Me"),
                    
 ######################## *******************************  ************************************** ################
 #                                            NavTab for Source-Matrix                                           #
@@ -24,7 +24,7 @@ shinyUI(navbarPage( fluid = T, title = shiny::a("EpiQuant", href = "https://gith
                           tags$script(src="lib/d3.js"),
                           tags$script(src="lib/underscore.js"),
                           tags$script(src="js/mapper.js"),
-                          tags$script(src = "js/chordtest2.js")),
+                          tags$script(src ="js/chordtest2.js")),
                           
                           h4("Epi-Matrix"),
                                      shinysky::shinyalert(id ="alert1", click.hide = T, auto.close.after = 5),                                    
@@ -62,7 +62,11 @@ shinyUI(navbarPage( fluid = T, title = shiny::a("EpiQuant", href = "https://gith
                                      
                             ),
                             tabPanel(title = "Chord Diagram", 
-                                      h4("This diagram shows the relationships between the sources that are at least 80% similar"), 
+                                      h4("This diagram shows the relationships between the sources that are at least 80% similar"),
+                                      sliderInput("chord_low", "Low Threshold for Similarity", min=0, max=1.0, value=0.7, step=0.05), 
+                                      sliderInput("chord_high", "High Threshold for Similarity", min=0, max=1.0, value=1.0, step=0.05),
+#                                       br(),
+#                                       dataTableOutput(outputId = "chord_out"),
                                       br(),
                                       div(id = 'jschord', class = 'jschord')
 #                                       column(2, includeHTML(path = "hair.html")),

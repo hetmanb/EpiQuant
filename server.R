@@ -14,6 +14,7 @@ source("source-helper.R")
 source("epi-helper.R")
 source("cgf-helper.R")
 source("compare-helper.R")
+source("chord_helper.R")
 
 
 
@@ -70,12 +71,24 @@ shinyServer(function(input, output, session) {
       dev.off()
     })
 #output variable for the jschord map:  
+
+  chord_in <- reactive({ 
+    melt(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7))
+  })
+  
+  output$chord_out <- renderDataTable(chord_file())
+
+  chord_file <- reactive({
+    chord_table(chord_in(), input$chord_low, input$chord_high)
+  })
+  
   output$jschord <- reactive({
-      list(filepath = 'data/hair.csv',
+      
+      list(filepath = as.matrix(chord_file()), #this is in the www/data folder
           color = c("#000000", "#FFDD89", "#957244", "#F26223")
       )
   })
-  output$chord <- renderUI(includeHTML("hair.html"))
+#   output$chord <- renderUI(includeHTML("hair.html"))
 #   output$chord <- renderImage({
 #     # A temp file to save the output.
 #     # This file will be removed later by renderImage
@@ -214,8 +227,5 @@ shinyServer(function(input, output, session) {
       }
     CompareDisplay(compareheatmap())
     })
-
-
-
 
 })

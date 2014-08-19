@@ -14,8 +14,8 @@ chordOutputBinding = new Shiny.OutputBinding();
       //*******************************************************************
       //  CREATE MATRIX AND MAP
       //*******************************************************************
-      d3.csv(data.filepath, function (error, data) {
-        var mpr = chordMpr(data);
+      // d3.csv(data.filepath, function (error, data) {
+        var mpr = chordMpr(data.filepath);
 
         mpr
           .addValuesToMap('has')
@@ -27,8 +27,9 @@ chordOutputBinding = new Shiny.OutputBinding();
             return +recs[0].count;
           });
         console.log('here');
+        console.log(mpr);
         drawChords(mpr.getMatrix(), mpr.getMap());
-      });
+      // });
       //*******************************************************************
       //  DRAW THE CHORD DIAGRAM
       //*******************************************************************
@@ -141,4 +142,21 @@ chordOutputBinding = new Shiny.OutputBinding();
       };
 }
 });
-Shiny.outputBindings.register(chordOutputBinding);      
+Shiny.outputBindings.register(chordOutputBinding);   
+
+// chordInputBinding = new Shiny.InputBinding();
+// $.extend(chordInputBinding, {
+//   find: function(scope){
+//     return $(scope).find('.jschord');
+//   },
+//   getValue: funtion(el){
+
+//   },
+//   subscribe: function(el,callback){
+//     $(el).on('change', function(e){
+//       callback();
+//     });
+//   }
+// });   
+// Shiny.inputBindings.register(chordInputBinding);
+
