@@ -6179,3 +6179,8 @@ button.close {
   background-color: #fff;
   color: #772953;
 }
+.alert-info{
+  color: #FF6917;
+  background-color: rgba(249, 115, 15, 0.26);
+  border-color: #DE6B26;
+}

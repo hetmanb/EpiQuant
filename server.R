@@ -10,16 +10,37 @@ library(gplots)
 library(reshape2)
 library(fossil)
 library(shinysky)
+library(RColorBrewer)
 source("source-helper.R")
 source("epi-helper.R")
 source("cgf-helper.R")
 source("compare-helper.R")
 source("chord_helper.R")
 
+prepend_shiny_alert <- function(session, id, message, alert_level="success") 
+{
+  session$sendCustomMessage("shiny_alert_handler", 
+                            list(
+                              id=id
+                              ,message=message
+                              ,alert_level=alert_level
+                            )
+  )
+}
+alert_qviz_start_msg <- renderMarkdown(text=
+                                         'To start using EpiQuant either:
 
-
+                                       - Download and populate the template file with your own data
+                                       - Update the table below with the scorings you want to use
+                                       - Just hit "Create Matrix!"
+                                       ')
 
 shinyServer(function(input, output, session) {
+  
+  isolate( prepend_shiny_alert(session
+                              ,'app_status_alert'
+                              ,alert_qviz_start_msg
+                              ,alert_level='info'))
   
 
 ##################################################################################################
@@ -84,28 +105,12 @@ shinyServer(function(input, output, session) {
   
   output$jschord <- reactive({
       
-      list(filepath = as.matrix(chord_file()), #this is in the www/data folder
-          color = c("#000000", "#FFDD89", "#957244", "#F26223")
+      list(
+        filepath = as.matrix(chord_file()), #this is in the www/data folder
+        color = brewer.pal(n = 8, name = "Oranges") #c("#000000", "#FFDD89", "#957244", "#F26223")
       )
   })
-#   output$chord <- renderUI(includeHTML("hair.html"))
-#   output$chord <- renderImage({
-#     # A temp file to save the output.
-#     # This file will be removed later by renderImage
-#     outfile <- tempfile(fileext='.svg')
-#     
-#     # Generate the SVG
-#     svg(outfile, width=800, height=600)
-#     includeHTML(path = 'www/hair.html')
-#     dev.off()
-#     
-#     # Return a list containing the filename
-#     list(src = outfile,
-#          contentType = 'image/svg',
-#          width = 800,
-#          height = 600,
-#          alt = "This is alternate text")
-#   }, deleteFile = TRUE)
+
 
 
 ##################################################################################################

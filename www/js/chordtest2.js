@@ -34,7 +34,7 @@ chordOutputBinding = new Shiny.OutputBinding();
       //  DRAW THE CHORD DIAGRAM
       //*******************************************************************
       function drawChords (matrix, mmap) {
-        var w = 882, h = 720, r1 = h / 2, r0 = r1 - 100;
+        var w = 950, h = 800, r1 = h / 2, r0 = r1 - 175;
 
         var fill = d3.scale.ordinal()
             //.domain(d3.range(8));
