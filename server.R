@@ -31,12 +31,10 @@ prepend_shiny_alert <- function(session, id, message, alert_level="success")
 }
 
 alert_qviz_start_msg <- renderMarkdown(text=
-                                         'To start using EpiQuant either:
-
-                                       - Download and populate the template file with your own data
-                                       - Update the table below with the scorings you want to use
-                                       - Just hit "Create Matrix!"
-                                       ')
+     'To start using **SourceMatrix** either:
+ 1. Download and populate the template file with your own data
+ 1. Update the table below with the scorings you want to use
+ 1. Just hit "Create Matrix!" ')
 
 shinyServer(function(input, output, session) {
   
@@ -48,7 +46,6 @@ shinyServer(function(input, output, session) {
 
 ##################################################################################################
 ############################ Server functions for Source Matrix ##################################
-  observe({showshinyalert(session, "alert1","Make sure to click 'Create Matrix' to show the heatmap!", 'danger' ) })
 
 # This code generates a table that changes depending on what is uploaded in the sidebar  
   output$scoretable <- renderHotable({  
