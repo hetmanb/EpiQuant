@@ -1,24 +1,35 @@
 
-# The shinyalert and showshinyalert are taken from AnalytixWare/ShinySky by xiaodaigh  and adapted by Peter Kruczkiewicz (https://bitbucket.org/peterk87/qviz)
+# The shinyalert and showshinyalert are taken from AnalytixWare/ShinySky 
+#  by xiaodaigh  and adapted by Peter Kruczkiewicz (https://bitbucket.org/peterk87/qviz)
 
 # http://shiny.rstudio.com
-#theme = "united.css", 
 
 library(shiny)
 library(shinysky)
 
-shiny_alert_container <- function(id) 
-{
+#Create an empty container for housing the Shiny alerts 
+shiny_alert_container <- function(id) {
   tagList(
     tags$head(
       singleton(tags$script(src="js/shinyalert.js"))
-    )
-    ,div(id=paste(id), class='shinyalert')
+    ),
+    div(id=paste(id), class='shinyalert')
   )
 }
-#    
+    
 
-shinyUI(navbarPage(theme = "united.css", fluid = T, title = shiny::a("EpiQuant", href = "https://github.com/hetmanb/EpiQuant/wiki"), inverse = T, footer=a(href="mailto:hetmanb@gmail.com", "Questions? Email Me"),
+
+
+######################## *******************************  ************************************** ################
+#                                            SHINY UI START                                                     #
+######################## *******************************  ************************************** ################  
+
+
+shinyUI(navbarPage(theme = "united.css", 
+                   fluid = T, 
+                   title = shiny::a("EpiQuant", href = "https://github.com/hetmanb/EpiQuant/wiki"), 
+                   inverse = T, 
+                   footer=a(href="mailto:hetmanb@gmail.com", "Questions? Email Me"),
                    
 ######################## *******************************  ************************************** ################
 #                                            NavTab for Source-Matrix                                           #
@@ -29,17 +40,16 @@ shinyUI(navbarPage(theme = "united.css", fluid = T, title = shiny::a("EpiQuant",
                         headerPanel("Source Analysis using Epi-Matrix"),   
                         # Sidebar with a slider input for number of observations
                         sidebarPanel(
+                          #load javascript files 
                           tags$head(
                           tags$script(src="lib/d3.js"),
                           tags$script(src="lib/underscore.js"),
                           tags$script(src="js/mapper.js"),
-                          tags$script(src ="js/chordtest2.js"),
-                          singleton(tags$link(href='jquery-ui-1.10.4.custom.css', type='text/css', rel='stylesheet'))
+                          tags$script(src ="js/chord.js")
                           ),
                           
-                          h4("Epi-Matrix"),
-                                     #shinysky::shinyalert(id ="alert1", click.hide = T, auto.close.after = 5),
-                                     p("Epi-matrix is a method of coming up with pairwise similarity indices based solely on a subjective scoring matix"),
+                          h4("SourceMatrix Options"),
+                                     p("SourceMatrix is a method of coming up with pairwise similarity indices based on a subjective scoring matix"),
                                      p("First, you'll need to download the", shiny::a("template file.", href= "https://www.dropbox.com/s/4p1xa8fx5myxq45/epi-score.txt?dl=1")),
                                      br(), 
                                      p("Once you've downloaded the file, open it in your favorite spreadsheet software and start filling in the boxes using the following rules."),
@@ -64,7 +74,7 @@ shinyUI(navbarPage(theme = "united.css", fluid = T, title = shiny::a("EpiQuant",
                                      shiny_alert_container('app_status_alert'),
                                      shinysky::hotable("scoretable")
                             ),                            
-                            tabPanel(title="Sum Heatmap",
+                            tabPanel(title="Source Similarity Heatmap",
                                      h3("Heatmap based on the source scorings and the penalty sliders from the sidebar"),
                                      downloadButton("downloadSourceHeatmap", "Download Heatmap"),
                                      downloadButton("downloadSourceMatrix", "Download Full Matrix File"),
@@ -77,9 +87,7 @@ shinyUI(navbarPage(theme = "united.css", fluid = T, title = shiny::a("EpiQuant",
                             tabPanel(title = "Chord Diagram", 
                                       h4("The chord diagram shows the source-relationships that fall within the low-and-high thresholds"),
                                       sliderInput("chord_low", "Low Threshold for Similarity", min=0, max=1.0, value=0.7, step=0.01), 
-                                      sliderInput("chord_high", "High Threshold for Similarity", min=0, max=1.0, value=.99, step=0.01),
-#                                       br(),
-#                                       dataTableOutput(outputId = "chord_out"),
+                                      sliderInput("chord_high", "High Threshold for Similarity", min=0, max=1.0, value=1, step=0.01),
                                       br(),
                                       busyIndicator("Processing...", wait = 500),
                                       div(id = 'jschord', class = 'jschord')

@@ -1,50 +1,21 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      #tooltip {
-        color: white;
-        opacity: .9;
-        background: #333;
-        padding: 5px;
-        border: 1px solid lightgrey;
-        border-radius: 5px;
-        position: relative;
-        z-index: 10;
-        visibility: hidden;
-        white-space: nowrap;
-        pointer-events: none;
-      }
-      #circle circle {
-        fill: none;
-        pointer-events: all;
-      }
-      path.group {
-        fill-opacity: .8;
-      }
-      path.chord {
-        fill-opacity: .8;
-        stroke: #000;
-        stroke-width: .25px;
-      }
-      #circle:hover path.fade {
-        display: none;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="tooltip"></div>
-    <script src="lib/d3.js"></script>
-    <script src="lib/underscore.js"></script>
-    <script src="js/mapper.js"></script>
-    <script>
+chordOutputBinding = new Shiny.OutputBinding(); 
+   $.extend(chordOutputBinding, {
+
+     find: function(scope){
+      console.log('in find function');
+       return $(scope).find('.jschord');
+     },
+     renderValue: function(el, data){
+       if (data == null) {
+         return; 
+       }
+      console.log('in render value');
+      console.log(data);
       //*******************************************************************
       //  CREATE MATRIX AND MAP
       //*******************************************************************
-      d3.csv('data/hair.csv', function (error, data) {
-        var mpr = chordMpr(data);
+      // d3.csv(data.filepath, function (error, data) {
+        var mpr = chordMpr(data.filepath);
 
         mpr
           .addValuesToMap('has')
@@ -55,17 +26,20 @@
             if (!recs[0]) return 0;
             return +recs[0].count;
           });
+        console.log('here');
+        console.log(mpr);
         drawChords(mpr.getMatrix(), mpr.getMap());
-      });
+      // });
       //*******************************************************************
       //  DRAW THE CHORD DIAGRAM
       //*******************************************************************
       function drawChords (matrix, mmap) {
-        var w = 882, h = 720, r1 = h / 2, r0 = r1 - 100;
+        var w = 950, h = 800, r1 = h / 2, r0 = r1 - 175;
 
         var fill = d3.scale.ordinal()
-            .domain(d3.range(4))
-            .range(["#000000", "#FFDD89", "#957244", "#F26223"]);
+            //.domain(d3.range(8));
+            .range(data.color);
+            //.range(["#000000", "#FFDD89", "#957244", "#F26223"]);
 
         var chord = d3.layout.chord()
             .padding(.02)
@@ -75,33 +49,39 @@
         var arc = d3.svg.arc()
             .innerRadius(r0)
             .outerRadius(r0 + 20);
+// declaring the svg element then removing the content? 
+        var svg = d3.select(el).select('#svg1');
+        svg.remove();
+        $(el).html('');
 
-        var svg = d3.select("body").append("svg:svg")
+        //var svg = d3.select(el).select("body").append("svg:svg")
+        svg = d3.select(el).append("svg")
             .attr("width", w)
             .attr("height", h)
-          .append("svg:g")
+          .append("g")
             .attr("id", "circle")
             .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
 
             svg.append("circle")
-                .attr("r", r0 + 20);
+                .attr("r", r0 + 20)
+                .attr("fill", "white");
 
         var rdr = chordRdr(matrix, mmap);
         chord.matrix(matrix);
 
         var g = svg.selectAll("g.group")
             .data(chord.groups())
-          .enter().append("svg:g")
+          .enter().append("g")
             .attr("class", "group")
             .on("mouseover", mouseover)
             .on("mouseout", function (d) { d3.select("#tooltip").style("visibility", "hidden") });
 
-        g.append("svg:path")
+        g.append("path")
             .style("stroke", "black")
             .style("fill", function(d) { return fill(d.index); })
             .attr("d", arc);
 
-        g.append("svg:text")
+        g.append("text")
             .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; })
             .attr("dy", ".35em")
             .style("font-family", "helvetica, arial, sans-serif")
@@ -116,7 +96,7 @@
 
           var chordPaths = svg.selectAll("path.chord")
                 .data(chord.chords())
-              .enter().append("svg:path")
+              .enter().append("path")
                 .attr("class", "chord")
                 .style("stroke", function(d) { return d3.rgb(fill(d.target.index)).darker(); })
                 .style("fill", function(d) { return fill(d.target.index); })
@@ -159,8 +139,24 @@
                   && p.target.index != i;
             });
           }
-      }
+      };
+}
+});
+Shiny.outputBindings.register(chordOutputBinding);   
 
-    </script>
-  </body>
-</html>
+// chordInputBinding = new Shiny.InputBinding();
+// $.extend(chordInputBinding, {
+//   find: function(scope){
+//     return $(scope).find('.jschord');
+//   },
+//   getValue: funtion(el){
+
+//   },
+//   subscribe: function(el,callback){
+//     $(el).on('change', function(e){
+//       callback();
+//     });
+//   }
+// });   
+// Shiny.inputBindings.register(chordInputBinding);
+

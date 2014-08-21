@@ -11,11 +11,13 @@ library(reshape2)
 library(fossil)
 library(shinysky)
 library(RColorBrewer)
-source("source-helper.R")
-source("epi-helper.R")
-source("cgf-helper.R")
-source("compare-helper.R")
-source("chord_helper.R")
+library(markdown)
+source("helpers/cgf-helper.R", local = T)
+source("helpers/chord_helper.R", local = T)
+source("helpers/compare-helper.R", local = T)
+source("helpers/epi-helper.R", local = T)
+source("helpers/source-helper.R", local = T)
+
 
 prepend_shiny_alert <- function(session, id, message, alert_level="success") 
 {
@@ -27,6 +29,7 @@ prepend_shiny_alert <- function(session, id, message, alert_level="success")
                             )
   )
 }
+
 alert_qviz_start_msg <- renderMarkdown(text=
                                          'To start using EpiQuant either:
 
@@ -91,23 +94,22 @@ shinyServer(function(input, output, session) {
       source_heatmap(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7))
       dev.off()
     })
-#output variable for the jschord map:  
+
+############ Functions for the Chord Diagram JS Output: #############################
 
   chord_in <- reactive({ 
     melt(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7))
   })
   
-  output$chord_out <- renderDataTable(chord_file())
-
   chord_file <- reactive({
     chord_table(chord_in(), input$chord_low, input$chord_high)
   })
   
   output$jschord <- reactive({
-      
+  # List of arguments given to the chord.js file     
       list(
-        filepath = as.matrix(chord_file()), #this is in the www/data folder
-        color = brewer.pal(n = 8, name = "Oranges") #c("#000000", "#FFDD89", "#957244", "#F26223")
+        filepath = as.matrix(chord_file()), 
+        color = brewer.pal(n = 8, name = "Oranges") 
       )
   })
 
