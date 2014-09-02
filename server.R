@@ -110,7 +110,7 @@ shinyServer(function(input, output, session) {
   temporal <- reactive({
     inFile <- input$strain_data
     if (is.null(inFile)){
-      print("inFile is null")
+#       print("inFile is null")
       return(temp_calc(read.table('data/strain_data.txt', header=TRUE, sep='\t')))
       }
       temp_calc(read.table(inFile$datapath, header=TRUE, sep='\t'))
@@ -118,7 +118,7 @@ shinyServer(function(input, output, session) {
   geography <- reactive({
     inFile <- input$strain_data
     if (is.null(inFile)){
-      print("inFile is null")
+#       print("inFile is null")
       return(geog_calc(read.table('data/strain_data.txt', header=TRUE, sep='\t')))
     }
     geog_calc(read.table(inFile$datapath, header=TRUE, sep='\t'))

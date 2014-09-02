@@ -134,5 +134,5 @@ EpiMatrix <- function(table){
 ######## Function to return a heatmap of the final EPIMATRIX function ####################
 EpiHeatmap <- function(m){
   heatcolor<- colorRampPalette(c("white","yellowgreen","darkgreen"))(512)  
-  heatmap.2(m, col=heatcolor, margins=c(10,10), trace='none',key=F,revC=TRUE)
+  heatmap.2(m, col=heatcolor, margins=c(10,10), trace='none', keysize=0.6, revC=TRUE)
 }

@@ -119,8 +119,8 @@ shinyUI(navbarPage(theme = "united.css",
                                            h4("Make the following sliders add up to 1.0"),
                                            sliderInput(inputId="source_coeff", label="Coefficient for Source Factor", min=0.0, max=1.0, value=0.5, step=0.05),
                                            sliderInput(inputId="temp_coeff", label="Coefficient for Temporal Factor", min=0.0, max=1.0, value=0.3, step=0.05),
-                                           sliderInput(inputId="geog_coeff", label="Coefficient for Geographical Factor", min=0.0, max=1.0, value=0.2, step=0.05)
-                                           ,submitButton("Create Matrix", icon = NULL)
+                                           sliderInput(inputId="geog_coeff", label="Coefficient for Geographical Factor", min=0.0, max=1.0, value=0.2, step=0.05),
+                                           submitButton("Create Matrix", icon = NULL)
                                            ),
                               
                               
