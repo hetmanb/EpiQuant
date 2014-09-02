@@ -17,33 +17,24 @@ source("helpers/chord_helper.R", local = T)
 source("helpers/compare-helper.R", local = T)
 source("helpers/epi-helper.R", local = T)
 source("helpers/source-helper.R", local = T)
+source("helpers/alert-helper.R", local = T)
 
-
-prepend_shiny_alert <- function(session, id, message, alert_level="success") 
-{
-  session$sendCustomMessage("shiny_alert_handler", 
-                            list(
-                              id=id
-                              ,message=message
-                              ,alert_level=alert_level
-                            )
-  )
-}
-
-alert_qviz_start_msg <- renderMarkdown(text=
-     'To start using **SourceMatrix** either:
- 1. Download and populate the template file with your own data
- 1. Update the table below with the scorings you want to use
- 1. Just hit "Create Matrix!" ')
 
 shinyServer(function(input, output, session) {
   
-  isolate( prepend_shiny_alert(session
-                              ,'app_status_alert'
-                              ,alert_qviz_start_msg
-                              ,alert_level='info'))
+  isolate(prepend_shiny_alert(session,
+                              'sourcematrix_alert',
+                              alert_sourcematrix_start_msg,
+                              alert_level='info'))
+  isolate(prepend_shiny_alert(session,
+                              'source_heat_alert',
+                              alert_sourcematrix_heat_msg,
+                              alert_level='info'))
   
-
+  isolate(prepend_shiny_alert(session,
+                              'source_chord_alert',
+                              alert_sourcematrix_chord_msg,
+                              alert_level='info'))
 ##################################################################################################
 ############################ Server functions for Source Matrix ##################################
 
@@ -231,5 +222,22 @@ shinyServer(function(input, output, session) {
       }
     CompareDisplay(compareheatmap())
     })
+
+#Download handler to download the comparison heatmap as a .pdf file:
+output$downloadCompareHeatmap <- downloadHandler( 
+  filename = c("CGF-Epi_Heatmap.pdf"),
+  content = function(file){
+    pdf(file, width=15, height=15)
+    CompareDisplay(compareheatmap())
+    dev.off()
+  })
+output$downloadCompareTable <- downloadHandler( 
+  filename = c("CGF-Epi_SimTable.txt"),
+  content = function(file){
+    write.table(melt(compareheatmap()), file, sep='\t', row.names = F) 
+  })  
+
+
+
 
 })

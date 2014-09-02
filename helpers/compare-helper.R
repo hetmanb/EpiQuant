@@ -1,6 +1,6 @@
 
 CompareMatrix <- function(cgf_data, epi_data) {
-
+# Import data from shiny 
   cgf<- cgf_data
   epi <- epi_data
   
@@ -8,9 +8,7 @@ CompareMatrix <- function(cgf_data, epi_data) {
   melt_cgf <- melt(as.matrix(cgf))
   melt_epi <- melt(as.matrix(epi))
   
-  # x <- max(melt_cgf$value) - min(melt_cgf$value)
-  # y <- max(melt_epi$value) - min(melt_epi$value)
-  
+# Rank the similarities from min - max, to allow for 'fair' comparisons
   melt_cgf$rank <- rank(melt_cgf$value, ties.method = 'random')
   melt_epi$rank <- rank(melt_epi$value, ties.method = 'random')
   
@@ -19,6 +17,8 @@ CompareMatrix <- function(cgf_data, epi_data) {
   merged_data$rank.x <- merged_data$rank.x / max(merged_data$rank.x)
   merged_data$rank.y <- merged_data$rank.y / max(merged_data$rank.y)
   
+# Subtract the Epi from the CGF data. If result is >0 the similarity was stronger via CGF. If the result
+# is <0, then the similarity was stronger via Epi relationships. 
   merged_data$minus <- merged_data$rank.x - merged_data$rank.y
   merged_data <- merged_data[,c(1:2,7)]
   
@@ -30,5 +30,5 @@ CompareMatrix <- function(cgf_data, epi_data) {
 CompareDisplay <- function(m){
   heatcolor<- colorRampPalette(c("darkgreen","white","darkblue"))(512)  
   castermap <- heatmap.2(m, margins = c(10,10), col=heatcolor, trace='none',keysize=0.6, revC=TRUE)
-  
+# Green denotes CGF sim, Blue denotes CGF Sim.   
 }
