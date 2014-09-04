@@ -1,6 +1,6 @@
 
 # The shinyalert and showshinyalert are taken from AnalytixWare/ShinySky 
-#  by xiaodaigh  and adapted by Peter Kruczkiewicz (https://bitbucket.org/peterk87/qviz)
+#  by xiaodaigh and adapted by Peter Kruczkiewicz (https://bitbucket.org/peterk87/qviz)
 
 # http://shiny.rstudio.com
 
@@ -61,9 +61,9 @@ shinyUI(navbarPage(theme = "united.css",
                                      p("Upload your similarity scoring matrix here:"),
                                      fileInput(inputId="source_scores",label="Upload",multiple=FALSE,accept=".txt"),
                                      h4("These sliders pertain to the epi-matrix using a summation approach:"),
-                                     sliderInput(inputId="mod7",label="Sum Modifier for 7-0 match", min=0, max=1.0, value=0.15, step=0.05),
-                                     sliderInput(inputId="mod8",label="Sum Modifier for 7-1 match", min=0, max=1.0, value=0.35, step=0.05),
-                                     submitButton("Create Matrix", icon = NULL)
+                                     sliderInput(inputId="mod7",label="Modifier for 7-0 match", min=0, max=1.0, value=0.15, step=0.05),
+                                     sliderInput(inputId="mod8",label="Modifier for 7-1 match", min=0, max=1.0, value=0.35, step=0.05),
+                                     submitButton("Submit", icon = NULL)
                         ),
                         
                         # Show a table of the uploaded data: 
@@ -120,7 +120,7 @@ shinyUI(navbarPage(theme = "united.css",
                                            sliderInput(inputId="source_coeff", label="Coefficient for Source Factor", min=0.0, max=1.0, value=0.5, step=0.05),
                                            sliderInput(inputId="temp_coeff", label="Coefficient for Temporal Factor", min=0.0, max=1.0, value=0.3, step=0.05),
                                            sliderInput(inputId="geog_coeff", label="Coefficient for Geographical Factor", min=0.0, max=1.0, value=0.2, step=0.05),
-                                           submitButton("Create Matrix", icon = NULL)
+                                           submitButton("Submit", icon = NULL)
                                            ),
                               
                               
@@ -149,7 +149,7 @@ shinyUI(navbarPage(theme = "united.css",
                                            br(),
                                            p("Upload your CGF data here:"),
                                            fileInput(inputId="cgf",label="Upload CGF file",multiple=FALSE,accept=".txt"),
-                                           submitButton("Create Matrix", icon = NULL)
+                                           submitButton("Submit", icon = NULL)
                               ),
                               
                               # Show a plot of the generated distribution
@@ -186,7 +186,7 @@ shinyUI(navbarPage(theme = "united.css",
                                            fileInput(inputId="epi_data",label="Upload Epi file",multiple=FALSE,accept=".txt"),
                                            p("Upload your Genetic Similarity (CGF) data here:"),
                                            fileInput(inputId="cgf_data",label="Upload Similarity (CGF) file",multiple=FALSE,accept=".txt"),
-                                           submitButton("Create Matrix", icon = NULL)
+                                           submitButton("Submit", icon = NULL)
                               ),
                               
                               # Show a plot of the generated distribution
