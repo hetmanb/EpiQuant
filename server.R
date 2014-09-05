@@ -138,7 +138,20 @@ shinyServer(function(input, output, session) {
   output$EpiHeatmap <- renderPlot({
     EpiHeatmap(EpiMatrix(table()))
      })  
-    
+
+####### Generate a map with the locations from the strain info file using rCharts and Leaflet:
+   output$epiMap <- renderMap({
+#     inFile <- read.table(file = 'data/strain_data.txt' , header = T)
+#     markerlist <- list(c(inFile$Latitude, inFile$Longitude)) 
+    map3 <- Leaflet$new()
+    map3$setView(c(49.6942, -112.8328), zoom = 6)
+#     map3$marker <- markerlist
+    #map3$marker(c(51.5, -0.09), bindPopup = "<p> Hi. I am a popup </p>")
+    #map3$marker(c(51.495, -0.083), bindPopup = "<p> Hi. I am another popup </p>")
+    map3
+   })
+
+
 #### Download Handlers for Data and Heatmaps: #####
 
   output$downloadEpiData <- downloadHandler( 

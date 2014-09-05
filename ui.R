@@ -16,8 +16,6 @@ shiny_alert_container <- function(id) {
     div(id=paste(id), class='shinyalert')
   )
 }
-    
-
 
 
 ######################## *******************************  ************************************** ################
@@ -45,7 +43,9 @@ shinyUI(navbarPage(theme = "united.css",
                           tags$script(src="lib/d3.js"),
                           tags$script(src="lib/underscore.js"),
                           tags$script(src="js/mapper.js"),
-                          tags$script(src ="js/chord.js")
+                          tags$script(src ="js/chord.js"),
+                          tags$script(src ="www/lib/leaflet.js")
+                          
                           ),
                           
                           h4("SourceMatrix Options"),
@@ -126,15 +126,19 @@ shinyUI(navbarPage(theme = "united.css",
                               
                               # Show a plot of the generated distribution
                               mainPanel(
-                                title="Epi-Matrix",
+                                tabsetPanel(
+                                  tabPanel(title="Epi-Matrix",
                                            downloadButton("downloadEpiData", "Download Similarity Data"),
                                            downloadButton("downloadEpiTable", "Download Similarity Table"),
                                            downloadButton("downloadEpiHeatmap", "Download Heatmap"),
                                            busyIndicator("Processing...", wait = 500),
                                            plotOutput("EpiHeatmap", width=1000, height=1000)
-                                  )
+                                  ),
+                                  tabPanel(title="Map", 
+                                           tags$style('.leaflet {height: 600px;}'),
+                                           chartOutput("epiMap", 'leaflet'))
                              )
-                            ),
+                            ))),
 ######################## *******************************  ************************************** ################
 #                                            NavTab for CGF-Matrix                                              #
 ######################## *******************************  ************************************** ################
