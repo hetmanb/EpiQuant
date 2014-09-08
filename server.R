@@ -12,12 +12,14 @@ library(fossil)
 library(shinysky)
 library(RColorBrewer)
 library(markdown)
+library(rCharts)
 source("helpers/cgf-helper.R", local = T)
 source("helpers/chord_helper.R", local = T)
 source("helpers/compare-helper.R", local = T)
 source("helpers/epi-helper.R", local = T)
 source("helpers/source-helper.R", local = T)
 source("helpers/alert-helper.R", local = T)
+source("helpers/map_helper.R", local = T)
 
 
 shinyServer(function(input, output, session) {
@@ -141,14 +143,20 @@ shinyServer(function(input, output, session) {
 
 ####### Generate a map with the locations from the strain info file using rCharts and Leaflet:
    output$epiMap <- renderMap({
-#     inFile <- read.table(file = 'data/strain_data.txt' , header = T)
-#     markerlist <- list(c(inFile$Latitude, inFile$Longitude)) 
-    map3 <- Leaflet$new()
-    map3$setView(c(49.6942, -112.8328), zoom = 6)
-#     map3$marker <- markerlist
-    #map3$marker(c(51.5, -0.09), bindPopup = "<p> Hi. I am a popup </p>")
-    #map3$marker(c(51.495, -0.083), bindPopup = "<p> Hi. I am another popup </p>")
-    map3
+     inFile <- input$strain_data
+     if (is.null(inFile)){
+       #       print("inFile is null")
+       return(EpiMap(read.table('data/strain_data.txt', header=TRUE, sep='\t')))
+     }     
+     EpiMap(input_data = read.table(input$datapath, header = T, sep = '\t'))
+# #     inFile <- read.table(file = 'data/strain_data.txt' , header = T)
+# #     markerlist <- list(c(inFile$Latitude, inFile$Longitude)) 
+#     epimap <- Leaflet$new()
+#     epimap$setView(c(49.6942, -112.8328), zoom = 6)
+# #     epimap$marker <- markerlist
+#     #epimap$marker(c(51.5, -0.09), bindPopup = "<p> Hi. I am a popup </p>")
+#     #epimap$marker(c(51.495, -0.083), bindPopup = "<p> Hi. I am another popup </p>")
+#     epimap
    })
 
 
