@@ -6,6 +6,7 @@
 
 library(shiny)
 library(shinysky)
+library(rCharts)
 
 #Create an empty container for housing the Shiny alerts 
 shiny_alert_container <- function(id) {

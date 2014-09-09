@@ -16,9 +16,24 @@ colors <- brewer.pal(12, "Paired")
 df2 <- map_data
 sources <- unique(df2$Source)
 df2$color <- colors[match(df2$Source, sources)]
-df2$popup <- paste0("<p>Strain:  ", df2$Strain, 
-                    "<br>Source:  ", df2$Source, 
-                    "<br>Year: ", df2$Year)
+df2$locs <- paste(df2$Latitude, ",", df2$Longitude)
+locs <- unique(df2$locs)
+# Create a list of all the strains from each unique location 
+a <- list()
+for(i in locs[1:length(locs)]){  
+  searchTerm  <- i 
+  searchVector <- which(df2$locs==searchTerm)
+  searchNames <- as.vector(df2$Strain)[searchVector]
+  a[[i]] <- searchNames
+}
+
+a_matrix<- (as.matrix(a))
+df2$strains <- a_matrix[match(df2$locs, row.names(a_matrix))]
+df2$popup <- paste0("<p>Strains: ", df2$strains)
+
+# df2$popup <- paste0("<p>Strain:  ", df2$Strain, 
+#                     "<br>Source:  ", df2$Source, 
+#                     "<br>Year: ", df2$Year)
 
 markers <- apply(df2, 1, as.list)
 
