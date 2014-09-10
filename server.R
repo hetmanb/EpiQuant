@@ -143,12 +143,10 @@ shinyServer(function(input, output, session) {
 
 ####### Generate a map with the locations from the strain info file using rCharts and Leaflet:
    output$epiMap <- renderMap({
-     inFile <- input$strain_data
-     if (is.null(inFile)){
-       #       print("inFile is null")
-       return(EpiMap(read.table('data/strain_data.txt', header=TRUE, sep='\t')))
-     }     
-     EpiMap(input_data = read.table(input$datapath, header = T, sep = '\t'))
+     if(is.null(input$strain_data)) { inFile <- read.table('data/strain_data.txt', header=T, sep='\t')  }     
+      else { inFile <- read.table(input$strain_data$datapath, header=T, sep='\t') } 
+       return(EpiMap(inFile))
+          
 # #     inFile <- read.table(file = 'data/strain_data.txt' , header = T)
 # #     markerlist <- list(c(inFile$Latitude, inFile$Longitude)) 
 #     epimap <- Leaflet$new()
