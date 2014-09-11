@@ -14,11 +14,15 @@ map_data <- input_data
 colors <- brewer.pal(12, "Paired")
 
 df2 <- map_data
+# Set a color scale dependant on the source of each strain
 sources <- unique(df2$Source)
 df2$color <- colors[match(df2$Source, sources)]
+
+# Create a column containing the GPS coords for each strain to be used as a lookup 
 df2$locs <- paste(df2$Latitude, ",", df2$Longitude)
 locs <- unique(df2$locs)
-# Create a list of all the strains from each unique location 
+
+# Use the locs list as a lookup to find all the strains that are at each of the unique locations 
 a <- list()
 for(i in locs[1:length(locs)]){  
   searchTerm  <- i 
@@ -26,29 +30,41 @@ for(i in locs[1:length(locs)]){
   searchNames <- as.vector(df2$Strain)[searchVector]
   a[[i]] <- searchNames
 }
-
 a_matrix<- (as.matrix(a))
-
 df2$strains <- a_matrix[match(df2$locs, row.names(a_matrix))]
 
-for(i in (1:nrow(df2))){
-  df2$radius[i] <- (length(df2$strains[[i]]))
+
+# Use the locs list as a lookup to find all the SOURCES that are at each of the unique locations 
+b <- list()
+for(i in locs[1:length(locs)]){  
+  searchTerm  <- i 
+  searchVector <- which(df2$locs==searchTerm)
+  searchNames <- as.vector(df2$Source)[searchVector]
+  b[[i]] <- searchNames
+}
+b_matrix<- (as.matrix(b))
+df2$sources <- b_matrix[match(df2$locs, row.names(b_matrix))]
+
+#List only the UNIQUE sources for each location point 
+for(i in 1:nrow(df2)){
+  df2$sources[[i]] <- paste(unique(df2$sources[[i]]), sep = ",")
 }
 
+# Count the number of strains in each location and store it as two variables - radius to be used for marker size
+for(i in 1:nrow(df2)){
+  df2$length[i] <- length(df2$strains[[i]])
+  df2$radius[i] <- length(df2$strains[[i]])
+  
+#Convert the radius into a more manageable scale for the map   
+}
 for(i in (1:nrow(df2))){
   df2$radius[i] <- (((df2$radius[i] - min(df2$radius)) * 8) / (max(df2$radius)-min(df2$radius)) + 4)
-}  
+} 
 
-df2$popup <- paste0("<p>Location: ", df2$City,", ",df2$Province.State,
-                    "<br>Strains: ", df2$strains)
-
-# df2$popup <- paste0("<p>Strain:  ", df2$Strain, 
-#                     "<br>Source:  ", df2$Source, 
-#                     "<br>Year: ", df2$Year)
-
-
-
-
+# The items desired to be seen in the popup box:
+df2$popup <- paste0("<p><strong>Location:</strong> ", df2$City," ", df2$Province.State,
+                    "<br><strong>Number of Strains:</strong> ", df2$length, 
+                    "<br><strong>Sources Present:</strong> ", df2$sources)
 
 
 
