@@ -37,6 +37,11 @@ shinyServer(function(input, output, session) {
                               'source_chord_alert',
                               alert_sourcematrix_chord_msg,
                               alert_level='info'))
+  isolate(prepend_shiny_alert(session,
+                              'epi_chord_alert',
+                              alert_epimatrix_chord_msg,
+                              alert_level='info'))
+  
 ##################################################################################################
 ############################ Server functions for Source Matrix ##################################
 
@@ -85,7 +90,7 @@ shinyServer(function(input, output, session) {
       dev.off()
     })
 
-############ Functions for the Chord Diagram JS Output: #############################
+############ Functions for the Source Chord Diagram JS Output: #############################
 
   chord_in <- reactive({ 
     melt(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7))
@@ -156,6 +161,26 @@ shinyServer(function(input, output, session) {
 #     #epimap$marker(c(51.495, -0.083), bindPopup = "<p> Hi. I am another popup </p>")
 #     epimap
    })
+
+############ Functions for the Source Chord Diagram JS Output: #############################
+
+chord2_in <- reactive({ 
+  melt(EpiMatrix(table()))
+})
+
+chord2_file <- reactive({
+  chord_table(chord2_in(), input$chord2_low, input$chord2_high)
+})
+
+output$jschord2 <- reactive({
+  # List of arguments given to the chord.js file     
+  list(
+    filepath = as.matrix(chord2_file()), 
+    color = brewer.pal(n = 8, name = "Greens") 
+  )
+})
+
+
 
 
 #### Download Handlers for Data and Heatmaps: #####

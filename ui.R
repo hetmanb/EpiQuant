@@ -45,6 +45,7 @@ shinyUI(navbarPage(theme = "united.css",
                           tags$script(src="lib/underscore.js"),
                           tags$script(src="js/mapper.js"),
                           tags$script(src ="js/chord.js"),
+                          tags$script(src ="js/chord2.js"),
                           tags$script(src ="www/lib/leaflet.js")
                           
                           ),
@@ -137,7 +138,18 @@ shinyUI(navbarPage(theme = "united.css",
                                   ),
                                   tabPanel(title="Map", 
                                            tags$style('.leaflet {height: 600px;}'),
-                                           chartOutput("epiMap", 'leaflet'))
+                                           chartOutput("epiMap", 'leaflet')),
+                                  tabPanel(title = "Epi Chord Diagram", 
+                                           h4("This chord diagram shows the epidemiological relationships that fall within the low-and-high thresholds"),
+                                           shiny_alert_container('epi_chord_alert'),
+                                           br(), 
+                                           #shiny_alert_container('source_chord_alert'),
+                                           sliderInput("chord2_low", "Low Threshold for Similarity", min=0, max=1.0, value=0.9, step=0.01), 
+                                           sliderInput("chord2_high", "High Threshold for Similarity", min=0, max=1.0, value=.95, step=0.01),
+                                           br(),
+                                           busyIndicator("Processing...", wait = 500),
+                                           div(id = 'jschord2', class = 'jschord2')
+                                  )
                              )
                             ))),
 ######################## *******************************  ************************************** ################

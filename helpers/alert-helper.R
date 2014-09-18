@@ -22,3 +22,7 @@ alert_sourcematrix_heat_msg <- renderMarkdown(text=
 
 alert_sourcematrix_chord_msg <- renderMarkdown(text='  * Hit the **Submit** button to generate the chord diagram if nothing shows up.
   * Hover your mouse over the subjects to see the relationships between individual sources ')
+
+alert_epimatrix_chord_msg <- renderMarkdown(text='  * Hit the **Submit** button to generate the chord diagram if nothing shows up.
+  * Hover your mouse over the subjects to see the relationships between individual strains in your dataset.
+  * Caution : if you select a threshold containing no data, the image will attempt to process indefinitely. If this happens, just reselect a new threshold and hit **Submit**. ')
