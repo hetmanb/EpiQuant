@@ -184,7 +184,7 @@ shinyServer(function(input, output, session) {
 ###########     Generate the CGF Matrix #####################   
   cgf_matrix <- reactive({
     if (is.null(input$cgf)) {
-      return(NULL)
+      return(cgf_calc(data=read.table("data/cgf(bh).txt", header=T, sep='\t')))
     }
     cgf_calc(data=read.table(input$cgf$datapath, header=T, sep='\t'))
     })
@@ -192,7 +192,7 @@ shinyServer(function(input, output, session) {
 ##########  Generate the Heatmap and display   ##################### 
 
   cgfheatmap <- reactive({
-    if (is.null(input$cgf)) {
+    if ((input$cgf_demo == FALSE) && is.null(input$cgf)){
       return(NULL)
     }
     cgf_heatmap(cgf_matrix())
@@ -227,16 +227,20 @@ shinyServer(function(input, output, session) {
 ###########   Generate the Heatmap and display  ##################### 
 
   compareheatmap <- reactive({
-    if (is.null(input$cgf_data)|is.null(input$epi_data)) {
-      return(NULL)
-      }
-    cgf_in <- read.table(input$cgf_data$datapath, header = T, sep='\t')
-    epi_in <- read.table(input$epi_data$datapath, header = T, sep='\t')
-    CompareMatrix(cgf_data=cgf_in, epi_data = epi_in)
-    })
+    if (input$compare_demo == TRUE){
+      CompareMatrix(cgf_data = read.table("data/CGF-SimTable.txt", header = T, sep = '\t'),  epi_data = read.table("data/Epi_Sim_Data.txt", header = T, sep = '\t'))}
+      else {
+        if(is.null(input$cgf_data)|is.null(input$epi_data)){
+          return(NULL) }
+            else {
+              cgf_in <- read.table(input$cgf_data$datapath, header = T, sep='\t')
+              epi_in <- read.table(input$epi_data$datapath, header = T, sep='\t')
+              CompareMatrix(cgf_data=cgf_in, epi_data = epi_in)}
+                    }
+     })
 
   output$compare_heatmap <- renderPlot({
-    if (is.null(input$cgf_data)|is.null(input$epi_data)) {
+    if ((is.null(input$cgf_data)|is.null(input$epi_data)) && input$compare_demo == FALSE) {
       return(NULL)
       }
     CompareDisplay(compareheatmap())

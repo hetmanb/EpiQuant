@@ -152,6 +152,7 @@ shinyUI(navbarPage(theme = "united.css",
                               sidebarPanel(h4("CGF Matrix"),
                                            p("CGF Matrix will take the CGF data from your dataset and calculate the similarity scores for each pairing of strains"),
                                            br(),
+                                           checkboxInput(inputId = "cgf_demo", label = "Use demo data", value = F),
                                            p("Upload your CGF data here:"),
                                            fileInput(inputId="cgf",label="Upload CGF file",multiple=FALSE,accept=".txt"),
                                            submitButton("Submit", icon = NULL)
@@ -160,13 +161,15 @@ shinyUI(navbarPage(theme = "united.css",
                               # Show a plot of the generated distribution
                               mainPanel(
                                 tabsetPanel(
-                                  tabPanel(title="CGF Heatmap",
+                                  tabPanel(title="CGF",
                                            h3("Heatmap based on the similarity scorings of your CGF Data"),
                                            downloadButton("downloadCGFHeatmap", "Download CGF Heatmap"),
                                            downloadButton("downloadCGFTable", "Download CGF Similarity Data"),
                                            br(),
                                            busyIndicator("Please wait... for datasets greater than 100, this can take a while", wait = 500),
-                                           plotOutput("cgf_heatmap", width=1000, height=1000))
+                                           plotOutput("cgf_heatmap", width=1000, height=1000)), 
+                                  tabPanel(title="MLST", 
+                                           h3("Heatmap based on the genomic similarities calculated using MLST"))
                                   
                                 )
                               )
@@ -187,6 +190,7 @@ shinyUI(navbarPage(theme = "united.css",
                                              "and those that are more strongly associated genetically will be shown in",
                                              span("blue.",style="color:blue")),
                                            br(),
+                                           checkboxInput("compare_demo", "Use demo data", FALSE),
                                            p("Upload your Epi data here:"),
                                            fileInput(inputId="epi_data",label="Upload Epi file",multiple=FALSE,accept=".txt"),
                                            p("Upload your Genetic Similarity (CGF) data here:"),
