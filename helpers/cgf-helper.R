@@ -16,11 +16,7 @@ cgf_calc <- function(data) {
     
     x1 <- as.numeric(cgf[xselect[i,2], c(2:ncol(cgf))])
     x2 <- as.numeric(cgf[xselect[i,1], c(2:ncol(cgf))])
-    y <- x1+x2
-    y <- ifelse(y == 0, 1, 
-                ifelse(y==1, 0, 1))
-    
-    
+    y <- ifelse(x1==x2, 1, 0 )    
     cgftab[[i]] <- y
   }
   sum.table <- vector()
@@ -36,7 +32,13 @@ cgf_calc <- function(data) {
 
 #Function 3 ######################################################################################################
 #function that calls heatmap.2 to generate a heatmap from the matrix calculations 
-cgf_heatmap <- function(m){
-  heatcolor<- colorRampPalette(c("white","lightblue","darkblue"))(512)
-  heatmap.2(m, col=heatcolor, trace='none',keysize=0.6, revC=TRUE)
+cgf_heatmap <- function(m, color){
+  if(color == 1){
+    heatcolor <-  colorRampPalette(c("white","lightblue","darkblue"))(512)
+  }
+    else{
+      heatcolor <- colorRampPalette(c("lightgrey","blue","darkblue"))(512)
+    }
+  
+  heatmap.2(m, col=heatcolor, trace='none',keysize=0.6, revC=TRUE, margins = c(10,10))
 }

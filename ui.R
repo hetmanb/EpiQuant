@@ -155,34 +155,34 @@ shinyUI(navbarPage(theme = "united.css",
 ######################## *******************************  ************************************** ################
 #                                            NavTab for CGF-Matrix                                              #
 ######################## *******************************  ************************************** ################
-                   tabPanel("CGFMatrix",
+                   tabPanel("GenMatrix",
                             pageWithSidebar(
                               
                               # Application title
-                              headerPanel("CGF Analysis and Similarity Calculator"),   
+                              headerPanel("Genetic Analysis and Similarity Calculator"),   
                               # Sidebar with a slider input for number of observations
-                              sidebarPanel(h4("CGF Matrix"),
-                                           p("CGF Matrix will take the CGF data from your dataset and calculate the similarity scores for each pairing of strains"),
+                              sidebarPanel(h4("GenMatrix"),
+                                           p("GenMatrix will take either CGF or allelic data (MLST+) from your dataset and calculate the similarity scores for each pairing of strains"),
                                            br(),
+                                           radioButtons(inputId = "gen_type", label = "Select your type of data:", choices = c("CGF" = 1, "MLST" = 2)), 
+#                                            checkboxGroupInput(inputId = "gen_data", label = "Select the type of data you're using:", choices  = c("CGF", "MLST"), inline = F ),
                                            checkboxInput(inputId = "cgf_demo", label = "Use demo data", value = F),
-                                           p("Upload your CGF data here:"),
-                                           fileInput(inputId="cgf",label="Upload CGF file",multiple=FALSE,accept=".txt"),
+                                           p("Upload your Gene data here:"),
+                                           fileInput(inputId="cgf",label="Upload CGF/MLST file",multiple=FALSE,accept=".txt"),
                                            submitButton("Submit", icon = NULL)
                               ),
                               
                               # Show a plot of the generated distribution
                               mainPanel(
                                 tabsetPanel(
-                                  tabPanel(title="CGF",
-                                           h3("Heatmap based on the similarity scorings of your CGF Data"),
-                                           downloadButton("downloadCGFHeatmap", "Download CGF Heatmap"),
-                                           downloadButton("downloadCGFTable", "Download CGF Similarity Data"),
+                                  tabPanel(title="GenMatrix",
+                                           h3("Heatmap based on the similarity scorings of your Genomic Data"),
+                                           downloadButton("downloadCGFHeatmap", "Download Gene Heatmap"),
+                                           downloadButton("downloadCGFTable", "Download Gene Similarity Data"),
                                            br(),
                                            busyIndicator("Please wait... for datasets greater than 100, this can take a while", wait = 500),
-                                           plotOutput("cgf_heatmap", width=1000, height=1000)), 
-                                  tabPanel(title="MLST", 
-                                           h3("Heatmap based on the genomic similarities calculated using MLST"))
-                                  
+                                           plotOutput("cgf_heatmap", width=1000, height=1000)) 
+                                                                    
                                 )
                               )
                             )),

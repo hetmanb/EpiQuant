@@ -208,7 +208,7 @@ output$jschord2 <- reactive({
 
 ###########     Generate the CGF Matrix #####################   
   cgf_matrix <- reactive({
-    if (is.null(input$cgf)) {
+    if (is.null(input$cgf) && (input$cgf_demo == TRUE))  {
       return(cgf_calc(data=read.table("data/cgf(bh).txt", header=T, sep='\t')))
     }
     cgf_calc(data=read.table(input$cgf$datapath, header=T, sep='\t'))
@@ -220,7 +220,7 @@ output$jschord2 <- reactive({
     if ((input$cgf_demo == FALSE) && is.null(input$cgf)){
       return(NULL)
     }
-    cgf_heatmap(cgf_matrix())
+    cgf_heatmap(cgf_matrix(), input$gen_type)
     })
   
   output$cgf_heatmap <- renderPlot({
