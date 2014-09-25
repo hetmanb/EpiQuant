@@ -16,8 +16,8 @@ SourceMatrix <- function(source_data,mod8,mod7) {
   epitab <- list()
   for (i in 1:nrow(xselect)) {
     
-    x1 <- as.numeric(data[xselect[i,2], c(3:ncol(data))])
-    x2 <- as.numeric(data[xselect[i,1], c(3:ncol(data))])
+    x1 <- as.numeric(data[xselect[i,2], c(2:ncol(data))])
+    x2 <- as.numeric(data[xselect[i,1], c(2:ncol(data))])
     y <- x1+x2
     y <- ifelse(y == 0, 1, 
                 ifelse(y==1, 0, 

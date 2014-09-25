@@ -52,7 +52,7 @@ shinyUI(navbarPage(theme = "united.css",
                           
                           h4("SourceMatrix Options"),
                                      p("SourceMatrix is a method of coming up with pairwise similarity indices based on a subjective scoring matix"),
-                                     p("First, you'll need to download the", shiny::a("template file.", href= "https://www.dropbox.com/s/4p1xa8fx5myxq45/epi-score.txt?dl=1")),
+                                     p("First, you'll need to download the", shiny::a("template file.", href= "https://www.dropbox.com/s/bkgvhi00y76w02d/source_scorings.txt?dl=1")),
                                      br(), 
                                      p("Once you've downloaded the file, open it in your favorite spreadsheet software and start filling in the boxes using the following rules."),
                                      code("1 = Strongly Correlated"),
