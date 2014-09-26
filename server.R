@@ -67,7 +67,7 @@ shinyServer(function(input, output, session) {
     if (is.null(inFile)) {
       return(NULL)
     }
-    source_heatmap(SourceMatrix(source_data=inFile, mod8=input$mod8, mod7=input$mod7))
+    source_heatmap(SourceMatrix(source_data=inFile, mod8=input$mod8, mod7=input$mod7, mod0=input$mod0))
   })
   
 ############ Download Handlers: #############################
@@ -80,7 +80,7 @@ shinyServer(function(input, output, session) {
   output$downloadSourcePairwise <- downloadHandler( 
     filename = c("SourcePairwise.txt"),
     content = function(file){
-      write.table(melt(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7)), sep='\t', file)
+      write.table(melt(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0)), sep='\t', file)
     })  
   output$downloadSourceHeatmap <- downloadHandler( 
     filename = c("SourceHeatmap.pdf"),
@@ -93,7 +93,7 @@ shinyServer(function(input, output, session) {
 ############ Functions for the Source Chord Diagram JS Output: #############################
 
   chord_in <- reactive({ 
-    melt(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7))
+    melt(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0))
   })
   
   chord_file <- reactive({

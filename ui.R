@@ -65,6 +65,7 @@ shinyUI(navbarPage(theme = "united.css",
                                      h4("These sliders pertain to the epi-matrix using a summation approach:"),
                                      sliderInput(inputId="mod7",label="Modifier for 7-0 match", min=0, max=1.0, value=0.15, step=0.05),
                                      sliderInput(inputId="mod8",label="Modifier for 7-1 match", min=0, max=1.0, value=0.35, step=0.05),
+                                     sliderInput(inputId="mod0",label="Modifier for 0-0 match", min=0, max=1.0, value=0.10, step=0.05),                
                                      submitButton("Submit", icon = NULL)
                         ),
                         
