@@ -56,7 +56,7 @@ shinyServer(function(input, output, session) {
    
   
 # Reactive variable for source scores that updates with the hotable input:
-  scoreDL <- reactive({ hot.to.df(input$scoretable)})
+  scoreDL <- reactive({hot.to.df(input$scoretable)})
 
 
 #  Generates a heatmap displaying source similarities  ####
@@ -67,7 +67,7 @@ shinyServer(function(input, output, session) {
     if (is.null(inFile)) {
       return(NULL)
     }
-    source_heatmap(SourceMatrix(source_data=inFile, mod8=input$mod8, mod7=input$mod7, mod0=input$mod0))
+    source_heatmap(as.matrix(SourceMatrix(source_data=inFile, mod8=input$mod8, mod7=input$mod7, mod0=input$mod0)))
   })
   
 ############ Download Handlers: #############################
