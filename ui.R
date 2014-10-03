@@ -222,5 +222,15 @@ shinyUI(navbarPage(theme = "united.css",
                                            br(),
                                            busyIndicator("Processing...", wait = 500),
                                            plotOutput("compare_heatmap", width=1000, height=1000)
-                                           )))))
+                                           ),
+                                  tabPanel(title="TangleGram",
+                                           h3("Tanglegram displaying the concordance of the 2 methods"),
+                                           br(),
+                                           sliderInput('num_k', "Select the number of clusters", min = 1, max = 10, step = 1, value = 4),
+#                                            downloadButton("downloadCompareHeatmap", "Download the Heatmap"), 
+#                                            downloadButton("downloadCompareTable", "Download the Comparison Table"),
+#                                            br(),
+                                           busyIndicator("Processing...", wait = 500),
+                                           plotOutput("tangle", width=1000, height=1000)
+                                  )))))
 ))

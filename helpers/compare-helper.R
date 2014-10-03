@@ -3,7 +3,8 @@ CompareMatrix <- function(cgf_data, epi_data) {
 # Import data from shiny 
   cgf<- cgf_data
   epi <- epi_data
-  
+  row.names(cgf) <- colnames(cgf)
+  row.names(epi) <- colnames(epi)
   
   melt_cgf <- melt(as.matrix(cgf))
   melt_epi <- melt(as.matrix(epi))

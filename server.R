@@ -20,6 +20,7 @@ source("helpers/epi-helper.R", local = T)
 source("helpers/source-helper.R", local = T)
 source("helpers/alert-helper.R", local = T)
 source("helpers/map_helper.R", local = T)
+source("helpers/tangle_helper.R", local = T)
 
 
 shinyServer(function(input, output, session) {
@@ -75,7 +76,7 @@ shinyServer(function(input, output, session) {
   output$downloadSourceMatrix <- downloadHandler( 
     filename = c("SourceMatrix.txt"),
     content = function(file){
-      write.table(SourceMatrix(source_data = scoreDL(), mod8=input$mod8, mod7=input$mod7), file)
+      write.table(SourceMatrix(source_data = scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0), file)
     })
   output$downloadSourcePairwise <- downloadHandler( 
     filename = c("SourcePairwise.txt"),
@@ -86,7 +87,7 @@ shinyServer(function(input, output, session) {
     filename = c("SourceHeatmap.pdf"),
     content = function(file){
       pdf(file, width=15, height=15)
-      source_heatmap(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7))
+      source_heatmap(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0))
       dev.off()
     })
 
@@ -188,7 +189,7 @@ output$jschord2 <- reactive({
   output$downloadEpiData <- downloadHandler( 
     filename = c("Epi_Sim_Data.txt"),
     content = function(file){
-      write.table(EpiMatrix(table()), file, sep="\t")
+      write.table(EpiMatrix(table()), file, sep="\t", row.names=F)
     })
   output$downloadEpiTable <- downloadHandler( 
     filename = c("Epi_Table.txt"),
@@ -235,13 +236,13 @@ output$jschord2 <- reactive({
     filename = c("CGF-Heatmap.pdf"),
     content = function(file){
       pdf(file, width=15, height=15)
-      cgf_heatmap(cgf_matrix())
+      cgf_heatmap(cgf_matrix(), input$gen_type)
       dev.off()
     })
   output$downloadCGFTable <- downloadHandler( 
     filename = c("CGF-SimTable.txt"),
     content = function(file){
-      write.table(cgf_matrix(), file, sep='\t') 
+      write.table(cgf_matrix(), file, sep='\t', row.names = F) 
     })  
 
 ##################################################################################################
@@ -270,6 +271,22 @@ output$jschord2 <- reactive({
       }
     CompareDisplay(compareheatmap())
     })
+
+
+output$tangle <- renderPlot({
+  if (input$compare_demo == TRUE){
+    tangle_helper(gene_data = read.table("data/CGF-SimTable.txt", header = T, sep = '\t'),  epi_data = read.table("data/Epi_Sim_Data.txt", header = T, sep = '\t'), num_k = input$num_k)}
+  else {
+    if(is.null(input$cgf_data)|is.null(input$epi_data)){
+      return(NULL) }
+    else {
+      gene_data <- read.table(input$cgf_data$datapath, header = T, sep='\t')
+      epi_data <- read.table(input$epi_data$datapath, header = T, sep='\t')
+      tangle_helper(gene_data, epi_data, input$num_k)}
+  }
+})
+
+
 
 #Download handler to download the comparison heatmap as a .pdf file:
 output$downloadCompareHeatmap <- downloadHandler( 
