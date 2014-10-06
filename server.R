@@ -273,19 +273,21 @@ output$jschord2 <- reactive({
     })
 
 
-output$tangle <- renderPlot({
+tangle <- reactive({
   if (input$compare_demo == TRUE){
-    tangle_helper(gene_data = read.table("data/CGF-SimTable.txt", header = T, sep = '\t'),  epi_data = read.table("data/Epi_Sim_Data.txt", header = T, sep = '\t'), num_k = input$num_k)}
+    tangle_helper(gene_data = read.table("data/CGF-SimTable.txt", header = T, sep = '\t'),  epi_data = read.table("data/Epi_Sim_Data.txt", header = T, sep = '\t'))}
   else {
     if(is.null(input$cgf_data)|is.null(input$epi_data)){
       return(NULL) }
     else {
       gene_data <- read.table(input$cgf_data$datapath, header = T, sep='\t')
       epi_data <- read.table(input$epi_data$datapath, header = T, sep='\t')
-      tangle_helper(gene_data, epi_data, input$num_k)}
+      tangle_helper(gene_data, epi_data)}
   }
 })
-
+output$tangle<- renderPlot({
+  tangle_plot(d = tangle(), k = input$num_k)
+})
 
 
 #Download handler to download the comparison heatmap as a .pdf file:
@@ -302,7 +304,12 @@ output$downloadCompareTable <- downloadHandler(
     write.table(melt(compareheatmap()), file, sep='\t', row.names = F) 
   })  
 
-
-
+output$DL_tanglegram <- downloadHandler( 
+  filename = c("Tanglegram.pdf"),
+  content = function(file){
+    pdf(file, width=15, height=15)
+    tangle_plot(d = tangle(), k = input$num_k)
+    dev.off()
+  })
 
 })
