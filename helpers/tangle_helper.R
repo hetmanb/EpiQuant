@@ -1,6 +1,5 @@
 tangle_helper <- function(gene_data, epi_data){
-
-library(dendextend)
+require(dendextend)
 
 # epi <- read.table("../../../0 - Publications_bh/Amy_Paul_presentation/basedata/Epi_Table (CI_only_60_25_15).txt", sep = '\t', header = T)
 # cgf <- read.table("../../../0 - Publications_bh/Amy_Paul_presentation/basedata/hexMLST-SimTable.txt", sep='\t', header = T)
