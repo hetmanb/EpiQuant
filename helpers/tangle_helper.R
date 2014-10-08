@@ -30,8 +30,8 @@ num_k <- k
 dendo <- d  
   
 library(RColorBrewer)
-dendo[[1]] <-  color_branches(dendo[[1]], num_k, col = brewer.pal(num_k, "Spectral"))
-col_lines_left2 <- brewer.pal(num_k, "Spectral")[cutree(dendo[[1]], num_k, order_clusters_as_data = F, sort_cluster_numbers = T)]
+dendo[[1]] <-  color_branches(dendo[[1]], num_k, col = brewer.pal(num_k, "Dark2"))
+col_lines_left2 <- brewer.pal(num_k, "Dark2")[cutree(dendo[[1]], num_k, order_clusters_as_data = F, sort_cluster_numbers = T)]
 
 tanglegram(dendo[[1]], dendo[[2]], 
            color_lines = col_lines_left2, 
