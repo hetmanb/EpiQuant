@@ -190,12 +190,12 @@ output$jschord2 <- reactive({
   output$downloadEpiData <- downloadHandler( 
     filename = c("Epi_Sim_Data.txt"),
     content = function(file){
-      write.table(EpiMatrix(table()), file, sep="\t", row.names=F)
+      write.table(EpiMatrix(table()), file, sep="\t", row.names=T)
     })
   output$downloadEpiTable <- downloadHandler( 
     filename = c("Epi_Table.txt"),
     content = function(file){
-      write.table(table(), file, sep="\t")
+      write.table(table(), file, sep="\t", row.names=F)
     })
   output$downloadEpiHeatmap <- downloadHandler( 
     filename = c("Epi_Heatmap.pdf"),
@@ -243,7 +243,7 @@ output$jschord2 <- reactive({
   output$downloadCGFTable <- downloadHandler( 
     filename = c("CGF-SimTable.txt"),
     content = function(file){
-      write.table(cgf_matrix(), file, sep='\t', row.names = F) 
+      write.table(cgf_matrix(), file, sep='\t', row.names = T) 
     })  
 
 ##################################################################################################
