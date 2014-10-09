@@ -120,7 +120,7 @@ shinyServer(function(input, output, session) {
     inFile <- input$strain_data
     if (is.null(inFile)){
 #       print("inFile is null")
-      return(temp_calc(read.table('data/strain_data.txt', header=TRUE, sep='\t')))
+      return(temp_calc(read.table('data/demo_data/demo_58_strainlist.txt', header=TRUE, sep='\t')))
       }
       temp_calc(read.table(inFile$datapath, header=TRUE, sep='\t'))
   })      
@@ -128,14 +128,14 @@ shinyServer(function(input, output, session) {
     inFile <- input$strain_data
     if (is.null(inFile)){
 #       print("inFile is null")
-      return(geog_calc(read.table('data/strain_data.txt', header=TRUE, sep='\t')))
+      return(geog_calc(read.table('data/demo_data/demo_58_strainlist.txt', header=TRUE, sep='\t')))
     }
     geog_calc(read.table(inFile$datapath, header=TRUE, sep='\t'))
   })  
 
 ######## Calculate the epi relations based upon the epi-input and source datasets: ######
   table <- reactive({
-    if(is.null(input$strain_data)) { inFile <- read.table('data/strain_data.txt', header=T, sep='\t')  }     
+    if(is.null(input$strain_data)) { inFile <- read.table('data/demo_data/demo_58_strainlist.txt', header=T, sep='\t')  }     
        else { inFile <- read.table(input$strain_data$datapath, header=T, sep='\t') } 
     if(is.null(input$source_data)) { sinFile <- read.table('data/source_ref.txt', header=T, sep = '\t')  }    
         else { sinFile <- read.table(input$source_data$datapath, header=T, sep='\t') }
@@ -150,7 +150,7 @@ shinyServer(function(input, output, session) {
 
 ####### Generate a map with the locations from the strain info file using rCharts and Leaflet:
    output$epiMap <- renderMap({
-     if(is.null(input$strain_data)) { inFile <- read.table('data/strain_data.txt', header=T, sep='\t')  }     
+     if(is.null(input$strain_data)) { inFile <- read.table('data/demo_data/demo_58_strainlist.txt', header=T, sep='\t')  }     
       else { inFile <- read.table(input$strain_data$datapath, header=T, sep='\t') } 
        return(EpiMap(inFile))
           
@@ -211,7 +211,7 @@ output$jschord2 <- reactive({
 ###########     Generate the CGF Matrix #####################   
   cgf_matrix <- reactive({
     if (is.null(input$cgf) && (input$cgf_demo == TRUE))  {
-      return(cgf_calc(data=read.table("data/cgf(bh).txt", header=T, sep='\t')))
+      return(cgf_calc(data=read.table("data/demo_data/demo_58_hexresults.txt", header=T, sep='\t')))
     }
     cgf_calc(data=read.table(input$cgf$datapath, header=T, sep='\t'))
     })
@@ -255,7 +255,8 @@ output$jschord2 <- reactive({
 
   compareheatmap <- reactive({
     if (input$compare_demo == TRUE){
-      CompareMatrix(cgf_data = read.table("data/CGF-SimTable.txt", header = T, sep = '\t'),  epi_data = read.table("data/Epi_Sim_Data.txt", header = T, sep = '\t'))}
+      CompareMatrix(cgf_data = read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
+                    epi_data = read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F))}
       else {
         if(is.null(input$cgf_data)|is.null(input$epi_data)){
           return(NULL) }
@@ -276,13 +277,14 @@ output$jschord2 <- reactive({
 
 tangle <- reactive({
   if (input$compare_demo == TRUE){
-    tangle_helper(gene_data = read.table("data/CGF-SimTable.txt", header = T, sep = '\t'),  epi_data = read.table("data/Epi_Sim_Data.txt", header = T, sep = '\t'))}
+    tangle_helper(gene_data = read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
+                  epi_data = read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F))}
   else {
     if(is.null(input$cgf_data)|is.null(input$epi_data)){
       return(NULL) }
     else {
-      gene_data <- read.table(input$cgf_data$datapath, header = T, sep='\t')
-      epi_data <- read.table(input$epi_data$datapath, header = T, sep='\t')
+      gene_data <- read.table(input$cgf_data$datapath, header = T, sep='\t', check.names = F)
+      epi_data <- read.table(input$epi_data$datapath, header = T, sep='\t', check.names = F)
       tangle_helper(gene_data, epi_data)}
   }
 })

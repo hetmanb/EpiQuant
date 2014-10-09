@@ -18,9 +18,9 @@ labels(d_epi) <- as.character(labels(d_epi))
 
 
 
-dendo_random <- untangle_random_search(d_cgf, d_epi, R = 200)
+dendo_random <- untangle_random_search(d_cgf, d_epi, R = 150)
 dend_heights <- heights_per_k.dendrogram(dendo_random[[2]])
-dendo <- untangle_step_rotate_1side(dend1 = dendo_random[[2]], dend2_fixed = dendo_random[[1]], dendextend_heights_per_k.dendrogram= (dend_heights)[[1]], k_seq = 2:3 )
+dendo <- untangle_step_rotate_1side(dend1 = dendo_random[[2]], dend2_fixed = dendo_random[[1]], dendextend_heights_per_k.dendrogram= (dend_heights)[[1]], k_seq = 2:4 )
 return(dendo)
 }
 
@@ -33,7 +33,7 @@ library(RColorBrewer)
 dendo[[1]] <-  color_branches(dendo[[1]], num_k, col = brewer.pal(num_k, "Dark2"))
 col_lines_left2 <- brewer.pal(num_k, "Dark2")[cutree(dendo[[1]], num_k, order_clusters_as_data = F, sort_cluster_numbers = T)]
 
-tanglegram(dendo[[1]], dendo[[2]], 
+tanglegram(dendo[[1]], dendo[[2]], margin_inner = 5,
            color_lines = col_lines_left2, 
            lab.cex = 0.75, 
            main_left = "Genetic Similarity", 

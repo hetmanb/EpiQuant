@@ -40,5 +40,5 @@ cgf_heatmap <- function(m, color){
       heatcolor <- colorRampPalette(c("lightgrey","blue","darkblue"))(512)
     }
   
-  heatmap.2(m, col=heatcolor, trace='none',keysize=0.6, revC=TRUE, margins = c(10,10))
+  heatmap.2(m, col=heatcolor, trace='none',keysize=0.6, revC=TRUE, margins = c(15,15))
 }
