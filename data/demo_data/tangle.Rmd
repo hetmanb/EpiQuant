@@ -1,0 +1,80 @@
+---
+title: "Producing a TangleGram in R"
+author: "bh"
+date: "October 9, 2014"
+output: html_document
+---
+
+# First, we need to load up the required libraries, in this case: 
+```{r}
+library(dendextend)
+library(RColorBrewer)
+```
+
+It is also a good idea to verify our working directory, since we'll be loading data from files located here: 
+```{r}
+getwd()
+```
+
+Now we can get our feet wet with some actual R code: 
+Load up the data from our tab-delimited text files:
+
+```{r}
+epi <- read.table('Epi_Sim_Data_58.txt', sep = '\t', header = T)
+cgf <- read.table("Hex-SimTable_58.txt", sep='\t', header = T)
+```
+
+Now, we set up the data to include both row and column names, and transform the matrices into 
+dendrograms using the base functions dist() and hclust(). 
+
+```{r}
+rownames(epi)<-colnames(epi)
+rownames(cgf)<-colnames(cgf)
+
+d_cgf<- as.dendrogram(hclust(dist(cgf)))
+d_epi<- as.dendrogram(hclust(dist(epi)))
+```
+
+An important reminder to using dendextend is that we have to make sure our labels are in the character format. 
+```{r}
+labels(d_cgf) <- as.character(labels(d_cgf))
+labels(d_epi) <- as.character(labels(d_epi))
+```
+
+Now, comes the fun part(s). We have our two trees, but we need to untangle them, or, configure their layout so that 
+the terminal leaves line up as close as possible. 
+The first step to this is by redrawing the trees at random 150 times. This can take a few seconds, so be patient. 
+```{r}
+dendo_random <- untangle_random_search(d_cgf, d_epi, R = 150)
+```
+
+Then, we fix one of the trees, and only rotate the second tree to fit the first.
+```{r}
+dend_heights <- heights_per_k.dendrogram(dendo_random[[2]])
+dendo <- untangle_step_rotate_1side(dend1 = dendo_random[[2]], dend2_fixed = dendo_random[[1]], dendextend_heights_per_k.dendrogram= (dend_heights)[[1]], k_seq = 2:4 )
+```
+
+Now, we color the branches and the connecting lines according to the "Dark2" palette in RColorBrewer. 
+```{r}
+dendo[[1]] <-  color_branches(dendo[[1]], 6, col = brewer.pal(6, "Dark2"))
+col_lines_left2 <- brewer.pal(6, "Dark2")[cutree(dendo[[1]], 6, order_clusters_as_data = F, sort_cluster_numbers = T)]
+```
+
+Finally, we can draw the actual plot:
+```{r tanglegram, fig.width=10, fig.height=12} 
+tangleplot<- tanglegram(dendo[[1]], dendo[[2]], margin_inner = 5,
+           color_lines = col_lines_left2, 
+           lab.cex = 0.75, 
+           main_left = "Genetic Similarity", 
+           main_right = "Epidemiological Similarity", 
+           sub = paste("Entanglement: ", round(entanglement(dendo[[1]], dendo[[2]]), 2)),
+           cex_sub = 0.9) 
+```
+
+
+
+
+
+```
+
+

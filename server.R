@@ -50,7 +50,7 @@ shinyServer(function(input, output, session) {
 # This code generates a table that changes depending on what is uploaded in the sidebar  
   output$scoretable <- renderHotable({  
       inFile <- input$source_scores
-      if (is.null(inFile)) {        
+      if ((is.null(inFile)) && (input$source_demo == TRUE)) {        
         return(read.table("data/source_scorings.txt", header=T, sep='\t'))
       }
       read.table(inFile$datapath, header=T, sep='\t')
@@ -118,7 +118,7 @@ shinyServer(function(input, output, session) {
 ### Calculate the temporal and geographical relations based upon the epi-input dataset: ##########  
   temporal <- reactive({
     inFile <- input$strain_data
-    if (is.null(inFile)){
+    if ((is.null(inFile)) && (input$epi_demo == TRUE)) {   
 #       print("inFile is null")
       return(temp_calc(read.table('data/demo_data/demo_58_strainlist.txt', header=TRUE, sep='\t')))
       }
@@ -126,7 +126,7 @@ shinyServer(function(input, output, session) {
   })      
   geography <- reactive({
     inFile <- input$strain_data
-    if (is.null(inFile)){
+    if ((is.null(inFile)) && (input$epi_demo == TRUE)) { 
 #       print("inFile is null")
       return(geog_calc(read.table('data/demo_data/demo_58_strainlist.txt', header=TRUE, sep='\t')))
     }
@@ -135,10 +135,18 @@ shinyServer(function(input, output, session) {
 
 ######## Calculate the epi relations based upon the epi-input and source datasets: ######
   table <- reactive({
-    if(is.null(input$strain_data)) { inFile <- read.table('data/demo_data/demo_58_strainlist.txt', header=T, sep='\t')  }     
-       else { inFile <- read.table(input$strain_data$datapath, header=T, sep='\t') } 
-    if(is.null(input$source_data)) { sinFile <- read.table('data/source_ref.txt', header=T, sep = '\t')  }    
-        else { sinFile <- read.table(input$source_data$datapath, header=T, sep='\t') }
+    if(is.null(input$strain_data)) { 
+      inFile <- read.table('data/demo_data/demo_58_strainlist.txt', header=T, sep='\t')  
+    }     
+       else { 
+         inFile <- read.table(input$strain_data$datapath, header=T, sep='\t') 
+       } 
+    if(is.null(input$source_data)) { 
+      sinFile <- read.table('data/source_ref.txt', header=T, sep = '\t')  
+    }    
+        else { 
+          sinFile <- read.table(input$source_data$datapath, header=T, sep='\t') 
+        }
     return(EpiTable(inFile, sinFile, geography(), temporal(), input$source_coeff, input$temp_coeff, input$geog_coeff))
   })  
 
