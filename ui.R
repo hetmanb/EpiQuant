@@ -211,6 +211,8 @@ shinyUI(navbarPage(theme = "united.css",
                                            fileInput(inputId="epi_data",label="Upload Epi file",multiple=FALSE,accept=".txt"),
                                            p("Upload your Genetic Similarity (CGF) data here:"),
                                            fileInput(inputId="cgf_data",label="Upload Similarity (CGF) file",multiple=FALSE,accept=".txt"),
+                                           p("Check here to select the clustering basis of the output:"),
+                                           radioButtons(inputId = "clus_type", label = NULL, choices = list("Genetic"= "A", "Epi" = "B", "Both" = "C"), selected = "A"),                                           
                                            submitButton("Submit", icon = NULL)
                               ),
                               

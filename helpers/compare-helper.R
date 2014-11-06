@@ -28,8 +28,25 @@ CompareMatrix <- function(cgf_data, epi_data) {
   return(data.matrix(caster))
 }
 
-CompareDisplay <- function(m){
-  heatcolor<- colorRampPalette(c("darkgreen","white","darkblue"))(512)  
-  castermap <- heatmap.2(m, col=heatcolor, Rowv=TRUE, symm=TRUE, Colv ="Rowv", trace='none',keysize=0.6, revC=TRUE)
+CompareDisplay <- function(m, cgf_data, epi_data, type){
+  
+  clus_type <- switch(type, 
+                      A = as.dendrogram(hclust(dist(data.matrix(cgf_data)))),
+                      B = as.dendrogram(hclust(dist(data.matrix(epi_data)))), 
+                      C = as.dendrogram(hclust(dist(m))))
+  
+#   clus_type <- ifelse(type == 1, as.dendrogram(hclust(dist(cgf_data))),
+#                       ifelse(type==2, as.dendrogram(hclust(dist(epi_data))), 
+#                                             as.dendrogram(hclust(dist(m)))))
+    
+heatcolor<- colorRampPalette(c("darkgreen","white","darkblue"))(512)
+heatmap.2(m, col=heatcolor, Rowv= clus_type, symm=TRUE, Colv ="Rowv", trace='none',keysize=0.6, revC=TRUE)
 # Green denotes CGF sim, Blue denotes CGF Sim.   
 }
+# CompareDisplay <- function(m){
+#   heatcolor<- colorRampPalette(c("darkgreen","white","darkblue"))(512)  
+#   castermap <- heatmap.2(m, col=heatcolor, Rowv=TRUE, symm=TRUE, Colv ="Rowv", trace='none',keysize=0.6, revC=TRUE)
+# #   Green denotes CGF sim, Blue denotes CGF Sim.   
+# }
+
+

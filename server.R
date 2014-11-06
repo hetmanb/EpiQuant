@@ -275,14 +275,32 @@ output$jschord2 <- reactive({
                     }
      })
 
-  output$compare_heatmap <- renderPlot({
-    if ((is.null(input$cgf_data)|is.null(input$epi_data)) && input$compare_demo == FALSE) {
-      return(NULL)
-      }
-    CompareDisplay(compareheatmap())
-    })
+#   output$compare_heatmap <- renderPlot({
+#     if ((is.null(input$cgf_data)|is.null(input$epi_data)) && input$compare_demo == FALSE) {
+#       return(NULL)
+#       }
+#    CompareDisplay(compareheatmap(), cgf_data, epi_data)
+#     })
+output$compare_heatmap <- renderPlot({
+  
+  if (input$compare_demo == TRUE){
+    CompareDisplay(compareheatmap(), 
+                   read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
+                   read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F),
+                   input$clus_type)}  
+  
+  else {
+    if(is.null(input$cgf_data)|is.null(input$epi_data)){
+      return(NULL) }
+    else {
+      cgf <- read.table(input$cgf_data$datapath, header = T, sep='\t', check.names = F)
+      epi <- read.table(input$epi_data$datapath, header = T, sep='\t', check.names = F)
+      CompareDisplay(compareheatmap(), cgf, epi, input$clus_type)}
+  }
+})
 
 
+#### Server Code for TanglePlots: ####
 tangle <- reactive({
   if (input$compare_demo == TRUE){
     tangle_helper(gene_data = read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
