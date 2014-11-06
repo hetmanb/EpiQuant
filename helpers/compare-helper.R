@@ -30,6 +30,6 @@ CompareMatrix <- function(cgf_data, epi_data) {
 
 CompareDisplay <- function(m){
   heatcolor<- colorRampPalette(c("darkgreen","white","darkblue"))(512)  
-  castermap <- heatmap.2(m, col=heatcolor, trace='none',keysize=0.6, revC=TRUE)
+  castermap <- heatmap.2(m, col=heatcolor, Rowv=TRUE, symm=TRUE, Colv ="Rowv", trace='none',keysize=0.6, revC=TRUE)
 # Green denotes CGF sim, Blue denotes CGF Sim.   
 }
