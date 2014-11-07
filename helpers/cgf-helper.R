@@ -33,12 +33,19 @@ cgf_calc <- function(data) {
 #Function 3 ######################################################################################################
 #function that calls heatmap.2 to generate a heatmap from the matrix calculations 
 cgf_heatmap <- function(m, color){
-  if(color == 1){
-    heatcolor <-  colorRampPalette(c("white","lightblue","darkblue"))(512)
-  }
-    else{
-      heatcolor <- colorRampPalette(c("lightgrey","blue","darkblue"))(512)
-    }
   
-  heatmap.2(m, col=heatcolor, trace='none',keysize=0.6, revC=TRUE, margins = c(15,15))
+  col_scale <- switch(color,
+                      A = colorRampPalette(c("white","lightblue","darkblue"))(512),
+                      B = colorRampPalette(c("white","orange","darkorange"))(512),
+                      C = colorRampPalette(c("white","red","darkred"))(512),
+                      D = colorRampPalette(c("white","forestgreen","darkgreen"))(512),
+                      E = colorRampPalette(c("lightgrey","blue","darkblue"))(512))
+#   if(color == 1){
+#     heatcolor <-  colorRampPalette(c("white","lightblue","darkblue"))(512)
+#   }
+#     else{
+#       heatcolor <- colorRampPalette(c("lightgrey","blue","darkblue"))(512)
+#     }
+  
+  heatmap.2(m, col=col_scale, trace='none',keysize=0.6, revC=TRUE, margins = c(15,15))
 }
