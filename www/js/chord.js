@@ -37,9 +37,8 @@ chordOutputBinding = new Shiny.OutputBinding();
         var w = 950, h = 800, r1 = h / 2, r0 = r1 - 175;
 
         var fill = d3.scale.ordinal()
-            //.domain(d3.range(8));
             .range(data.color);
-            //.range(["#000000", "#FFDD89", "#957244", "#F26223"]);
+            
 
         var chord = d3.layout.chord()
             .padding(.02)

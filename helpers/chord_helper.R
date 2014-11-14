@@ -1,28 +1,42 @@
 chord_table <- function(data, low, high){
 
   chord_table <- data
-
-#   chord_table <- unique(data.frame(ct[, c(3,4,9)]))
   colnames(chord_table) <- c("has", "prefers", "count")
   chord_table <- unique(chord_table)
-  chord_table <- subset(chord_table, subset = (chord_table$count >= low) & (chord_table$count <= high) )
   
+  values <- chord_table$count
     
-  # chord_table$color <- max.col(chord_table[1:nrow(chord_table), 3:5], "random")
-  # chord_table <- chord_table[,c(1,2,6,7)]
+  ii <- cut(values, breaks = seq(min(values), max(values), len = length(values)), 
+            include.lowest = TRUE)
   
-  # colnames(chord_table) <- c(as.character("Strain1"), as.character("Strain2"), "1", "2", "3", "4")
+  colors <- colorRampPalette(c("green", "yellow", "orange"))(length(values))[ii]
   
-  
-  # chord_melt <- melt(chord_table)
-  # chord_melt <- chord_melt[, c(1, 2, 4, 3)]
-  
-  
-  # class(chord_table[,(1)]) #<- "string"
-  # class(chord_table[,(2)]) #<- "string"
+  chord_table$color <- (colors)
+  chord_table <- subset(chord_table, subset = (chord_table$count >= low) & (chord_table$count <= high) )  
+  palette <- as.vector(as.character(chord_table$color))
   return(chord_table)
 }
 
 
-#   write.csv(chord_table, "../EpiQuant/www/data/chordtemp.csv", row.names =F)
+chordcolor <- function(data, low, high){
   
+  chord_table <- data
+  colnames(chord_table) <- c("has", "prefers", "count")
+  chord_table <- unique(chord_table)
+  chord_table <- subset(chord_table, subset = (chord_table$count >= low) & (chord_table$count <= high) )
+  
+  
+  values <- chord_table$count
+  
+  
+  ii <- cut(values, breaks = seq(min(values), max(values), len = length(values)), 
+            include.lowest = TRUE)
+  
+  colors <- colorRampPalette(c("#FFF5EB","#FEE6CE","#FDD0A2","#FDAE6B","#FD8D3C","#F16913","#D94801","#8C2D04"))(length(ii))[ii]
+  
+  chord_table$color <- (colors)
+#   chord_table <- subset(chord_table, subset = (chord_table$count >= low) & (chord_table$count <= high) )
+  
+  palette <- as.vector(as.character(chord_table$color))
+  return(palette)
+}  

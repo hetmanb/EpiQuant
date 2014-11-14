@@ -102,11 +102,18 @@ shinyServer(function(input, output, session) {
     chord_table(chord_in(), input$chord_low, input$chord_high)
   })
   
+  chord_color <- reactive({
+    chordcolor(chord_in(), input$chord_low, input$chord_high)
+  })
+
+
   output$jschord <- reactive({
   # List of arguments given to the chord.js file     
       list(
         filepath = as.matrix(chord_file()), 
-        color = brewer.pal(n = 8, name = "Oranges") 
+        color = chord_color()
+        
+#           brewer.pal(n = 8, name = "Oranges") 
       )
   })
 
@@ -324,7 +331,20 @@ output$downloadCompareHeatmap <- downloadHandler(
   filename = c("CGF-Epi_Heatmap.pdf"),
   content = function(file){
     pdf(file, width=15, height=15)
-    CompareDisplay(compareheatmap())
+    if (input$compare_demo == TRUE){
+      CompareDisplay(compareheatmap(), 
+                     read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
+                     read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F),
+                     input$clus_type)}  
+    
+    else {
+      if(is.null(input$cgf_data)|is.null(input$epi_data)){
+        return(NULL) }
+      else {
+        cgf <- read.table(input$cgf_data$datapath, header = T, sep='\t', check.names = F)
+        epi <- read.table(input$epi_data$datapath, header = T, sep='\t', check.names = F)
+        CompareDisplay(compareheatmap(), cgf, epi, input$clus_type)}
+    }
     dev.off()
   })
 output$downloadCompareTable <- downloadHandler( 

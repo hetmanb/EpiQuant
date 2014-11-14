@@ -36,8 +36,8 @@ col_lines_left2 <- brewer.pal(num_k, "Dark2")[cutree(dendo[[1]], num_k, order_cl
 tanglegram(dendo[[1]], dendo[[2]], margin_inner = 5,
            color_lines = col_lines_left2, 
            lab.cex = 0.75, 
-           main_left = "Genetic Similarity", 
            main_right = "Epidemiological Similarity", 
+           main_left = "Genetic Similarity", 
            sub = paste("Entanglement: ", round(entanglement(dendo[[1]], dendo[[2]]), 2)),
            cex_sub = 0.9) 
 
