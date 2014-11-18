@@ -168,18 +168,10 @@ shinyServer(function(input, output, session) {
      if(is.null(input$strain_data)) { inFile <- read.table('data/demo_data/demo_58_strainlist.txt', header=T, sep='\t')  }     
       else { inFile <- read.table(input$strain_data$datapath, header=T, sep='\t') } 
        return(EpiMap(inFile))
-          
-# #     inFile <- read.table(file = 'data/strain_data.txt' , header = T)
-# #     markerlist <- list(c(inFile$Latitude, inFile$Longitude)) 
-#     epimap <- Leaflet$new()
-#     epimap$setView(c(49.6942, -112.8328), zoom = 6)
-# #     epimap$marker <- markerlist
-#     #epimap$marker(c(51.5, -0.09), bindPopup = "<p> Hi. I am a popup </p>")
-#     #epimap$marker(c(51.495, -0.083), bindPopup = "<p> Hi. I am another popup </p>")
-#     epimap
+
    })
 
-############ Functions for the Source Chord Diagram JS Output: #############################
+############ Functions for the Epi-Chord Diagram JS Output: #############################
 
 chord2_in <- reactive({ 
   melt(EpiMatrix(table()))
@@ -188,12 +180,15 @@ chord2_in <- reactive({
 chord2_file <- reactive({
   chord_table(chord2_in(), input$chord2_low, input$chord2_high)
 })
+chord2_color <- reactive({
+  chord2color(chord2_in(), input$chord2_low, input$chord2_high)
+})
 
 output$jschord2 <- reactive({
   # List of arguments given to the chord.js file     
   list(
     filepath = as.matrix(chord2_file()), 
-    color = brewer.pal(n = 8, name = "Greens") 
+    color = chord2_color() 
   )
 })
 
