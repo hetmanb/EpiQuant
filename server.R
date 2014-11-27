@@ -22,6 +22,7 @@ source("helpers/source-helper.R", local = T)
 source("helpers/alert-helper.R", local = T)
 source("helpers/map_helper.R", local = T)
 source("helpers/tangle_helper.R", local = T)
+source("helpers/wallace-helper.R", local=T)
 
 
 shinyServer(function(input, output, session) {

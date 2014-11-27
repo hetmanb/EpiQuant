@@ -14,7 +14,7 @@ temp_calc <- function(input_data){
   timedata$date <- as.Date(paste(timedata$Year, timedata$Month, timedata$Day, sep = "-"))
   #### Create an empty matrix and populate it with the pairwise distances ####
   time_matrix <- matrix(data = NA, nrow=nrow(timedata), ncol=nrow(timedata))
-  time_matrix <- as.matrix(dist(x=timedata$date, diag=TRUE, upper=TRUE), nrow=nrow(timedata), ncol=nrow(timedata))
+  time_matrix <- as.matrix(dist(x=timedata$date, diag=TRUE, upper=TRUE, method = 'euclidean'), nrow=nrow(timedata), ncol=nrow(timedata))
   
   #### Convert all the distances to a log value and normalize them based on the max distance ####
   time_log <- log10(time_matrix) 

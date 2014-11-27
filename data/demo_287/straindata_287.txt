@@ -1,0 +1,288 @@
+Strain	Source	Country	Province/State	City	Latitude	Longitude	Day	Month	Year
+CI_5997	A_MiscWildFaecalA_Raccoon	Canada	Ontario		51.253775	-85.3232139	19	7	2012
+CI_5947	A_EquineFaecalA_Horse	Canada	Alberta		53.9332706	-116.5765035	8	8	2012
+CI_5943	A_EquineFaecalA_Horse	Canada	Alberta		53.9332706	-116.5765035	8	8	2012
+CI_5906	A_RuminantFaecalA_Cow	Canada	Alberta		53.9332706	-116.5765035	8	8	2012
+CI_5889	A_RuminantFaecalA_Cow	Canada	Alberta		53.9332706	-116.5765035	8	8	2012
+CI_5692	A_RuminantFaecalA_Cow	Canada	Alberta		53.9332706	-116.5765035	9	7	2012
+CI_5429	A_RuminantFaecalA_Cow	Canada	Alberta		53.9332706	-116.5765035	29	5	2012
+CI_5357	A_RuminantFaecalA_Cow	Canada	Alberta		53.9332706	-116.5765035	24	4	2012
+CI_5328	A_RuminantFaecalA_Cow	Canada	Alberta		53.9332706	-116.5765035	24	4	2012
+CI_5300	A_RuminantFaecalA_Cow	Canada	Alberta	Lethbridge	49.69349	-112.84184	19	12	2011
+CI_5292	A_RuminantFaecalA_Cow	Canada	Alberta	Lethbridge	49.69349	-112.84184	13	12	2011
+CI_5265	A_RuminantFaecalA_Cow	Canada	Alberta	Lethbridge	49.69349	-112.84184	6	12	2011
+CI_5254	A_RuminantFaecalA_Cow	Canada	Alberta	Lethbridge	49.69349	-112.84184	29	11	2011
+CI_5245	A_RuminantFaecalA_Cow	Canada	Alberta	Lethbridge	49.69349	-112.84184	21	11	2011
+CI_5198	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	21	11	2011
+CI_5034	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	24	10	2011
+CI_4990	A_MiscWildFaecalA_Raccoon	Canada	Ontario		51.253775	-85.3232139	13	10	2011
+CI_4909	A_MiscWildFaecalA_Raccoon	Canada	Ontario		51.253775	-85.3232139	4	10	2011
+CI_4864	A_MiscWildFaecalA_Raccoon	Canada	Ontario		51.253775	-85.3232139	5	10	2011
+CI_4835	A_MiscWildFaecalA_Raccoon	Canada	Ontario		51.253775	-85.3232139	4	10	2011
+CI_4806	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	26	9	2011
+CI_4458	A_RuminantFaecalA_Cow	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4447	A_RuminantFaecalA_Cow	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4428	A_RuminantFaecalA_Cow	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4424	A_RuminantFaecalA_Cow	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4411	A_RuminantFaecalA_Cow	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4395	A_RuminantFaecalA_Cow	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4383	A_RuminantFaecalA_Cow	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4378	A_RuminantFaecalA_Cow	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4360	A_RuminantFaecalA_Cow	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4356	A_RuminantFaecalA_Cow	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4353	A_RuminantFaecalA_Cow	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4108	A_RuminantFaecalA_Cow	Canada	Alberta	Lethbridge	49.69349	-112.84184	4	1	2011
+CI_4102	E_WaterWaterE_Water	Canada	Quebec		52.9399159	-73.5491361	15	11	2010
+CI_4079	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	15	11	2010
+CI_4071	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	15	11	2010
+CI_3986	E_WaterWaterE_Water	Canada	Alberta		53.9332706	-116.5765035	27	9	2010
+CI_3943	E_WaterWaterE_Water	Canada	Alberta		53.9332706	-116.5765035	17	8	2010
+CI_3889	E_WaterWaterE_Water	Canada	Alberta		53.9332706	-116.5765035	6	7	2010
+CI_3879	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	28	6	2010
+CI_3856	E_WaterWaterE_Water	Canada	Quebec		52.9399159	-73.5491361	28	6	2010
+CI_3812	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	31	5	2010
+CI_3643	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	19	10	2009
+CI_3609	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	5	10	2009
+CI_3421	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	15	6	2009
+CI_3299	A_RuminantFaecalA_Cow	Canada	Alberta	Lethbridge	49.69349	-112.84184	19	1	2009
+CI_3290	A_RuminantFaecalA_Cow	Canada	Alberta	Lethbridge	49.69349	-112.84184	13	1	2009
+CI_3252	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	3	11	2008
+CI_3074	E_WaterWaterE_Water	Canada	British Columbia	Sumas River	49.0405691	-122.1836635	3	12	2007
+CI_3043	E_WaterWaterE_Water	Canada	Alberta	Lethbridge	49.69349	-112.84184	19	11	2007
+CI_3036	E_WaterWaterE_Water	Canada	Alberta	Lethbridge	49.69349	-112.84184	19	11	2007
+CI_2991	E_WaterWaterE_Water	Canada	British Columbia	Sumas River	49.0405691	-122.1836635	9	10	2007
+CI_2989	E_WaterWaterE_Water	Canada	British Columbia	Sumas River	49.0405691	-122.1836635	9	10	2007
+CI_2950	E_WaterWaterE_Water	Canada	Alberta	Lethbridge	49.69349	-112.84184	17	9	2007
+CI_2864	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	18	6	2007
+CI_2840	E_WaterWaterE_Water	Canada	Alberta		53.9332706	-116.5765035	15	5	2007
+CI_2705	E_WaterWaterE_Water	Canada	British Columbia	Sumas River	49.0405691	-122.1836635	4	12	2006
+CI_2695	E_WaterWaterE_Water	Canada	Alberta	Lethbridge	49.69349	-112.84184	27	11	2006
+CI_2651	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	27	11	2006
+CI_2605	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	14	11	2006
+CI_2548	E_WaterWaterE_Water	Canada	British Columbia	Sumas River	49.0405691	-122.1836635	6	11	2006
+CI_2536	E_WaterWaterE_Water	Canada	Alberta	Lethbridge	49.69349	-112.84184	6	11	2006
+CI_2533	E_WaterWaterE_Water	Canada	Alberta	Lethbridge	49.69349	-112.84184	6	11	2006
+CI_2510	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	30	10	2006
+CI_2499	E_WaterWaterE_Water	Canada	Alberta	Lethbridge	49.69349	-112.84184	30	10	2006
+CI_2439	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	16	10	2006
+CI_2423	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	16	10	2006
+CI_2328	E_WaterWaterE_Water	Canada	Alberta		53.9332706	-116.5765035	26	9	2006
+CI_2230	E_WaterWaterE_Water	Canada	New Brunswick	Grand Falls	47.0479934	-67.7399015	30	8	2006
+CI_2061	A_AvianFaecalA_Chicken	Canada	Alberta	Coaldale	49.7275202	-112.6179093	11	7	2006
+CI_2055	A_AvianFaecalA_Duck	Canada	Alberta	Coaldale	49.7275202	-112.6179093	11	7	2006
+CI_2009	A_AvianFaecalA_Duck	Canada	Alberta	Coaldale	49.7275202	-112.6179093	4	7	2006
+CI_2004	A_AvianFaecalA_Goose	Canada	Alberta	Coaldale	49.7275202	-112.6179093	4	7	2006
+CI_1969	A_AvianFaecalA_Chicken	Canada	Alberta		53.9332706	-116.5765035	28	6	2006
+CI_1964	A_AvianFaecalA_Chicken	Canada	Alberta		53.9332706	-116.5765035	28	6	2006
+CI_1943	A_CompanionFaecalA_Dog	Canada	Alberta	Lethbridge	49.69349	-112.84184	26	6	2006
+CI_1920	A_AvianFaecalA_Goose	Canada	Alberta	Fort Macleod	49.7216792	-113.4000408	20	6	2006
+CI_1915	E_WaterWaterE_Water	Canada	Alberta		53.9332706	-116.5765035	7	6	2006
+CI_1884	A_RuminantFaecalA_Cow	Canada	Alberta	Lethbridge	49.69349	-112.84184	29	5	2006
+CI_1875	A_RuminantFaecalA_Cow	Canada	Alberta	Lethbridge	49.69349	-112.84184	29	5	2006
+CI_1874	A_RuminantFaecalA_Cow	Canada	Alberta	Lethbridge	49.69349	-112.84184	29	5	2006
+CI_1845	E_WaterWaterE_Water	Canada	Ontario		51.253775	-85.3232139	15	5	2006
+CI_1799	E_WaterWaterE_Water	Canada	British Columbia	Sumas River	49.0405691	-122.1836635	24	4	2006
+CI_1660	E_WaterWaterE_Water	Canada	New Brunswick	Grand Falls	47.0479934	-67.7399015	21	3	2006
+CI_1653	E_WaterWaterE_Water	Canada	Alberta	Fort Macleod	49.7216792	-113.4000408	13	3	2006
+CI_1636	E_WaterWaterE_Water	Canada	British Columbia	Salmon River	49.1463835	-122.597773	6	3	2006
+CI_1415	E_WaterWaterE_Water	Canada	Alberta		53.9332706	-116.5765035	28	9	2005
+CI_1117	A_RuminantFaecalA_Sheep	Canada	Alberta	Lethbridge	49.69349	-112.84184	10	8	2005
+CI_1109	A_RuminantFaecalA_Cow	Canada	Alberta	Fort Macleod	49.7216792	-113.4000408	10	8	2005
+CI_1096	A_RuminantFaecalA_Cow	Canada	Alberta	Lethbridge	49.69349	-112.84184	20	7	2005
+CI_1092	A_RuminantFaecalA_Sheep	Canada	Alberta	Lethbridge	49.69349	-112.84184	20	7	2005
+CI_0987	A_RuminantFaecalA_Cow	Canada	Alberta	Pincher Creek	49.4863458	-113.9502548	22	6	2005
+CI_0973	A_RuminantFaecalA_Cow	Canada	Alberta	Fort Macleod	49.7216792	-113.4000408	22	6	2005
+CI_0955	A_PorcineFaecalA_Pig	Canada	Alberta	Lethbridge	49.69349	-112.84184	6	6	2005
+CI_0927	A_RuminantFaecalA_Cow	Canada	Alberta	Pincher Creek	49.4863458	-113.9502548	17	5	2005
+CI_0918	A_RuminantFaecalA_Cow	Canada	Alberta	Lethbridge	49.69349	-112.84184	25	5	2005
+CI_0898	A_RuminantFaecalA_Cow	Canada	Alberta	Pincher Creek	49.4863458	-113.9502548	17	5	2005
+CI_0893	A_RuminantFaecalA_Cow	Canada	Alberta	Pincher Creek	49.4863458	-113.9502548	17	5	2005
+CI_0884	A_RuminantFaecalA_Cow	Canada	Alberta	Pincher Creek	49.4863458	-113.9502548	17	5	2005
+CI_0783	A_RuminantFaecalA_Cow	Canada	Alberta		53.9332706	-116.5765035	15	11	2004
+CI_0765	A_AvianFaecalA_Goose	Canada	Alberta		53.9332706	-116.5765035	15	11	2004
+CI_0699	E_WaterWaterE_Water	Canada	Alberta		53.9332706	-116.5765035	6	10	2004
+CI_0697	E_WaterWaterE_Water	Canada	Alberta		53.9332706	-116.5765035	6	10	2004
+CI_0685	A_AvianFaecalA_Chicken	Canada	Alberta		53.9332706	-116.5765035	5	10	2004
+CI_0677	A_AvianFaecalA_Chicken	Canada	Alberta		53.9332706	-116.5765035	5	10	2004
+CI_0662	E_WaterWaterE_Water	Canada	Alberta		53.9332706	-116.5765035	29	9	2004
+CI_0637	E_SewageSewageE_Sewage	Canada	Alberta	Fort Macleod	49.7216792	-113.4000408	28	9	2004
+CI_0609	E_WaterWaterE_Water	Canada	Alberta		53.9332706	-116.5765035	15	9	2004
+CI_0532	E_WaterWaterE_Water	Canada	Alberta		53.9332706	-116.5765035	1	9	2004
+CI_0458	A_AvianFaecalA_Goose	Canada	Alberta		53.9332706	-116.5765035	19	8	2004
+CI_0453	A_AvianFaecalA_Goose	Canada	Alberta		53.9332706	-116.5765035	19	8	2004
+CI_0450	A_AvianFaecalA_Goose	Canada	Alberta		53.9332706	-116.5765035	19	8	2004
+CI_0405	A_CompanionFaecalA_Cat	Canada	Alberta		53.9332706	-116.5765035	10	8	2004
+CI_0392	E_SewageSewageE_Sewage	Canada	Alberta	Fort Macleod	49.7216792	-113.4000408	28	7	2004
+CI_0346	A_RuminantFaecalA_Sheep	Canada	Alberta		53.9332706	-116.5765035	21	7	2004
+CI_0334	A_RuminantFaecalA_Cow	Canada	Alberta		53.9332706	-116.5765035	21	7	2004
+CI_0325	A_RuminantFaecalA_Cow	Canada	Alberta		53.9332706	-116.5765035	12	7	2004
+CI_0322	A_RuminantFaecalA_Cow	Canada	Alberta		53.9332706	-116.5765035	12	7	2004
+CI_0292	E_WaterWaterE_Water	Canada	Alberta		53.9332706	-116.5765035	14	7	2004
+CI_0182	A_RuminantFaecalA_Cow	Canada	Alberta		53.9332706	-116.5765035	8	6	2004
+CI_0168	A_RuminantFaecalA_Cow	Canada	Alberta		53.9332706	-116.5765035	2	6	2004
+CI_0165	A_RuminantFaecalA_Cow	Canada	Alberta		53.9332706	-116.5765035	2	6	2004
+CI_0136	A_RuminantFaecalA_Cow	Canada	Alberta		53.9332706	-116.5765035	2	6	2004
+CI_0094	E_WaterWaterE_Water	Canada	Alberta		53.9332706	-116.5765035	16	6	2004
+CHR_159	HumanClinicalHuman	Canada	Alberta	Lethbridge	49.69349	-112.84184	27	6	2005
+CHR_151	HumanClinicalHuman	Canada	Alberta	Lethbridge	49.69349	-112.84184	26	8	2005
+CHR_130	HumanClinicalHuman	Canada	Alberta	Lethbridge	49.69349	-112.84184	24	6	2005
+CHR_127	HumanClinicalHuman	Canada	Alberta	Lethbridge	49.69349	-112.84184	16	6	2005
+CHR_119	HumanClinicalHuman	Canada	Alberta	Lethbridge	49.69349	-112.84184	6	6	2005
+CHR_090	HumanClinicalHuman	Canada	Alberta	Lethbridge	49.69349	-112.84184	26	6	2005
+CHR_053	HumanClinicalHuman	Canada	Alberta	Lethbridge	49.69349	-112.84184	13	9	2004
+CHR_028	HumanClinicalHuman	Canada	Alberta	Lethbridge	49.69349	-112.84184	12	7	2004
+CHR_026	HumanClinicalHuman	Canada	Alberta	Lethbridge	49.69349	-112.84184	8	7	2004
+CHR_023	HumanClinicalHuman	Canada	Alberta	Lethbridge	49.69349	-112.84184	21	6	2004
+CHR_022	HumanClinicalHuman	Canada	Alberta	Lethbridge	49.69349	-112.84184	20	6	2004
+CGY_HR_174	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	4	7	2005
+CGY_HR_170	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	2	7	2005
+CGY_HR_140	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	27	6	2005
+CGY_HR_139	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	27	6	2005
+CGY_HR_121	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	1	1	2005
+CGY_HR_118	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	21	6	2005
+CGY_HR_109	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	18	6	2005
+CGY_HR_108	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	18	6	2005
+CGY_HR_103	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	14	6	2005
+CGY_HR_101	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	14	6	2005
+CGY_HR_098	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	12	6	2005
+CGY_HR_090	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	8	6	2005
+CGY_HR_083	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	3	6	2005
+CGY_HR_082	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	3	6	2005
+CGY_HR_080	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	2	6	2005
+CGY_HR_076	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	1	6	2005
+CGY_HR_074	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	1	6	2005
+CGY_HR_073	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	31	5	2005
+CGY_HR_061	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	25	5	2005
+CGY_HR_058	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	22	5	2005
+CGY_HR_027	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	28	4	2005
+CGY_HR_026	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	26	4	2005
+CGY_HR_022	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	23	4	2005
+CGY_HR_020	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	21	4	2005
+CGY_HR_013	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	18	4	2005
+CGY_HR_009	HumanClinicalHuman	Canada	Alberta	Calgary	51.0453246	-114.0581012	14	4	2005
+CE2_R2_11_3085	A_AvianRetailA_Turkey	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	12	7	2011
+CE2_R2_11_3081	A_AvianRetailA_Chicken	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	12	7	2011
+CE2_R2_11_3023	A_AvianRetailA_Chicken	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	15	3	2011
+CE2_R2_11_3019	A_AvianRetailA_Chicken	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	15	3	2011
+CE2_R2_11_2022	A_AvianRetailA_Turkey	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	5	7	2011
+CE2_R2_11_2018	A_AvianRetailA_Chicken	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	5	7	2011
+CE2_R2_11_1033	A_AvianRetailA_Chicken	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	19	7	2011
+CE2_R2_11_1027	A_AvianRetailA_Chicken	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	19	7	2011
+CE2_R2_11_1009	A_AvianRetailA_Chicken	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	10	5	2011
+CE2_R2_11_1006	A_AvianRetailA_Chicken	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	5	4	2011
+CE2_R_11_3131	A_AvianRetailA_Chicken	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	6	9	2011
+CE2_R_11_3113	A_AvianRetailA_Chicken	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	12	7	2011
+CE2_R_11_3039	A_AvianRetailA_Chicken	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	1	3	2011
+CE2_R_11_3035	A_AvianRetailA_Chicken	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	15	2	2011
+CE2_R_11_3021	A_AvianRetailA_Chicken	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	1	2	2011
+CE2_R_11_3009	A_AvianRetailA_Chicken	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	4	1	2011
+CE2_R_11_1063	A_AvianRetailA_Chicken	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	23	8	2011
+CE_R2_11_0374	A_AvianRetailA_Turkey	Canada	Ontario	Waterloo	43.4642578	-80.5204096	23	8	2011
+CE_R2_11_0350	A_AvianRetailA_Turkey	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	8	2011
+CE_R2_11_0134	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	8	3	2011
+CE_R_11_0270	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	4	10	2011
+CE_R_11_0251	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	13	9	2011
+CE_R_11_0240	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	30	8	2011
+CE_R_11_0238	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	30	8	2011
+CE_R_11_0192	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	12	7	2011
+CE_R_11_0178	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	9	7	2011
+CE_R_11_0170	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	9	7	2011
+CE_R_11_0114	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	3	5	2011
+CE_R_11_0100	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	19	4	2011
+CE_R_11_0077	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	22	3	2011
+CE_R_10_0306	A_PorcineRetailA_Pig	Canada	Ontario	Waterloo	43.4642578	-80.5204096	29	6	2010
+CE_R_10_0305	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	29	6	2010
+CE_R_10_0273	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	15	6	2010
+CE_M_10_4091	A_AvianFaecalA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	20	9	2010
+CE_M_10_4054	A_AvianFaecalA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	6	2010
+CE_M_10_4053	A_AvianFaecalA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	6	2010
+CE_M_10_3107	A_RuminantFaecalA_Cow	Canada	Ontario	Waterloo	43.4642578	-80.5204096	15	11	2010
+CE_M_10_3062	A_RuminantFaecalA_Cow	Canada	Ontario	Waterloo	43.4642578	-80.5204096	29	6	2010
+CE_M_10_2113	A_RuminantFaecalA_Cow	Canada	Ontario	Waterloo	43.4642578	-80.5204096	6	12	2010
+CE_M_10_2108	A_RuminantFaecalA_Cow	Canada	Ontario	Waterloo	43.4642578	-80.5204096	6	12	2010
+CE_M_10_2096	A_RuminantFaecalA_Cow	Canada	Ontario	Waterloo	43.4642578	-80.5204096	29	11	2010
+CE_M_10_2090	A_RuminantFaecalA_Cow	Canada	Ontario	Waterloo	43.4642578	-80.5204096	4	10	2010
+CE_M_09_4099	A_AvianFaecalA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	21	9	2009
+CE_M_09_3081	A_RuminantFaecalA_Cow	Canada	Ontario	Waterloo	43.4642578	-80.5204096	20	7	2009
+CE_M_09_3054	A_RuminantFaecalA_Cow	Canada	Ontario	Waterloo	43.4642578	-80.5204096	19	5	2009
+CE_M_09_2085	A_RuminantFaecalA_Cow	Canada	Ontario	Waterloo	43.4642578	-80.5204096	27	7	2009
+CE_M_09_1073	A_PorcineFaecalA_Pig	Canada	Ontario	Waterloo	43.4642578	-80.5204096	6	7	2009
+CA99CN070038	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	4	2007
+08_7039	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	23	9	2008
+08_7017	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	17	9	2008
+08_7016	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	12	9	2008
+08_6877	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	9	2008
+08_6208	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	28	8	2008
+08_6160	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	22	8	2008
+08_5925	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	15	8	2008
+08_5603	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	12	8	2008
+08_5490	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	28	7	2008
+08_5176	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	22	7	2008
+08_4913	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	15	7	2008
+08_4697	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	7	2008
+08_4696	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	7	2008
+08_4603	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	7	2008
+08_4474	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	7	2008
+08_4472	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	7	2008
+08_4468	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	7	2008
+08_4466	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	7	2008
+08_4461	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	7	2008
+08_4460	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	7	2008
+08_4456	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	26	6	2008
+08_1714	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	9	10	2007
+08_1711	A_PorcineRetailA_Pig	Canada	Ontario	Waterloo	43.4642578	-80.5204096	18	9	2007
+08_1709	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	18	9	2007
+08_1700	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	8	2007
+08_0100	A_PorcineRetailA_Pig	Canada	Ontario	Waterloo	43.4642578	-80.5204096	23	7	2007
+08_0099	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	21	7	2007
+08_0096	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	16	7	2007
+08_0094	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	16	7	2007
+07_7331	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	11	6	2007
+07_7324	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	28	5	2007
+07_7314	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	10	4	2007
+07_6215	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	3	10	2007
+07_6066	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	25	9	2007
+07_6017	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	23	9	2007
+07_5583	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	6	9	2007
+07_5581	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	5	9	2007
+07_5425	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	4	9	2007
+07_5321	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	31	7	2007
+07_5041	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	21	8	2007
+07_5039	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	21	8	2007
+07_5038	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	20	8	2007
+07_4428	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	8	2007
+07_4269	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	31	7	2007
+07_4268	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	31	7	2007
+07_4076	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	20	7	2007
+07_3853	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	16	7	2007
+07_3647	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	10	7	2007
+07_3508	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	6	7	2007
+07_3238	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	19	6	2007
+07_2680	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	30	5	2007
+07_2174	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	5	2007
+07_1875	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	17	4	2007
+07_1493	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	29	3	2007
+07_1009	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	6	3	2007
+07_0971	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	3	2007
+07_0675	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	13	2	2007
+07_0549	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	5	2	2007
+06_7656	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	4	12	2006
+06_7585	A_RuminantFaecalA_Cow	Canada	Ontario	Waterloo	43.4642578	-80.5204096	25	7	2006
+06_7515	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	23	11	2006
+06_7332	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	29	10	2006
+06_7331	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	11	2006
+06_6554	A_RuminantFaecalA_Cow	Canada	Ontario	Waterloo	43.4642578	-80.5204096	4	7	2006
+06_6212	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	24	9	2006
+06_6211	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	19	9	2006
+06_5790	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	13	9	2006
+06_5176	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	18	8	2006
+06_4911	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	15	8	2006
+06_4734	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	10	8	2006
+06_3852	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	5	7	2006
+06_3851	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	5	7	2006
+06_3849	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	22	6	2006
+06_3783	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	4	7	2006
+06_3569	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	19	6	2006
+06_3245	HumanClinicalHuman	Canada	Ontario	Waterloo	43.4642578	-80.5204096	6	6	2006
+06_2866	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	26	9	2005
+06_2855	A_AvianRetailA_Chicken	Canada	Ontario	Waterloo	43.4642578	-80.5204096	27	6	2005
