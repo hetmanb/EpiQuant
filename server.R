@@ -278,12 +278,6 @@ output$jschord2 <- reactive({
                     }
      })
 
-#   output$compare_heatmap <- renderPlot({
-#     if ((is.null(input$cgf_data)|is.null(input$epi_data)) && input$compare_demo == FALSE) {
-#       return(NULL)
-#       }
-#    CompareDisplay(compareheatmap(), cgf_data, epi_data)
-#     })
 output$compare_heatmap <- renderPlot({
   
   if (input$compare_demo == TRUE){
