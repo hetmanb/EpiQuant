@@ -328,7 +328,7 @@ output$downloadCompareHeatmap <- downloadHandler(
       CompareDisplay(compareheatmap(), 
                      read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
                      read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F),
-                     input$clus_type)}  
+                     input$clus_type, input$sigma)}  
     
     else {
       if(is.null(input$cgf_data)|is.null(input$epi_data)){
@@ -336,7 +336,7 @@ output$downloadCompareHeatmap <- downloadHandler(
       else {
         cgf <- read.table(input$cgf_data$datapath, header = T, sep='\t', check.names = F)
         epi <- read.table(input$epi_data$datapath, header = T, sep='\t', check.names = F)
-        CompareDisplay(compareheatmap(), cgf, epi, input$clus_type)}
+        CompareDisplay(compareheatmap(), cgf, epi, input$clus_type, input$sigma)}
     }
     dev.off()
   })
