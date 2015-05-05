@@ -230,6 +230,7 @@ shinyUI(navbarPage(theme = "united.css",
                                            downloadButton("downloadCompareTable", "Download the Comparison Table"),
                                            br(),
                                            busyIndicator("Processing...", wait = 500),
+                                           sliderInput('sigma','Select the Sigma value for displaying outliers on the heatmap', min = 0, max = 4, step = 0.1, value = 1),
                                            plotOutput("compare_heatmap", width=1000, height=1000)
                                            ),
                                   tabPanel(title="TangleGram",

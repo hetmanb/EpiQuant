@@ -267,7 +267,8 @@ output$jschord2 <- reactive({
   compareheatmap <- reactive({
     if (input$compare_demo == TRUE){
       CompareMatrix(cgf_data = read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
-                    epi_data = read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F))}
+                    epi_data = read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F)
+                    )}
       else {
         if(is.null(input$cgf_data)|is.null(input$epi_data)){
           return(NULL) }
@@ -284,7 +285,8 @@ output$compare_heatmap <- renderPlot({
     CompareDisplay(compareheatmap(), 
                    read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
                    read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F),
-                   input$clus_type)}  
+                   type = input$clus_type, 
+                   sigma_in = input$sigma)}  
   
   else {
     if(is.null(input$cgf_data)|is.null(input$epi_data)){
@@ -292,7 +294,7 @@ output$compare_heatmap <- renderPlot({
     else {
       cgf <- read.table(input$cgf_data$datapath, header = T, sep='\t', check.names = F)
       epi <- read.table(input$epi_data$datapath, header = T, sep='\t', check.names = F)
-      CompareDisplay(compareheatmap(), cgf, epi, input$clus_type)}
+      CompareDisplay(compareheatmap(), cgf, epi, input$clus_type, input$sigma)}
   }
 })
 

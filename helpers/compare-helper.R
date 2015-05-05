@@ -28,25 +28,31 @@ CompareMatrix <- function(cgf_data, epi_data) {
   return(data.matrix(caster))
 }
 
-CompareDisplay <- function(m, cgf_data, epi_data, type){
+CompareDisplay <- function(m, cgf_data, epi_data, type, sigma_in){
   
   clus_type <- switch(type, 
                       A = as.dendrogram(hclust(dist(data.matrix(cgf_data))), method = 'single'),
                       B = as.dendrogram(hclust(dist(data.matrix(epi_data))), method = 'single'), 
                       C = as.dendrogram(hclust(dist(m))), method = 'single')
+
+sigma <- sigma_in 
+pn_0 <- pnorm(sigma ,mean=0, sd=1) - pnorm(-sigma, mean=0, sd=1)  
+pn_1 <- (1 - pn_0)/2 
+
+
+pn_0 <- round(pn_0*1000, 0)
+pn_1 <- round(pn_1*1000, 0)
+
+
+dg <- colorRampPalette(c("darkgreen","honeydew"))(pn_1)
+wh <- colorRampPalette("white")(pn_0)
+db <- colorRampPalette(c("lightcyan", "darkblue"))(pn_1)
+
+sig1 <- c(dg, wh, db)
   
-#   clus_type <- ifelse(type == 1, as.dendrogram(hclust(dist(cgf_data))),
-#                       ifelse(type==2, as.dendrogram(hclust(dist(epi_data))), 
-#                                             as.dendrogram(hclust(dist(m)))))
-    
-heatcolor<- colorRampPalette(c("darkgreen","white","white","white","darkblue"))(512)
-heatmap.2(m, col=heatcolor, Rowv= clus_type, symm=TRUE, Colv ="Rowv", trace='none',keysize=0.6, revC=TRUE)
+heatcolor <- sig1  
+# heatcolor <- colorRampPalette(c("darkgreen","white","darkblue"))
+heatmap.2(m, col= heatcolor, Rowv= clus_type, symm=TRUE, Colv ="Rowv", trace='none',keysize=0.6, revC=TRUE)
 # Green denotes CGF sim, Blue denotes CGF Sim.   
 }
-# CompareDisplay <- function(m){
-#   heatcolor<- colorRampPalette(c("darkgreen","white","darkblue"))(512)  
-#   castermap <- heatmap.2(m, col=heatcolor, Rowv=TRUE, symm=TRUE, Colv ="Rowv", trace='none',keysize=0.6, revC=TRUE)
-# #   Green denotes CGF sim, Blue denotes CGF Sim.   
-# }
-
 
