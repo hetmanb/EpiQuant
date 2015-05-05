@@ -126,6 +126,9 @@ EpiMatrix <- function(table){
   str.cast <- dcast(str.matrix, formula= Strain.1 ~ Strain.2)
   str.cast <- as.matrix(str.cast[,2:ncol(str.cast)]) 
   rownames(str.cast) <- colnames(str.cast)
+  #Turn the siminlarity values into distance values
+  str.cast <- abs(str.cast-1)
+  #
   return(str.cast)
 }
 
@@ -133,6 +136,7 @@ EpiMatrix <- function(table){
 ##########################################################################################
 ######## Function to return a heatmap of the final EPIMATRIX function ####################
 EpiHeatmap <- function(m){
-  heatcolor<- colorRampPalette(c("white","yellowgreen","darkgreen"))(512)  
-  heatmap.2(m, col=heatcolor, margins=c(10,10), trace='none', keysize=0.6, revC=TRUE)
+#   heatcolor<- colorRampPalette(c("white","yellowgreen","darkgreen"))(512)
+  heatcolor<- colorRampPalette(c("darkgreen","yellowgreen","white"))(512)
+  heatmap.2(m, col=heatcolor, margins=c(10,10), trace='none', keysize=0.6, revC=TRUE, hclustfun = function(x) hclust(x,method = 'single'))#, distfun = 'single')
 }

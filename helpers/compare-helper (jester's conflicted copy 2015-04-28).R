@@ -40,6 +40,7 @@ CompareDisplay <- function(m, cgf_data, epi_data, type){
 #                                             as.dendrogram(hclust(dist(m)))))
     
 heatcolor<- colorRampPalette(c("darkgreen","white","white","white","darkblue"))(512)
+# heatcolor<- colorRampPalette(c("black", "red"))(2)
 heatmap.2(m, col=heatcolor, Rowv= clus_type, symm=TRUE, Colv ="Rowv", trace='none',keysize=0.6, revC=TRUE)
 # Green denotes CGF sim, Blue denotes CGF Sim.   
 }

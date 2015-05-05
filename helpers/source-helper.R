@@ -29,7 +29,7 @@ SourceMatrix <- function(source_data,mod8,mod7, mod0) {
                   ifelse(y==1, 0, 
                          ifelse(y==2, 1, 
                                 ifelse(y==7, mod7, 
-                                       ifelse(y==8, mod8, 0.75)))))
+                                       ifelse(y==8, mod8, 0.9)))))
     }
     
     epitab[[i]] <- y
@@ -48,7 +48,7 @@ SourceMatrix <- function(source_data,mod8,mod7, mod0) {
 #Function 3 ######################################################################################################
 #function that calls heatmap.2 to generate a heatmap from the matrix calculations 
 source_heatmap <- function(m){
-  heatcolor<- colorRampPalette(c("white","orange","orangered2"))(512)
+  heatcolor<- colorRampPalette(c("white","goldenrod1","orangered2"))(256)
   heatmap.2(m, col=heatcolor, trace='none', margins = c(10, 10), keysize=0.8, revC=TRUE)
 }
 

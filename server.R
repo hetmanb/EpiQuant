@@ -301,14 +301,15 @@ output$compare_heatmap <- renderPlot({
 tangle <- reactive({
   if (input$compare_demo == TRUE){
     tangle_helper(gene_data = read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
-                  epi_data = read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F))}
+                  epi_data = read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F), 
+                  input$cut_epi, input$cut_cgf)}
   else {
     if(is.null(input$cgf_data)|is.null(input$epi_data)){
       return(NULL) }
     else {
       gene_data <- read.table(input$cgf_data$datapath, header = T, sep='\t', check.names = F)
       epi_data <- read.table(input$epi_data$datapath, header = T, sep='\t', check.names = F)
-      tangle_helper(gene_data, epi_data)}
+      tangle_helper(gene_data, epi_data, input$cut_epi, input$cut_cgf)}
   }
 })
 output$tangle<- renderPlot({
