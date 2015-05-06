@@ -275,28 +275,36 @@ output$jschord2 <- reactive({
             else {
               cgf_in <- read.table(input$cgf_data$datapath, header = T, sep='\t')
               epi_in <- read.table(input$epi_data$datapath, header = T, sep='\t')
-              CompareMatrix(cgf_data=cgf_in, epi_data = epi_in)}
-                    }
-     })
+              if(input$compare_raw == FALSE){
+                  CompareMatrix(cgf_data=cgf_in, epi_data = epi_in)}
+                    else {
+                       CompareMatrixRaw(cgf_data=cgf_in, epi_data = epi_in)}    
+        }
+     }
+  })
+  
 
 output$compare_heatmap <- renderPlot({
   
-  if (input$compare_demo == TRUE){
-    CompareDisplay(compareheatmap(), 
-                   read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
-                   read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F),
-                   type = input$clus_type, 
-                   sigma_in = input$sigma)}  
-  
-  else {
-    if(is.null(input$cgf_data)|is.null(input$epi_data)){
-      return(NULL) }
-    else {
-      cgf <- read.table(input$cgf_data$datapath, header = T, sep='\t', check.names = F)
-      epi <- read.table(input$epi_data$datapath, header = T, sep='\t', check.names = F)
-      CompareDisplay(compareheatmap(), cgf, epi, input$clus_type, input$sigma)}
-  }
-})
+            if (input$compare_demo == TRUE){
+              CompareDisplay(compareheatmap(), 
+                             read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
+                             read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F),
+                             type = input$clus_type, 
+                             sigma_in = input$sigma)}  
+            
+            else {
+              if(is.null(input$cgf_data)|is.null(input$epi_data)){
+                return(NULL) }
+              else {
+                cgf <- read.table(input$cgf_data$datapath, header = T, sep='\t', check.names = F)
+                epi <- read.table(input$epi_data$datapath, header = T, sep='\t', check.names = F)
+                CompareDisplay(compareheatmap(), cgf, epi, input$clus_type, input$sigma)}
+             }
+           })
+          
+       
+
 
 
 #### Server Code for TanglePlots: ####
