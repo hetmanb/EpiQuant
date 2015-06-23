@@ -109,13 +109,11 @@ shinyServer(function(input, output, session) {
 
 
   output$jschord <- reactive({
-  # List of arguments given to the chord.js file     
-      list(
-        filepath = as.matrix(chord_file()), 
-        color = chord_color()
-        
-#           brewer.pal(n = 8, name = "Oranges") 
-      )
+    # List of arguments given to the chord.js file     
+    list(
+      filepath = chord_file(), 
+      color = chord_color()
+    )
   })
 
 
