@@ -109,29 +109,29 @@ chordOutputBinding = new Shiny.OutputBinding();
                 })
                 .on("mouseout", function (d) { d3.select("#tooltip").style("visibility", "hidden") });
 
-          function chordTip (d) {
-            var p = d3.format(".2%"), q = d3.format(",.3r")
-            return "Chord Info:<br/>"
-              + p(d.svalue/d.stotal) + " (" + q(d.svalue) + ") of "
-              + d.sname + " prefer " + d.tname
-              + (d.sname === d.tname ? "": ("<br/>while...<br/>"
-              + p(d.tvalue/d.ttotal) + " (" + q(d.tvalue) + ") of "
-              + d.tname + " prefer " + d.sname))
-          }
+         function chordTip (d) {
+           var p = d3.format(".2%"), q = d3.format(",.3r")
+           return "Chord Info:<br/>"
+             + p(d.svalue/d.stotal) + " (" + q(d.svalue) + ") of "
+             + d.sname + " prefer " + d.tname
+             + (d.sname === d.tname ? "": ("<br/>while...<br/>"
+             + p(d.tvalue/d.ttotal) + " (" + q(d.tvalue) + ") of "
+             + d.tname + " prefer " + d.sname))
+         }
 
-          function groupTip (d) {
-            var p = d3.format(".1%"), q = d3.format(",.3r")
-            return "Group Info:<br/>"
-                + d.gname + " : " + q(d.gvalue) + "<br/>"
-                + p(d.gvalue/d.mtotal) + " of Matrix Total (" + q(d.mtotal) + ")"
-          }
+         function groupTip (d) {
+           var p = d3.format(".1%"), q = d3.format(",.3r")
+           return "Group Info:<br/>"
+               + d.gname + " : " + q(d.gvalue) + "<br/>"
+               + p(d.gvalue/d.mtotal) + " of Matrix Total (" + q(d.mtotal) + ")"
+         }
 
-          function mouseover(d, i) {
-            d3.select("#tooltip")
-              .style("visibility", "visible")
-              .html(groupTip(rdr(d)))
-              .style("top", function () { return (d3.event.pageY - 80)+"px"})
-              .style("left", function () { return (d3.event.pageX - 130)+"px";})
+         function mouseover(d, i) {
+           d3.select("#tooltip")
+             .style("visibility", "visible")
+             .html(groupTip(rdr(d)))
+             .style("top", function () { return (d3.event.pageY - 80)+"px"})
+             .style("left", function () { return (d3.event.pageX - 130)+"px";})
 
             chordPaths.classed("fade", function(p) {
               return p.source.index != i
