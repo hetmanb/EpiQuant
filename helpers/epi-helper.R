@@ -107,7 +107,6 @@ EpiTable <- function(main_input, source_input, geog_input, temp_input, source_co
   
   #### Lookup and merge Geography data : ####
   strain_sims <- merge.data.frame(strain_sims, geog_matrix, by.x= c("Strain.1", "Strain.2"), by.y = c("Var1", "Var2"))
-  # strain_sims <- strain_sims[, c(3,4,5,6,7,8,1,2,9,10,11)]
   colnames(strain_sims) <- c("Strain.1", "Strain.2", "Source.1", "Source.2", "Location.1", "Location.2", "Date.1", "Date.2", "Source.Sim", "Temp.Sim", "Geog.Sim")
   
   #### Finalize the similarity matrix and calculate the overall similarity between the strains: ####
@@ -126,6 +125,7 @@ EpiMatrix <- function(table){
   str.cast <- dcast(str.matrix, formula= Strain.1 ~ Strain.2)
   str.cast <- as.matrix(str.cast[,2:ncol(str.cast)]) 
   rownames(str.cast) <- colnames(str.cast)
+  
   #Turn the siminlarity values into distance values
   str.cast <- abs(str.cast-1)
   #
@@ -136,7 +136,12 @@ EpiMatrix <- function(table){
 ##########################################################################################
 ######## Function to return a heatmap of the final EPIMATRIX function ####################
 EpiHeatmap <- function(m){
-#   heatcolor<- colorRampPalette(c("white","yellowgreen","darkgreen"))(512)
+  heatcolor<- colorRampPalette(c("darkgreen","yellowgreen","white"))(512)
+  d3heatmap(m, dendrogram = 'both', colors=heatcolor, revC=TRUE, hclustfun = function(x) hclust(x,method = 'single'))
+}
+
+EpiHeatmap_pdf <- function(m){
   heatcolor<- colorRampPalette(c("darkgreen","yellowgreen","white"))(512)
   heatmap.2(m, col=heatcolor, margins=c(10,10), trace='none', keysize=0.6, revC=TRUE, hclustfun = function(x) hclust(x,method = 'single'))#, distfun = 'single')
 }
+

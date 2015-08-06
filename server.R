@@ -14,6 +14,7 @@ library(RColorBrewer)
 library(markdown)
 library(rCharts)
 library(dendextend)
+library(d3heatmap)
 source("helpers/cgf-helper.R", local = T)
 source("helpers/chord_helper.R", local = T)
 source("helpers/compare-helper.R", local = T)
@@ -26,6 +27,8 @@ source("helpers/wallace-helper.R", local=T)
 
 
 shinyServer(function(input, output, session) {
+  rv <- reactiveValues()
+  
   
   isolate(prepend_shiny_alert(session,
                               'sourcematrix_alert',
@@ -48,7 +51,14 @@ shinyServer(function(input, output, session) {
 ##################################################################################################
 ############################ Server functions for Source Matrix ##################################
 
-# This code generates a table that changes depending on what is uploaded in the sidebar  
+
+
+
+
+
+
+
+#This code generates a table that changes depending on what is uploaded in the sidebar  
   output$scoretable <- renderHotable({  
       inFile <- input$source_scores
       if ((is.null(inFile)) && (input$source_demo == TRUE)) {        
@@ -56,21 +66,32 @@ shinyServer(function(input, output, session) {
       }
       read.table(inFile$datapath, header=T, sep='\t')
     }, readOnly = F)
-   
   
+
 # Reactive variable for source scores that updates with the hotable input:
+  
   scoreDL <- reactive({hot.to.df(input$scoretable)})
 
+#   observe({
+#     rv$scoreDL <- renderDataTable({
+#       inFile <- input$source_scores
+#       if ((is.null(inFile)) && (input$source_demo == TRUE)) {        
+#         return(read.table("data/source_scorings.txt", header=T, sep='\t'))
+#       }
+#       read.table(inFile$datapath, header=T, sep='\t')
+#     })
+#     print(class(rv$scoreDL))
+#     }
+#   )
 
 #  Generates a heatmap displaying source similarities  ####
-
- 
-  output$source_heatmap <- renderPlot({
+  output$source_heatmap <- renderD3heatmap({
     inFile <- scoreDL()
     if (is.null(inFile)) {
       return(NULL)
     }
-    source_heatmap(as.matrix(SourceMatrix(source_data=inFile, mod8=input$mod8, mod7=input$mod7, mod0=input$mod0)))
+    m = (SourceMatrix(source_data=inFile, mod8=input$mod8, mod7=input$mod7, mod0=input$mod0))
+    source_heatmap(m)
   })
   
 ############ Download Handlers: #############################
@@ -89,7 +110,7 @@ shinyServer(function(input, output, session) {
     filename = c("SourceHeatmap.pdf"),
     content = function(file){
       pdf(file, width=15, height=15)
-      source_heatmap(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0))
+      source_heatmap_pdf(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0))
       dev.off()
     })
 
@@ -158,7 +179,7 @@ shinyServer(function(input, output, session) {
 
 
 ######## Generate a heatmap of the results and display on the Main Output : #############
-  output$EpiHeatmap <- renderPlot({
+  output$EpiHeatmap <- renderD3heatmap({
     EpiHeatmap(EpiMatrix(table()))
      })  
 
@@ -193,7 +214,7 @@ output$jschord2 <- reactive({
 
 
 
-#### Download Handlers for Data and Heatmaps: #####
+#### Download Handlers forepiData and Heatmaps: #####
 
   output$downloadEpiData <- downloadHandler( 
     filename = c("Epi_Sim_Data.txt"),
@@ -209,7 +230,7 @@ output$jschord2 <- reactive({
     filename = c("Epi_Heatmap.pdf"),
     content = function(file){
       pdf(file, width=25, height=25)
-      EpiHeatmap(EpiMatrix(table()))
+      EpiHeatmap_pdf(EpiMatrix(table()))
       dev.off()
     })
 
@@ -233,7 +254,7 @@ output$jschord2 <- reactive({
     cgf_heatmap(cgf_matrix(), input$gen_type)
     })
   
-  output$cgf_heatmap <- renderPlot({
+  output$cgf_heatmap <- renderD3heatmap({
     cgfheatmap()
     })
 
@@ -245,7 +266,7 @@ output$jschord2 <- reactive({
     filename = c("CGF-Heatmap.pdf"),
     content = function(file){
       pdf(file, width=15, height=15)
-      cgf_heatmap(cgf_matrix(), input$gen_type)
+      cgf_heatmap_pdf(cgf_matrix(), input$gen_type)
       dev.off()
     })
   output$downloadCGFTable <- downloadHandler( 
@@ -281,7 +302,7 @@ output$jschord2 <- reactive({
   })
   
 
-output$compare_heatmap <- renderPlot({
+output$compare_heatmap <- renderD3heatmap({
   
             if (input$compare_demo == TRUE){
               CompareDisplay(compareheatmap(), 
@@ -330,7 +351,7 @@ output$downloadCompareHeatmap <- downloadHandler(
   content = function(file){
     pdf(file, width=15, height=15)
     if (input$compare_demo == TRUE){
-      CompareDisplay(compareheatmap(), 
+      CompareDisplay_pdf(compareheatmap(), 
                      read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
                      read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F),
                      input$clus_type, input$sigma)}  

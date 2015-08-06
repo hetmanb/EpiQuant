@@ -49,10 +49,14 @@ SourceMatrix <- function(source_data,mod8,mod7, mod0) {
 #function that calls heatmap.2 to generate a heatmap from the matrix calculations 
 source_heatmap <- function(m){
   heatcolor<- colorRampPalette(c("white","goldenrod1","orangered2"))(256)
-  heatmap.2(m, col=heatcolor, trace='none', margins = c(10, 10), keysize=0.8, revC=TRUE)
+  d3heatmap(m, dendrogram = 'both', colors = heatcolor, revC = TRUE)  
+#   heatmap.2(m, col=heatcolor, trace='none', margins = c(10, 10), keysize=0.8, revC=TRUE)
 }
 
-
+source_heatmap_pdf <- function(m){
+  heatcolor<- colorRampPalette(c("white","goldenrod1","orangered2"))(256)
+  heatmap.2(m, col=heatcolor, trace='none', margins = c(12, 12), keysize=0.8, revC=TRUE)
+}
 
 
 

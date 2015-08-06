@@ -40,12 +40,18 @@ cgf_heatmap <- function(m, color){
                       C = colorRampPalette(c("white","red","darkred"))(512),
                       D = colorRampPalette(c("white","forestgreen","darkgreen"))(512),
                       E = colorRampPalette(c("lightgrey","blue","darkblue"))(512))
-#   if(color == 1){
-#     heatcolor <-  colorRampPalette(c("white","lightblue","darkblue"))(512)
-#   }
-#     else{
-#       heatcolor <- colorRampPalette(c("lightgrey","blue","darkblue"))(512)
-#     }
+  d3heatmap(m, dendrogram = 'both', colors=col_scale, revC=TRUE, hclustfun = function(x) hclust(x,method = 'single'))
+}
+
+
+##### for Download handler static image: 
+cgf_heatmap_pdf <- function(m, color){
   
+  col_scale <- switch(color,
+                      A = colorRampPalette(c("white","lightblue","darkblue"))(512),
+                      B = colorRampPalette(c("white","orange","darkorange"))(512),
+                      C = colorRampPalette(c("white","red","darkred"))(512),
+                      D = colorRampPalette(c("white","forestgreen","darkgreen"))(512),
+                      E = colorRampPalette(c("lightgrey","blue","darkblue"))(512))
   heatmap.2(m, col=col_scale, trace='none',keysize=0.6, revC=TRUE, margins = c(15,15))
 }

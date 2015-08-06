@@ -7,6 +7,7 @@
 library(shiny)
 library(shinysky)
 library(rCharts)
+library(d3heatmap)
 
 #Create an empty container for housing the Shiny alerts 
 shiny_alert_container <- function(id) {
@@ -41,7 +42,7 @@ shinyUI(navbarPage(theme = "united.css",
                         sidebarPanel(
                           #load javascript files 
                           tags$head(
-                          tags$script(src="lib/d3.js"),
+#                           tags$script(src="lib/d3.js"),
                           tags$script(src="lib/underscore.js"),
                           tags$script(src="js/mapper.js"),
                           tags$script(src ="js/chord.js"),
@@ -63,10 +64,6 @@ shinyUI(navbarPage(theme = "united.css",
                                      br(),
                                      p("Upload your similarity scoring matrix here:"),
                                      fileInput(inputId="source_scores",label="Upload",multiple=FALSE,accept=".txt"),
-                                     h4("These sliders pertain to the epi-matrix using a summation approach:"),
-                                     sliderInput(inputId="mod7",label="Modifier for 7-0 match", min=0, max=1.0, value=0.15, step=0.05),
-                                     sliderInput(inputId="mod8",label="Modifier for 7-1 match", min=0, max=1.0, value=0.35, step=0.05),
-                                     sliderInput(inputId="mod0",label="Modifier for 0-0 match", min=0, max=1.0, value=0.95, step=0.05),                
                                      submitButton("Submit", icon = NULL)
                         ),
                         
@@ -76,6 +73,7 @@ shinyUI(navbarPage(theme = "united.css",
                             tabPanel(title="Epi-Table",
                                      br(),
                                      shiny_alert_container('sourcematrix_alert'),
+#                                      dataTableOutput("scoretable")
                                      shinysky::hotable("scoretable")
                             ),                            
                             tabPanel(title="Source Similarity Heatmap",
@@ -84,9 +82,13 @@ shinyUI(navbarPage(theme = "united.css",
                                      downloadButton("downloadSourceHeatmap", "Download Heatmap"),
                                      downloadButton("downloadSourceMatrix", "Download Full Matrix File"),
                                      downloadButton("downloadSourcePairwise", "Download Pairwise File"),
+                                     h4("These sliders pertain to the epi-matrix using a summation approach:"),
+                                     sliderInput(inputId="mod7",label="Modifier for 7-0 match", min=0, max=1.0, value=0.15, step=0.05),
+                                     sliderInput(inputId="mod8",label="Modifier for 7-1 match", min=0, max=1.0, value=0.35, step=0.05),
+                                     sliderInput(inputId="mod0",label="Modifier for 0-0 match", min=0, max=1.0, value=0.95, step=0.05), 
                                      br(),
                                      busyIndicator("Processing...", wait = 500),
-                                     plotOutput("source_heatmap", width=750, height=750)
+                                     d3heatmapOutput("source_heatmap", width=750, height=750)
                                      
                             ),
                             tabPanel(title = "Chord Diagram", 
@@ -138,7 +140,7 @@ shinyUI(navbarPage(theme = "united.css",
                                            downloadButton("downloadEpiTable", "Download Similarity Table"),
                                            downloadButton("downloadEpiHeatmap", "Download Heatmap"),
                                            busyIndicator("Processing...", wait = 500),
-                                           plotOutput("EpiHeatmap", width=1000, height=1000)
+                                           d3heatmapOutput("EpiHeatmap", width=1000, height=1000)
                                   ),
                                   tabPanel(title="Map", 
                                            tags$style('.leaflet {height: 600px;}'),
@@ -187,7 +189,7 @@ shinyUI(navbarPage(theme = "united.css",
                                            downloadButton("downloadCGFTable", "Download Gene Similarity Data"),
                                            br(),
                                            busyIndicator("Please wait... for datasets greater than 100, this can take a while", wait = 500),
-                                           plotOutput("cgf_heatmap", width=1000, height=1000)) 
+                                           d3heatmapOutput("cgf_heatmap", width=1000, height=1000)) 
                                                                     
                                 )
                               )
@@ -232,7 +234,7 @@ shinyUI(navbarPage(theme = "united.css",
                                            br(),
                                            busyIndicator("Processing...", wait = 500),
                                            sliderInput('sigma','Select the Sigma value for displaying outliers on the heatmap', min = 0, max = 4, step = 0.1, value = 1),
-                                           plotOutput("compare_heatmap", width=1000, height=1000)
+                                           d3heatmapOutput("compare_heatmap", width=1000, height=1000)
                                            ),
                                   tabPanel(title="TangleGram",
                                            h3("Tanglegram displaying the concordance of the 2 methods"),
