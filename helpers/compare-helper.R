@@ -10,8 +10,8 @@ CompareMatrix <- function(cgf_data, epi_data) {
   melt_epi <- melt(as.matrix(epi))
   
 # Rank the similarities from min - max, to allow for 'fair' comparisons
-  melt_cgf$rank <- rank(melt_cgf$value, ties.method = 'random')
-  melt_epi$rank <- rank(melt_epi$value, ties.method = 'random')
+  melt_cgf$rank <- rank(melt_cgf$value, ties.method = 'average')
+  melt_epi$rank <- rank(melt_epi$value, ties.method = 'average')
   
   
   merged_data <- merge(x=melt_cgf, y=melt_epi, by = c("Var1", "Var2"), all = T)
@@ -63,8 +63,8 @@ CompareDisplay <- function(m, cgf_data, epi_data, type, sigma_in){
                           B = as.dendrogram(hclust(dist(data.matrix(epi_data))), method = 'single'), 
                           C = as.dendrogram(hclust(dist(m))), method = 'single')
     
-    sigma <- sigma_in 
-    pn_0 <- pnorm(sigma ,mean=0, sd=1) - pnorm(-sigma, mean=0, sd=1)
+    sigma <- sigma_in
+    pn_0 <- pnorm(sigma) - pnorm(-sigma)
     
     pn_1 <- (1 - pn_0)/2 
     p_value <- pn_1
@@ -73,25 +73,26 @@ CompareDisplay <- function(m, cgf_data, epi_data, type, sigma_in){
     pn_1 <- round(pn_1*1000, 0)
     
     
-    dg <- colorRampPalette(c("darkgreen","honeydew"))(pn_1)
+    dg <- colorRampPalette(c("darkgreen","white"))(pn_1)
     wh <- colorRampPalette("white")(pn_0)
-    db <- colorRampPalette(c("lightcyan", "darkblue"))(pn_1)
+    db <- colorRampPalette(c("white", "darkblue"))(pn_1)
     
     sig1 <- c(dg, wh, db)
 
     if(any(m) != 0) {
       heatcolor <- sig1
-      print('some differences present')
-      d3heatmap(m, colors = heatcolor, Rowv= clus_type, symm=TRUE, Colv ="Rowv", revC=TRUE, 
+      d3heatmap(m,
+                col = heatcolor,
+                Rowv = rev(clus_type),
+                Colv= "Rowv",
+                revC = F, 
+                symm = T,
+                symbreaks = T,
                 main = paste("P-Value for Outliers: ", round(p_value, 3)))
-#       heatmap.2(m, col= heatcolor, Rowv= clus_type, symm=TRUE, Colv ="Rowv", trace='none',keysize=0.6, revC=TRUE, 
-#                 main = paste("P-Value for Outliers: ", round(p_value, 3)))
           } else { 
             plot(1,1,col="white")
             text(1,1,"Error: No comparisons available, data is identical")
             print("no differences present")
-#             heatcolor <- colorRampPalette(c("darkgreen","white","darkblue"))
-#             heatmap.2(m, col= heatcolor, symm=TRUE, Colv ="Rowv", trace='none',keysize=0.6, revC=TRUE, breaks = c(-1, -0.01, 0.01, 1))
     }
 
     
@@ -111,21 +112,28 @@ CompareDisplay_pdf <- function(m, cgf_data, epi_data, type, sigma_in){
   pn_1 <- (1 - pn_0)/2 
   p_value <- pn_1
   
-  pn_0 <- round(pn_0*1000, 0)
-  pn_1 <- round(pn_1*1000, 0)
+  my_breaks = c(seq(-1, -pn_0, length=100),
+           seq((-pn_0+0.001), -0.002, length = 100),
+           seq(0.002, pn_0, length = 100),
+           seq((pn_0+.001), 1, length = 100))
   
-  
-  dg <- colorRampPalette(c("darkgreen","honeydew"))(pn_1)
-  wh <- colorRampPalette("white")(pn_0)
-  db <- colorRampPalette(c("lightcyan", "darkblue"))(pn_1)
-  
-  sig1 <- c(dg, wh, db)
+  my_palette <- colorRampPalette(c("darkgreen", "white", "white", "white","darkblue"))(399)
   
   if(any(m) != 0) {
-    heatcolor <- sig1
-    print('some differences present')
-          heatmap.2(m, col= heatcolor, Rowv= clus_type, symm=TRUE, Colv ="Rowv", trace='none',keysize=0.6, revC=TRUE, 
-                    main = paste("P-Value for Outliers: ", round(p_value, 3)))
+    heatcolor <- my_palette
+    heatmap.2(m,
+              col = heatcolor,
+              Rowv= clus_type,
+              Colv ="Rowv",
+              symm = TRUE,
+              revC = TRUE,
+              trace='none',
+              keysize=0.6,
+              breaks = my_breaks,
+              sepwidth = c(0.01,0.01),
+              sepcolor = "white",
+              # symkey = F,
+              main = paste("P-Value for Outliers: ", round(p_value, 3)))
   } else { 
     plot(1,1,col="white")
     text(1,1,"Error: No comparisons available, data is identical")

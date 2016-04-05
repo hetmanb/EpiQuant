@@ -18,80 +18,72 @@ shiny_alert_container <- function(id) {
     div(id=paste(id), class='shinyalert')
   )
 }
-
-
 ######################## *******************************  ************************************** ################
 #                                            SHINY UI START                                                     #
 ######################## *******************************  ************************************** ################  
-
-
-shinyUI(navbarPage(theme = "united.css", 
+shinyUI(
+  navbarPage(theme = "united.css", 
                    fluid = T, 
                    title = shiny::a("EpiQuant", href = "https://github.com/hetmanb/EpiQuant/wiki"), 
                    inverse = T, 
                    footer=a(href="mailto:hetmanb@gmail.com", "Questions? Email Me"),
-                   
 ######################## *******************************  ************************************** ################
 #                                            NavTab for Source-Matrix                                           #
 ######################## *******************************  ************************************** ################                   
                   tabPanel("SourceMatrix",
-                      pageWithSidebar(                        
+                      pageWithSidebar(
                         # Application title
-                        headerPanel("Source Analysis using Epi-Matrix"),   
+                        headerPanel("Source Analysis using Epi-Matrix",
+                                    # load javascript files 
+                                    tags$head(
+                                      tags$script(src="lib/underscore.js"),
+                                      tags$script(src="js/mapper.js"),
+                                      tags$script(src ="js/chord.js"),
+                                      tags$script(src ="js/chord2.js"),
+                                      tags$script(src ="www/lib/leaflet.js")
+                                    )
+                              ),
                         # Sidebar with a slider input for number of observations
-                        sidebarPanel(
-                          #load javascript files 
-                          tags$head(
-#                           tags$script(src="lib/d3.js"),
-                          tags$script(src="lib/underscore.js"),
-                          tags$script(src="js/mapper.js"),
-                          tags$script(src ="js/chord.js"),
-                          tags$script(src ="js/chord2.js"),
-                          tags$script(src ="www/lib/leaflet.js")
-                          
-                          ),
-                          
-                          h4("SourceMatrix Options"),
-                                     p("SourceMatrix is a method of coming up with pairwise similarity indices based on a subjective scoring matix"),
-                                     p("First, you'll need to download the", shiny::a("template file.", href= "https://www.dropbox.com/s/bkgvhi00y76w02d/source_scorings.txt?dl=1")),
-                                     br(), 
-                                     p("Once you've downloaded the file, open it in your favorite spreadsheet software and start filling in the boxes using the following rules."),
-                                     code("1 = Strongly Correlated"),
-                                     code("0 = Strongly Uncorrelated"),
-                                     code("7 = Possibly Correlated (Wildcard)"),
-                                     br(),
-                                     checkboxInput(inputId = "source_demo", label = "Use demo data", value = TRUE), 
-                                     br(),
-                                     p("Upload your similarity scoring matrix here:"),
-                                     fileInput(inputId="source_scores",label="Upload",multiple=FALSE,accept=".txt"),
-                                     submitButton("Submit", icon = NULL)
-                        ),
-                        
+                        sidebarPanel(width = 4
+                                             ,h4("SourceMatrix Options")
+                                             ,p("SourceMatrix is a method of coming up with pairwise similarity indices based on a subjective scoring matix")
+                                             ,p("First, you'll need to download the", shiny::a("template file.", href= "https://www.dropbox.com/s/bkgvhi00y76w02d/source_scorings.txt?dl=1"))
+                                             ,br()
+                                             ,p("Once you've downloaded the file, open it in your favorite spreadsheet software and start filling in the boxes using the following rules.")
+                                             ,code("1 = Strongly Correlated")
+                                             ,code("0 = Strongly Uncorrelated")
+                                             ,code("7 = Possibly Correlated (Wildcard)")
+                                             ,br()
+                                             ,checkboxInput(inputId = "source_demo", label = "Use demo data", value = TRUE)
+                                             ,br()
+                                             ,p("Upload your similarity scoring matrix here:")
+                                             ,fileInput(inputId="source_scores",label="Upload",multiple=FALSE,accept=".txt")
+                                             ,h4("These sliders pertain to the epi-matrix using a summation approach:")
+                                             ,sliderInput(inputId="mod7",label="Modifier for 7-0 match", min=0, max=1.0, value=0.15, step=0.05)
+                                             ,sliderInput(inputId="mod8",label="Modifier for 7-1 match", min=0, max=1.0, value=0.35, step=0.05)
+                                             ,sliderInput(inputId="mod0",label="Modifier for 0-0 match", min=0, max=1.0, value=0.95, step=0.05)
+                                             ,submitButton("Submit", icon = NULL)
+                                           ),
                         # Show a table of the uploaded data: 
                         mainPanel(
                           tabsetPanel(
-                            tabPanel(title="Epi-Table",
+                            id = 'conditionedPanels',
+                            tabPanel("Source Table",
                                      br(),
                                      shiny_alert_container('sourcematrix_alert'),
-#                                      dataTableOutput("scoretable")
                                      shinysky::hotable("scoretable")
                             ),                            
-                            tabPanel(title="Source Similarity Heatmap",
+                            tabPanel("Source Heatmap",
                                      h3("Heatmap based on the source scorings and the penalty sliders from the sidebar"),
                                      shiny_alert_container('source_heat_alert'),
                                      downloadButton("downloadSourceHeatmap", "Download Heatmap"),
                                      downloadButton("downloadSourceMatrix", "Download Full Matrix File"),
                                      downloadButton("downloadSourcePairwise", "Download Pairwise File"),
-                                     h4("These sliders pertain to the epi-matrix using a summation approach:"),
-                                     sliderInput(inputId="mod7",label="Modifier for 7-0 match", min=0, max=1.0, value=0.15, step=0.05),
-                                     sliderInput(inputId="mod8",label="Modifier for 7-1 match", min=0, max=1.0, value=0.35, step=0.05),
-                                     sliderInput(inputId="mod0",label="Modifier for 0-0 match", min=0, max=1.0, value=0.95, step=0.05), 
                                      br(),
                                      busyIndicator("Processing...", wait = 500),
                                      d3heatmapOutput("source_heatmap", width=750, height=750)
-                                     
-                            ),
-                            tabPanel(title = "Chord Diagram", 
+                                     ),
+                            tabPanel("Source Chord",
                                       h4("The chord diagram shows the source-relationships that fall within the low-and-high thresholds"),
                                       br(), 
                                       shiny_alert_container('source_chord_alert'),
@@ -100,8 +92,8 @@ shinyUI(navbarPage(theme = "united.css",
                                       br(),
                                       busyIndicator("Processing...", wait = 500),
                                       div(id = 'jschord', class = 'jschord')
-                                      )
-                                )
+                            )
+                            )
                           ))),
 ######################## *******************************  ************************************** ################
 #                                            NavTab for Epi-Matrix                                              #
@@ -127,8 +119,8 @@ shinyUI(navbarPage(theme = "united.css",
                                            h4("Make the following sliders add up to 1.0"),
                                            sliderInput(inputId="source_coeff", label="Coefficient for Source Factor", min=0.0, max=1.0, value=0.5, step=0.05),
                                            sliderInput(inputId="temp_coeff", label="Coefficient for Temporal Factor", min=0.0, max=1.0, value=0.3, step=0.05),
-                                           sliderInput(inputId="geog_coeff", label="Coefficient for Geographical Factor", min=0.0, max=1.0, value=0.2, step=0.05),
-                                           submitButton("Submit", icon = NULL)
+                                           sliderInput(inputId="geog_coeff", label="Coefficient for Geographical Factor", min=0.0, max=1.0, value=0.2, step=0.05)
+                                           ,submitButton("Submit", icon = NULL)
                                            ),
                               
                               
@@ -149,7 +141,7 @@ shinyUI(navbarPage(theme = "united.css",
                                            h4("This chord diagram shows the epidemiological relationships that fall within the low-and-high thresholds"),
                                            shiny_alert_container('epi_chord_alert'),
                                            br(), 
-                                           #shiny_alert_container('source_chord_alert'),
+                                           shiny_alert_container('source_chord_alert'),
                                            sliderInput("chord2_low", "Low Threshold for Similarity", min=0, max=1.0, value=0.7, step=0.01), 
                                            sliderInput("chord2_high", "High Threshold for Similarity", min=0, max=1.0, value=.95, step=0.01),
                                            br(),
@@ -233,7 +225,7 @@ shinyUI(navbarPage(theme = "united.css",
                                            downloadButton("downloadCompareTable", "Download the Comparison Table"),
                                            br(),
                                            busyIndicator("Processing...", wait = 500),
-                                           sliderInput('sigma','Select the Sigma value for displaying outliers on the heatmap', min = 0, max = 4, step = 0.1, value = 1),
+                                           sliderInput('sigma','Select the Sigma value for displaying outliers on the heatmap', min = 0.1, max = 3, step = 0.01, value = 1),
                                            d3heatmapOutput("compare_heatmap", width=1000, height=1000)
                                            ),
                                   tabPanel(title="TangleGram",

@@ -51,13 +51,7 @@ shinyServer(function(input, output, session) {
 ##################################################################################################
 ############################ Server functions for Source Matrix ##################################
 
-
-
-
-
-
-
-
+  
 #This code generates a table that changes depending on what is uploaded in the sidebar  
   output$scoretable <- renderHotable({  
       inFile <- input$source_scores
@@ -67,22 +61,9 @@ shinyServer(function(input, output, session) {
       read.table(inFile$datapath, header=T, sep='\t')
     }, readOnly = F)
   
-
-# Reactive variable for source scores that updates with the hotable input:
+# Reactive table for source scores that updates with the hotable input:
   
   scoreDL <- reactive({hot.to.df(input$scoretable)})
-
-#   observe({
-#     rv$scoreDL <- renderDataTable({
-#       inFile <- input$source_scores
-#       if ((is.null(inFile)) && (input$source_demo == TRUE)) {        
-#         return(read.table("data/source_scorings.txt", header=T, sep='\t'))
-#       }
-#       read.table(inFile$datapath, header=T, sep='\t')
-#     })
-#     print(class(rv$scoreDL))
-#     }
-#   )
 
 #  Generates a heatmap displaying source similarities  ####
   output$source_heatmap <- renderD3heatmap({
@@ -322,22 +303,21 @@ output$compare_heatmap <- renderD3heatmap({
            })
           
        
-
-
-
 #### Server Code for TanglePlots: ####
 tangle <- reactive({
   if (input$compare_demo == TRUE){
-    tangle_helper(gene_data = read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
-                  epi_data = read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F), 
-                  input$cut_epi, input$cut_cgf)}
+    gene_data <-  read.table("data/demo_data/Hex-SimTable_58.txt", header = T, sep = '\t', check.names = F)
+    epi_data <-  read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F)
+    tangle_helper(gene_data, epi_data, input$cut_epi, input$cut_cgf)
+    }
   else {
     if(is.null(input$cgf_data)|is.null(input$epi_data)){
       return(NULL) }
     else {
       gene_data <- read.table(input$cgf_data$datapath, header = T, sep='\t', check.names = F)
       epi_data <- read.table(input$epi_data$datapath, header = T, sep='\t', check.names = F)
-      tangle_helper(gene_data, epi_data, input$cut_epi, input$cut_cgf)}
+      tangle_helper(gene_data, epi_data, input$cut_epi, input$cut_cgf)
+      }
   }
 })
 output$tangle<- renderPlot({
@@ -346,6 +326,9 @@ output$tangle<- renderPlot({
 
 
 #Download handler to download the comparison heatmap as a .pdf file:
+
+
+
 output$downloadCompareHeatmap <- downloadHandler( 
   filename = c("CGF-Epi_Heatmap.pdf"),
   content = function(file){
@@ -362,10 +345,11 @@ output$downloadCompareHeatmap <- downloadHandler(
       else {
         cgf <- read.table(input$cgf_data$datapath, header = T, sep='\t', check.names = F)
         epi <- read.table(input$epi_data$datapath, header = T, sep='\t', check.names = F)
-        CompareDisplay(compareheatmap(), cgf, epi, input$clus_type, input$sigma)}
+        CompareDisplay_pdf(compareheatmap(), cgf, epi, input$clus_type, input$sigma)}
     }
     dev.off()
   })
+
 output$downloadCompareTable <- downloadHandler( 
   filename = c("CGF-Epi_SimTable.txt"),
   content = function(file){

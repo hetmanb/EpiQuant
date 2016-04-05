@@ -83,8 +83,8 @@ tanglegram(dendo[[1]], dendo[[2]], margin_inner = 5,
 #            sub = paste("Entanglement: ", round(entanglement(dendo[[1]], dendo[[2]]), 2)),
            sub = paste("Adj Wallace A vs. B:", round(wallace_list$Adjusted_Wallace_A_vs_B, 3), "\n", 
                        "Adj Wallace B vs. A:", round(wallace_list$Adjusted_Wallace_B_vs_A, 3), "\n", 
-                       "Entanglement:", round(entanglement(dendo[[1]], dendo[[2]]), 2), "\n",
-                       "Spearman's NonParametric Correlation:", cor_cophenetic(tree1 = dendo[[1]], tree2 = dendo[[2]], method = "spearman")),
+                       "Entanglement:", round(entanglement(dendo[[1]], dendo[[2]]), 2), "\n"),
+                       #,"Spearman's NonParametric Correlation:", cor_cophenetic(tree1 = dendo[[1]], tree2 = dendo[[2]], method = "spearman")),
            cex_sub = 0.9)
 
 }

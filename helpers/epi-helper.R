@@ -112,7 +112,8 @@ EpiTable <- function(main_input, source_input, geog_input, temp_input, source_co
   #### Finalize the similarity matrix and calculate the overall similarity between the strains: ####
   str.matrix <- strain_sims
   str.matrix$total <- NA
-  str.matrix$total <- ((str.matrix$Source.Sim*x) + (str.matrix$Temp.Sim*y) + (str.matrix$Geog.Sim*z))
+  #str.matrix$total <- ((str.matrix$Source.Sim*x) + (str.matrix$Temp.Sim*y) + (str.matrix$Geog.Sim*z))
+  str.matrix$total <- sqrt( ((str.matrix$Source.Sim^2)*x) + ((str.matrix$Temp.Sim^2)*y) + ((str.matrix$Geog.Sim^2)*z) ) 
   return(str.matrix)
 }  
 

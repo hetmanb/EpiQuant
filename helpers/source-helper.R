@@ -39,6 +39,7 @@ SourceMatrix <- function(source_data,mod8,mod7, mod0) {
     sum.table[i] <- ((sum(epitab[[i]]))/(length(epitab[[i]])))
   }
   sim.matrix <- matrix(data=sum.table, nrow=nrow(data), ncol=nrow(data))
+  # sim.matrix <- abs(1 - sim.matrix)
   rownames(sim.matrix) <- data[1:nrow(data),1]
   colnames(sim.matrix) <- data[1:nrow(data),1]
   return(sim.matrix)
