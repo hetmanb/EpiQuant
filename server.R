@@ -24,7 +24,7 @@ source("helpers/alert-helper.R", local = T)
 source("helpers/map_helper.R", local = T)
 source("helpers/tangle_helper.R", local = T)
 source("helpers/wallace-helper.R", local=T)
-
+source("helpers/source-helper2.R", local = T)
 
 shinyServer(function(input, output, session) {
   rv <- reactiveValues()
@@ -74,6 +74,15 @@ shinyServer(function(input, output, session) {
     m = (SourceMatrix(source_data=inFile, mod8=input$mod8, mod7=input$mod7, mod0=input$mod0))
     source_heatmap(m)
   })
+  #  ** TEST ** Generates a heatmap displaying source similarities using modified equation ####
+  output$source_heatmap2 <- renderD3heatmap({
+    inFile <- scoreDL()
+    if (is.null(inFile)) {
+      return(NULL)
+    }
+    m = (SourceMatrix2(source_data=inFile, mod8=input$mod8, mod7=input$mod7))
+    source_heatmap(m)
+  })
   
 ############ Download Handlers: #############################
   
@@ -94,7 +103,25 @@ shinyServer(function(input, output, session) {
       source_heatmap_pdf(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0))
       dev.off()
     })
-
+  ############ Download Handlers ** TEST ** 2 : #############################
+  
+  output$downloadSourceMatrix2 <- downloadHandler( 
+    filename = c("SourceMatrix.txt"),
+    content = function(file){
+      write.table(SourceMatrix2(source_data = scoreDL(), mod8=input$mod8, mod7=input$mod7), file)
+    })
+  output$downloadSourcePairwise2 <- downloadHandler( 
+    filename = c("SourcePairwise.txt"),
+    content = function(file){
+      write.table(melt(SourceMatrix2(scoreDL(), mod8=input$mod8, mod7=input$mod7)), sep='\t', file)
+    })  
+  output$downloadSourceHeatmap2 <- downloadHandler( 
+    filename = c("SourceHeatmap.pdf"),
+    content = function(file){
+      pdf(file, width=15, height=15)
+      source_heatmap_pdf(SourceMatrix2(scoreDL(), mod8=input$mod8, mod7=input$mod7))
+      dev.off()
+    })
 ############ Functions for the Source Chord Diagram JS Output: #############################
 
   chord_in <- reactive({ 

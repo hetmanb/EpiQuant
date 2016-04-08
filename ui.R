@@ -83,6 +83,16 @@ shinyUI(
                                      busyIndicator("Processing...", wait = 500),
                                      d3heatmapOutput("source_heatmap", width=750, height=750)
                                      ),
+                            tabPanel(" **TEST** Source Heatmap 2",
+                                     h3("Heatmap based on the source scorings and the penalty sliders from the sidebar"),
+                                     shiny_alert_container('source_heat_alert'),
+                                     downloadButton("downloadSourceHeatmap2", "Download Heatmap"),
+                                     downloadButton("downloadSourceMatrix2", "Download Full Matrix File"),
+                                     downloadButton("downloadSourcePairwise2", "Download Pairwise File"),
+                                     br(),
+                                     busyIndicator("Processing...", wait = 500),
+                                     d3heatmapOutput("source_heatmap2", width=750, height=750)
+                            ),
                             tabPanel("Source Chord",
                                       h4("The chord diagram shows the source-relationships that fall within the low-and-high thresholds"),
                                       br(), 
