@@ -100,6 +100,7 @@ EpiTable <- function(main_input, source_input, geog_input, temp_input, source_co
   strain_sims <- merge.data.frame(strain_sims, source_matrix, by.x = c("Source.1", "Source.2"), by.y= c("Var1", "Var2"))
   strain_sims <- strain_sims[, c(3,4,1,2,5,6,7,8,9)]
   colnames(strain_sims) <- c("Strain.1", "Strain.2", "Source.1", "Source.2", "Date.1", "Date.2", "Location.1", "Location.2", "Source.Sim")
+  strain_sims$Source.Sim <- (1 - strain_sims$Source.Sim) 
   
   #### Lookup and merge temporal data: ####
   strain_sims <- merge.data.frame(strain_sims, temp_matrix, by.x= c("Strain.1", "Strain.2"), by.y = c("Var1", "Var2")) 

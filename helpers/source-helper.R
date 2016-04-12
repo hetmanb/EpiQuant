@@ -37,7 +37,7 @@ SourceMatrix <- function(source_data,mod8,mod7, mod0, mod14) {
   }
   sum.table <- vector()
   for (i in 1:nrow(xselect)){
-    sum.table[i] <- ((sum(epitab[[i]]))/(length(epitab[[i]])))
+    sum.table[i] <- (1 - ((sum(epitab[[i]]))/(length(epitab[[i]]))))
   }
   sim.matrix <- matrix(data=sum.table, nrow=nrow(data), ncol=nrow(data))
   # sim.matrix <- abs(1 - sim.matrix)
@@ -50,13 +50,15 @@ SourceMatrix <- function(source_data,mod8,mod7, mod0, mod14) {
 #Function 3 ######################################################################################################
 #function that calls heatmap.2 to generate a heatmap from the matrix calculations 
 source_heatmap <- function(m){
-  heatcolor<- colorRampPalette(c("white","goldenrod1","orangered2"))(256)
+  heatcolor<- colorRampPalette(c("orangered2", "goldenrod1", "white"))(256)
+  # heatcolor<- colorRampPalette(c("white","goldenrod1","orangered2"))(256)
   d3heatmap(m, dendrogram = 'both', colors = heatcolor, revC = TRUE)  
 #   heatmap.2(m, col=heatcolor, trace='none', margins = c(10, 10), keysize=0.8, revC=TRUE)
 }
 
 source_heatmap_pdf <- function(m){
-  heatcolor<- colorRampPalette(c("white","goldenrod1","orangered2"))(256)
+  # heatcolor<- colorRampPalette(c("white","goldenrod1","orangered2"))(256)
+  heatcolor<- colorRampPalette(c("orangered2", "goldenrod1", "white"))(256)
   heatmap.2(m, col=heatcolor, trace='none', margins = c(12, 12), keysize=0.8, revC=TRUE)
 }
 
