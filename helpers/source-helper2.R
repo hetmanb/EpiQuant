@@ -1,11 +1,12 @@
 ###################################### Function 2 SUM-Epimatrix##########################################################
 
-SourceMatrix2 <- function(source_data,mod8,mod7) {
+SourceMatrix2 <- function(source_data,mod8,mod7, mod14) {
   # load the epi-matrix that was made in Excel
   data <- as.matrix(source_data)
   #this is the standardized coefficient of differences - any sample will have this much difference in it, inherently
   mod8 <- mod8
   mod7 <- mod7
+  mod14 <- mod14
   #this generates all the possible non-redundant row pairings available in the matrix (eg 1vs2, 1vs3... 2vs3,etc) 
   #and saves it as a variable 'xselect'
   #Use for full matrix:
@@ -28,7 +29,7 @@ SourceMatrix2 <- function(source_data,mod8,mod7) {
                   ifelse(y==1, 0, 
                          ifelse(y==2, 1, 
                                 ifelse(y==7, mod7, 
-                                       ifelse(y==8, mod8, mod7)))))
+                                       ifelse(y==8, mod8, mod14)))))
     }
     
     epitab[[i]] <- y

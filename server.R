@@ -71,7 +71,7 @@ shinyServer(function(input, output, session) {
     if (is.null(inFile)) {
       return(NULL)
     }
-    m = (SourceMatrix(source_data=inFile, mod8=input$mod8, mod7=input$mod7, mod0=input$mod0))
+    m = (SourceMatrix(source_data=inFile, mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14 = input$mod14))
     source_heatmap(m)
   })
   #  ** TEST ** Generates a heatmap displaying source similarities using modified equation ####
@@ -80,7 +80,7 @@ shinyServer(function(input, output, session) {
     if (is.null(inFile)) {
       return(NULL)
     }
-    m = (SourceMatrix2(source_data=inFile, mod8=input$mod8, mod7=input$mod7))
+    m = (SourceMatrix2(source_data=inFile, mod8=input$mod8, mod7=input$mod7, mod14=input$mod14))
     source_heatmap(m)
   })
   
@@ -108,18 +108,18 @@ shinyServer(function(input, output, session) {
   output$downloadSourceMatrix2 <- downloadHandler( 
     filename = c("SourceMatrix.txt"),
     content = function(file){
-      write.table(SourceMatrix2(source_data = scoreDL(), mod8=input$mod8, mod7=input$mod7), file)
+      write.table(SourceMatrix2(source_data = scoreDL(), mod8=input$mod8, mod7=input$mod7, mod14=input$mod14), file)
     })
   output$downloadSourcePairwise2 <- downloadHandler( 
     filename = c("SourcePairwise.txt"),
     content = function(file){
-      write.table(melt(SourceMatrix2(scoreDL(), mod8=input$mod8, mod7=input$mod7)), sep='\t', file)
+      write.table(melt(SourceMatrix2(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod14=input$mod14)), sep='\t', file)
     })  
   output$downloadSourceHeatmap2 <- downloadHandler( 
     filename = c("SourceHeatmap.pdf"),
     content = function(file){
       pdf(file, width=15, height=15)
-      source_heatmap_pdf(SourceMatrix2(scoreDL(), mod8=input$mod8, mod7=input$mod7))
+      source_heatmap_pdf(SourceMatrix2(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod14=input$mod14))
       dev.off()
     })
 ############ Functions for the Source Chord Diagram JS Output: #############################
