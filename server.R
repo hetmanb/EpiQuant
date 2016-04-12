@@ -89,18 +89,18 @@ shinyServer(function(input, output, session) {
   output$downloadSourceMatrix <- downloadHandler( 
     filename = c("SourceMatrix.txt"),
     content = function(file){
-      write.table(SourceMatrix(source_data = scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0), file)
+      write.table(SourceMatrix(source_data = scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14), file)
     })
   output$downloadSourcePairwise <- downloadHandler( 
     filename = c("SourcePairwise.txt"),
     content = function(file){
-      write.table(melt(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0)), sep='\t', file)
+      write.table(melt(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14)), sep='\t', file)
     })  
   output$downloadSourceHeatmap <- downloadHandler( 
     filename = c("SourceHeatmap.pdf"),
     content = function(file){
       pdf(file, width=15, height=15)
-      source_heatmap_pdf(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0))
+      source_heatmap_pdf(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14))
       dev.off()
     })
   ############ Download Handlers ** TEST ** 2 : #############################
