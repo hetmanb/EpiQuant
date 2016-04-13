@@ -125,7 +125,7 @@ shinyServer(function(input, output, session) {
 ############ Functions for the Source Chord Diagram JS Output: #############################
 
   chord_in <- reactive({ 
-    melt(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0))
+    melt(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14 = input$mod14))
   })
   
   chord_file <- reactive({
@@ -222,7 +222,7 @@ output$jschord2 <- reactive({
 
 
 
-#### Download Handlers forepiData and Heatmaps: #####
+#### Download Handlers for epiData and Heatmaps: #####
 
   output$downloadEpiData <- downloadHandler( 
     filename = c("Epi_Sim_Data.txt"),

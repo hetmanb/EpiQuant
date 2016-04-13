@@ -21,7 +21,7 @@ cgf_calc <- function(data) {
   }
   sum.table <- vector()
   for (i in 1:nrow(xselect)){
-    sum.table[i] <- ((sum(cgftab[[i]]))/(length(cgftab[[i]])))
+    sum.table[i] <- (1- (sum(cgftab[[i]]))/(length(cgftab[[i]])))
   }
   sim.matrix <- matrix(data=sum.table, nrow=nrow(cgf), ncol=nrow(cgf))
   rownames(sim.matrix) <- cgf[1:nrow(cgf),1]

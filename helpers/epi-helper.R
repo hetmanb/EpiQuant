@@ -21,7 +21,7 @@ temp_calc <- function(input_data){
   time_log[time_log == -Inf ] <- 0
   max_log <- max(time_log)
   norm_time_log <- time_log / max_log
-  norm_time_log <- 1 - norm_time_log
+  # norm_time_log <- 1 - norm_time_log
   
   #### Import row and column names from the original datafile and melt data for easy reading ####
   rownames(norm_time_log) <- timedata$Strain
@@ -46,7 +46,7 @@ geog_calc <- function(input_data){
   geog_matrix[geog_matrix == -Inf ] <- 0
   max_d <- max(geog_matrix)
   geog_matrix <- geog_matrix / max_d
-  geog_matrix <- 1 - geog_matrix
+  # geog_matrix <- 1 - geog_matrix
   
   #### Import row and column names from the original datafile ####
   colnames(geog_matrix) <- d[, 1]
@@ -100,7 +100,7 @@ EpiTable <- function(main_input, source_input, geog_input, temp_input, source_co
   strain_sims <- merge.data.frame(strain_sims, source_matrix, by.x = c("Source.1", "Source.2"), by.y= c("Var1", "Var2"))
   strain_sims <- strain_sims[, c(3,4,1,2,5,6,7,8,9)]
   colnames(strain_sims) <- c("Strain.1", "Strain.2", "Source.1", "Source.2", "Date.1", "Date.2", "Location.1", "Location.2", "Source.Sim")
-  strain_sims$Source.Sim <- (1 - strain_sims$Source.Sim) 
+  # strain_sims$Source.Sim <- (1 - strain_sims$Source.Sim) 
   
   #### Lookup and merge temporal data: ####
   strain_sims <- merge.data.frame(strain_sims, temp_matrix, by.x= c("Strain.1", "Strain.2"), by.y = c("Var1", "Var2")) 
@@ -129,7 +129,7 @@ EpiMatrix <- function(table){
   rownames(str.cast) <- colnames(str.cast)
   
   #Turn the siminlarity values into distance values
-  str.cast <- abs(str.cast-1)
+  # str.cast <- abs(str.cast-1)
   #
   return(str.cast)
 }

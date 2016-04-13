@@ -36,11 +36,11 @@ SourceMatrix <- function(source_data,mod8,mod7, mod0, mod14) {
     epitab[[i]] <- y
   }
   sum.table <- vector()
+  #Distance values = 1 - sum of similarities / number of attributes
   for (i in 1:nrow(xselect)){
-    sum.table[i] <- (1 - ((sum(epitab[[i]]))/(length(epitab[[i]]))))
+      sum.table[i] <- (1 - ((sum(epitab[[i]]))/(length(epitab[[i]]))))
   }
   sim.matrix <- matrix(data=sum.table, nrow=nrow(data), ncol=nrow(data))
-  # sim.matrix <- abs(1 - sim.matrix)
   rownames(sim.matrix) <- data[1:nrow(data),1]
   colnames(sim.matrix) <- data[1:nrow(data),1]
   return(sim.matrix)
