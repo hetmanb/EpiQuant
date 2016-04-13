@@ -36,10 +36,10 @@ geog_calc <- function(input_data){
   
   #### Read data table from project folder - this contains locations and their GPS Coordinates ####  
   geogdata <- input_data
-  d <- geogdata  
+  # d <- geogdata  
   
   #### Create a matrix containing the pair-wise distances (in km) between all the locations using the fossil package ####
-  geog_matrix <- as.matrix(earth.dist(lats=d[,6:7], dist=TRUE))
+  geog_matrix <- as.matrix(earth.dist(lats=geogdata[,6:7], dist=TRUE))
   
   #### Calculate the maximum distance in the matrix and divide all values by it to arrive at a max distance of 1 ####
   geog_matrix <- log10(geog_matrix)
@@ -49,8 +49,8 @@ geog_calc <- function(input_data){
   # geog_matrix <- 1 - geog_matrix
   
   #### Import row and column names from the original datafile ####
-  colnames(geog_matrix) <- d[, 1]
-  rownames(geog_matrix) <- d[, 1]
+  colnames(geog_matrix) <- geogdata[, 1]
+  rownames(geog_matrix) <- geogdata[, 1]
   
   #### Create a melted pairwise distance table for easier readability ####
   geog_melt <- melt(geog_matrix) 
@@ -73,7 +73,7 @@ EpiTable <- function(main_input, source_input, geog_input, temp_input, source_co
   
   
   #### Create the pairwise table for lookups ####
-  d <- expand.grid(1:nrow(datafile), 1:nrow(datafile), include.equals=T)
+  d <- expand.grid(1:nrow(datafile), 1:nrow(datafile))
   #### Create Empty matrix ####
   strain_sims <- matrix(ncol=8, nrow=(nrow(d)))
   
@@ -87,7 +87,7 @@ EpiTable <- function(main_input, source_input, geog_input, temp_input, source_co
   
   #### Make concatenated strings from the date and location data for matching to the similarity scores: ####
   datafile$Date <- as.Date(paste(datafile$Year, datafile$Month, datafile$Day, sep = "-"))
-  datafile$Location <- as.character(paste(datafile$Country, datafile$Province.State, datafile$City, sep = "_"))
+  datafile$Location <- as.character(paste(datafile$Country, datafile$Province, datafile$City, sep = "_"))
   
   #### Populate the matrix with the date and location pairwise data and rename columns for readability: ####
   strain_sims[,5] <- as.character(datafile[(d[,1]),11])
@@ -99,22 +99,22 @@ EpiTable <- function(main_input, source_input, geog_input, temp_input, source_co
   #### Lookup and merge source data : ####
   strain_sims <- merge.data.frame(strain_sims, source_matrix, by.x = c("Source.1", "Source.2"), by.y= c("Var1", "Var2"))
   strain_sims <- strain_sims[, c(3,4,1,2,5,6,7,8,9)]
-  colnames(strain_sims) <- c("Strain.1", "Strain.2", "Source.1", "Source.2", "Date.1", "Date.2", "Location.1", "Location.2", "Source.Sim")
+  colnames(strain_sims) <- c("Strain.1", "Strain.2", "Source.1", "Source.2", "Date.1", "Date.2", "Location.1", "Location.2", "Source.Dist")
   # strain_sims$Source.Sim <- (1 - strain_sims$Source.Sim) 
   
   #### Lookup and merge temporal data: ####
   strain_sims <- merge.data.frame(strain_sims, temp_matrix, by.x= c("Strain.1", "Strain.2"), by.y = c("Var1", "Var2")) 
-  colnames(strain_sims) <- c("Strain.1", "Strain.2", "Source.1", "Source.2", "Date.1", "Date.2", "Location.1", "Location.2", "Source.Sim", "Temp.Sim")
+  colnames(strain_sims) <- c("Strain.1", "Strain.2", "Source.1", "Source.2", "Date.1", "Date.2", "Location.1", "Location.2", "Source.Dist", "Temp.Dist")
   
   #### Lookup and merge Geography data : ####
   strain_sims <- merge.data.frame(strain_sims, geog_matrix, by.x= c("Strain.1", "Strain.2"), by.y = c("Var1", "Var2"))
-  colnames(strain_sims) <- c("Strain.1", "Strain.2", "Source.1", "Source.2", "Location.1", "Location.2", "Date.1", "Date.2", "Source.Sim", "Temp.Sim", "Geog.Sim")
+  colnames(strain_sims) <- c("Strain.1", "Strain.2", "Source.1", "Source.2", "Date.1", "Date.2", "Location.1", "Location.2", "Source.Dist", "Temp.Dist", "Geog.Dist")
   
   #### Finalize the similarity matrix and calculate the overall similarity between the strains: ####
   str.matrix <- strain_sims
-  str.matrix$total <- NA
+  str.matrix$Total.Dist <- NA
   #str.matrix$total <- ((str.matrix$Source.Sim*x) + (str.matrix$Temp.Sim*y) + (str.matrix$Geog.Sim*z))
-  str.matrix$total <- sqrt( ((str.matrix$Source.Sim^2)*x) + ((str.matrix$Temp.Sim^2)*y) + ((str.matrix$Geog.Sim^2)*z) ) 
+  str.matrix$Total.Dist <- sqrt( ((str.matrix$Source.Dist^2)*x) + ((str.matrix$Temp.Dist^2)*y) + ((str.matrix$Geog.Dist^2)*z) ) 
   return(str.matrix)
 }  
 
@@ -122,16 +122,13 @@ EpiTable <- function(main_input, source_input, geog_input, temp_input, source_co
 ######## Function to return matrix of just strains and final similarity scores for building graphics #####
 
 EpiMatrix <- function(table){
-  str.matrix <- table
-  str.matrix <- str.matrix[,c(1,2,12)]
-  str.cast <- dcast(str.matrix, formula= Strain.1 ~ Strain.2)
-  str.cast <- as.matrix(str.cast[,2:ncol(str.cast)]) 
-  rownames(str.cast) <- colnames(str.cast)
+  epi.matrix <- table
+  epi.matrix <- epi.matrix[,c(1,2,12)]
+  epi.cast <- dcast(epi.matrix, formula= Strain.1 ~ Strain.2, value.var = "Total.Dist")
+  epi.cast <- as.matrix(epi.cast[,2:ncol(epi.cast)]) 
+  rownames(epi.cast) <- colnames(epi.cast)
   
-  #Turn the siminlarity values into distance values
-  # str.cast <- abs(str.cast-1)
-  #
-  return(str.cast)
+  return(epi.cast)
 }
 
 
@@ -139,11 +136,14 @@ EpiMatrix <- function(table){
 ######## Function to return a heatmap of the final EPIMATRIX function ####################
 EpiHeatmap <- function(m){
   heatcolor<- colorRampPalette(c("darkgreen","yellowgreen","white"))(512)
-  d3heatmap(m, dendrogram = 'both', colors=heatcolor, revC=TRUE, hclustfun = function(x) hclust(x,method = 'single'))
+  d3heatmap(m, dendrogram = 'both', colors=heatcolor, Rowv = T, reorderfun = function(d, w) rev(reorder(d, w)),
+            revC=TRUE, hclustfun = function(x) hclust(x,method = 'single'))
 }
 
 EpiHeatmap_pdf <- function(m){
   heatcolor<- colorRampPalette(c("darkgreen","yellowgreen","white"))(512)
-  heatmap.2(m, col=heatcolor, margins=c(10,10), trace='none', keysize=0.6, revC=TRUE, hclustfun = function(x) hclust(x,method = 'single'))#, distfun = 'single')
+  heatmap.2(m, col=heatcolor, Rowv = TRUE ,margins=c(10,10), trace='none', srtCol = 45,
+            keysize=0.6, revC=T, #reorderfun = function(d, w) rev(reorder(d, w)), 
+            hclustfun = function(x) hclust(x,method = 'single'))
 }
 

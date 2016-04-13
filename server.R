@@ -56,7 +56,7 @@ shinyServer(function(input, output, session) {
   output$scoretable <- renderHotable({  
       inFile <- input$source_scores
       if ((is.null(inFile)) && (input$source_demo == TRUE)) {        
-        return(read.table("pub_data/00_sourcetest_v2.txt", header=T, sep='\t'))
+        return(read.table("pub_data/sourcetest_v2.txt", header=T, sep='\t'))
       }
       read.table(inFile$datapath, header=T, sep='\t')
     }, readOnly = F)
