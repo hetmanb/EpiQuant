@@ -1,0 +1,275 @@
+Strain	Source	Country	Province	City	Latitude	Longitude	Day	Month	Year
+CE_M_09_4099	Chicken_Farm	Canada	Ontario	Waterloo	43.4642578	-80.5204096	21	9	2009
+CE_M_10_4054	Chicken_Farm	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	6	2010
+CE_M_10_4091	Chicken_Farm	Canada	Ontario	Waterloo	43.4642578	-80.5204096	20	9	2010
+CI_1964	Chicken_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	28	6	2006
+CI_1969	Chicken_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	28	6	2006
+CI_2061	Chicken_Farm	Canada	Alberta	Coaldale	49.7275202	-112.6179093	11	7	2006
+CI_0677	Chicken_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	5	10	2004
+CI_0685	Chicken_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	5	10	2004
+CI_2055	Duck_Farm	Canada	Alberta	Coaldale	49.7275202	-112.6179093	11	7	2006
+CI_2009	Duck_Farm	Canada	Alberta	Coaldale	49.7275202	-112.6179093	4	7	2006
+CI_1920	Goose_Farm	Canada	Alberta	Fort Macleod	49.7216792	-113.4000408	20	6	2006
+CI_2004	Goose_Farm	Canada	Alberta	Coaldale	49.7275202	-112.6179093	4	7	2006
+CI_0765	Goose_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	15	11	2004
+CI_0458	Goose_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	19	8	2004
+CI_0450	Goose_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	19	8	2004
+CI_0453	Goose_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	19	8	2004
+CE2_R_11_3009	Chicken_Retail	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	4	1	2011
+CE2_R2_11_1009	Chicken_Retail	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	10	5	2011
+CE2_R_11_3021	Chicken_Retail	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	1	2	2011
+CE2_R2_11_1006	Chicken_Retail	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	5	4	2011
+CE2_R2_11_3023	Chicken_Retail	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	15	3	2011
+CE2_R_11_3039	Chicken_Retail	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	1	3	2011
+CE2_R_11_1063	Chicken_Retail	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	23	8	2011
+CE2_R_11_3131	Chicken_Retail	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	6	9	2011
+CE2_R2_11_2018	Chicken_Retail	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	5	7	2011
+CE2_R_11_3113	Chicken_Retail	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	12	7	2011
+CE2_R2_11_3081	Chicken_Retail	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	12	7	2011
+CE2_R2_11_1027	Chicken_Retail	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	19	7	2011
+CE2_R2_11_1033	Chicken_Retail	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	19	7	2011
+06_2866	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	26	9	2005
+08_1709	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	18	9	2007
+08_1714	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	9	10	2007
+08_1700	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	8	2007
+08_0099	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	21	7	2007
+08_0096	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	16	7	2007
+07_7314	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	10	4	2007
+07_7331	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	11	6	2007
+07_7324	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	28	5	2007
+CE_R_10_0305	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	29	6	2010
+CE_R_10_0273	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	15	6	2010
+CE_R_11_0192	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	12	7	2011
+CE_R_11_0170	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	9	7	2011
+CE_R_11_0178	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	9	7	2011
+CE_R_11_0114	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	3	5	2011
+CE_R_11_0100	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	19	4	2011
+CE_R_11_0077	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	22	3	2011
+CE_R2_11_0134	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	8	3	2011
+CE_R_11_0270	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	4	10	2011
+CE_R_11_0251	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	13	9	2011
+CE_R_11_0238	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	30	8	2011
+CE_R_11_0240	Chicken_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	30	8	2011
+CE2_R2_11_2022	Turkey_Retail	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	5	7	2011
+CE2_R2_11_3085	Turkey_Retail	Canada	British Columbia	Chilliwack	49.1579401	-121.9514666	12	7	2011
+CE_R2_11_0350	Turkey_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	8	2011
+CE_R2_11_0374	Turkey_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	23	8	2011
+CI_0405	Cat	Canada	Alberta	N/A	53.9332706	-116.5765035	10	8	2004
+CI_1943	Dog	Canada	Alberta	Lethbridge	49.69349	-112.84184	26	6	2006
+CI_5943	Horse	Canada	Alberta	N/A	53.9332706	-116.5765035	8	8	2012
+CI_5947	Horse	Canada	Alberta	N/A	53.9332706	-116.5765035	8	8	2012
+CI_5997	Raccoon	Canada	Ontario	N/A	51.253775	-85.3232139	19	7	2012
+CI_4990	Raccoon	Canada	Ontario	N/A	51.253775	-85.3232139	13	10	2011
+CI_4864	Raccoon	Canada	Ontario	N/A	51.253775	-85.3232139	5	10	2011
+CI_4835	Raccoon	Canada	Ontario	N/A	51.253775	-85.3232139	4	10	2011
+CI_4909	Raccoon	Canada	Ontario	N/A	51.253775	-85.3232139	4	10	2011
+CI_0955	Pig_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	6	6	2005
+08_0100	Pig_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	23	7	2007
+08_1711	Pig_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	18	9	2007
+CE_R_10_0306	Pig_Retail	Canada	Ontario	Waterloo	43.4642578	-80.5204096	29	6	2010
+06_6554	Cow_Farm	Canada	Ontario	Waterloo	43.4642578	-80.5204096	4	7	2006
+CE_M_09_3054	Cow_Farm	Canada	Ontario	Waterloo	43.4642578	-80.5204096	19	5	2009
+CE_M_09_3081	Cow_Farm	Canada	Ontario	Waterloo	43.4642578	-80.5204096	20	7	2009
+CE_M_09_2085	Cow_Farm	Canada	Ontario	Waterloo	43.4642578	-80.5204096	27	7	2009
+CE_M_10_3062	Cow_Farm	Canada	Ontario	Waterloo	43.4642578	-80.5204096	29	6	2010
+CE_M_10_3107	Cow_Farm	Canada	Ontario	Waterloo	43.4642578	-80.5204096	15	11	2010
+CE_M_10_2096	Cow_Farm	Canada	Ontario	Waterloo	43.4642578	-80.5204096	29	11	2010
+CE_M_10_2108	Cow_Farm	Canada	Ontario	Waterloo	43.4642578	-80.5204096	6	12	2010
+CE_M_10_2113	Cow_Farm	Canada	Ontario	Waterloo	43.4642578	-80.5204096	6	12	2010
+CI_5889	Cow_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	8	8	2012
+CI_5906	Cow_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	8	8	2012
+CI_5328	Cow_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	24	4	2012
+CI_5357	Cow_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	24	4	2012
+CI_5429	Cow_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	29	5	2012
+CI_5692	Cow_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	9	7	2012
+CI_4458	Cow_Farm	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4447	Cow_Farm	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4428	Cow_Farm	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4424	Cow_Farm	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4411	Cow_Farm	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4395	Cow_Farm	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4383	Cow_Farm	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4378	Cow_Farm	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4360	Cow_Farm	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4353	Cow_Farm	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_4356	Cow_Farm	Canada	Alberta	Stirling	49.5023104	-112.5231788	4	7	2011
+CI_3290	Cow_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	13	1	2009
+CI_3299	Cow_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	19	1	2009
+CI_4108	Cow_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	4	1	2011
+CI_5245	Cow_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	21	11	2011
+CI_5254	Cow_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	29	11	2011
+CI_5265	Cow_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	6	12	2011
+CI_5292	Cow_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	13	12	2011
+CI_5300	Cow_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	19	12	2011
+CI_1884	Cow_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	29	5	2006
+CI_1874	Cow_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	29	5	2006
+CI_1875	Cow_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	29	5	2006
+CI_0918	Cow_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	25	5	2005
+CI_1096	Cow_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	20	7	2005
+CI_1109	Cow_Farm	Canada	Alberta	Fort Macleod	49.7216792	-113.4000408	10	8	2005
+CI_0973	Cow_Farm	Canada	Alberta	Fort Macleod	49.7216792	-113.4000408	22	6	2005
+CI_0987	Cow_Farm	Canada	Alberta	Pincher Creek	49.4863458	-113.9502548	22	6	2005
+CI_0927	Cow_Farm	Canada	Alberta	Pincher Creek	49.4863458	-113.9502548	17	5	2005
+CI_0898	Cow_Farm	Canada	Alberta	Pincher Creek	49.4863458	-113.9502548	17	5	2005
+CI_0884	Cow_Farm	Canada	Alberta	Pincher Creek	49.4863458	-113.9502548	17	5	2005
+CI_0893	Cow_Farm	Canada	Alberta	Pincher Creek	49.4863458	-113.9502548	17	5	2005
+CI_0783	Cow_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	15	11	2004
+CI_0334	Cow_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	21	7	2004
+CI_0322	Cow_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	12	7	2004
+CI_0325	Cow_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	12	7	2004
+CI_0182	Cow_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	8	6	2004
+CI_0168	Cow_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	2	6	2004
+CI_0136	Cow_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	2	6	2004
+CI_0165	Cow_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	2	6	2004
+CI_1092	Sheep_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	20	7	2005
+CI_1117	Sheep_Farm	Canada	Alberta	Lethbridge	49.69349	-112.84184	10	8	2005
+CI_0346	Sheep_Farm	Canada	Alberta	N/A	53.9332706	-116.5765035	21	7	2004
+CI_0637	Water_Sewage	Canada	Alberta	Fort Macleod	49.7216792	-113.4000408	28	9	2004
+CI_0392	Water_Sewage	Canada	Alberta	Fort Macleod	49.7216792	-113.4000408	28	7	2004
+CI_3889	Water_Surface	Canada	Alberta	N/A	53.9332706	-116.5765035	6	7	2010
+CI_3986	Water_Surface	Canada	Alberta	N/A	53.9332706	-116.5765035	27	9	2010
+CI_3943	Water_Surface	Canada	Alberta	N/A	53.9332706	-116.5765035	17	8	2010
+CI_2840	Water_Surface	Canada	Alberta	N/A	53.9332706	-116.5765035	15	5	2007
+CI_1915	Water_Surface	Canada	Alberta	N/A	53.9332706	-116.5765035	7	6	2006
+CI_2328	Water_Surface	Canada	Alberta	N/A	53.9332706	-116.5765035	26	9	2006
+CI_1415	Water_Surface	Canada	Alberta	N/A	53.9332706	-116.5765035	28	9	2005
+CI_0292	Water_Surface	Canada	Alberta	N/A	53.9332706	-116.5765035	14	7	2004
+CI_0094	Water_Surface	Canada	Alberta	N/A	53.9332706	-116.5765035	16	6	2004
+CI_0697	Water_Surface	Canada	Alberta	N/A	53.9332706	-116.5765035	6	10	2004
+CI_0699	Water_Surface	Canada	Alberta	N/A	53.9332706	-116.5765035	6	10	2004
+CI_0609	Water_Surface	Canada	Alberta	N/A	53.9332706	-116.5765035	15	9	2004
+CI_0532	Water_Surface	Canada	Alberta	N/A	53.9332706	-116.5765035	1	9	2004
+CI_2950	Water_Surface	Canada	Alberta	Lethbridge	49.69349	-112.84184	17	9	2007
+CI_3036	Water_Surface	Canada	Alberta	Lethbridge	49.69349	-112.84184	19	11	2007
+CI_3043	Water_Surface	Canada	Alberta	Lethbridge	49.69349	-112.84184	19	11	2007
+CI_2695	Water_Surface	Canada	Alberta	Lethbridge	49.69349	-112.84184	27	11	2006
+CI_2499	Water_Surface	Canada	Alberta	Lethbridge	49.69349	-112.84184	30	10	2006
+CI_2533	Water_Surface	Canada	Alberta	Lethbridge	49.69349	-112.84184	6	11	2006
+CI_2536	Water_Surface	Canada	Alberta	Lethbridge	49.69349	-112.84184	6	11	2006
+CI_5198	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	21	11	2011
+CI_4806	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	26	9	2011
+CI_5034	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	24	10	2011
+CI_4102	Water_Surface	Canada	Quebec	N/A	52.9399159	-73.5491361	15	11	2010
+CI_3856	Water_Surface	Canada	Quebec	N/A	52.9399159	-73.5491361	28	6	2010
+CI_4071	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	15	11	2010
+CI_4079	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	15	11	2010
+CI_3879	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	28	6	2010
+CI_3812	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	31	5	2010
+CI_3252	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	3	11	2008
+CI_3421	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	15	6	2009
+CI_3609	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	5	10	2009
+CI_3643	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	19	10	2009
+CI_2864	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	18	6	2007
+CI_1845	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	15	5	2006
+CI_2510	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	30	10	2006
+CI_2605	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	14	11	2006
+CI_2423	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	16	10	2006
+CI_2439	Water_Surface	Canada	Ontario	N/A	51.253775	-85.3232139	16	10	2006
+CI_3074	Water_Surface	Canada	British Columbia	Sumas River	49.0405691	-122.1836635	3	12	2007
+CI_2989	Water_Surface	Canada	British Columbia	Sumas River	49.0405691	-122.1836635	9	10	2007
+CI_2991	Water_Surface	Canada	British Columbia	Sumas River	49.0405691	-122.1836635	9	10	2007
+CI_2230	Water_Surface	Canada	New Brunswick	Grand Falls	47.0479934	-67.7399015	30	8	2006
+CI_1660	Water_Surface	Canada	New Brunswick	Grand Falls	47.0479934	-67.7399015	21	3	2006
+CI_1653	Water_Surface	Canada	Alberta	Fort Macleod	49.7216792	-113.4000408	13	3	2006
+CI_2548	Water_Surface	Canada	British Columbia	Sumas River	49.0405691	-122.1836635	6	11	2006
+CI_2705	Water_Surface	Canada	British Columbia	Sumas River	49.0405691	-122.1836635	4	12	2006
+CI_1799	Water_Surface	Canada	British Columbia	Sumas River	49.0405691	-122.1836635	24	4	2006
+CI_1636	Water_Surface	Canada	British Columbia	Salmon River	49.1463835	-122.597773	6	3	2006
+08_5603	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	12	8	2008
+08_5925	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	15	8	2008
+08_6160	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	22	8	2008
+08_6208	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	28	8	2008
+08_7039	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	23	9	2008
+08_7017	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	17	9	2008
+08_6877	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	9	2008
+08_7016	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	12	9	2008
+08_4456	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	26	6	2008
+08_4696	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	7	2008
+08_4697	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	7	2008
+08_4913	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	15	7	2008
+08_5176	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	22	7	2008
+08_5490	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	28	7	2008
+08_4603	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	7	2008
+08_4474	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	7	2008
+08_4472	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	7	2008
+08_4468	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	7	2008
+08_4466	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	7	2008
+08_4460	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	7	2008
+08_4461	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	7	2008
+06_3783	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	4	7	2006
+06_3851	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	5	7	2006
+06_3852	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	5	7	2006
+06_3245	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	6	6	2006
+06_3849	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	22	6	2006
+06_3569	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	19	6	2006
+06_7331	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	11	2006
+06_7332	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	29	10	2006
+06_7515	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	23	11	2006
+06_7656	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	4	12	2006
+06_5790	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	13	9	2006
+06_6212	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	24	9	2006
+06_6211	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	19	9	2006
+06_4734	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	10	8	2006
+06_4911	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	15	8	2006
+06_5176	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	18	8	2006
+07_5581	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	5	9	2007
+07_5583	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	6	9	2007
+07_6215	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	3	10	2007
+07_6017	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	23	9	2007
+07_6066	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	25	9	2007
+07_5038	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	20	8	2007
+07_5039	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	21	8	2007
+07_5041	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	21	8	2007
+07_3238	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	19	6	2007
+07_4428	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	8	2007
+07_4268	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	31	7	2007
+07_4269	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	31	7	2007
+07_4076	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	20	7	2007
+07_3853	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	16	7	2007
+07_3647	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	10	7	2007
+07_3508	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	6	7	2007
+07_2680	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	30	5	2007
+07_2174	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	7	5	2007
+07_1875	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	17	4	2007
+07_1493	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	29	3	2007
+07_0971	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	2	3	2007
+07_1009	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	6	3	2007
+07_0675	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	13	2	2007
+07_0549	Human_Urban	Canada	Ontario	Waterloo	43.4642578	-80.5204096	5	2	2007
+CHR_053	Human_Urban	Canada	Alberta	Lethbridge	49.69349	-112.84184	13	9	2004
+CHR_028	Human_Urban	Canada	Alberta	Lethbridge	49.69349	-112.84184	12	7	2004
+CHR_026	Human_Urban	Canada	Alberta	Lethbridge	49.69349	-112.84184	8	7	2004
+CHR_023	Human_Urban	Canada	Alberta	Lethbridge	49.69349	-112.84184	21	6	2004
+CHR_022	Human_Urban	Canada	Alberta	Lethbridge	49.69349	-112.84184	20	6	2004
+CHR_151	Human_Urban	Canada	Alberta	Lethbridge	49.69349	-112.84184	26	8	2005
+CHR_119	Human_Urban	Canada	Alberta	Lethbridge	49.69349	-112.84184	6	6	2005
+CHR_127	Human_Urban	Canada	Alberta	Lethbridge	49.69349	-112.84184	16	6	2005
+CHR_130	Human_Urban	Canada	Alberta	Lethbridge	49.69349	-112.84184	24	6	2005
+CHR_090	Human_Urban	Canada	Alberta	Lethbridge	49.69349	-112.84184	26	6	2005
+CHR_159	Human_Urban	Canada	Alberta	Lethbridge	49.69349	-112.84184	27	6	2005
+CGY_HR_121	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	1	1	2005
+CGY_HR_009	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	14	4	2005
+CGY_HR_027	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	28	4	2005
+CGY_HR_026	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	26	4	2005
+CGY_HR_013	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	18	4	2005
+CGY_HR_022	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	23	4	2005
+CGY_HR_020	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	21	4	2005
+CGY_HR_139	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	27	6	2005
+CGY_HR_140	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	27	6	2005
+CGY_HR_170	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	2	7	2005
+CGY_HR_174	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	4	7	2005
+CGY_HR_061	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	25	5	2005
+CGY_HR_058	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	22	5	2005
+CGY_HR_080	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	2	6	2005
+CGY_HR_082	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	3	6	2005
+CGY_HR_083	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	3	6	2005
+CGY_HR_073	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	31	5	2005
+CGY_HR_074	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	1	6	2005
+CGY_HR_076	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	1	6	2005
+CGY_HR_118	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	21	6	2005
+CGY_HR_108	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	18	6	2005
+CGY_HR_109	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	18	6	2005
+CGY_HR_090	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	8	6	2005
+CGY_HR_098	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	12	6	2005
+CGY_HR_101	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	14	6	2005
+CGY_HR_103	Human_Urban	Canada	Alberta	Calgary	51.0453246	-114.0581012	14	6	2005
