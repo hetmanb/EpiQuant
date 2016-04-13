@@ -36,7 +36,7 @@ SourceMatrix2 <- function(source_data,mod8,mod7, mod14) {
   }
   sum.table <- vector()
   for (i in 1:nrow(xselect)){
-    sum.table[i] <- ((sum(epitab[[i]]))/(length(which(epitab[[i]] > 0 ))))
+    sum.table[i] <- 1 - ((sum(epitab[[i]]))/(length(which(epitab[[i]] > 0 ))))
   }
   sim.matrix <- matrix(data=sum.table, nrow=nrow(data), ncol=nrow(data))
   # sim.matrix <- abs(1 - sim.matrix)
