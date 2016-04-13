@@ -1,0 +1,1601 @@
+"Var1"	"Var2"	"value"
+"1"	"Chicken_Abattoir"	"Chicken_Abattoir"	0
+"2"	"Chicken_Farm"	"Chicken_Abattoir"	0.216
+"3"	"Chicken_Retail"	"Chicken_Abattoir"	0.176
+"4"	"Turkey_Farm"	"Chicken_Abattoir"	0.216
+"5"	"Turkey_Retail"	"Chicken_Abattoir"	0.176
+"6"	"Duck_Farm"	"Chicken_Abattoir"	0.216
+"7"	"Duck_Retail"	"Chicken_Abattoir"	0.176
+"8"	"Goose_Farm"	"Chicken_Abattoir"	0.216
+"9"	"Cow_Abattoir"	"Chicken_Abattoir"	0.248
+"10"	"Cow_Farm"	"Chicken_Abattoir"	0.36
+"11"	"Cow_Retail"	"Chicken_Abattoir"	0.32
+"12"	"Pig_Farm"	"Chicken_Abattoir"	0.296
+"13"	"Pig_Retail"	"Chicken_Abattoir"	0.256
+"14"	"Goat_Farm"	"Chicken_Abattoir"	0.28
+"15"	"Sheep_Farm"	"Chicken_Abattoir"	0.28
+"16"	"Sheep_Retail"	"Chicken_Abattoir"	0.256
+"17"	"Donkey"	"Chicken_Abattoir"	0.416
+"18"	"Horse"	"Chicken_Abattoir"	0.416
+"19"	"Llama"	"Chicken_Abattoir"	0.416
+"20"	"Seagull"	"Chicken_Abattoir"	0.448
+"21"	"Raccoon"	"Chicken_Abattoir"	0.536
+"22"	"Wild Bird"	"Chicken_Abattoir"	0.472
+"23"	"Cat"	"Chicken_Abattoir"	0.472
+"24"	"Dog"	"Chicken_Abattoir"	0.472
+"25"	"Fly"	"Chicken_Abattoir"	0.616
+"26"	"Rat"	"Chicken_Abattoir"	0.432
+"27"	"Skunk"	"Chicken_Abattoir"	0.456
+"28"	"Deer"	"Chicken_Abattoir"	0.488
+"29"	"Farm Soil"	"Chicken_Abattoir"	0.44
+"30"	"Sewage"	"Chicken_Abattoir"	0.608
+"31"	"Lake Water"	"Chicken_Abattoir"	0.704
+"32"	"Human_Urban"	"Chicken_Abattoir"	0.568
+"33"	"Human_Farm Worker"	"Chicken_Abattoir"	0.688
+"34"	"Human_Abattoir Worker"	"Chicken_Abattoir"	0.576
+"35"	"Farm Lagoon"	"Chicken_Abattoir"	0.464
+"36"	"Farm Manure"	"Chicken_Abattoir"	0.496
+"37"	"Fresh Produce"	"Chicken_Abattoir"	0.424
+"38"	"Raw Milk"	"Chicken_Abattoir"	0.36
+"39"	"Beach Sand"	"Chicken_Abattoir"	0.8
+"40"	"Irrigation Water"	"Chicken_Abattoir"	0.616
+"41"	"Chicken_Abattoir"	"Chicken_Farm"	0.216
+"42"	"Chicken_Farm"	"Chicken_Farm"	0
+"43"	"Chicken_Retail"	"Chicken_Farm"	0.208
+"44"	"Turkey_Farm"	"Chicken_Farm"	0.04
+"45"	"Turkey_Retail"	"Chicken_Farm"	0.208
+"46"	"Duck_Farm"	"Chicken_Farm"	0.04
+"47"	"Duck_Retail"	"Chicken_Farm"	0.208
+"48"	"Goose_Farm"	"Chicken_Farm"	0.04
+"49"	"Cow_Abattoir"	"Chicken_Farm"	0.296
+"50"	"Cow_Farm"	"Chicken_Farm"	0.184
+"51"	"Cow_Retail"	"Chicken_Farm"	0.352
+"52"	"Pig_Farm"	"Chicken_Farm"	0.12
+"53"	"Pig_Retail"	"Chicken_Farm"	0.288
+"54"	"Goat_Farm"	"Chicken_Farm"	0.2
+"55"	"Sheep_Farm"	"Chicken_Farm"	0.2
+"56"	"Sheep_Retail"	"Chicken_Farm"	0.288
+"57"	"Donkey"	"Chicken_Farm"	0.48
+"58"	"Horse"	"Chicken_Farm"	0.48
+"59"	"Llama"	"Chicken_Farm"	0.48
+"60"	"Seagull"	"Chicken_Farm"	0.48
+"61"	"Raccoon"	"Chicken_Farm"	0.544
+"62"	"Wild Bird"	"Chicken_Farm"	0.504
+"63"	"Cat"	"Chicken_Farm"	0.544
+"64"	"Dog"	"Chicken_Farm"	0.544
+"65"	"Fly"	"Chicken_Farm"	0.536
+"66"	"Rat"	"Chicken_Farm"	0.44
+"67"	"Skunk"	"Chicken_Farm"	0.448
+"68"	"Deer"	"Chicken_Farm"	0.52
+"69"	"Farm Soil"	"Chicken_Farm"	0.448
+"70"	"Sewage"	"Chicken_Farm"	0.68
+"71"	"Lake Water"	"Chicken_Farm"	0.696
+"72"	"Human_Urban"	"Chicken_Farm"	0.64
+"73"	"Human_Farm Worker"	"Chicken_Farm"	0.568
+"74"	"Human_Abattoir Worker"	"Chicken_Farm"	0.68
+"75"	"Farm Lagoon"	"Chicken_Farm"	0.472
+"76"	"Farm Manure"	"Chicken_Farm"	0.504
+"77"	"Fresh Produce"	"Chicken_Farm"	0.4
+"78"	"Raw Milk"	"Chicken_Farm"	0.352
+"79"	"Beach Sand"	"Chicken_Farm"	0.792
+"80"	"Irrigation Water"	"Chicken_Farm"	0.624
+"81"	"Chicken_Abattoir"	"Chicken_Retail"	0.176
+"82"	"Chicken_Farm"	"Chicken_Retail"	0.208
+"83"	"Chicken_Retail"	"Chicken_Retail"	0
+"84"	"Turkey_Farm"	"Chicken_Retail"	0.208
+"85"	"Turkey_Retail"	"Chicken_Retail"	0.04
+"86"	"Duck_Farm"	"Chicken_Retail"	0.208
+"87"	"Duck_Retail"	"Chicken_Retail"	0.04
+"88"	"Goose_Farm"	"Chicken_Retail"	0.208
+"89"	"Cow_Abattoir"	"Chicken_Retail"	0.296
+"90"	"Cow_Farm"	"Chicken_Retail"	0.352
+"91"	"Cow_Retail"	"Chicken_Retail"	0.184
+"92"	"Pig_Farm"	"Chicken_Retail"	0.288
+"93"	"Pig_Retail"	"Chicken_Retail"	0.12
+"94"	"Goat_Farm"	"Chicken_Retail"	0.24
+"95"	"Sheep_Farm"	"Chicken_Retail"	0.24
+"96"	"Sheep_Retail"	"Chicken_Retail"	0.12
+"97"	"Donkey"	"Chicken_Retail"	0.392
+"98"	"Horse"	"Chicken_Retail"	0.392
+"99"	"Llama"	"Chicken_Retail"	0.392
+"100"	"Seagull"	"Chicken_Retail"	0.48
+"101"	"Raccoon"	"Chicken_Retail"	0.512
+"102"	"Wild Bird"	"Chicken_Retail"	0.504
+"103"	"Cat"	"Chicken_Retail"	0.504
+"104"	"Dog"	"Chicken_Retail"	0.504
+"105"	"Fly"	"Chicken_Retail"	0.592
+"106"	"Rat"	"Chicken_Retail"	0.408
+"107"	"Skunk"	"Chicken_Retail"	0.432
+"108"	"Deer"	"Chicken_Retail"	0.52
+"109"	"Farm Soil"	"Chicken_Retail"	0.448
+"110"	"Sewage"	"Chicken_Retail"	0.64
+"111"	"Lake Water"	"Chicken_Retail"	0.68
+"112"	"Human_Urban"	"Chicken_Retail"	0.52
+"113"	"Human_Farm Worker"	"Chicken_Retail"	0.624
+"114"	"Human_Abattoir Worker"	"Chicken_Retail"	0.624
+"115"	"Farm Lagoon"	"Chicken_Retail"	0.472
+"116"	"Farm Manure"	"Chicken_Retail"	0.504
+"117"	"Fresh Produce"	"Chicken_Retail"	0.4
+"118"	"Raw Milk"	"Chicken_Retail"	0.28
+"119"	"Beach Sand"	"Chicken_Retail"	0.776
+"120"	"Irrigation Water"	"Chicken_Retail"	0.624
+"121"	"Chicken_Abattoir"	"Turkey_Farm"	0.216
+"122"	"Chicken_Farm"	"Turkey_Farm"	0.04
+"123"	"Chicken_Retail"	"Turkey_Farm"	0.208
+"124"	"Turkey_Farm"	"Turkey_Farm"	0
+"125"	"Turkey_Retail"	"Turkey_Farm"	0.208
+"126"	"Duck_Farm"	"Turkey_Farm"	0.04
+"127"	"Duck_Retail"	"Turkey_Farm"	0.208
+"128"	"Goose_Farm"	"Turkey_Farm"	0.04
+"129"	"Cow_Abattoir"	"Turkey_Farm"	0.296
+"130"	"Cow_Farm"	"Turkey_Farm"	0.184
+"131"	"Cow_Retail"	"Turkey_Farm"	0.352
+"132"	"Pig_Farm"	"Turkey_Farm"	0.12
+"133"	"Pig_Retail"	"Turkey_Farm"	0.288
+"134"	"Goat_Farm"	"Turkey_Farm"	0.2
+"135"	"Sheep_Farm"	"Turkey_Farm"	0.2
+"136"	"Sheep_Retail"	"Turkey_Farm"	0.288
+"137"	"Donkey"	"Turkey_Farm"	0.48
+"138"	"Horse"	"Turkey_Farm"	0.48
+"139"	"Llama"	"Turkey_Farm"	0.48
+"140"	"Seagull"	"Turkey_Farm"	0.48
+"141"	"Raccoon"	"Turkey_Farm"	0.544
+"142"	"Wild Bird"	"Turkey_Farm"	0.504
+"143"	"Cat"	"Turkey_Farm"	0.544
+"144"	"Dog"	"Turkey_Farm"	0.544
+"145"	"Fly"	"Turkey_Farm"	0.536
+"146"	"Rat"	"Turkey_Farm"	0.44
+"147"	"Skunk"	"Turkey_Farm"	0.448
+"148"	"Deer"	"Turkey_Farm"	0.52
+"149"	"Farm Soil"	"Turkey_Farm"	0.448
+"150"	"Sewage"	"Turkey_Farm"	0.68
+"151"	"Lake Water"	"Turkey_Farm"	0.696
+"152"	"Human_Urban"	"Turkey_Farm"	0.64
+"153"	"Human_Farm Worker"	"Turkey_Farm"	0.568
+"154"	"Human_Abattoir Worker"	"Turkey_Farm"	0.68
+"155"	"Farm Lagoon"	"Turkey_Farm"	0.472
+"156"	"Farm Manure"	"Turkey_Farm"	0.504
+"157"	"Fresh Produce"	"Turkey_Farm"	0.4
+"158"	"Raw Milk"	"Turkey_Farm"	0.352
+"159"	"Beach Sand"	"Turkey_Farm"	0.792
+"160"	"Irrigation Water"	"Turkey_Farm"	0.624
+"161"	"Chicken_Abattoir"	"Turkey_Retail"	0.176
+"162"	"Chicken_Farm"	"Turkey_Retail"	0.208
+"163"	"Chicken_Retail"	"Turkey_Retail"	0.04
+"164"	"Turkey_Farm"	"Turkey_Retail"	0.208
+"165"	"Turkey_Retail"	"Turkey_Retail"	0
+"166"	"Duck_Farm"	"Turkey_Retail"	0.208
+"167"	"Duck_Retail"	"Turkey_Retail"	0.04
+"168"	"Goose_Farm"	"Turkey_Retail"	0.208
+"169"	"Cow_Abattoir"	"Turkey_Retail"	0.296
+"170"	"Cow_Farm"	"Turkey_Retail"	0.352
+"171"	"Cow_Retail"	"Turkey_Retail"	0.184
+"172"	"Pig_Farm"	"Turkey_Retail"	0.288
+"173"	"Pig_Retail"	"Turkey_Retail"	0.12
+"174"	"Goat_Farm"	"Turkey_Retail"	0.24
+"175"	"Sheep_Farm"	"Turkey_Retail"	0.24
+"176"	"Sheep_Retail"	"Turkey_Retail"	0.12
+"177"	"Donkey"	"Turkey_Retail"	0.392
+"178"	"Horse"	"Turkey_Retail"	0.392
+"179"	"Llama"	"Turkey_Retail"	0.392
+"180"	"Seagull"	"Turkey_Retail"	0.48
+"181"	"Raccoon"	"Turkey_Retail"	0.512
+"182"	"Wild Bird"	"Turkey_Retail"	0.504
+"183"	"Cat"	"Turkey_Retail"	0.504
+"184"	"Dog"	"Turkey_Retail"	0.504
+"185"	"Fly"	"Turkey_Retail"	0.592
+"186"	"Rat"	"Turkey_Retail"	0.408
+"187"	"Skunk"	"Turkey_Retail"	0.432
+"188"	"Deer"	"Turkey_Retail"	0.52
+"189"	"Farm Soil"	"Turkey_Retail"	0.448
+"190"	"Sewage"	"Turkey_Retail"	0.64
+"191"	"Lake Water"	"Turkey_Retail"	0.68
+"192"	"Human_Urban"	"Turkey_Retail"	0.52
+"193"	"Human_Farm Worker"	"Turkey_Retail"	0.624
+"194"	"Human_Abattoir Worker"	"Turkey_Retail"	0.624
+"195"	"Farm Lagoon"	"Turkey_Retail"	0.472
+"196"	"Farm Manure"	"Turkey_Retail"	0.504
+"197"	"Fresh Produce"	"Turkey_Retail"	0.4
+"198"	"Raw Milk"	"Turkey_Retail"	0.28
+"199"	"Beach Sand"	"Turkey_Retail"	0.776
+"200"	"Irrigation Water"	"Turkey_Retail"	0.624
+"201"	"Chicken_Abattoir"	"Duck_Farm"	0.216
+"202"	"Chicken_Farm"	"Duck_Farm"	0.04
+"203"	"Chicken_Retail"	"Duck_Farm"	0.208
+"204"	"Turkey_Farm"	"Duck_Farm"	0.04
+"205"	"Turkey_Retail"	"Duck_Farm"	0.208
+"206"	"Duck_Farm"	"Duck_Farm"	0
+"207"	"Duck_Retail"	"Duck_Farm"	0.208
+"208"	"Goose_Farm"	"Duck_Farm"	0.04
+"209"	"Cow_Abattoir"	"Duck_Farm"	0.296
+"210"	"Cow_Farm"	"Duck_Farm"	0.184
+"211"	"Cow_Retail"	"Duck_Farm"	0.352
+"212"	"Pig_Farm"	"Duck_Farm"	0.12
+"213"	"Pig_Retail"	"Duck_Farm"	0.288
+"214"	"Goat_Farm"	"Duck_Farm"	0.2
+"215"	"Sheep_Farm"	"Duck_Farm"	0.2
+"216"	"Sheep_Retail"	"Duck_Farm"	0.288
+"217"	"Donkey"	"Duck_Farm"	0.48
+"218"	"Horse"	"Duck_Farm"	0.48
+"219"	"Llama"	"Duck_Farm"	0.48
+"220"	"Seagull"	"Duck_Farm"	0.48
+"221"	"Raccoon"	"Duck_Farm"	0.544
+"222"	"Wild Bird"	"Duck_Farm"	0.504
+"223"	"Cat"	"Duck_Farm"	0.544
+"224"	"Dog"	"Duck_Farm"	0.544
+"225"	"Fly"	"Duck_Farm"	0.536
+"226"	"Rat"	"Duck_Farm"	0.44
+"227"	"Skunk"	"Duck_Farm"	0.448
+"228"	"Deer"	"Duck_Farm"	0.52
+"229"	"Farm Soil"	"Duck_Farm"	0.448
+"230"	"Sewage"	"Duck_Farm"	0.68
+"231"	"Lake Water"	"Duck_Farm"	0.696
+"232"	"Human_Urban"	"Duck_Farm"	0.64
+"233"	"Human_Farm Worker"	"Duck_Farm"	0.568
+"234"	"Human_Abattoir Worker"	"Duck_Farm"	0.68
+"235"	"Farm Lagoon"	"Duck_Farm"	0.472
+"236"	"Farm Manure"	"Duck_Farm"	0.504
+"237"	"Fresh Produce"	"Duck_Farm"	0.4
+"238"	"Raw Milk"	"Duck_Farm"	0.352
+"239"	"Beach Sand"	"Duck_Farm"	0.792
+"240"	"Irrigation Water"	"Duck_Farm"	0.624
+"241"	"Chicken_Abattoir"	"Duck_Retail"	0.176
+"242"	"Chicken_Farm"	"Duck_Retail"	0.208
+"243"	"Chicken_Retail"	"Duck_Retail"	0.04
+"244"	"Turkey_Farm"	"Duck_Retail"	0.208
+"245"	"Turkey_Retail"	"Duck_Retail"	0.04
+"246"	"Duck_Farm"	"Duck_Retail"	0.208
+"247"	"Duck_Retail"	"Duck_Retail"	0
+"248"	"Goose_Farm"	"Duck_Retail"	0.208
+"249"	"Cow_Abattoir"	"Duck_Retail"	0.296
+"250"	"Cow_Farm"	"Duck_Retail"	0.352
+"251"	"Cow_Retail"	"Duck_Retail"	0.184
+"252"	"Pig_Farm"	"Duck_Retail"	0.288
+"253"	"Pig_Retail"	"Duck_Retail"	0.12
+"254"	"Goat_Farm"	"Duck_Retail"	0.24
+"255"	"Sheep_Farm"	"Duck_Retail"	0.24
+"256"	"Sheep_Retail"	"Duck_Retail"	0.12
+"257"	"Donkey"	"Duck_Retail"	0.392
+"258"	"Horse"	"Duck_Retail"	0.392
+"259"	"Llama"	"Duck_Retail"	0.392
+"260"	"Seagull"	"Duck_Retail"	0.48
+"261"	"Raccoon"	"Duck_Retail"	0.512
+"262"	"Wild Bird"	"Duck_Retail"	0.504
+"263"	"Cat"	"Duck_Retail"	0.504
+"264"	"Dog"	"Duck_Retail"	0.504
+"265"	"Fly"	"Duck_Retail"	0.592
+"266"	"Rat"	"Duck_Retail"	0.408
+"267"	"Skunk"	"Duck_Retail"	0.432
+"268"	"Deer"	"Duck_Retail"	0.52
+"269"	"Farm Soil"	"Duck_Retail"	0.448
+"270"	"Sewage"	"Duck_Retail"	0.64
+"271"	"Lake Water"	"Duck_Retail"	0.68
+"272"	"Human_Urban"	"Duck_Retail"	0.52
+"273"	"Human_Farm Worker"	"Duck_Retail"	0.624
+"274"	"Human_Abattoir Worker"	"Duck_Retail"	0.624
+"275"	"Farm Lagoon"	"Duck_Retail"	0.472
+"276"	"Farm Manure"	"Duck_Retail"	0.504
+"277"	"Fresh Produce"	"Duck_Retail"	0.4
+"278"	"Raw Milk"	"Duck_Retail"	0.28
+"279"	"Beach Sand"	"Duck_Retail"	0.776
+"280"	"Irrigation Water"	"Duck_Retail"	0.624
+"281"	"Chicken_Abattoir"	"Goose_Farm"	0.216
+"282"	"Chicken_Farm"	"Goose_Farm"	0.04
+"283"	"Chicken_Retail"	"Goose_Farm"	0.208
+"284"	"Turkey_Farm"	"Goose_Farm"	0.04
+"285"	"Turkey_Retail"	"Goose_Farm"	0.208
+"286"	"Duck_Farm"	"Goose_Farm"	0.04
+"287"	"Duck_Retail"	"Goose_Farm"	0.208
+"288"	"Goose_Farm"	"Goose_Farm"	0
+"289"	"Cow_Abattoir"	"Goose_Farm"	0.296
+"290"	"Cow_Farm"	"Goose_Farm"	0.184
+"291"	"Cow_Retail"	"Goose_Farm"	0.352
+"292"	"Pig_Farm"	"Goose_Farm"	0.12
+"293"	"Pig_Retail"	"Goose_Farm"	0.288
+"294"	"Goat_Farm"	"Goose_Farm"	0.2
+"295"	"Sheep_Farm"	"Goose_Farm"	0.2
+"296"	"Sheep_Retail"	"Goose_Farm"	0.288
+"297"	"Donkey"	"Goose_Farm"	0.48
+"298"	"Horse"	"Goose_Farm"	0.48
+"299"	"Llama"	"Goose_Farm"	0.48
+"300"	"Seagull"	"Goose_Farm"	0.48
+"301"	"Raccoon"	"Goose_Farm"	0.544
+"302"	"Wild Bird"	"Goose_Farm"	0.504
+"303"	"Cat"	"Goose_Farm"	0.544
+"304"	"Dog"	"Goose_Farm"	0.544
+"305"	"Fly"	"Goose_Farm"	0.536
+"306"	"Rat"	"Goose_Farm"	0.44
+"307"	"Skunk"	"Goose_Farm"	0.448
+"308"	"Deer"	"Goose_Farm"	0.52
+"309"	"Farm Soil"	"Goose_Farm"	0.448
+"310"	"Sewage"	"Goose_Farm"	0.68
+"311"	"Lake Water"	"Goose_Farm"	0.696
+"312"	"Human_Urban"	"Goose_Farm"	0.64
+"313"	"Human_Farm Worker"	"Goose_Farm"	0.568
+"314"	"Human_Abattoir Worker"	"Goose_Farm"	0.68
+"315"	"Farm Lagoon"	"Goose_Farm"	0.472
+"316"	"Farm Manure"	"Goose_Farm"	0.504
+"317"	"Fresh Produce"	"Goose_Farm"	0.4
+"318"	"Raw Milk"	"Goose_Farm"	0.352
+"319"	"Beach Sand"	"Goose_Farm"	0.792
+"320"	"Irrigation Water"	"Goose_Farm"	0.624
+"321"	"Chicken_Abattoir"	"Cow_Abattoir"	0.248
+"322"	"Chicken_Farm"	"Cow_Abattoir"	0.296
+"323"	"Chicken_Retail"	"Cow_Abattoir"	0.296
+"324"	"Turkey_Farm"	"Cow_Abattoir"	0.296
+"325"	"Turkey_Retail"	"Cow_Abattoir"	0.296
+"326"	"Duck_Farm"	"Cow_Abattoir"	0.296
+"327"	"Duck_Retail"	"Cow_Abattoir"	0.296
+"328"	"Goose_Farm"	"Cow_Abattoir"	0.296
+"329"	"Cow_Abattoir"	"Cow_Abattoir"	0
+"330"	"Cow_Farm"	"Cow_Abattoir"	0.168
+"331"	"Cow_Retail"	"Cow_Abattoir"	0.168
+"332"	"Pig_Farm"	"Cow_Abattoir"	0.296
+"333"	"Pig_Retail"	"Cow_Abattoir"	0.296
+"334"	"Goat_Farm"	"Cow_Abattoir"	0.24
+"335"	"Sheep_Farm"	"Cow_Abattoir"	0.24
+"336"	"Sheep_Retail"	"Cow_Abattoir"	0.216
+"337"	"Donkey"	"Cow_Abattoir"	0.432
+"338"	"Horse"	"Cow_Abattoir"	0.432
+"339"	"Llama"	"Cow_Abattoir"	0.432
+"340"	"Seagull"	"Cow_Abattoir"	0.512
+"341"	"Raccoon"	"Cow_Abattoir"	0.48
+"342"	"Wild Bird"	"Cow_Abattoir"	0.536
+"343"	"Cat"	"Cow_Abattoir"	0.568
+"344"	"Dog"	"Cow_Abattoir"	0.568
+"345"	"Fly"	"Cow_Abattoir"	0.6
+"346"	"Rat"	"Cow_Abattoir"	0.488
+"347"	"Skunk"	"Cow_Abattoir"	0.512
+"348"	"Deer"	"Cow_Abattoir"	0.544
+"349"	"Farm Soil"	"Cow_Abattoir"	0.344
+"350"	"Sewage"	"Cow_Abattoir"	0.608
+"351"	"Lake Water"	"Cow_Abattoir"	0.68
+"352"	"Human_Urban"	"Cow_Abattoir"	0.608
+"353"	"Human_Farm Worker"	"Cow_Abattoir"	0.576
+"354"	"Human_Abattoir Worker"	"Cow_Abattoir"	0.52
+"355"	"Farm Lagoon"	"Cow_Abattoir"	0.384
+"356"	"Farm Manure"	"Cow_Abattoir"	0.4
+"357"	"Fresh Produce"	"Cow_Abattoir"	0.408
+"358"	"Raw Milk"	"Cow_Abattoir"	0.336
+"359"	"Beach Sand"	"Cow_Abattoir"	0.76
+"360"	"Irrigation Water"	"Cow_Abattoir"	0.536
+"361"	"Chicken_Abattoir"	"Cow_Farm"	0.36
+"362"	"Chicken_Farm"	"Cow_Farm"	0.184
+"363"	"Chicken_Retail"	"Cow_Farm"	0.352
+"364"	"Turkey_Farm"	"Cow_Farm"	0.184
+"365"	"Turkey_Retail"	"Cow_Farm"	0.352
+"366"	"Duck_Farm"	"Cow_Farm"	0.184
+"367"	"Duck_Retail"	"Cow_Farm"	0.352
+"368"	"Goose_Farm"	"Cow_Farm"	0.184
+"369"	"Cow_Abattoir"	"Cow_Farm"	0.168
+"370"	"Cow_Farm"	"Cow_Farm"	0
+"371"	"Cow_Retail"	"Cow_Farm"	0.224
+"372"	"Pig_Farm"	"Cow_Farm"	0.184
+"373"	"Pig_Retail"	"Cow_Farm"	0.352
+"374"	"Goat_Farm"	"Cow_Farm"	0.184
+"375"	"Sheep_Farm"	"Cow_Farm"	0.184
+"376"	"Sheep_Retail"	"Cow_Farm"	0.272
+"377"	"Donkey"	"Cow_Farm"	0.504
+"378"	"Horse"	"Cow_Farm"	0.504
+"379"	"Llama"	"Cow_Farm"	0.504
+"380"	"Seagull"	"Cow_Farm"	0.512
+"381"	"Raccoon"	"Cow_Farm"	0.496
+"382"	"Wild Bird"	"Cow_Farm"	0.536
+"383"	"Cat"	"Cow_Farm"	0.608
+"384"	"Dog"	"Cow_Farm"	0.608
+"385"	"Fly"	"Cow_Farm"	0.544
+"386"	"Rat"	"Cow_Farm"	0.504
+"387"	"Skunk"	"Cow_Farm"	0.512
+"388"	"Deer"	"Cow_Farm"	0.544
+"389"	"Farm Soil"	"Cow_Farm"	0.4
+"390"	"Sewage"	"Cow_Farm"	0.648
+"391"	"Lake Water"	"Cow_Farm"	0.68
+"392"	"Human_Urban"	"Cow_Farm"	0.648
+"393"	"Human_Farm Worker"	"Cow_Farm"	0.52
+"394"	"Human_Abattoir Worker"	"Cow_Farm"	0.632
+"395"	"Farm Lagoon"	"Cow_Farm"	0.44
+"396"	"Farm Manure"	"Cow_Farm"	0.456
+"397"	"Fresh Produce"	"Cow_Farm"	0.408
+"398"	"Raw Milk"	"Cow_Farm"	0.336
+"399"	"Beach Sand"	"Cow_Farm"	0.76
+"400"	"Irrigation Water"	"Cow_Farm"	0.592
+"401"	"Chicken_Abattoir"	"Cow_Retail"	0.32
+"402"	"Chicken_Farm"	"Cow_Retail"	0.352
+"403"	"Chicken_Retail"	"Cow_Retail"	0.184
+"404"	"Turkey_Farm"	"Cow_Retail"	0.352
+"405"	"Turkey_Retail"	"Cow_Retail"	0.184
+"406"	"Duck_Farm"	"Cow_Retail"	0.352
+"407"	"Duck_Retail"	"Cow_Retail"	0.184
+"408"	"Goose_Farm"	"Cow_Retail"	0.352
+"409"	"Cow_Abattoir"	"Cow_Retail"	0.168
+"410"	"Cow_Farm"	"Cow_Retail"	0.224
+"411"	"Cow_Retail"	"Cow_Retail"	0
+"412"	"Pig_Farm"	"Cow_Retail"	0.352
+"413"	"Pig_Retail"	"Cow_Retail"	0.184
+"414"	"Goat_Farm"	"Cow_Retail"	0.224
+"415"	"Sheep_Farm"	"Cow_Retail"	0.224
+"416"	"Sheep_Retail"	"Cow_Retail"	0.104
+"417"	"Donkey"	"Cow_Retail"	0.416
+"418"	"Horse"	"Cow_Retail"	0.416
+"419"	"Llama"	"Cow_Retail"	0.416
+"420"	"Seagull"	"Cow_Retail"	0.512
+"421"	"Raccoon"	"Cow_Retail"	0.464
+"422"	"Wild Bird"	"Cow_Retail"	0.536
+"423"	"Cat"	"Cow_Retail"	0.568
+"424"	"Dog"	"Cow_Retail"	0.568
+"425"	"Fly"	"Cow_Retail"	0.6
+"426"	"Rat"	"Cow_Retail"	0.472
+"427"	"Skunk"	"Cow_Retail"	0.496
+"428"	"Deer"	"Cow_Retail"	0.544
+"429"	"Farm Soil"	"Cow_Retail"	0.4
+"430"	"Sewage"	"Cow_Retail"	0.608
+"431"	"Lake Water"	"Cow_Retail"	0.664
+"432"	"Human_Urban"	"Cow_Retail"	0.528
+"433"	"Human_Farm Worker"	"Cow_Retail"	0.576
+"434"	"Human_Abattoir Worker"	"Cow_Retail"	0.576
+"435"	"Farm Lagoon"	"Cow_Retail"	0.44
+"436"	"Farm Manure"	"Cow_Retail"	0.456
+"437"	"Fresh Produce"	"Cow_Retail"	0.408
+"438"	"Raw Milk"	"Cow_Retail"	0.264
+"439"	"Beach Sand"	"Cow_Retail"	0.744
+"440"	"Irrigation Water"	"Cow_Retail"	0.592
+"441"	"Chicken_Abattoir"	"Pig_Farm"	0.296
+"442"	"Chicken_Farm"	"Pig_Farm"	0.12
+"443"	"Chicken_Retail"	"Pig_Farm"	0.288
+"444"	"Turkey_Farm"	"Pig_Farm"	0.12
+"445"	"Turkey_Retail"	"Pig_Farm"	0.288
+"446"	"Duck_Farm"	"Pig_Farm"	0.12
+"447"	"Duck_Retail"	"Pig_Farm"	0.288
+"448"	"Goose_Farm"	"Pig_Farm"	0.12
+"449"	"Cow_Abattoir"	"Pig_Farm"	0.296
+"450"	"Cow_Farm"	"Pig_Farm"	0.184
+"451"	"Cow_Retail"	"Pig_Farm"	0.352
+"452"	"Pig_Farm"	"Pig_Farm"	0
+"453"	"Pig_Retail"	"Pig_Farm"	0.208
+"454"	"Goat_Farm"	"Pig_Farm"	0.2
+"455"	"Sheep_Farm"	"Pig_Farm"	0.2
+"456"	"Sheep_Retail"	"Pig_Farm"	0.288
+"457"	"Donkey"	"Pig_Farm"	0.48
+"458"	"Horse"	"Pig_Farm"	0.48
+"459"	"Llama"	"Pig_Farm"	0.48
+"460"	"Seagull"	"Pig_Farm"	0.56
+"461"	"Raccoon"	"Pig_Farm"	0.544
+"462"	"Wild Bird"	"Pig_Farm"	0.584
+"463"	"Cat"	"Pig_Farm"	0.544
+"464"	"Dog"	"Pig_Farm"	0.544
+"465"	"Fly"	"Pig_Farm"	0.536
+"466"	"Rat"	"Pig_Farm"	0.44
+"467"	"Skunk"	"Pig_Farm"	0.448
+"468"	"Deer"	"Pig_Farm"	0.52
+"469"	"Farm Soil"	"Pig_Farm"	0.448
+"470"	"Sewage"	"Pig_Farm"	0.68
+"471"	"Lake Water"	"Pig_Farm"	0.696
+"472"	"Human_Urban"	"Pig_Farm"	0.64
+"473"	"Human_Farm Worker"	"Pig_Farm"	0.568
+"474"	"Human_Abattoir Worker"	"Pig_Farm"	0.68
+"475"	"Farm Lagoon"	"Pig_Farm"	0.472
+"476"	"Farm Manure"	"Pig_Farm"	0.504
+"477"	"Fresh Produce"	"Pig_Farm"	0.4
+"478"	"Raw Milk"	"Pig_Farm"	0.352
+"479"	"Beach Sand"	"Pig_Farm"	0.792
+"480"	"Irrigation Water"	"Pig_Farm"	0.624
+"481"	"Chicken_Abattoir"	"Pig_Retail"	0.256
+"482"	"Chicken_Farm"	"Pig_Retail"	0.288
+"483"	"Chicken_Retail"	"Pig_Retail"	0.12
+"484"	"Turkey_Farm"	"Pig_Retail"	0.288
+"485"	"Turkey_Retail"	"Pig_Retail"	0.12
+"486"	"Duck_Farm"	"Pig_Retail"	0.288
+"487"	"Duck_Retail"	"Pig_Retail"	0.12
+"488"	"Goose_Farm"	"Pig_Retail"	0.288
+"489"	"Cow_Abattoir"	"Pig_Retail"	0.296
+"490"	"Cow_Farm"	"Pig_Retail"	0.352
+"491"	"Cow_Retail"	"Pig_Retail"	0.184
+"492"	"Pig_Farm"	"Pig_Retail"	0.208
+"493"	"Pig_Retail"	"Pig_Retail"	0
+"494"	"Goat_Farm"	"Pig_Retail"	0.24
+"495"	"Sheep_Farm"	"Pig_Retail"	0.24
+"496"	"Sheep_Retail"	"Pig_Retail"	0.12
+"497"	"Donkey"	"Pig_Retail"	0.392
+"498"	"Horse"	"Pig_Retail"	0.392
+"499"	"Llama"	"Pig_Retail"	0.392
+"500"	"Seagull"	"Pig_Retail"	0.56
+"501"	"Raccoon"	"Pig_Retail"	0.512
+"502"	"Wild Bird"	"Pig_Retail"	0.584
+"503"	"Cat"	"Pig_Retail"	0.504
+"504"	"Dog"	"Pig_Retail"	0.504
+"505"	"Fly"	"Pig_Retail"	0.592
+"506"	"Rat"	"Pig_Retail"	0.408
+"507"	"Skunk"	"Pig_Retail"	0.432
+"508"	"Deer"	"Pig_Retail"	0.52
+"509"	"Farm Soil"	"Pig_Retail"	0.448
+"510"	"Sewage"	"Pig_Retail"	0.64
+"511"	"Lake Water"	"Pig_Retail"	0.68
+"512"	"Human_Urban"	"Pig_Retail"	0.52
+"513"	"Human_Farm Worker"	"Pig_Retail"	0.624
+"514"	"Human_Abattoir Worker"	"Pig_Retail"	0.624
+"515"	"Farm Lagoon"	"Pig_Retail"	0.472
+"516"	"Farm Manure"	"Pig_Retail"	0.504
+"517"	"Fresh Produce"	"Pig_Retail"	0.4
+"518"	"Raw Milk"	"Pig_Retail"	0.28
+"519"	"Beach Sand"	"Pig_Retail"	0.776
+"520"	"Irrigation Water"	"Pig_Retail"	0.624
+"521"	"Chicken_Abattoir"	"Goat_Farm"	0.28
+"522"	"Chicken_Farm"	"Goat_Farm"	0.2
+"523"	"Chicken_Retail"	"Goat_Farm"	0.24
+"524"	"Turkey_Farm"	"Goat_Farm"	0.2
+"525"	"Turkey_Retail"	"Goat_Farm"	0.24
+"526"	"Duck_Farm"	"Goat_Farm"	0.2
+"527"	"Duck_Retail"	"Goat_Farm"	0.24
+"528"	"Goose_Farm"	"Goat_Farm"	0.2
+"529"	"Cow_Abattoir"	"Goat_Farm"	0.24
+"530"	"Cow_Farm"	"Goat_Farm"	0.184
+"531"	"Cow_Retail"	"Goat_Farm"	0.224
+"532"	"Pig_Farm"	"Goat_Farm"	0.2
+"533"	"Pig_Retail"	"Goat_Farm"	0.24
+"534"	"Goat_Farm"	"Goat_Farm"	0
+"535"	"Sheep_Farm"	"Goat_Farm"	0.032
+"536"	"Sheep_Retail"	"Goat_Farm"	0.16
+"537"	"Donkey"	"Goat_Farm"	0.352
+"538"	"Horse"	"Goat_Farm"	0.352
+"539"	"Llama"	"Goat_Farm"	0.352
+"540"	"Seagull"	"Goat_Farm"	0.584
+"541"	"Raccoon"	"Goat_Farm"	0.552
+"542"	"Wild Bird"	"Goat_Farm"	0.552
+"543"	"Cat"	"Goat_Farm"	0.472
+"544"	"Dog"	"Goat_Farm"	0.472
+"545"	"Fly"	"Goat_Farm"	0.56
+"546"	"Rat"	"Goat_Farm"	0.392
+"547"	"Skunk"	"Goat_Farm"	0.4
+"548"	"Deer"	"Goat_Farm"	0.448
+"549"	"Farm Soil"	"Goat_Farm"	0.472
+"550"	"Sewage"	"Goat_Farm"	0.608
+"551"	"Lake Water"	"Goat_Farm"	0.664
+"552"	"Human_Urban"	"Goat_Farm"	0.608
+"553"	"Human_Farm Worker"	"Goat_Farm"	0.592
+"554"	"Human_Abattoir Worker"	"Goat_Farm"	0.704
+"555"	"Farm Lagoon"	"Goat_Farm"	0.496
+"556"	"Farm Manure"	"Goat_Farm"	0.528
+"557"	"Fresh Produce"	"Goat_Farm"	0.424
+"558"	"Raw Milk"	"Goat_Farm"	0.184
+"559"	"Beach Sand"	"Goat_Farm"	0.76
+"560"	"Irrigation Water"	"Goat_Farm"	0.592
+"561"	"Chicken_Abattoir"	"Sheep_Farm"	0.28
+"562"	"Chicken_Farm"	"Sheep_Farm"	0.2
+"563"	"Chicken_Retail"	"Sheep_Farm"	0.24
+"564"	"Turkey_Farm"	"Sheep_Farm"	0.2
+"565"	"Turkey_Retail"	"Sheep_Farm"	0.24
+"566"	"Duck_Farm"	"Sheep_Farm"	0.2
+"567"	"Duck_Retail"	"Sheep_Farm"	0.24
+"568"	"Goose_Farm"	"Sheep_Farm"	0.2
+"569"	"Cow_Abattoir"	"Sheep_Farm"	0.24
+"570"	"Cow_Farm"	"Sheep_Farm"	0.184
+"571"	"Cow_Retail"	"Sheep_Farm"	0.224
+"572"	"Pig_Farm"	"Sheep_Farm"	0.2
+"573"	"Pig_Retail"	"Sheep_Farm"	0.24
+"574"	"Goat_Farm"	"Sheep_Farm"	0.032
+"575"	"Sheep_Farm"	"Sheep_Farm"	0
+"576"	"Sheep_Retail"	"Sheep_Farm"	0.16
+"577"	"Donkey"	"Sheep_Farm"	0.352
+"578"	"Horse"	"Sheep_Farm"	0.352
+"579"	"Llama"	"Sheep_Farm"	0.352
+"580"	"Seagull"	"Sheep_Farm"	0.584
+"581"	"Raccoon"	"Sheep_Farm"	0.552
+"582"	"Wild Bird"	"Sheep_Farm"	0.552
+"583"	"Cat"	"Sheep_Farm"	0.472
+"584"	"Dog"	"Sheep_Farm"	0.472
+"585"	"Fly"	"Sheep_Farm"	0.56
+"586"	"Rat"	"Sheep_Farm"	0.392
+"587"	"Skunk"	"Sheep_Farm"	0.4
+"588"	"Deer"	"Sheep_Farm"	0.448
+"589"	"Farm Soil"	"Sheep_Farm"	0.472
+"590"	"Sewage"	"Sheep_Farm"	0.608
+"591"	"Lake Water"	"Sheep_Farm"	0.664
+"592"	"Human_Urban"	"Sheep_Farm"	0.608
+"593"	"Human_Farm Worker"	"Sheep_Farm"	0.592
+"594"	"Human_Abattoir Worker"	"Sheep_Farm"	0.704
+"595"	"Farm Lagoon"	"Sheep_Farm"	0.496
+"596"	"Farm Manure"	"Sheep_Farm"	0.528
+"597"	"Fresh Produce"	"Sheep_Farm"	0.424
+"598"	"Raw Milk"	"Sheep_Farm"	0.184
+"599"	"Beach Sand"	"Sheep_Farm"	0.76
+"600"	"Irrigation Water"	"Sheep_Farm"	0.592
+"601"	"Chicken_Abattoir"	"Sheep_Retail"	0.256
+"602"	"Chicken_Farm"	"Sheep_Retail"	0.288
+"603"	"Chicken_Retail"	"Sheep_Retail"	0.12
+"604"	"Turkey_Farm"	"Sheep_Retail"	0.288
+"605"	"Turkey_Retail"	"Sheep_Retail"	0.12
+"606"	"Duck_Farm"	"Sheep_Retail"	0.288
+"607"	"Duck_Retail"	"Sheep_Retail"	0.12
+"608"	"Goose_Farm"	"Sheep_Retail"	0.288
+"609"	"Cow_Abattoir"	"Sheep_Retail"	0.216
+"610"	"Cow_Farm"	"Sheep_Retail"	0.272
+"611"	"Cow_Retail"	"Sheep_Retail"	0.104
+"612"	"Pig_Farm"	"Sheep_Retail"	0.288
+"613"	"Pig_Retail"	"Sheep_Retail"	0.12
+"614"	"Goat_Farm"	"Sheep_Retail"	0.16
+"615"	"Sheep_Farm"	"Sheep_Retail"	0.16
+"616"	"Sheep_Retail"	"Sheep_Retail"	0
+"617"	"Donkey"	"Sheep_Retail"	0.352
+"618"	"Horse"	"Sheep_Retail"	0.352
+"619"	"Llama"	"Sheep_Retail"	0.352
+"620"	"Seagull"	"Sheep_Retail"	0.56
+"621"	"Raccoon"	"Sheep_Retail"	0.512
+"622"	"Wild Bird"	"Sheep_Retail"	0.584
+"623"	"Cat"	"Sheep_Retail"	0.504
+"624"	"Dog"	"Sheep_Retail"	0.504
+"625"	"Fly"	"Sheep_Retail"	0.592
+"626"	"Rat"	"Sheep_Retail"	0.408
+"627"	"Skunk"	"Sheep_Retail"	0.432
+"628"	"Deer"	"Sheep_Retail"	0.48
+"629"	"Farm Soil"	"Sheep_Retail"	0.448
+"630"	"Sewage"	"Sheep_Retail"	0.64
+"631"	"Lake Water"	"Sheep_Retail"	0.68
+"632"	"Human_Urban"	"Sheep_Retail"	0.52
+"633"	"Human_Farm Worker"	"Sheep_Retail"	0.624
+"634"	"Human_Abattoir Worker"	"Sheep_Retail"	0.624
+"635"	"Farm Lagoon"	"Sheep_Retail"	0.472
+"636"	"Farm Manure"	"Sheep_Retail"	0.504
+"637"	"Fresh Produce"	"Sheep_Retail"	0.4
+"638"	"Raw Milk"	"Sheep_Retail"	0.2
+"639"	"Beach Sand"	"Sheep_Retail"	0.776
+"640"	"Irrigation Water"	"Sheep_Retail"	0.624
+"641"	"Chicken_Abattoir"	"Donkey"	0.416
+"642"	"Chicken_Farm"	"Donkey"	0.48
+"643"	"Chicken_Retail"	"Donkey"	0.392
+"644"	"Turkey_Farm"	"Donkey"	0.48
+"645"	"Turkey_Retail"	"Donkey"	0.392
+"646"	"Duck_Farm"	"Donkey"	0.48
+"647"	"Duck_Retail"	"Donkey"	0.392
+"648"	"Goose_Farm"	"Donkey"	0.48
+"649"	"Cow_Abattoir"	"Donkey"	0.432
+"650"	"Cow_Farm"	"Donkey"	0.504
+"651"	"Cow_Retail"	"Donkey"	0.416
+"652"	"Pig_Farm"	"Donkey"	0.48
+"653"	"Pig_Retail"	"Donkey"	0.392
+"654"	"Goat_Farm"	"Donkey"	0.352
+"655"	"Sheep_Farm"	"Donkey"	0.352
+"656"	"Sheep_Retail"	"Donkey"	0.352
+"657"	"Donkey"	"Donkey"	0
+"658"	"Horse"	"Donkey"	0.04
+"659"	"Llama"	"Donkey"	0.04
+"660"	"Seagull"	"Donkey"	0.52
+"661"	"Raccoon"	"Donkey"	0.392
+"662"	"Wild Bird"	"Donkey"	0.488
+"663"	"Cat"	"Donkey"	0.208
+"664"	"Dog"	"Donkey"	0.208
+"665"	"Fly"	"Donkey"	0.512
+"666"	"Rat"	"Donkey"	0.232
+"667"	"Skunk"	"Donkey"	0.256
+"668"	"Deer"	"Donkey"	0.288
+"669"	"Farm Soil"	"Donkey"	0.472
+"670"	"Sewage"	"Donkey"	0.544
+"671"	"Lake Water"	"Donkey"	0.584
+"672"	"Human_Urban"	"Donkey"	0.544
+"673"	"Human_Farm Worker"	"Donkey"	0.72
+"674"	"Human_Abattoir Worker"	"Donkey"	0.688
+"675"	"Farm Lagoon"	"Donkey"	0.552
+"676"	"Farm Manure"	"Donkey"	0.544
+"677"	"Fresh Produce"	"Donkey"	0.52
+"678"	"Raw Milk"	"Donkey"	0.336
+"679"	"Beach Sand"	"Donkey"	0.584
+"680"	"Irrigation Water"	"Donkey"	0.608
+"681"	"Chicken_Abattoir"	"Horse"	0.416
+"682"	"Chicken_Farm"	"Horse"	0.48
+"683"	"Chicken_Retail"	"Horse"	0.392
+"684"	"Turkey_Farm"	"Horse"	0.48
+"685"	"Turkey_Retail"	"Horse"	0.392
+"686"	"Duck_Farm"	"Horse"	0.48
+"687"	"Duck_Retail"	"Horse"	0.392
+"688"	"Goose_Farm"	"Horse"	0.48
+"689"	"Cow_Abattoir"	"Horse"	0.432
+"690"	"Cow_Farm"	"Horse"	0.504
+"691"	"Cow_Retail"	"Horse"	0.416
+"692"	"Pig_Farm"	"Horse"	0.48
+"693"	"Pig_Retail"	"Horse"	0.392
+"694"	"Goat_Farm"	"Horse"	0.352
+"695"	"Sheep_Farm"	"Horse"	0.352
+"696"	"Sheep_Retail"	"Horse"	0.352
+"697"	"Donkey"	"Horse"	0.04
+"698"	"Horse"	"Horse"	0
+"699"	"Llama"	"Horse"	0.04
+"700"	"Seagull"	"Horse"	0.52
+"701"	"Raccoon"	"Horse"	0.392
+"702"	"Wild Bird"	"Horse"	0.488
+"703"	"Cat"	"Horse"	0.208
+"704"	"Dog"	"Horse"	0.208
+"705"	"Fly"	"Horse"	0.512
+"706"	"Rat"	"Horse"	0.232
+"707"	"Skunk"	"Horse"	0.256
+"708"	"Deer"	"Horse"	0.288
+"709"	"Farm Soil"	"Horse"	0.472
+"710"	"Sewage"	"Horse"	0.544
+"711"	"Lake Water"	"Horse"	0.584
+"712"	"Human_Urban"	"Horse"	0.544
+"713"	"Human_Farm Worker"	"Horse"	0.72
+"714"	"Human_Abattoir Worker"	"Horse"	0.688
+"715"	"Farm Lagoon"	"Horse"	0.552
+"716"	"Farm Manure"	"Horse"	0.544
+"717"	"Fresh Produce"	"Horse"	0.52
+"718"	"Raw Milk"	"Horse"	0.336
+"719"	"Beach Sand"	"Horse"	0.584
+"720"	"Irrigation Water"	"Horse"	0.608
+"721"	"Chicken_Abattoir"	"Llama"	0.416
+"722"	"Chicken_Farm"	"Llama"	0.48
+"723"	"Chicken_Retail"	"Llama"	0.392
+"724"	"Turkey_Farm"	"Llama"	0.48
+"725"	"Turkey_Retail"	"Llama"	0.392
+"726"	"Duck_Farm"	"Llama"	0.48
+"727"	"Duck_Retail"	"Llama"	0.392
+"728"	"Goose_Farm"	"Llama"	0.48
+"729"	"Cow_Abattoir"	"Llama"	0.432
+"730"	"Cow_Farm"	"Llama"	0.504
+"731"	"Cow_Retail"	"Llama"	0.416
+"732"	"Pig_Farm"	"Llama"	0.48
+"733"	"Pig_Retail"	"Llama"	0.392
+"734"	"Goat_Farm"	"Llama"	0.352
+"735"	"Sheep_Farm"	"Llama"	0.352
+"736"	"Sheep_Retail"	"Llama"	0.352
+"737"	"Donkey"	"Llama"	0.04
+"738"	"Horse"	"Llama"	0.04
+"739"	"Llama"	"Llama"	0
+"740"	"Seagull"	"Llama"	0.52
+"741"	"Raccoon"	"Llama"	0.392
+"742"	"Wild Bird"	"Llama"	0.488
+"743"	"Cat"	"Llama"	0.208
+"744"	"Dog"	"Llama"	0.208
+"745"	"Fly"	"Llama"	0.512
+"746"	"Rat"	"Llama"	0.232
+"747"	"Skunk"	"Llama"	0.256
+"748"	"Deer"	"Llama"	0.288
+"749"	"Farm Soil"	"Llama"	0.472
+"750"	"Sewage"	"Llama"	0.544
+"751"	"Lake Water"	"Llama"	0.584
+"752"	"Human_Urban"	"Llama"	0.544
+"753"	"Human_Farm Worker"	"Llama"	0.72
+"754"	"Human_Abattoir Worker"	"Llama"	0.688
+"755"	"Farm Lagoon"	"Llama"	0.552
+"756"	"Farm Manure"	"Llama"	0.544
+"757"	"Fresh Produce"	"Llama"	0.52
+"758"	"Raw Milk"	"Llama"	0.336
+"759"	"Beach Sand"	"Llama"	0.584
+"760"	"Irrigation Water"	"Llama"	0.608
+"761"	"Chicken_Abattoir"	"Seagull"	0.448
+"762"	"Chicken_Farm"	"Seagull"	0.48
+"763"	"Chicken_Retail"	"Seagull"	0.48
+"764"	"Turkey_Farm"	"Seagull"	0.48
+"765"	"Turkey_Retail"	"Seagull"	0.48
+"766"	"Duck_Farm"	"Seagull"	0.48
+"767"	"Duck_Retail"	"Seagull"	0.48
+"768"	"Goose_Farm"	"Seagull"	0.48
+"769"	"Cow_Abattoir"	"Seagull"	0.512
+"770"	"Cow_Farm"	"Seagull"	0.512
+"771"	"Cow_Retail"	"Seagull"	0.512
+"772"	"Pig_Farm"	"Seagull"	0.56
+"773"	"Pig_Retail"	"Seagull"	0.56
+"774"	"Goat_Farm"	"Seagull"	0.584
+"775"	"Sheep_Farm"	"Seagull"	0.584
+"776"	"Sheep_Retail"	"Seagull"	0.56
+"777"	"Donkey"	"Seagull"	0.52
+"778"	"Horse"	"Seagull"	0.52
+"779"	"Llama"	"Seagull"	0.52
+"780"	"Seagull"	"Seagull"	0
+"781"	"Raccoon"	"Seagull"	0.232
+"782"	"Wild Bird"	"Seagull"	0.24
+"783"	"Cat"	"Seagull"	0.424
+"784"	"Dog"	"Seagull"	0.424
+"785"	"Fly"	"Seagull"	0.52
+"786"	"Rat"	"Seagull"	0.368
+"787"	"Skunk"	"Seagull"	0.392
+"788"	"Deer"	"Seagull"	0.424
+"789"	"Farm Soil"	"Seagull"	0.44
+"790"	"Sewage"	"Seagull"	0.448
+"791"	"Lake Water"	"Seagull"	0.616
+"792"	"Human_Urban"	"Seagull"	0.488
+"793"	"Human_Farm Worker"	"Seagull"	0.56
+"794"	"Human_Abattoir Worker"	"Seagull"	0.56
+"795"	"Farm Lagoon"	"Seagull"	0.552
+"796"	"Farm Manure"	"Seagull"	0.528
+"797"	"Fresh Produce"	"Seagull"	0.48
+"798"	"Raw Milk"	"Seagull"	0.528
+"799"	"Beach Sand"	"Seagull"	0.544
+"800"	"Irrigation Water"	"Seagull"	0.608
+"801"	"Chicken_Abattoir"	"Raccoon"	0.536
+"802"	"Chicken_Farm"	"Raccoon"	0.544
+"803"	"Chicken_Retail"	"Raccoon"	0.512
+"804"	"Turkey_Farm"	"Raccoon"	0.544
+"805"	"Turkey_Retail"	"Raccoon"	0.512
+"806"	"Duck_Farm"	"Raccoon"	0.544
+"807"	"Duck_Retail"	"Raccoon"	0.512
+"808"	"Goose_Farm"	"Raccoon"	0.544
+"809"	"Cow_Abattoir"	"Raccoon"	0.48
+"810"	"Cow_Farm"	"Raccoon"	0.496
+"811"	"Cow_Retail"	"Raccoon"	0.464
+"812"	"Pig_Farm"	"Raccoon"	0.544
+"813"	"Pig_Retail"	"Raccoon"	0.512
+"814"	"Goat_Farm"	"Raccoon"	0.552
+"815"	"Sheep_Farm"	"Raccoon"	0.552
+"816"	"Sheep_Retail"	"Raccoon"	0.512
+"817"	"Donkey"	"Raccoon"	0.392
+"818"	"Horse"	"Raccoon"	0.392
+"819"	"Llama"	"Raccoon"	0.392
+"820"	"Seagull"	"Raccoon"	0.232
+"821"	"Raccoon"	"Raccoon"	0
+"822"	"Wild Bird"	"Raccoon"	0.384
+"823"	"Cat"	"Raccoon"	0.408
+"824"	"Dog"	"Raccoon"	0.408
+"825"	"Fly"	"Raccoon"	0.432
+"826"	"Rat"	"Raccoon"	0.296
+"827"	"Skunk"	"Raccoon"	0.32
+"828"	"Deer"	"Raccoon"	0.408
+"829"	"Farm Soil"	"Raccoon"	0.448
+"830"	"Sewage"	"Raccoon"	0.512
+"831"	"Lake Water"	"Raccoon"	0.624
+"832"	"Human_Urban"	"Raccoon"	0.552
+"833"	"Human_Farm Worker"	"Raccoon"	0.584
+"834"	"Human_Abattoir Worker"	"Raccoon"	0.568
+"835"	"Farm Lagoon"	"Raccoon"	0.56
+"836"	"Farm Manure"	"Raccoon"	0.536
+"837"	"Fresh Produce"	"Raccoon"	0.472
+"838"	"Raw Milk"	"Raccoon"	0.48
+"839"	"Beach Sand"	"Raccoon"	0.552
+"840"	"Irrigation Water"	"Raccoon"	0.672
+"841"	"Chicken_Abattoir"	"Wild Bird"	0.472
+"842"	"Chicken_Farm"	"Wild Bird"	0.504
+"843"	"Chicken_Retail"	"Wild Bird"	0.504
+"844"	"Turkey_Farm"	"Wild Bird"	0.504
+"845"	"Turkey_Retail"	"Wild Bird"	0.504
+"846"	"Duck_Farm"	"Wild Bird"	0.504
+"847"	"Duck_Retail"	"Wild Bird"	0.504
+"848"	"Goose_Farm"	"Wild Bird"	0.504
+"849"	"Cow_Abattoir"	"Wild Bird"	0.536
+"850"	"Cow_Farm"	"Wild Bird"	0.536
+"851"	"Cow_Retail"	"Wild Bird"	0.536
+"852"	"Pig_Farm"	"Wild Bird"	0.584
+"853"	"Pig_Retail"	"Wild Bird"	0.584
+"854"	"Goat_Farm"	"Wild Bird"	0.552
+"855"	"Sheep_Farm"	"Wild Bird"	0.552
+"856"	"Sheep_Retail"	"Wild Bird"	0.584
+"857"	"Donkey"	"Wild Bird"	0.488
+"858"	"Horse"	"Wild Bird"	0.488
+"859"	"Llama"	"Wild Bird"	0.488
+"860"	"Seagull"	"Wild Bird"	0.24
+"861"	"Raccoon"	"Wild Bird"	0.384
+"862"	"Wild Bird"	"Wild Bird"	0
+"863"	"Cat"	"Wild Bird"	0.376
+"864"	"Dog"	"Wild Bird"	0.376
+"865"	"Fly"	"Wild Bird"	0.584
+"866"	"Rat"	"Wild Bird"	0.352
+"867"	"Skunk"	"Wild Bird"	0.32
+"868"	"Deer"	"Wild Bird"	0.296
+"869"	"Farm Soil"	"Wild Bird"	0.48
+"870"	"Sewage"	"Wild Bird"	0.416
+"871"	"Lake Water"	"Wild Bird"	0.544
+"872"	"Human_Urban"	"Wild Bird"	0.496
+"873"	"Human_Farm Worker"	"Wild Bird"	0.68
+"874"	"Human_Abattoir Worker"	"Wild Bird"	0.68
+"875"	"Farm Lagoon"	"Wild Bird"	0.592
+"876"	"Farm Manure"	"Wild Bird"	0.568
+"877"	"Fresh Produce"	"Wild Bird"	0.52
+"878"	"Raw Milk"	"Wild Bird"	0.496
+"879"	"Beach Sand"	"Wild Bird"	0.512
+"880"	"Irrigation Water"	"Wild Bird"	0.536
+"881"	"Chicken_Abattoir"	"Cat"	0.472
+"882"	"Chicken_Farm"	"Cat"	0.544
+"883"	"Chicken_Retail"	"Cat"	0.504
+"884"	"Turkey_Farm"	"Cat"	0.544
+"885"	"Turkey_Retail"	"Cat"	0.504
+"886"	"Duck_Farm"	"Cat"	0.544
+"887"	"Duck_Retail"	"Cat"	0.504
+"888"	"Goose_Farm"	"Cat"	0.544
+"889"	"Cow_Abattoir"	"Cat"	0.568
+"890"	"Cow_Farm"	"Cat"	0.608
+"891"	"Cow_Retail"	"Cat"	0.568
+"892"	"Pig_Farm"	"Cat"	0.544
+"893"	"Pig_Retail"	"Cat"	0.504
+"894"	"Goat_Farm"	"Cat"	0.472
+"895"	"Sheep_Farm"	"Cat"	0.472
+"896"	"Sheep_Retail"	"Cat"	0.504
+"897"	"Donkey"	"Cat"	0.208
+"898"	"Horse"	"Cat"	0.208
+"899"	"Llama"	"Cat"	0.208
+"900"	"Seagull"	"Cat"	0.424
+"901"	"Raccoon"	"Cat"	0.408
+"902"	"Wild Bird"	"Cat"	0.376
+"903"	"Cat"	"Cat"	0
+"904"	"Dog"	"Cat"	0.0159999999999999
+"905"	"Fly"	"Cat"	0.568
+"906"	"Rat"	"Cat"	0.232
+"907"	"Skunk"	"Cat"	0.2
+"908"	"Deer"	"Cat"	0.232
+"909"	"Farm Soil"	"Cat"	0.624
+"910"	"Sewage"	"Cat"	0.368
+"911"	"Lake Water"	"Cat"	0.656
+"912"	"Human_Urban"	"Cat"	0.368
+"913"	"Human_Farm Worker"	"Cat"	0.704
+"914"	"Human_Abattoir Worker"	"Cat"	0.704
+"915"	"Farm Lagoon"	"Cat"	0.704
+"916"	"Farm Manure"	"Cat"	0.696
+"917"	"Fresh Produce"	"Cat"	0.632
+"918"	"Raw Milk"	"Cat"	0.416
+"919"	"Beach Sand"	"Cat"	0.56
+"920"	"Irrigation Water"	"Cat"	0.664
+"921"	"Chicken_Abattoir"	"Dog"	0.472
+"922"	"Chicken_Farm"	"Dog"	0.544
+"923"	"Chicken_Retail"	"Dog"	0.504
+"924"	"Turkey_Farm"	"Dog"	0.544
+"925"	"Turkey_Retail"	"Dog"	0.504
+"926"	"Duck_Farm"	"Dog"	0.544
+"927"	"Duck_Retail"	"Dog"	0.504
+"928"	"Goose_Farm"	"Dog"	0.544
+"929"	"Cow_Abattoir"	"Dog"	0.568
+"930"	"Cow_Farm"	"Dog"	0.608
+"931"	"Cow_Retail"	"Dog"	0.568
+"932"	"Pig_Farm"	"Dog"	0.544
+"933"	"Pig_Retail"	"Dog"	0.504
+"934"	"Goat_Farm"	"Dog"	0.472
+"935"	"Sheep_Farm"	"Dog"	0.472
+"936"	"Sheep_Retail"	"Dog"	0.504
+"937"	"Donkey"	"Dog"	0.208
+"938"	"Horse"	"Dog"	0.208
+"939"	"Llama"	"Dog"	0.208
+"940"	"Seagull"	"Dog"	0.424
+"941"	"Raccoon"	"Dog"	0.408
+"942"	"Wild Bird"	"Dog"	0.376
+"943"	"Cat"	"Dog"	0.0159999999999999
+"944"	"Dog"	"Dog"	0
+"945"	"Fly"	"Dog"	0.568
+"946"	"Rat"	"Dog"	0.232
+"947"	"Skunk"	"Dog"	0.2
+"948"	"Deer"	"Dog"	0.232
+"949"	"Farm Soil"	"Dog"	0.624
+"950"	"Sewage"	"Dog"	0.368
+"951"	"Lake Water"	"Dog"	0.656
+"952"	"Human_Urban"	"Dog"	0.368
+"953"	"Human_Farm Worker"	"Dog"	0.704
+"954"	"Human_Abattoir Worker"	"Dog"	0.704
+"955"	"Farm Lagoon"	"Dog"	0.704
+"956"	"Farm Manure"	"Dog"	0.696
+"957"	"Fresh Produce"	"Dog"	0.632
+"958"	"Raw Milk"	"Dog"	0.416
+"959"	"Beach Sand"	"Dog"	0.56
+"960"	"Irrigation Water"	"Dog"	0.664
+"961"	"Chicken_Abattoir"	"Fly"	0.616
+"962"	"Chicken_Farm"	"Fly"	0.536
+"963"	"Chicken_Retail"	"Fly"	0.592
+"964"	"Turkey_Farm"	"Fly"	0.536
+"965"	"Turkey_Retail"	"Fly"	0.592
+"966"	"Duck_Farm"	"Fly"	0.536
+"967"	"Duck_Retail"	"Fly"	0.592
+"968"	"Goose_Farm"	"Fly"	0.536
+"969"	"Cow_Abattoir"	"Fly"	0.6
+"970"	"Cow_Farm"	"Fly"	0.544
+"971"	"Cow_Retail"	"Fly"	0.6
+"972"	"Pig_Farm"	"Fly"	0.536
+"973"	"Pig_Retail"	"Fly"	0.592
+"974"	"Goat_Farm"	"Fly"	0.56
+"975"	"Sheep_Farm"	"Fly"	0.56
+"976"	"Sheep_Retail"	"Fly"	0.592
+"977"	"Donkey"	"Fly"	0.512
+"978"	"Horse"	"Fly"	0.512
+"979"	"Llama"	"Fly"	0.512
+"980"	"Seagull"	"Fly"	0.52
+"981"	"Raccoon"	"Fly"	0.432
+"982"	"Wild Bird"	"Fly"	0.584
+"983"	"Cat"	"Fly"	0.568
+"984"	"Dog"	"Fly"	0.568
+"985"	"Fly"	"Fly"	0
+"986"	"Rat"	"Fly"	0.568
+"987"	"Skunk"	"Fly"	0.576
+"988"	"Deer"	"Fly"	0.552
+"989"	"Farm Soil"	"Fly"	0.496
+"990"	"Sewage"	"Fly"	0.768
+"991"	"Lake Water"	"Fly"	0.584
+"992"	"Human_Urban"	"Fly"	0.672
+"993"	"Human_Farm Worker"	"Fly"	0.496
+"994"	"Human_Abattoir Worker"	"Fly"	0.552
+"995"	"Farm Lagoon"	"Fly"	0.592
+"996"	"Farm Manure"	"Fly"	0.584
+"997"	"Fresh Produce"	"Fly"	0.448
+"998"	"Raw Milk"	"Fly"	0.56
+"999"	"Beach Sand"	"Fly"	0.544
+"1000"	"Irrigation Water"	"Fly"	0.592
+"1001"	"Chicken_Abattoir"	"Rat"	0.432
+"1002"	"Chicken_Farm"	"Rat"	0.44
+"1003"	"Chicken_Retail"	"Rat"	0.408
+"1004"	"Turkey_Farm"	"Rat"	0.44
+"1005"	"Turkey_Retail"	"Rat"	0.408
+"1006"	"Duck_Farm"	"Rat"	0.44
+"1007"	"Duck_Retail"	"Rat"	0.408
+"1008"	"Goose_Farm"	"Rat"	0.44
+"1009"	"Cow_Abattoir"	"Rat"	0.488
+"1010"	"Cow_Farm"	"Rat"	0.504
+"1011"	"Cow_Retail"	"Rat"	0.472
+"1012"	"Pig_Farm"	"Rat"	0.44
+"1013"	"Pig_Retail"	"Rat"	0.408
+"1014"	"Goat_Farm"	"Rat"	0.392
+"1015"	"Sheep_Farm"	"Rat"	0.392
+"1016"	"Sheep_Retail"	"Rat"	0.408
+"1017"	"Donkey"	"Rat"	0.232
+"1018"	"Horse"	"Rat"	0.232
+"1019"	"Llama"	"Rat"	0.232
+"1020"	"Seagull"	"Rat"	0.368
+"1021"	"Raccoon"	"Rat"	0.296
+"1022"	"Wild Bird"	"Rat"	0.352
+"1023"	"Cat"	"Rat"	0.232
+"1024"	"Dog"	"Rat"	0.232
+"1025"	"Fly"	"Rat"	0.568
+"1026"	"Rat"	"Rat"	0
+"1027"	"Skunk"	"Rat"	0.0640000000000001
+"1028"	"Deer"	"Rat"	0.152
+"1029"	"Farm Soil"	"Rat"	0.584
+"1030"	"Sewage"	"Rat"	0.448
+"1031"	"Lake Water"	"Rat"	0.56
+"1032"	"Human_Urban"	"Rat"	0.488
+"1033"	"Human_Farm Worker"	"Rat"	0.744
+"1034"	"Human_Abattoir Worker"	"Rat"	0.728
+"1035"	"Farm Lagoon"	"Rat"	0.624
+"1036"	"Farm Manure"	"Rat"	0.656
+"1037"	"Fresh Produce"	"Rat"	0.496
+"1038"	"Raw Milk"	"Rat"	0.336
+"1039"	"Beach Sand"	"Rat"	0.528
+"1040"	"Irrigation Water"	"Rat"	0.624
+"1041"	"Chicken_Abattoir"	"Skunk"	0.456
+"1042"	"Chicken_Farm"	"Skunk"	0.448
+"1043"	"Chicken_Retail"	"Skunk"	0.432
+"1044"	"Turkey_Farm"	"Skunk"	0.448
+"1045"	"Turkey_Retail"	"Skunk"	0.432
+"1046"	"Duck_Farm"	"Skunk"	0.448
+"1047"	"Duck_Retail"	"Skunk"	0.432
+"1048"	"Goose_Farm"	"Skunk"	0.448
+"1049"	"Cow_Abattoir"	"Skunk"	0.512
+"1050"	"Cow_Farm"	"Skunk"	0.512
+"1051"	"Cow_Retail"	"Skunk"	0.496
+"1052"	"Pig_Farm"	"Skunk"	0.448
+"1053"	"Pig_Retail"	"Skunk"	0.432
+"1054"	"Goat_Farm"	"Skunk"	0.4
+"1055"	"Sheep_Farm"	"Skunk"	0.4
+"1056"	"Sheep_Retail"	"Skunk"	0.432
+"1057"	"Donkey"	"Skunk"	0.256
+"1058"	"Horse"	"Skunk"	0.256
+"1059"	"Llama"	"Skunk"	0.256
+"1060"	"Seagull"	"Skunk"	0.392
+"1061"	"Raccoon"	"Skunk"	0.32
+"1062"	"Wild Bird"	"Skunk"	0.32
+"1063"	"Cat"	"Skunk"	0.2
+"1064"	"Dog"	"Skunk"	0.2
+"1065"	"Fly"	"Skunk"	0.576
+"1066"	"Rat"	"Skunk"	0.0640000000000001
+"1067"	"Skunk"	"Skunk"	0
+"1068"	"Deer"	"Skunk"	0.12
+"1069"	"Farm Soil"	"Skunk"	0.608
+"1070"	"Sewage"	"Skunk"	0.416
+"1071"	"Lake Water"	"Skunk"	0.584
+"1072"	"Human_Urban"	"Skunk"	0.456
+"1073"	"Human_Farm Worker"	"Skunk"	0.752
+"1074"	"Human_Abattoir Worker"	"Skunk"	0.752
+"1075"	"Farm Lagoon"	"Skunk"	0.648
+"1076"	"Farm Manure"	"Skunk"	0.68
+"1077"	"Fresh Produce"	"Skunk"	0.52
+"1078"	"Raw Milk"	"Skunk"	0.344
+"1079"	"Beach Sand"	"Skunk"	0.552
+"1080"	"Irrigation Water"	"Skunk"	0.648
+"1081"	"Chicken_Abattoir"	"Deer"	0.488
+"1082"	"Chicken_Farm"	"Deer"	0.52
+"1083"	"Chicken_Retail"	"Deer"	0.52
+"1084"	"Turkey_Farm"	"Deer"	0.52
+"1085"	"Turkey_Retail"	"Deer"	0.52
+"1086"	"Duck_Farm"	"Deer"	0.52
+"1087"	"Duck_Retail"	"Deer"	0.52
+"1088"	"Goose_Farm"	"Deer"	0.52
+"1089"	"Cow_Abattoir"	"Deer"	0.544
+"1090"	"Cow_Farm"	"Deer"	0.544
+"1091"	"Cow_Retail"	"Deer"	0.544
+"1092"	"Pig_Farm"	"Deer"	0.52
+"1093"	"Pig_Retail"	"Deer"	0.52
+"1094"	"Goat_Farm"	"Deer"	0.448
+"1095"	"Sheep_Farm"	"Deer"	0.448
+"1096"	"Sheep_Retail"	"Deer"	0.48
+"1097"	"Donkey"	"Deer"	0.288
+"1098"	"Horse"	"Deer"	0.288
+"1099"	"Llama"	"Deer"	0.288
+"1100"	"Seagull"	"Deer"	0.424
+"1101"	"Raccoon"	"Deer"	0.408
+"1102"	"Wild Bird"	"Deer"	0.296
+"1103"	"Cat"	"Deer"	0.232
+"1104"	"Dog"	"Deer"	0.232
+"1105"	"Fly"	"Deer"	0.552
+"1106"	"Rat"	"Deer"	0.152
+"1107"	"Skunk"	"Deer"	0.12
+"1108"	"Deer"	"Deer"	0
+"1109"	"Farm Soil"	"Deer"	0.624
+"1110"	"Sewage"	"Deer"	0.448
+"1111"	"Lake Water"	"Deer"	0.56
+"1112"	"Human_Urban"	"Deer"	0.488
+"1113"	"Human_Farm Worker"	"Deer"	0.768
+"1114"	"Human_Abattoir Worker"	"Deer"	0.768
+"1115"	"Farm Lagoon"	"Deer"	0.664
+"1116"	"Farm Manure"	"Deer"	0.696
+"1117"	"Fresh Produce"	"Deer"	0.552
+"1118"	"Raw Milk"	"Deer"	0.392
+"1119"	"Beach Sand"	"Deer"	0.528
+"1120"	"Irrigation Water"	"Deer"	0.608
+"1121"	"Chicken_Abattoir"	"Farm Soil"	0.44
+"1122"	"Chicken_Farm"	"Farm Soil"	0.448
+"1123"	"Chicken_Retail"	"Farm Soil"	0.448
+"1124"	"Turkey_Farm"	"Farm Soil"	0.448
+"1125"	"Turkey_Retail"	"Farm Soil"	0.448
+"1126"	"Duck_Farm"	"Farm Soil"	0.448
+"1127"	"Duck_Retail"	"Farm Soil"	0.448
+"1128"	"Goose_Farm"	"Farm Soil"	0.448
+"1129"	"Cow_Abattoir"	"Farm Soil"	0.344
+"1130"	"Cow_Farm"	"Farm Soil"	0.4
+"1131"	"Cow_Retail"	"Farm Soil"	0.4
+"1132"	"Pig_Farm"	"Farm Soil"	0.448
+"1133"	"Pig_Retail"	"Farm Soil"	0.448
+"1134"	"Goat_Farm"	"Farm Soil"	0.472
+"1135"	"Sheep_Farm"	"Farm Soil"	0.472
+"1136"	"Sheep_Retail"	"Farm Soil"	0.448
+"1137"	"Donkey"	"Farm Soil"	0.472
+"1138"	"Horse"	"Farm Soil"	0.472
+"1139"	"Llama"	"Farm Soil"	0.472
+"1140"	"Seagull"	"Farm Soil"	0.44
+"1141"	"Raccoon"	"Farm Soil"	0.448
+"1142"	"Wild Bird"	"Farm Soil"	0.48
+"1143"	"Cat"	"Farm Soil"	0.624
+"1144"	"Dog"	"Farm Soil"	0.624
+"1145"	"Fly"	"Farm Soil"	0.496
+"1146"	"Rat"	"Farm Soil"	0.584
+"1147"	"Skunk"	"Farm Soil"	0.608
+"1148"	"Deer"	"Farm Soil"	0.624
+"1149"	"Farm Soil"	"Farm Soil"	0
+"1150"	"Sewage"	"Farm Soil"	0.568
+"1151"	"Lake Water"	"Farm Soil"	0.528
+"1152"	"Human_Urban"	"Farm Soil"	0.568
+"1153"	"Human_Farm Worker"	"Farm Soil"	0.408
+"1154"	"Human_Abattoir Worker"	"Farm Soil"	0.392
+"1155"	"Farm Lagoon"	"Farm Soil"	0.216
+"1156"	"Farm Manure"	"Farm Soil"	0.192
+"1157"	"Fresh Produce"	"Farm Soil"	0.28
+"1158"	"Raw Milk"	"Farm Soil"	0.472
+"1159"	"Beach Sand"	"Farm Soil"	0.552
+"1160"	"Irrigation Water"	"Farm Soil"	0.384
+"1161"	"Chicken_Abattoir"	"Sewage"	0.608
+"1162"	"Chicken_Farm"	"Sewage"	0.68
+"1163"	"Chicken_Retail"	"Sewage"	0.64
+"1164"	"Turkey_Farm"	"Sewage"	0.68
+"1165"	"Turkey_Retail"	"Sewage"	0.64
+"1166"	"Duck_Farm"	"Sewage"	0.68
+"1167"	"Duck_Retail"	"Sewage"	0.64
+"1168"	"Goose_Farm"	"Sewage"	0.68
+"1169"	"Cow_Abattoir"	"Sewage"	0.608
+"1170"	"Cow_Farm"	"Sewage"	0.648
+"1171"	"Cow_Retail"	"Sewage"	0.608
+"1172"	"Pig_Farm"	"Sewage"	0.68
+"1173"	"Pig_Retail"	"Sewage"	0.64
+"1174"	"Goat_Farm"	"Sewage"	0.608
+"1175"	"Sheep_Farm"	"Sewage"	0.608
+"1176"	"Sheep_Retail"	"Sewage"	0.64
+"1177"	"Donkey"	"Sewage"	0.544
+"1178"	"Horse"	"Sewage"	0.544
+"1179"	"Llama"	"Sewage"	0.544
+"1180"	"Seagull"	"Sewage"	0.448
+"1181"	"Raccoon"	"Sewage"	0.512
+"1182"	"Wild Bird"	"Sewage"	0.416
+"1183"	"Cat"	"Sewage"	0.368
+"1184"	"Dog"	"Sewage"	0.368
+"1185"	"Fly"	"Sewage"	0.768
+"1186"	"Rat"	"Sewage"	0.448
+"1187"	"Skunk"	"Sewage"	0.416
+"1188"	"Deer"	"Sewage"	0.448
+"1189"	"Farm Soil"	"Sewage"	0.568
+"1190"	"Sewage"	"Sewage"	0
+"1191"	"Lake Water"	"Sewage"	0.496
+"1192"	"Human_Urban"	"Sewage"	0.312
+"1193"	"Human_Farm Worker"	"Sewage"	0.608
+"1194"	"Human_Abattoir Worker"	"Sewage"	0.608
+"1195"	"Farm Lagoon"	"Sewage"	0.488
+"1196"	"Farm Manure"	"Sewage"	0.576
+"1197"	"Fresh Produce"	"Sewage"	0.608
+"1198"	"Raw Milk"	"Sewage"	0.568
+"1199"	"Beach Sand"	"Sewage"	0.496
+"1200"	"Irrigation Water"	"Sewage"	0.448
+"1201"	"Chicken_Abattoir"	"Lake Water"	0.704
+"1202"	"Chicken_Farm"	"Lake Water"	0.696
+"1203"	"Chicken_Retail"	"Lake Water"	0.68
+"1204"	"Turkey_Farm"	"Lake Water"	0.696
+"1205"	"Turkey_Retail"	"Lake Water"	0.68
+"1206"	"Duck_Farm"	"Lake Water"	0.696
+"1207"	"Duck_Retail"	"Lake Water"	0.68
+"1208"	"Goose_Farm"	"Lake Water"	0.696
+"1209"	"Cow_Abattoir"	"Lake Water"	0.68
+"1210"	"Cow_Farm"	"Lake Water"	0.68
+"1211"	"Cow_Retail"	"Lake Water"	0.664
+"1212"	"Pig_Farm"	"Lake Water"	0.696
+"1213"	"Pig_Retail"	"Lake Water"	0.68
+"1214"	"Goat_Farm"	"Lake Water"	0.664
+"1215"	"Sheep_Farm"	"Lake Water"	0.664
+"1216"	"Sheep_Retail"	"Lake Water"	0.68
+"1217"	"Donkey"	"Lake Water"	0.584
+"1218"	"Horse"	"Lake Water"	0.584
+"1219"	"Llama"	"Lake Water"	0.584
+"1220"	"Seagull"	"Lake Water"	0.616
+"1221"	"Raccoon"	"Lake Water"	0.624
+"1222"	"Wild Bird"	"Lake Water"	0.544
+"1223"	"Cat"	"Lake Water"	0.656
+"1224"	"Dog"	"Lake Water"	0.656
+"1225"	"Fly"	"Lake Water"	0.584
+"1226"	"Rat"	"Lake Water"	0.56
+"1227"	"Skunk"	"Lake Water"	0.584
+"1228"	"Deer"	"Lake Water"	0.56
+"1229"	"Farm Soil"	"Lake Water"	0.528
+"1230"	"Sewage"	"Lake Water"	0.496
+"1231"	"Lake Water"	"Lake Water"	0
+"1232"	"Human_Urban"	"Lake Water"	0.696
+"1233"	"Human_Farm Worker"	"Lake Water"	0.648
+"1234"	"Human_Abattoir Worker"	"Lake Water"	0.632
+"1235"	"Farm Lagoon"	"Lake Water"	0.392
+"1236"	"Farm Manure"	"Lake Water"	0.48
+"1237"	"Fresh Produce"	"Lake Water"	0.52
+"1238"	"Raw Milk"	"Lake Water"	0.624
+"1239"	"Beach Sand"	"Lake Water"	0.296
+"1240"	"Irrigation Water"	"Lake Water"	0.224
+"1241"	"Chicken_Abattoir"	"Human_Urban"	0.568
+"1242"	"Chicken_Farm"	"Human_Urban"	0.64
+"1243"	"Chicken_Retail"	"Human_Urban"	0.52
+"1244"	"Turkey_Farm"	"Human_Urban"	0.64
+"1245"	"Turkey_Retail"	"Human_Urban"	0.52
+"1246"	"Duck_Farm"	"Human_Urban"	0.64
+"1247"	"Duck_Retail"	"Human_Urban"	0.52
+"1248"	"Goose_Farm"	"Human_Urban"	0.64
+"1249"	"Cow_Abattoir"	"Human_Urban"	0.608
+"1250"	"Cow_Farm"	"Human_Urban"	0.648
+"1251"	"Cow_Retail"	"Human_Urban"	0.528
+"1252"	"Pig_Farm"	"Human_Urban"	0.64
+"1253"	"Pig_Retail"	"Human_Urban"	0.52
+"1254"	"Goat_Farm"	"Human_Urban"	0.608
+"1255"	"Sheep_Farm"	"Human_Urban"	0.608
+"1256"	"Sheep_Retail"	"Human_Urban"	0.52
+"1257"	"Donkey"	"Human_Urban"	0.544
+"1258"	"Horse"	"Human_Urban"	0.544
+"1259"	"Llama"	"Human_Urban"	0.544
+"1260"	"Seagull"	"Human_Urban"	0.488
+"1261"	"Raccoon"	"Human_Urban"	0.552
+"1262"	"Wild Bird"	"Human_Urban"	0.496
+"1263"	"Cat"	"Human_Urban"	0.368
+"1264"	"Dog"	"Human_Urban"	0.368
+"1265"	"Fly"	"Human_Urban"	0.672
+"1266"	"Rat"	"Human_Urban"	0.488
+"1267"	"Skunk"	"Human_Urban"	0.456
+"1268"	"Deer"	"Human_Urban"	0.488
+"1269"	"Farm Soil"	"Human_Urban"	0.568
+"1270"	"Sewage"	"Human_Urban"	0.312
+"1271"	"Lake Water"	"Human_Urban"	0.696
+"1272"	"Human_Urban"	"Human_Urban"	0
+"1273"	"Human_Farm Worker"	"Human_Urban"	0.472
+"1274"	"Human_Abattoir Worker"	"Human_Urban"	0.472
+"1275"	"Farm Lagoon"	"Human_Urban"	0.664
+"1276"	"Farm Manure"	"Human_Urban"	0.64
+"1277"	"Fresh Produce"	"Human_Urban"	0.664
+"1278"	"Raw Milk"	"Human_Urban"	0.528
+"1279"	"Beach Sand"	"Human_Urban"	0.584
+"1280"	"Irrigation Water"	"Human_Urban"	0.608
+"1281"	"Chicken_Abattoir"	"Human_Farm Worker"	0.688
+"1282"	"Chicken_Farm"	"Human_Farm Worker"	0.568
+"1283"	"Chicken_Retail"	"Human_Farm Worker"	0.624
+"1284"	"Turkey_Farm"	"Human_Farm Worker"	0.568
+"1285"	"Turkey_Retail"	"Human_Farm Worker"	0.624
+"1286"	"Duck_Farm"	"Human_Farm Worker"	0.568
+"1287"	"Duck_Retail"	"Human_Farm Worker"	0.624
+"1288"	"Goose_Farm"	"Human_Farm Worker"	0.568
+"1289"	"Cow_Abattoir"	"Human_Farm Worker"	0.576
+"1290"	"Cow_Farm"	"Human_Farm Worker"	0.52
+"1291"	"Cow_Retail"	"Human_Farm Worker"	0.576
+"1292"	"Pig_Farm"	"Human_Farm Worker"	0.568
+"1293"	"Pig_Retail"	"Human_Farm Worker"	0.624
+"1294"	"Goat_Farm"	"Human_Farm Worker"	0.592
+"1295"	"Sheep_Farm"	"Human_Farm Worker"	0.592
+"1296"	"Sheep_Retail"	"Human_Farm Worker"	0.624
+"1297"	"Donkey"	"Human_Farm Worker"	0.72
+"1298"	"Horse"	"Human_Farm Worker"	0.72
+"1299"	"Llama"	"Human_Farm Worker"	0.72
+"1300"	"Seagull"	"Human_Farm Worker"	0.56
+"1301"	"Raccoon"	"Human_Farm Worker"	0.584
+"1302"	"Wild Bird"	"Human_Farm Worker"	0.68
+"1303"	"Cat"	"Human_Farm Worker"	0.704
+"1304"	"Dog"	"Human_Farm Worker"	0.704
+"1305"	"Fly"	"Human_Farm Worker"	0.496
+"1306"	"Rat"	"Human_Farm Worker"	0.744
+"1307"	"Skunk"	"Human_Farm Worker"	0.752
+"1308"	"Deer"	"Human_Farm Worker"	0.768
+"1309"	"Farm Soil"	"Human_Farm Worker"	0.408
+"1310"	"Sewage"	"Human_Farm Worker"	0.608
+"1311"	"Lake Water"	"Human_Farm Worker"	0.648
+"1312"	"Human_Urban"	"Human_Farm Worker"	0.472
+"1313"	"Human_Farm Worker"	"Human_Farm Worker"	0
+"1314"	"Human_Abattoir Worker"	"Human_Farm Worker"	0.216
+"1315"	"Farm Lagoon"	"Human_Farm Worker"	0.464
+"1316"	"Farm Manure"	"Human_Farm Worker"	0.44
+"1317"	"Fresh Produce"	"Human_Farm Worker"	0.472
+"1318"	"Raw Milk"	"Human_Farm Worker"	0.552
+"1319"	"Beach Sand"	"Human_Farm Worker"	0.576
+"1320"	"Irrigation Water"	"Human_Farm Worker"	0.52
+"1321"	"Chicken_Abattoir"	"Human_Abattoir Worker"	0.576
+"1322"	"Chicken_Farm"	"Human_Abattoir Worker"	0.68
+"1323"	"Chicken_Retail"	"Human_Abattoir Worker"	0.624
+"1324"	"Turkey_Farm"	"Human_Abattoir Worker"	0.68
+"1325"	"Turkey_Retail"	"Human_Abattoir Worker"	0.624
+"1326"	"Duck_Farm"	"Human_Abattoir Worker"	0.68
+"1327"	"Duck_Retail"	"Human_Abattoir Worker"	0.624
+"1328"	"Goose_Farm"	"Human_Abattoir Worker"	0.68
+"1329"	"Cow_Abattoir"	"Human_Abattoir Worker"	0.52
+"1330"	"Cow_Farm"	"Human_Abattoir Worker"	0.632
+"1331"	"Cow_Retail"	"Human_Abattoir Worker"	0.576
+"1332"	"Pig_Farm"	"Human_Abattoir Worker"	0.68
+"1333"	"Pig_Retail"	"Human_Abattoir Worker"	0.624
+"1334"	"Goat_Farm"	"Human_Abattoir Worker"	0.704
+"1335"	"Sheep_Farm"	"Human_Abattoir Worker"	0.704
+"1336"	"Sheep_Retail"	"Human_Abattoir Worker"	0.624
+"1337"	"Donkey"	"Human_Abattoir Worker"	0.688
+"1338"	"Horse"	"Human_Abattoir Worker"	0.688
+"1339"	"Llama"	"Human_Abattoir Worker"	0.688
+"1340"	"Seagull"	"Human_Abattoir Worker"	0.56
+"1341"	"Raccoon"	"Human_Abattoir Worker"	0.568
+"1342"	"Wild Bird"	"Human_Abattoir Worker"	0.68
+"1343"	"Cat"	"Human_Abattoir Worker"	0.704
+"1344"	"Dog"	"Human_Abattoir Worker"	0.704
+"1345"	"Fly"	"Human_Abattoir Worker"	0.552
+"1346"	"Rat"	"Human_Abattoir Worker"	0.728
+"1347"	"Skunk"	"Human_Abattoir Worker"	0.752
+"1348"	"Deer"	"Human_Abattoir Worker"	0.768
+"1349"	"Farm Soil"	"Human_Abattoir Worker"	0.392
+"1350"	"Sewage"	"Human_Abattoir Worker"	0.608
+"1351"	"Lake Water"	"Human_Abattoir Worker"	0.632
+"1352"	"Human_Urban"	"Human_Abattoir Worker"	0.472
+"1353"	"Human_Farm Worker"	"Human_Abattoir Worker"	0.216
+"1354"	"Human_Abattoir Worker"	"Human_Abattoir Worker"	0
+"1355"	"Farm Lagoon"	"Human_Abattoir Worker"	0.448
+"1356"	"Farm Manure"	"Human_Abattoir Worker"	0.424
+"1357"	"Fresh Produce"	"Human_Abattoir Worker"	0.472
+"1358"	"Raw Milk"	"Human_Abattoir Worker"	0.592
+"1359"	"Beach Sand"	"Human_Abattoir Worker"	0.56
+"1360"	"Irrigation Water"	"Human_Abattoir Worker"	0.504
+"1361"	"Chicken_Abattoir"	"Farm Lagoon"	0.464
+"1362"	"Chicken_Farm"	"Farm Lagoon"	0.472
+"1363"	"Chicken_Retail"	"Farm Lagoon"	0.472
+"1364"	"Turkey_Farm"	"Farm Lagoon"	0.472
+"1365"	"Turkey_Retail"	"Farm Lagoon"	0.472
+"1366"	"Duck_Farm"	"Farm Lagoon"	0.472
+"1367"	"Duck_Retail"	"Farm Lagoon"	0.472
+"1368"	"Goose_Farm"	"Farm Lagoon"	0.472
+"1369"	"Cow_Abattoir"	"Farm Lagoon"	0.384
+"1370"	"Cow_Farm"	"Farm Lagoon"	0.44
+"1371"	"Cow_Retail"	"Farm Lagoon"	0.44
+"1372"	"Pig_Farm"	"Farm Lagoon"	0.472
+"1373"	"Pig_Retail"	"Farm Lagoon"	0.472
+"1374"	"Goat_Farm"	"Farm Lagoon"	0.496
+"1375"	"Sheep_Farm"	"Farm Lagoon"	0.496
+"1376"	"Sheep_Retail"	"Farm Lagoon"	0.472
+"1377"	"Donkey"	"Farm Lagoon"	0.552
+"1378"	"Horse"	"Farm Lagoon"	0.552
+"1379"	"Llama"	"Farm Lagoon"	0.552
+"1380"	"Seagull"	"Farm Lagoon"	0.552
+"1381"	"Raccoon"	"Farm Lagoon"	0.56
+"1382"	"Wild Bird"	"Farm Lagoon"	0.592
+"1383"	"Cat"	"Farm Lagoon"	0.704
+"1384"	"Dog"	"Farm Lagoon"	0.704
+"1385"	"Fly"	"Farm Lagoon"	0.592
+"1386"	"Rat"	"Farm Lagoon"	0.624
+"1387"	"Skunk"	"Farm Lagoon"	0.648
+"1388"	"Deer"	"Farm Lagoon"	0.664
+"1389"	"Farm Soil"	"Farm Lagoon"	0.216
+"1390"	"Sewage"	"Farm Lagoon"	0.488
+"1391"	"Lake Water"	"Farm Lagoon"	0.392
+"1392"	"Human_Urban"	"Farm Lagoon"	0.664
+"1393"	"Human_Farm Worker"	"Farm Lagoon"	0.464
+"1394"	"Human_Abattoir Worker"	"Farm Lagoon"	0.448
+"1395"	"Farm Lagoon"	"Farm Lagoon"	0
+"1396"	"Farm Manure"	"Farm Lagoon"	0.168
+"1397"	"Fresh Produce"	"Farm Lagoon"	0.336
+"1398"	"Raw Milk"	"Farm Lagoon"	0.456
+"1399"	"Beach Sand"	"Farm Lagoon"	0.584
+"1400"	"Irrigation Water"	"Farm Lagoon"	0.248
+"1401"	"Chicken_Abattoir"	"Farm Manure"	0.496
+"1402"	"Chicken_Farm"	"Farm Manure"	0.504
+"1403"	"Chicken_Retail"	"Farm Manure"	0.504
+"1404"	"Turkey_Farm"	"Farm Manure"	0.504
+"1405"	"Turkey_Retail"	"Farm Manure"	0.504
+"1406"	"Duck_Farm"	"Farm Manure"	0.504
+"1407"	"Duck_Retail"	"Farm Manure"	0.504
+"1408"	"Goose_Farm"	"Farm Manure"	0.504
+"1409"	"Cow_Abattoir"	"Farm Manure"	0.4
+"1410"	"Cow_Farm"	"Farm Manure"	0.456
+"1411"	"Cow_Retail"	"Farm Manure"	0.456
+"1412"	"Pig_Farm"	"Farm Manure"	0.504
+"1413"	"Pig_Retail"	"Farm Manure"	0.504
+"1414"	"Goat_Farm"	"Farm Manure"	0.528
+"1415"	"Sheep_Farm"	"Farm Manure"	0.528
+"1416"	"Sheep_Retail"	"Farm Manure"	0.504
+"1417"	"Donkey"	"Farm Manure"	0.544
+"1418"	"Horse"	"Farm Manure"	0.544
+"1419"	"Llama"	"Farm Manure"	0.544
+"1420"	"Seagull"	"Farm Manure"	0.528
+"1421"	"Raccoon"	"Farm Manure"	0.536
+"1422"	"Wild Bird"	"Farm Manure"	0.568
+"1423"	"Cat"	"Farm Manure"	0.696
+"1424"	"Dog"	"Farm Manure"	0.696
+"1425"	"Fly"	"Farm Manure"	0.584
+"1426"	"Rat"	"Farm Manure"	0.656
+"1427"	"Skunk"	"Farm Manure"	0.68
+"1428"	"Deer"	"Farm Manure"	0.696
+"1429"	"Farm Soil"	"Farm Manure"	0.192
+"1430"	"Sewage"	"Farm Manure"	0.576
+"1431"	"Lake Water"	"Farm Manure"	0.48
+"1432"	"Human_Urban"	"Farm Manure"	0.64
+"1433"	"Human_Farm Worker"	"Farm Manure"	0.44
+"1434"	"Human_Abattoir Worker"	"Farm Manure"	0.424
+"1435"	"Farm Lagoon"	"Farm Manure"	0.168
+"1436"	"Farm Manure"	"Farm Manure"	0
+"1437"	"Fresh Produce"	"Farm Manure"	0.368
+"1438"	"Raw Milk"	"Farm Manure"	0.488
+"1439"	"Beach Sand"	"Farm Manure"	0.504
+"1440"	"Irrigation Water"	"Farm Manure"	0.336
+"1441"	"Chicken_Abattoir"	"Fresh Produce"	0.424
+"1442"	"Chicken_Farm"	"Fresh Produce"	0.4
+"1443"	"Chicken_Retail"	"Fresh Produce"	0.4
+"1444"	"Turkey_Farm"	"Fresh Produce"	0.4
+"1445"	"Turkey_Retail"	"Fresh Produce"	0.4
+"1446"	"Duck_Farm"	"Fresh Produce"	0.4
+"1447"	"Duck_Retail"	"Fresh Produce"	0.4
+"1448"	"Goose_Farm"	"Fresh Produce"	0.4
+"1449"	"Cow_Abattoir"	"Fresh Produce"	0.408
+"1450"	"Cow_Farm"	"Fresh Produce"	0.408
+"1451"	"Cow_Retail"	"Fresh Produce"	0.408
+"1452"	"Pig_Farm"	"Fresh Produce"	0.4
+"1453"	"Pig_Retail"	"Fresh Produce"	0.4
+"1454"	"Goat_Farm"	"Fresh Produce"	0.424
+"1455"	"Sheep_Farm"	"Fresh Produce"	0.424
+"1456"	"Sheep_Retail"	"Fresh Produce"	0.4
+"1457"	"Donkey"	"Fresh Produce"	0.52
+"1458"	"Horse"	"Fresh Produce"	0.52
+"1459"	"Llama"	"Fresh Produce"	0.52
+"1460"	"Seagull"	"Fresh Produce"	0.48
+"1461"	"Raccoon"	"Fresh Produce"	0.472
+"1462"	"Wild Bird"	"Fresh Produce"	0.52
+"1463"	"Cat"	"Fresh Produce"	0.632
+"1464"	"Dog"	"Fresh Produce"	0.632
+"1465"	"Fly"	"Fresh Produce"	0.448
+"1466"	"Rat"	"Fresh Produce"	0.496
+"1467"	"Skunk"	"Fresh Produce"	0.52
+"1468"	"Deer"	"Fresh Produce"	0.552
+"1469"	"Farm Soil"	"Fresh Produce"	0.28
+"1470"	"Sewage"	"Fresh Produce"	0.608
+"1471"	"Lake Water"	"Fresh Produce"	0.52
+"1472"	"Human_Urban"	"Fresh Produce"	0.664
+"1473"	"Human_Farm Worker"	"Fresh Produce"	0.472
+"1474"	"Human_Abattoir Worker"	"Fresh Produce"	0.472
+"1475"	"Farm Lagoon"	"Fresh Produce"	0.336
+"1476"	"Farm Manure"	"Fresh Produce"	0.368
+"1477"	"Fresh Produce"	"Fresh Produce"	0
+"1478"	"Raw Milk"	"Fresh Produce"	0.424
+"1479"	"Beach Sand"	"Fresh Produce"	0.544
+"1480"	"Irrigation Water"	"Fresh Produce"	0.504
+"1481"	"Chicken_Abattoir"	"Raw Milk"	0.36
+"1482"	"Chicken_Farm"	"Raw Milk"	0.352
+"1483"	"Chicken_Retail"	"Raw Milk"	0.28
+"1484"	"Turkey_Farm"	"Raw Milk"	0.352
+"1485"	"Turkey_Retail"	"Raw Milk"	0.28
+"1486"	"Duck_Farm"	"Raw Milk"	0.352
+"1487"	"Duck_Retail"	"Raw Milk"	0.28
+"1488"	"Goose_Farm"	"Raw Milk"	0.352
+"1489"	"Cow_Abattoir"	"Raw Milk"	0.336
+"1490"	"Cow_Farm"	"Raw Milk"	0.336
+"1491"	"Cow_Retail"	"Raw Milk"	0.264
+"1492"	"Pig_Farm"	"Raw Milk"	0.352
+"1493"	"Pig_Retail"	"Raw Milk"	0.28
+"1494"	"Goat_Farm"	"Raw Milk"	0.184
+"1495"	"Sheep_Farm"	"Raw Milk"	0.184
+"1496"	"Sheep_Retail"	"Raw Milk"	0.2
+"1497"	"Donkey"	"Raw Milk"	0.336
+"1498"	"Horse"	"Raw Milk"	0.336
+"1499"	"Llama"	"Raw Milk"	0.336
+"1500"	"Seagull"	"Raw Milk"	0.528
+"1501"	"Raccoon"	"Raw Milk"	0.48
+"1502"	"Wild Bird"	"Raw Milk"	0.496
+"1503"	"Cat"	"Raw Milk"	0.416
+"1504"	"Dog"	"Raw Milk"	0.416
+"1505"	"Fly"	"Raw Milk"	0.56
+"1506"	"Rat"	"Raw Milk"	0.336
+"1507"	"Skunk"	"Raw Milk"	0.344
+"1508"	"Deer"	"Raw Milk"	0.392
+"1509"	"Farm Soil"	"Raw Milk"	0.472
+"1510"	"Sewage"	"Raw Milk"	0.568
+"1511"	"Lake Water"	"Raw Milk"	0.624
+"1512"	"Human_Urban"	"Raw Milk"	0.528
+"1513"	"Human_Farm Worker"	"Raw Milk"	0.552
+"1514"	"Human_Abattoir Worker"	"Raw Milk"	0.592
+"1515"	"Farm Lagoon"	"Raw Milk"	0.456
+"1516"	"Farm Manure"	"Raw Milk"	0.488
+"1517"	"Fresh Produce"	"Raw Milk"	0.424
+"1518"	"Raw Milk"	"Raw Milk"	0
+"1519"	"Beach Sand"	"Raw Milk"	0.704
+"1520"	"Irrigation Water"	"Raw Milk"	0.568
+"1521"	"Chicken_Abattoir"	"Beach Sand"	0.8
+"1522"	"Chicken_Farm"	"Beach Sand"	0.792
+"1523"	"Chicken_Retail"	"Beach Sand"	0.776
+"1524"	"Turkey_Farm"	"Beach Sand"	0.792
+"1525"	"Turkey_Retail"	"Beach Sand"	0.776
+"1526"	"Duck_Farm"	"Beach Sand"	0.792
+"1527"	"Duck_Retail"	"Beach Sand"	0.776
+"1528"	"Goose_Farm"	"Beach Sand"	0.792
+"1529"	"Cow_Abattoir"	"Beach Sand"	0.76
+"1530"	"Cow_Farm"	"Beach Sand"	0.76
+"1531"	"Cow_Retail"	"Beach Sand"	0.744
+"1532"	"Pig_Farm"	"Beach Sand"	0.792
+"1533"	"Pig_Retail"	"Beach Sand"	0.776
+"1534"	"Goat_Farm"	"Beach Sand"	0.76
+"1535"	"Sheep_Farm"	"Beach Sand"	0.76
+"1536"	"Sheep_Retail"	"Beach Sand"	0.776
+"1537"	"Donkey"	"Beach Sand"	0.584
+"1538"	"Horse"	"Beach Sand"	0.584
+"1539"	"Llama"	"Beach Sand"	0.584
+"1540"	"Seagull"	"Beach Sand"	0.544
+"1541"	"Raccoon"	"Beach Sand"	0.552
+"1542"	"Wild Bird"	"Beach Sand"	0.512
+"1543"	"Cat"	"Beach Sand"	0.56
+"1544"	"Dog"	"Beach Sand"	0.56
+"1545"	"Fly"	"Beach Sand"	0.544
+"1546"	"Rat"	"Beach Sand"	0.528
+"1547"	"Skunk"	"Beach Sand"	0.552
+"1548"	"Deer"	"Beach Sand"	0.528
+"1549"	"Farm Soil"	"Beach Sand"	0.552
+"1550"	"Sewage"	"Beach Sand"	0.496
+"1551"	"Lake Water"	"Beach Sand"	0.296
+"1552"	"Human_Urban"	"Beach Sand"	0.584
+"1553"	"Human_Farm Worker"	"Beach Sand"	0.576
+"1554"	"Human_Abattoir Worker"	"Beach Sand"	0.56
+"1555"	"Farm Lagoon"	"Beach Sand"	0.584
+"1556"	"Farm Manure"	"Beach Sand"	0.504
+"1557"	"Fresh Produce"	"Beach Sand"	0.544
+"1558"	"Raw Milk"	"Beach Sand"	0.704
+"1559"	"Beach Sand"	"Beach Sand"	0
+"1560"	"Irrigation Water"	"Beach Sand"	0.432
+"1561"	"Chicken_Abattoir"	"Irrigation Water"	0.616
+"1562"	"Chicken_Farm"	"Irrigation Water"	0.624
+"1563"	"Chicken_Retail"	"Irrigation Water"	0.624
+"1564"	"Turkey_Farm"	"Irrigation Water"	0.624
+"1565"	"Turkey_Retail"	"Irrigation Water"	0.624
+"1566"	"Duck_Farm"	"Irrigation Water"	0.624
+"1567"	"Duck_Retail"	"Irrigation Water"	0.624
+"1568"	"Goose_Farm"	"Irrigation Water"	0.624
+"1569"	"Cow_Abattoir"	"Irrigation Water"	0.536
+"1570"	"Cow_Farm"	"Irrigation Water"	0.592
+"1571"	"Cow_Retail"	"Irrigation Water"	0.592
+"1572"	"Pig_Farm"	"Irrigation Water"	0.624
+"1573"	"Pig_Retail"	"Irrigation Water"	0.624
+"1574"	"Goat_Farm"	"Irrigation Water"	0.592
+"1575"	"Sheep_Farm"	"Irrigation Water"	0.592
+"1576"	"Sheep_Retail"	"Irrigation Water"	0.624
+"1577"	"Donkey"	"Irrigation Water"	0.608
+"1578"	"Horse"	"Irrigation Water"	0.608
+"1579"	"Llama"	"Irrigation Water"	0.608
+"1580"	"Seagull"	"Irrigation Water"	0.608
+"1581"	"Raccoon"	"Irrigation Water"	0.672
+"1582"	"Wild Bird"	"Irrigation Water"	0.536
+"1583"	"Cat"	"Irrigation Water"	0.664
+"1584"	"Dog"	"Irrigation Water"	0.664
+"1585"	"Fly"	"Irrigation Water"	0.592
+"1586"	"Rat"	"Irrigation Water"	0.624
+"1587"	"Skunk"	"Irrigation Water"	0.648
+"1588"	"Deer"	"Irrigation Water"	0.608
+"1589"	"Farm Soil"	"Irrigation Water"	0.384
+"1590"	"Sewage"	"Irrigation Water"	0.448
+"1591"	"Lake Water"	"Irrigation Water"	0.224
+"1592"	"Human_Urban"	"Irrigation Water"	0.608
+"1593"	"Human_Farm Worker"	"Irrigation Water"	0.52
+"1594"	"Human_Abattoir Worker"	"Irrigation Water"	0.504
+"1595"	"Farm Lagoon"	"Irrigation Water"	0.248
+"1596"	"Farm Manure"	"Irrigation Water"	0.336
+"1597"	"Fresh Produce"	"Irrigation Water"	0.504
+"1598"	"Raw Milk"	"Irrigation Water"	0.568
+"1599"	"Beach Sand"	"Irrigation Water"	0.432
+"1600"	"Irrigation Water"	"Irrigation Water"	0

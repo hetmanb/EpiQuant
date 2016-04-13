@@ -56,7 +56,7 @@ shinyServer(function(input, output, session) {
   output$scoretable <- renderHotable({  
       inFile <- input$source_scores
       if ((is.null(inFile)) && (input$source_demo == TRUE)) {        
-        return(read.table("data/00_sourcetest_v2.txt", header=T, sep='\t'))
+        return(read.table("pub_data/00_sourcetest_v2.txt", header=T, sep='\t'))
       }
       read.table(inFile$datapath, header=T, sep='\t')
     }, readOnly = F)
@@ -155,7 +155,7 @@ shinyServer(function(input, output, session) {
     inFile <- input$strain_data
     if ((is.null(inFile)) && (input$epi_demo == TRUE)) {   
 #       print("inFile is null")
-      return(temp_calc(read.table('data/00_updated_straindata274.txt', header=TRUE, sep='\t')))
+      return(temp_calc(read.table('pub_data/updated_straindata274.txt', header=TRUE, sep='\t')))
       }
       temp_calc(read.table(inFile$datapath, header=TRUE, sep='\t'))
   })      
@@ -163,7 +163,7 @@ shinyServer(function(input, output, session) {
     inFile <- input$strain_data
     if ((is.null(inFile)) && (input$epi_demo == TRUE)) { 
 #       print("inFile is null")
-      return(geog_calc(read.table('data/00_updated_straindata274.txt', header=TRUE, sep='\t')))
+      return(geog_calc(read.table('pub_data/updated_straindata274.txt', header=TRUE, sep='\t')))
     }
     geog_calc(read.table(inFile$datapath, header=TRUE, sep='\t'))
   })  
@@ -171,13 +171,13 @@ shinyServer(function(input, output, session) {
 ######## Calculate the epi relations based upon the epi-input and source datasets: ######
   table <- reactive({
     if(is.null(input$strain_data)) { 
-      inFile <- read.table('data/00_updated_straindata274.txt', header=T, sep='\t')  
+      inFile <- read.table('pub_data/updated_straindata274.txt', header=T, sep='\t')  
     }     
        else { 
          inFile <- read.table(input$strain_data$datapath, header=T, sep='\t') 
        } 
     if(is.null(input$source_data)) { 
-      sinFile <- read.table('data/00_SourcePairwise.txt', header=T, sep = '\t')  
+      sinFile <- read.table('pub_data/SourcePairwise_v2.txt', header=T, sep = '\t')  
     }    
         else { 
           sinFile <- read.table(input$source_data$datapath, header=T, sep='\t') 
@@ -193,7 +193,7 @@ shinyServer(function(input, output, session) {
 
 ####### Generate a map with the locations from the strain info file using rCharts and Leaflet:
    output$epiMap <- renderMap({
-     if(is.null(input$strain_data)) { inFile <- read.table('data/00_updated_straindata274.txt', header=T, sep='\t')  }     
+     if(is.null(input$strain_data)) { inFile <- read.table('pub_data/updated_straindata274.txt', header=T, sep='\t')  }     
       else { inFile <- read.table(input$strain_data$datapath, header=T, sep='\t') } 
        return(EpiMap(inFile))
 

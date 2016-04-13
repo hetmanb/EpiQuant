@@ -1,0 +1,41 @@
+Source	Animal	Avian	Ruminant	Porcine	OtherAnimal	Food.Farm Level	Food.Processing Level	Food.Retail Level	NonFood.Wild	NonFood.Domestic&Companion	Human	Urban	Rural	Food Consumption	Recreational.Water	Recreational.AnimalContact	Recreational.Travel	Occupational.FarmWork	Occupational.FoodHandling	Environmental	Water	Soil/Sand	Farm Impact	Human Impact	Non Impacted
+Chicken_Abattoir	1	1	0	0	0	7	1	7	0	0	0	0	0	7	0	0	0	7	1	0	0	0	0	0	0
+Chicken_Farm	1	1	0	0	0	1	7	7	7	0	0	0	0	7	0	0	0	1	7	0	0	0	1	0	0
+Chicken_Retail	1	1	0	0	0	7	7	1	0	0	0	0	0	1	0	0	0	7	7	0	0	0	7	0	0
+Turkey_Farm	1	1	0	0	0	1	7	7	7	0	0	0	0	7	0	0	0	1	7	0	0	0	1	0	0
+Turkey_Retail	1	1	0	0	0	7	7	1	0	0	0	0	0	1	0	0	0	7	7	0	0	0	7	0	0
+Duck_Farm	1	1	0	0	0	1	7	7	7	0	0	0	0	7	0	0	0	1	7	0	0	0	1	0	0
+Duck_Retail	1	1	0	0	0	7	7	1	0	0	0	0	0	1	0	0	0	7	7	0	0	0	7	0	0
+Goose_Farm	1	1	0	0	0	1	7	7	7	0	0	0	0	7	0	0	0	1	7	0	0	0	1	0	0
+Cow_Abattoir	1	0	1	0	0	7	1	7	0	0	0	0	0	7	7	0	0	7	7	0	7	0	1	0	0
+Cow_Farm	1	0	1	0	0	1	7	7	7	0	0	0	0	7	7	0	0	1	7	0	7	0	1	0	0
+Cow_Retail	1	0	1	0	0	7	7	1	0	0	0	0	0	1	7	0	0	7	7	0	7	0	7	0	0
+Pig_Farm	1	0	0	1	0	1	7	7	7	0	0	0	0	7	0	0	0	1	7	0	0	0	1	0	0
+Pig_Retail	1	0	0	1	0	7	7	1	0	0	0	0	0	1	0	0	0	7	7	0	0	0	7	0	0
+Goat_Farm	1	0	1	0	0	1	7	0	0	0	0	0	0	7	0	0	0	1	7	0	0	0	7	0	0
+Sheep_Farm	1	0	1	0	0	1	7	0	0	0	0	0	0	7	0	0	0	1	7	0	0	0	7	0	0
+Sheep_Retail	1	0	1	0	0	7	7	1	0	0	0	0	0	1	0	0	0	7	7	0	0	0	7	0	0
+Donkey	1	0	7	0	1	7	0	0	0	1	0	0	7	0	0	1	0	7	0	0	0	0	7	0	0
+Horse	1	0	7	0	1	7	0	0	0	1	0	0	7	0	0	1	0	7	0	0	0	0	7	0	0
+Llama	1	0	7	0	1	7	0	0	0	1	0	0	7	0	0	1	0	7	0	0	0	0	7	0	0
+Seagull	1	1	0	0	0	7	7	7	1	7	0	7	7	0	7	7	0	0	0	0	7	7	0	7	0
+Raccoon	1	0	0	0	1	7	7	7	1	7	0	7	7	0	7	7	0	7	0	0	7	7	7	7	0
+Wild Bird	1	1	0	0	0	0	0	0	1	0	0	7	7	0	7	7	0	0	0	0	7	7	0	0	7
+Cat	1	0	0	0	1	0	0	0	0	1	0	7	7	0	0	1	0	0	0	0	0	0	0	1	0
+Dog	1	0	0	0	1	0	0	0	0	1	0	7	7	0	0	1	0	0	0	0	0	0	0	1	0
+Fly	1	7	7	7	1	1	7	7	7	1	0	7	7	7	7	7	7	7	7	0	0	7	7	7	7
+Rat	1	0	0	0	1	7	0	0	1	7	0	7	7	0	0	0	0	0	0	0	0	0	7	0	0
+Skunk	1	0	0	0	1	0	0	0	1	7	0	7	7	0	0	0	0	0	0	0	0	0	7	0	0
+Deer	1	0	7	0	1	0	0	0	1	7	0	7	7	0	0	0	0	0	0	0	0	0	0	0	7
+Farm Soil	0	7	7	7	0	7	7	7	0	0	0	0	7	7	7	7	0	7	0	0	7	7	1	0	0
+Sewage	0	0	0	0	0	0	0	0	0	7	7	1	7	0	7	0	0	0	0	1	1	7	0	1	0
+Lake Water	0	7	7	7	7	7	0	0	7	0	0	0	1	0	1	0	7	0	0	1	1	7	7	7	7
+Human_Urban	0	0	0	0	0	0	0	1	0	7	1	1	7	1	7	7	7	0	0	0	0	0	0	1	0
+Human_Farm Worker	0	7	7	7	0	1	7	7	0	7	1	7	1	1	7	7	7	1	7	0	7	7	1	1	0
+Human_Abattoir Worker	0	7	7	7	0	7	1	7	0	7	1	7	1	1	7	7	7	7	1	0	7	7	1	1	0
+Farm Lagoon	0	7	7	7	0	7	7	7	0	0	0	0	1	7	7	0	0	7	0	1	1	7	1	0	0
+Farm Manure	0	7	7	7	0	7	7	7	0	0	0	0	1	7	7	7	0	7	0	1	7	1	1	0	0
+Fresh Produce	0	7	7	7	0	7	7	7	7	0	0	7	7	7	0	0	0	7	7	0	7	7	7	0	0
+Raw Milk	1	0	1	0	0	1	7	0	0	0	0	7	1	1	0	0	0	7	0	0	0	0	7	0	0
+Beach Sand	0	7	7	7	7	7	0	0	7	7	0	7	7	0	1	7	7	0	0	1	7	1	7	1	7
+Irrigation Water	0	7	7	7	0	7	0	0	0	0	0	0	1	7	7	0	7	0	0	1	1	7	1	7	7
