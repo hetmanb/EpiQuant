@@ -142,7 +142,8 @@ EpiHeatmap <- function(m){
 
 EpiHeatmap_pdf <- function(m){
   heatcolor<- colorRampPalette(c("darkgreen","yellowgreen","white"))(512)
-  heatmap.2(m, col=heatcolor, Rowv = TRUE ,margins=c(10,10), trace='none', srtCol = 45,
+  par(oma=c(10,4,4,10))
+  heatmap.2(m, col=heatcolor, Rowv = TRUE , trace='none', srtCol = 45,
             keysize=0.6, revC=T, #reorderfun = function(d, w) rev(reorder(d, w)), 
             hclustfun = function(x) hclust(x,method = 'single'))
 }
