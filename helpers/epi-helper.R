@@ -136,15 +136,14 @@ EpiMatrix <- function(table){
 ######## Function to return a heatmap of the final EPIMATRIX function ####################
 EpiHeatmap <- function(m){
   heatcolor<- colorRampPalette(c("darkgreen","yellowgreen","white"))(512)
-  d3heatmap(m, dendrogram = 'both', colors=heatcolor, Rowv = T, reorderfun = function(d, w) rev(reorder(d, w)),
+  d3heatmap(m, dendrogram = 'both', colors=heatcolor, Rowv = T, 
+            reorderfun = function(d, w) rev(reorder(d, w)),
             revC=TRUE, hclustfun = function(x) hclust(x,method = 'single'))
 }
 
 EpiHeatmap_pdf <- function(m){
   heatcolor<- colorRampPalette(c("darkgreen","yellowgreen","white"))(512)
-  par(oma=c(10,4,4,10))
-  heatmap.2(m, col=heatcolor, Rowv = TRUE , trace='none', srtCol = 45,
-            keysize=0.6, revC=T, #reorderfun = function(d, w) rev(reorder(d, w)), 
-            hclustfun = function(x) hclust(x,method = 'single'))
+  heatmap.2(m, col=heatcolor, Rowv = TRUE , trace='none', srtCol = 45, margins = c(12,14),
+            keysize=0.6, revC=T, hclustfun = function(x) hclust(x,method = 'single'))
 }
 

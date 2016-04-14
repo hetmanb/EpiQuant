@@ -51,18 +51,17 @@ SourceMatrix <- function(source_data,mod8,mod7, mod0, mod14) {
 #function that calls heatmap.2 to generate a heatmap from the matrix calculations 
 source_heatmap <- function(m){
   heatcolor<- colorRampPalette(c("orangered2", "goldenrod1", "white"))(512)
-  d3heatmap(m, dendrogram = 'both', colors=heatcolor, 
-            Rowv = T, cexRow = 0.80, cexCol = 0.80, reorderfun = function(d, w) rev(reorder(d, w)),
+  d3heatmap(m, dendrogram = 'both', colors = heatcolor, 
+            Rowv = T, cexRow = 0.80, cexCol = 0.80, 
+            reorderfun = function(d, w) rev(reorder(d, w)),
             revC=TRUE, hclustfun = function(x) hclust(x,method = 'single'))  
-#   heatmap.2(m, col=heatcolor, trace='none', margins = c(10, 10), keysize=0.8, revC=TRUE)
 }
 
 source_heatmap_pdf <- function(m){
-  # heatcolor<- colorRampPalette(c("white","goldenrod1","orangered2"))(256)
   heatcolor<- colorRampPalette(c("orangered2", "goldenrod1", "white"))(512)
-  par(oma=c(14,4,4,14))
-  heatmap.2(m, col=heatcolor, Rowv = TRUE , trace='none', cexRow = 1.1, cexCol = 1.1, srtCol = 45,
-            keysize=0.8, revC=T, #reorderfun = function(d, w) rev(reorder(d, w)),  
+  heatmap.2(m, col=heatcolor, Rowv = TRUE , trace='none', 
+            cexRow = 1.1, cexCol = 1.1, srtCol = 45, key = T,
+            keysize=0.8, revC=T, margins = c(12,14), 
             hclustfun = function(x) hclust(x,method = 'single'))
 }
 
