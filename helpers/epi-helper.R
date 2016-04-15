@@ -100,8 +100,7 @@ EpiTable <- function(main_input, source_input, geog_input, temp_input, source_co
   strain_sims <- merge.data.frame(strain_sims, source_matrix, by.x = c("Source.1", "Source.2"), by.y= c("Var1", "Var2"))
   strain_sims <- strain_sims[, c(3,4,1,2,5,6,7,8,9)]
   colnames(strain_sims) <- c("Strain.1", "Strain.2", "Source.1", "Source.2", "Date.1", "Date.2", "Location.1", "Location.2", "Source.Dist")
-  # strain_sims$Source.Sim <- (1 - strain_sims$Source.Sim) 
-  
+
   #### Lookup and merge temporal data: ####
   strain_sims <- merge.data.frame(strain_sims, temp_matrix, by.x= c("Strain.1", "Strain.2"), by.y = c("Var1", "Var2")) 
   colnames(strain_sims) <- c("Strain.1", "Strain.2", "Source.1", "Source.2", "Date.1", "Date.2", "Location.1", "Location.2", "Source.Dist", "Temp.Dist")
@@ -113,8 +112,8 @@ EpiTable <- function(main_input, source_input, geog_input, temp_input, source_co
   #### Finalize the similarity matrix and calculate the overall similarity between the strains: ####
   str.matrix <- strain_sims
   str.matrix$Total.Dist <- NA
-  #str.matrix$total <- ((str.matrix$Source.Sim*x) + (str.matrix$Temp.Sim*y) + (str.matrix$Geog.Sim*z))
-  str.matrix$Total.Dist <- sqrt( ((str.matrix$Source.Dist^2)*x) + ((str.matrix$Temp.Dist^2)*y) + ((str.matrix$Geog.Dist^2)*z) ) 
+  str.matrix$Total.Dist <- sqrt( ((str.matrix$Source.Dist^2)*x) + ((str.matrix$Temp.Dist^2)*y) + ((str.matrix$Geog.Dist^2)*z) )
+  str.matrix$Epi.Sym <- 1 - str.matrix$Total.Dist
   return(str.matrix)
 }  
 
@@ -123,8 +122,8 @@ EpiTable <- function(main_input, source_input, geog_input, temp_input, source_co
 
 EpiMatrix <- function(table){
   epi.matrix <- table
-  epi.matrix <- epi.matrix[,c(1,2,12)]
-  epi.cast <- dcast(epi.matrix, formula= Strain.1 ~ Strain.2, value.var = "Total.Dist")
+  epi.matrix <- epi.matrix[,c(1,2,13)]
+  epi.cast <- dcast(epi.matrix, formula= Strain.1 ~ Strain.2, value.var = "Epi.Sym")
   epi.cast <- as.matrix(epi.cast[,2:ncol(epi.cast)]) 
   rownames(epi.cast) <- colnames(epi.cast)
   
@@ -136,14 +135,14 @@ EpiMatrix <- function(table){
 ######## Function to return a heatmap of the final EPIMATRIX function ####################
 EpiHeatmap <- function(m){
   heatcolor<- colorRampPalette(c("darkgreen","yellowgreen","white"))(512)
-  d3heatmap(m, dendrogram = 'both', colors=heatcolor, Rowv = T, 
+  d3heatmap(m, dendrogram = 'both', colors=rev(heatcolor), Rowv = T, 
             reorderfun = function(d, w) rev(reorder(d, w)),
             revC=TRUE, hclustfun = function(x) hclust(x,method = 'single'))
 }
 
 EpiHeatmap_pdf <- function(m){
   heatcolor<- colorRampPalette(c("darkgreen","yellowgreen","white"))(512)
-  heatmap.2(m, col=heatcolor, Rowv = TRUE , trace='none',
+  heatmap.2(m, col=rev(heatcolor), Rowv = TRUE , trace='none',
             srtCol = 45,
             revC=T, margins = c(14,14), keysize = 1,
             hclustfun = function(x) hclust(x,method = 'single'))

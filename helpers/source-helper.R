@@ -38,7 +38,7 @@ SourceMatrix <- function(source_data,mod8,mod7, mod0, mod14) {
   sum.table <- vector()
   #Distance values = 1 - sum of similarities / number of attributes
   for (i in 1:nrow(xselect)){
-      sum.table[i] <- (1 - ((sum(epitab[[i]]))/(length(epitab[[i]]))))
+      sum.table[i] <- ( ((sum(epitab[[i]]))/(length(epitab[[i]]))))
   }
   sim.matrix <- matrix(data=sum.table, nrow=nrow(data), ncol=nrow(data))
   rownames(sim.matrix) <- data[1:nrow(data),1]
@@ -51,7 +51,7 @@ SourceMatrix <- function(source_data,mod8,mod7, mod0, mod14) {
 #function that calls heatmap.2 to generate a heatmap from the matrix calculations 
 source_heatmap <- function(m){
   heatcolor<- colorRampPalette(c("orangered2", "goldenrod1", "white"))(512)
-  d3heatmap(m, dendrogram = 'both', colors = heatcolor, 
+  d3heatmap(m, dendrogram = 'both', colors = rev(heatcolor), 
             Rowv = T, cexRow = 0.80, cexCol = 0.80, 
             reorderfun = function(d, w) rev(reorder(d, w)),
             revC=TRUE, hclustfun = function(x) hclust(x,method = 'single'))  
@@ -59,7 +59,7 @@ source_heatmap <- function(m){
 
 source_heatmap_pdf <- function(m){
   heatcolor<- colorRampPalette(c("orangered2", "goldenrod1", "white"))(512)
-  heatmap.2(m, col=heatcolor, Rowv = TRUE , trace='none',
+  heatmap.2(m, col=rev(heatcolor), Rowv = TRUE , trace='none',
             cexRow = 1.1, cexCol = 1.1, srtCol = 45,
             revC=T, margins = c(14,14), keysize = 1,
             hclustfun = function(x) hclust(x,method = 'single'))
