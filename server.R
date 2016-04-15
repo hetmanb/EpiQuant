@@ -99,7 +99,7 @@ shinyServer(function(input, output, session) {
   output$downloadSourceHeatmap <- downloadHandler( 
     filename = c("SourceHeatmap.pdf"),
     content = function(file){
-      pdf(file, width=15, height=15)
+      pdf(file, width=16, height=16)
       source_heatmap_pdf(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14))
       dev.off()
     })
@@ -118,7 +118,7 @@ shinyServer(function(input, output, session) {
   output$downloadSourceHeatmap2 <- downloadHandler( 
     filename = c("SourceHeatmap.pdf"),
     content = function(file){
-      pdf(file, width=15, height=15)
+      pdf(file, width=16, height=16)
       source_heatmap_pdf(SourceMatrix2(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod14=input$mod14))
       dev.off()
     })

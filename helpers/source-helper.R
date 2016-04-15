@@ -59,9 +59,9 @@ source_heatmap <- function(m){
 
 source_heatmap_pdf <- function(m){
   heatcolor<- colorRampPalette(c("orangered2", "goldenrod1", "white"))(512)
-  heatmap.2(m, col=heatcolor, Rowv = TRUE , trace='none', 
-            cexRow = 1.1, cexCol = 1.1, srtCol = 45, key = T,
-            keysize=0.8, revC=T, margins = c(12,14), 
+  heatmap.2(m, col=heatcolor, Rowv = TRUE , trace='none',
+            cexRow = 1.1, cexCol = 1.1, srtCol = 45,
+            revC=T, margins = c(14,14), keysize = 1,
             hclustfun = function(x) hclust(x,method = 'single'))
 }
 
