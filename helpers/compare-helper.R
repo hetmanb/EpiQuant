@@ -88,6 +88,7 @@ CompareDisplay <- function(m, cgf_data, epi_data, type, sigma_in){
                 revC = F, 
                 symm = T,
                 symbreaks = T,
+                reorderfun = function(d, w) rev(reorder(d, w)),
                 main = paste("P-Value for Outliers: ", round(p_value, 3)))
           } else { 
             plot(1,1,col="white")

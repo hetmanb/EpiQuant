@@ -250,7 +250,7 @@ output$jschord2 <- reactive({
     if (is.null(input$cgf) && (input$cgf_demo == TRUE))  {
       return(cgf_calc(data=read.table("data/demo_data/demo_58_hexresults.txt", header=T, sep='\t')))
     }
-    cgf_calc(data=read.table(input$cgf$datapath, header=T, sep='\t'))
+    cgf_calc(data=read.table(input$cgf$datapath))
     })
 
 ##########  Generate the Heatmap and display   ##################### 

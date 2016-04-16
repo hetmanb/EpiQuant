@@ -1,34 +1,10 @@
 ###################################### Function 2 SUM-Epimatrix##########################################################
 
-cgf_calc <- function(data) {
-  # load the epi-matrix that was made in Excel
-  cgf <- as.matrix(data)
-  #this is the standardized coefficient of differences - any sample will have this much difference in it, inherently
-  #this generates all the possible non-redundant row pairings available in the matrix (eg 1vs2, 1vs3... 2vs3,etc) 
-  #and saves it as a variable 'xselect'
-  #Use for full matrix:
-  xselect <- expand.grid(1:nrow(cgf), 1:nrow(cgf), include.equals=TRUE)
-  
-  #add together all the pairwise comparisons from the cgf-table and hopefully save it as a variable to tweak the nips of:
-  
-  cgftab <- list()
-  for (i in 1:nrow(xselect)) {
-    
-    x1 <- as.numeric(cgf[xselect[i,2], c(2:ncol(cgf))])
-    x2 <- as.numeric(cgf[xselect[i,1], c(2:ncol(cgf))])
-    y <- ifelse(x1==x2, 1, 0 )    
-    cgftab[[i]] <- y
-  }
-  sum.table <- vector()
-  for (i in 1:nrow(xselect)){
-    sum.table[i] <- (1- (sum(cgftab[[i]]))/(length(cgftab[[i]])))
-  }
-  sim.matrix <- matrix(data=sum.table, nrow=nrow(cgf), ncol=nrow(cgf))
-  rownames(sim.matrix) <- cgf[1:nrow(cgf),1]
-  colnames(sim.matrix) <- cgf[1:nrow(cgf),1]
-  return(sim.matrix)
+cgf_calc <- function(data){
+  d <- dist.gene(as.matrix(data), method = "percentage")
+  d <- 1 - as.matrix(d)
+  return(d) 
 }
-
 
 #Function 3 ######################################################################################################
 #function that calls heatmap.2 to generate a heatmap from the matrix calculations 
@@ -40,9 +16,10 @@ cgf_heatmap <- function(m, color){
                       C = colorRampPalette(c("white","red","darkred"))(512),
                       D = colorRampPalette(c("white","forestgreen","darkgreen"))(512),
                       E = colorRampPalette(c("white","lightblue","lightblue","blue","darkblue"))(512))
-  d3heatmap(m, dendrogram = 'both', colors=col_scale, revC=TRUE, hclustfun = function(x) hclust(x,method = 'single'))
+  d3heatmap(m, dendrogram = 'both', colors=col_scale, revC=TRUE,
+            reorderfun = function(d, w) rev(reorder(d, w)),
+            hclustfun = function(x) hclust(x,method = 'single'))
 }
-
 
 ##### for Download handler static image: 
 cgf_heatmap_pdf <- function(m, color){
@@ -53,5 +30,13 @@ cgf_heatmap_pdf <- function(m, color){
                       C = colorRampPalette(c("white","red","darkred"))(512),
                       D = colorRampPalette(c("white","forestgreen","darkgreen"))(512),
                       E = colorRampPalette(c("white","lightblue","blue","darkblue"))(512))
-  heatmap.2(m, col=col_scale, trace='none',keysize=0.6, revC=TRUE, margins = c(15,15))
+  heatmap.2(m, col=col_scale, Rowv = TRUE , trace='none',
+            cexRow = 1.1, cexCol = 1.1, srtCol = 45,
+            revC=T, margins = c(14,14), keysize = 1,
+            hclustfun = function(x) hclust(x,method = 'single'))
+
 }
+
+
+
+
