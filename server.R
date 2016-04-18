@@ -89,8 +89,9 @@ shinyServer(function(input, output, session) {
   output$downloadSourceMatrix <- downloadHandler( 
     filename = c("SourceMatrix.txt"),
     content = function(file){
-      write.table(SourceMatrix(source_data = scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14), file)
-    })
+      # write.table(SourceMatrix(source_data = scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14), file)
+      write.table(source_heatmap_pdf(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14))[[2]], file)
+      })
   output$downloadSourcePairwise <- downloadHandler( 
     filename = c("SourcePairwise.txt"),
     content = function(file){
@@ -100,9 +101,11 @@ shinyServer(function(input, output, session) {
     filename = c("SourceHeatmap.pdf"),
     content = function(file){
       pdf(file, width=16, height=16)
-      source_heatmap_pdf(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14))
+      source_heatmap_pdf(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14))[[1]]
       dev.off()
     })
+  
+  
   ############ Download Handlers ** TEST ** 2 : #############################
   
   output$downloadSourceMatrix2 <- downloadHandler( 
@@ -188,7 +191,7 @@ shinyServer(function(input, output, session) {
 
 ######## Generate a heatmap of the results and display on the Main Output : #############
   output$EpiHeatmap <- renderD3heatmap({
-    EpiHeatmap(EpiMatrix(table()))
+    EpiHeatmap_d3(EpiMatrix(table()))
      })  
 
 ####### Generate a map with the locations from the strain info file using rCharts and Leaflet:
@@ -225,12 +228,12 @@ output$jschord2 <- reactive({
 #### Download Handlers for epiData and Heatmaps: #####
 
   output$downloadEpiData <- downloadHandler( 
-    filename = c("Epi_Sim_Data.txt"),
+    filename = c("Epi_SimMatrix.txt"),
     content = function(file){
-      write.table(EpiMatrix(table()), file, sep="\t", row.names=T)
+      write.table(EpiHeatmap_pdf(EpiMatrix(table()))[[2]], file, sep="\t", row.names=T)
     })
   output$downloadEpiTable <- downloadHandler( 
-    filename = c("Epi_Table.txt"),
+    filename = c("Epi_Table_Summary.txt"),
     content = function(file){
       write.table(table(), file, sep="\t", row.names=F)
     })
@@ -238,7 +241,7 @@ output$jschord2 <- reactive({
     filename = c("Epi_Heatmap.pdf"),
     content = function(file){
       pdf(file, width=25, height=25)
-      EpiHeatmap_pdf(EpiMatrix(table()))
+      EpiHeatmap_pdf(EpiMatrix(table()))[[1]]
       dev.off()
     })
 
