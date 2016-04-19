@@ -59,16 +59,15 @@ CompareMatrixRaw <- function(cgf_data, epi_data) {
 CompareDisplay <- function(m, cgf_data, epi_data, type, sigma_in){
   
     clus_type <- switch(type, 
-                          A = as.dendrogram(hclust(dist(data.matrix(cgf_data))), method = 'single'),
-                          B = as.dendrogram(hclust(dist(data.matrix(epi_data))), method = 'single'), 
-                          C = as.dendrogram(hclust(dist(m))), method = 'single')
+                          A = as.dendrogram(hclust(dist(data.matrix(cgf_data)), method = 'single')),
+                          B = as.dendrogram(hclust(dist(data.matrix(epi_data)), method = 'single')), 
+                          C = TRUE ) #as.dendrogram(hclust(dist(m)), method = 'single'))
     
     sigma <- sigma_in
     pn_0 <- pnorm(sigma) - pnorm(-sigma)
     
     pn_1 <- (1 - pn_0)/2 
-    p_value <- pn_1
-    
+
     pn_0 <- round(pn_0*1000, 0)
     pn_1 <- round(pn_1*1000, 0)
     
@@ -89,7 +88,7 @@ CompareDisplay <- function(m, cgf_data, epi_data, type, sigma_in){
                 symm = T,
                 symbreaks = T,
                 reorderfun = function(d, w) rev(reorder(d, w)),
-                main = paste("P-Value for Outliers: ", round(p_value, 3)))
+                main = paste("P-Value for Outliers: ", round(pn_1, 3)))
           } else { 
             plot(1,1,col="white")
             text(1,1,"Error: No comparisons available, data is identical")
@@ -103,10 +102,10 @@ CompareDisplay <- function(m, cgf_data, epi_data, type, sigma_in){
 CompareDisplay_pdf <- function(m, cgf_data, epi_data, type, sigma_in){
   
   clus_type <- switch(type, 
-                      A = as.dendrogram(hclust(dist(data.matrix(cgf_data))), method = 'single'),
-                      B = as.dendrogram(hclust(dist(data.matrix(epi_data))), method = 'single'), 
-                      C = as.dendrogram(hclust(dist(m))), method = 'single')
-  
+                      A = as.dendrogram(hclust(dist(data.matrix(cgf_data)), method = 'single')),
+                      B = as.dendrogram(hclust(dist(data.matrix(epi_data)), method = 'single')), 
+                      C = TRUE )#as.dendrogram(hclust(dist(m), method = 'single')))
+
   sigma <- sigma_in 
   pn_0 <- pnorm(sigma ,mean=0, sd=1) - pnorm(-sigma, mean=0, sd=1)
   
@@ -114,34 +113,42 @@ CompareDisplay_pdf <- function(m, cgf_data, epi_data, type, sigma_in){
   p_value <- pn_1
   
   my_breaks = c(seq(-1, -pn_0, length=100),
-           seq((-pn_0+0.001), -0.002, length = 100),
-           seq(0.002, pn_0, length = 100),
-           seq((pn_0+.001), 1, length = 100))
+                seq((-pn_0+0.001), -0.002, length = 100),
+                seq(0.002, pn_0, length = 100),
+                seq((pn_0+.001), 1, length = 100))
   
-  my_palette <- colorRampPalette(c("darkgreen", "white", "white", "white","darkblue"))(399)
+  my_palette <- colorRampPalette(c("darkgreen", "white", "white", "white", "darkblue"))(399)
   
-  if(any(m) != 0) {
-    heatcolor <- my_palette
+  plot <- if(any(m) != 0) {
     heatmap.2(m,
-              col = heatcolor,
+              col = my_palette,
               Rowv= clus_type,
               Colv ="Rowv",
               symm = TRUE,
               revC = TRUE,
+              key = TRUE,
+              keysize=1,
+              key.title = NA,
               trace='none',
-              keysize=0.6,
               breaks = my_breaks,
-              sepwidth = c(0.01,0.01),
-              sepcolor = "white",
-              # symkey = F,
-              main = paste("P-Value for Outliers: ", round(p_value, 3)))
-  } else { 
-    plot(1,1,col="white")
-    text(1,1,"Error: No comparisons available, data is identical")
-    print("no differences present")
-    #             heatcolor <- colorRampPalette(c("darkgreen","white","darkblue"))
-    #             heatmap.2(m, col= heatcolor, symm=TRUE, Colv ="Rowv", trace='none',keysize=0.6, revC=TRUE, breaks = c(-1, -0.01, 0.01, 1))
-  }
+              margins = c(8,8),
+              symkey = F,
+              srtCol = 45,
+              cexRow = 0.4,
+              cexCol = 0.4
+              # main = paste("P-Value for Outliers: ", round(p_value, 3))
+              )
+          } else { 
+            plot(1,1,col="white")
+            text(1,1,"Error: No comparisons available, data is identical")
+            print("no differences present")
+          }
   
+  data <- if(any(m) != 0) {
+             m[plot$rowInd, plot$colInd]
+              } else {
+             m
+              }
   
+  return(list(plot, data))
 }

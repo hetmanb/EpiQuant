@@ -234,6 +234,7 @@ shinyUI(
                                            br(),
                                            downloadButton("downloadCompareHeatmap", "Download the Heatmap"), 
                                            downloadButton("downloadCompareTable", "Download the Comparison Table"),
+                                           downloadButton("downloadCompareMatrix", "Download the Comparison Matrix"),
                                            br(),
                                            busyIndicator("Processing...", wait = 500),
                                            sliderInput('sigma','Select the Sigma value for displaying outliers on the heatmap', min = 0.1, max = 3, step = 0.01, value = 1),

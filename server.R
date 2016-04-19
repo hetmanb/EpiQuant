@@ -15,6 +15,7 @@ library(markdown)
 library(rCharts)
 library(dendextend)
 library(d3heatmap)
+library(ape)
 source("helpers/cgf-helper.R", local = T)
 source("helpers/chord_helper.R", local = T)
 source("helpers/compare-helper.R", local = T)
@@ -262,7 +263,7 @@ output$jschord2 <- reactive({
     if ((input$cgf_demo == FALSE) && is.null(input$cgf)){
       return(NULL)
     }
-    cgf_heatmap(cgf_matrix(), input$gen_type)
+    cgf_heatmap_D3(cgf_matrix(), input$gen_type)
     })
   
   output$cgf_heatmap <- renderD3heatmap({
@@ -277,13 +278,14 @@ output$jschord2 <- reactive({
     filename = c("CGF-Heatmap.pdf"),
     content = function(file){
       pdf(file, width=15, height=15)
-      cgf_heatmap_pdf(cgf_matrix(), input$gen_type)
+      cgf_heatmap_pdf(cgf_matrix(), input$gen_type)[[1]]
       dev.off()
     })
   output$downloadCGFTable <- downloadHandler( 
     filename = c("CGF-SimTable.txt"),
     content = function(file){
-      write.table(cgf_matrix(), file, sep='\t', row.names = T) 
+      write.table(cgf_heatmap_pdf(cgf_matrix(), input$gen_type)[[2]],
+                  file, sep='\t', row.names = T) 
     })  
 
 ##################################################################################################
@@ -357,17 +359,15 @@ output$tangle<- renderPlot({
 
 #Download handler to download the comparison heatmap as a .pdf file:
 
-
-
 output$downloadCompareHeatmap <- downloadHandler( 
-  filename = c("CGF-Epi_Heatmap.pdf"),
+  filename = c("GenEpi_Heatmap.pdf"),
   content = function(file){
     pdf(file, width=15, height=15)
     if (input$compare_demo == TRUE){
       CompareDisplay_pdf(compareheatmap(), 
                      read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
                      read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F),
-                     input$clus_type, input$sigma)}  
+                     input$clus_type, input$sigma)[[1]]}  
     
     else {
       if(is.null(input$cgf_data)|is.null(input$epi_data)){
@@ -375,16 +375,21 @@ output$downloadCompareHeatmap <- downloadHandler(
       else {
         cgf <- read.table(input$cgf_data$datapath, header = T, sep='\t', check.names = F)
         epi <- read.table(input$epi_data$datapath, header = T, sep='\t', check.names = F)
-        CompareDisplay_pdf(compareheatmap(), cgf, epi, input$clus_type, input$sigma)}
+        CompareDisplay_pdf(compareheatmap(), cgf, epi, input$clus_type, input$sigma)[[1]]}
     }
     dev.off()
   })
 
 output$downloadCompareTable <- downloadHandler( 
-  filename = c("CGF-Epi_SimTable.txt"),
+  filename = c("GenEpi_SimTable.txt"),
   content = function(file){
     write.table(melt(compareheatmap()), file, sep='\t', row.names = F) 
   })  
+output$downloadCompareMatrix <- downloadHandler( 
+  filename = c("GenEpi_SimMatrix.txt"),
+  content = function(file){
+    write.table(CompareDisplay_pdf(compareheatmap(), cgf, epi, input$clus_type, input$sigma)[[2]], file, sep='\t', row.names = F) 
+  }) 
 
 output$DL_tanglegram <- downloadHandler( 
   filename = c("Tanglegram.pdf"),
