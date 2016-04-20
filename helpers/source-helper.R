@@ -59,12 +59,12 @@ source_heatmap <- function(m){
 
 source_heatmap_pdf <- function(m){
   heatcolor<- colorRampPalette(c("orangered2", "goldenrod1", "white"))(512)
-  plot <- heatmap.2(m, col=rev(heatcolor), Rowv = TRUE , trace='none',
+  heatmap.2(m, col=rev(heatcolor), Rowv = TRUE , trace='none',
             cexRow = 1.1, cexCol = 1.1, srtCol = 45,
             revC=T, margins = c(14,14), keysize = 1,
             hclustfun = function(x) hclust(x,method = 'single'))
-  data <- m[plot$rowInd, plot$colInd]
-  return(list(plot, data))
+#   data <- m[plot$rowInd, plot$colInd]
+#   return(list(plot, data))
 }
 
 

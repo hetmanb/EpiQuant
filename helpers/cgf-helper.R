@@ -30,12 +30,11 @@ cgf_heatmap_pdf <- function(m, color){
                       C = colorRampPalette(c("white","red","darkred"))(512),
                       D = colorRampPalette(c("white","forestgreen","darkgreen"))(512),
                       E = colorRampPalette(c("white","lightblue","blue","darkblue"))(512))
-  plot <- heatmap.2(m, col=col_scale, Rowv = TRUE , trace='none',
+  heatmap.2(m, col=col_scale, Rowv = TRUE , trace='none',
             cexRow = .3, cexCol = .3, srtCol = 45,
             revC=T, margins = c(14,14), keysize = 1,
             hclustfun = function(x) hclust(x,method = 'single'))
-  data <- m[plot$rowInd, plot$colInd]
-  return(list(plot, data))
+
 
 }
 

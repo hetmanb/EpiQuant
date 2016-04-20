@@ -119,7 +119,7 @@ CompareDisplay_pdf <- function(m, cgf_data, epi_data, type, sigma_in){
   
   my_palette <- colorRampPalette(c("darkgreen", "white", "white", "white", "darkblue"))(399)
   
-  plot <- if(any(m) != 0) {
+  if(any(m) != 0) {
     heatmap.2(m,
               col = my_palette,
               Rowv= clus_type,
@@ -143,12 +143,12 @@ CompareDisplay_pdf <- function(m, cgf_data, epi_data, type, sigma_in){
             text(1,1,"Error: No comparisons available, data is identical")
             print("no differences present")
           }
-  
-  data <- if(any(m) != 0) {
-             m[plot$rowInd, plot$colInd]
-              } else {
-             m
-              }
+#   
+#   data <- if(any(m) != 0) {
+#              m[plot$rowInd, plot$colInd]
+#               } else {
+#              m
+#               }
   
   return(list(plot, data))
 }

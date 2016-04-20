@@ -142,11 +142,11 @@ EpiHeatmap_d3 <- function(m){
 
 EpiHeatmap_pdf <- function(m){
   heatcolor<- colorRampPalette(c("darkgreen","yellowgreen","white"))(512)
-  plot <- heatmap.2(m, col=rev(heatcolor), Rowv = TRUE , trace='none',
+  heatmap.2(m, col=rev(heatcolor), Rowv = TRUE , trace='none',
             srtCol = 45,
             revC=T, margins = c(14,14), keysize = 1,
             hclustfun = function(x) hclust(x,method = 'single'))
-  data <- m[plot$rowInd, plot$colInd]
-  return(list(plot, data))
+  # data <- m[plot$rowInd, plot$colInd]
+  # return(list(plot, data))
 }
 

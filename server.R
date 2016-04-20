@@ -91,7 +91,7 @@ shinyServer(function(input, output, session) {
     filename = c("SourceMatrix.txt"),
     content = function(file){
       # write.table(SourceMatrix(source_data = scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14), file)
-      write.table(source_heatmap_pdf(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14))[[2]], file)
+      write.table((SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14)), file, sep = '\t')
       })
   output$downloadSourcePairwise <- downloadHandler( 
     filename = c("SourcePairwise.txt"),
@@ -102,7 +102,7 @@ shinyServer(function(input, output, session) {
     filename = c("SourceHeatmap.pdf"),
     content = function(file){
       pdf(file, width=16, height=16)
-      source_heatmap_pdf(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14))[[1]]
+      source_heatmap_pdf(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14))
       dev.off()
     })
   
@@ -231,7 +231,7 @@ output$jschord2 <- reactive({
   output$downloadEpiData <- downloadHandler( 
     filename = c("Epi_SimMatrix.txt"),
     content = function(file){
-      write.table(EpiHeatmap_pdf(EpiMatrix(table()))[[2]], file, sep="\t", row.names=T)
+      write.table(EpiMatrix(table()), file, sep="\t", row.names=T)
     })
   output$downloadEpiTable <- downloadHandler( 
     filename = c("Epi_Table_Summary.txt"),
@@ -242,7 +242,7 @@ output$jschord2 <- reactive({
     filename = c("Epi_Heatmap.pdf"),
     content = function(file){
       pdf(file, width=25, height=25)
-      EpiHeatmap_pdf(EpiMatrix(table()))[[1]]
+      EpiHeatmap_pdf(EpiMatrix(table()))
       dev.off()
     })
 
@@ -259,7 +259,7 @@ output$jschord2 <- reactive({
 
 ##########  Generate the Heatmap and display   ##################### 
 
-  cgfheatmap <- reactive({
+  genHeatmap <- reactive({
     if ((input$cgf_demo == FALSE) && is.null(input$cgf)){
       return(NULL)
     }
@@ -267,25 +267,24 @@ output$jschord2 <- reactive({
     })
   
   output$cgf_heatmap <- renderD3heatmap({
-    cgfheatmap()
+    genHeatmap()
     })
 
 
-########## Create the download button handlers for use with EpiMatrix ######
+########## Create the download button handlers for use with Genomic Heatmaps (CGF etc)######
 
 #Download handler to download the heatmap as a .pdf file:
   output$downloadCGFHeatmap <- downloadHandler( 
-    filename = c("CGF-Heatmap.pdf"),
+    filename = c("Gen_Heatmap.pdf"),
     content = function(file){
       pdf(file, width=15, height=15)
-      cgf_heatmap_pdf(cgf_matrix(), input$gen_type)[[1]]
+      cgf_heatmap_pdf(cgf_matrix(), input$gen_type)
       dev.off()
     })
   output$downloadCGFTable <- downloadHandler( 
-    filename = c("CGF-SimTable.txt"),
+    filename = c("Gen_SimMatrix.txt"),
     content = function(file){
-      write.table(cgf_heatmap_pdf(cgf_matrix(), input$gen_type)[[2]],
-                  file, sep='\t', row.names = T) 
+      write.table(cgf_matrix(), file, sep='\t', row.names = T) 
     })  
 
 ##################################################################################################
@@ -367,7 +366,7 @@ output$downloadCompareHeatmap <- downloadHandler(
       CompareDisplay_pdf(compareheatmap(), 
                      read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
                      read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F),
-                     input$clus_type, input$sigma)[[1]]}  
+                     input$clus_type, input$sigma)}  
     
     else {
       if(is.null(input$cgf_data)|is.null(input$epi_data)){
@@ -375,7 +374,7 @@ output$downloadCompareHeatmap <- downloadHandler(
       else {
         cgf <- read.table(input$cgf_data$datapath, header = T, sep='\t', check.names = F)
         epi <- read.table(input$epi_data$datapath, header = T, sep='\t', check.names = F)
-        CompareDisplay_pdf(compareheatmap(), cgf, epi, input$clus_type, input$sigma)[[1]]}
+        CompareDisplay_pdf(compareheatmap(), cgf, epi, input$clus_type, input$sigma)}
     }
     dev.off()
   })
@@ -388,7 +387,7 @@ output$downloadCompareTable <- downloadHandler(
 output$downloadCompareMatrix <- downloadHandler( 
   filename = c("GenEpi_SimMatrix.txt"),
   content = function(file){
-    write.table(CompareDisplay_pdf(compareheatmap(), cgf, epi, input$clus_type, input$sigma)[[2]], file, sep='\t', row.names = F) 
+    write.table(compareheatmap(), file, sep='\t', row.names = F) 
   }) 
 
 output$DL_tanglegram <- downloadHandler( 
