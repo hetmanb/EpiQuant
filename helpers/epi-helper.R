@@ -36,8 +36,7 @@ geog_calc <- function(input_data){
   
   #### Read data table from project folder - this contains locations and their GPS Coordinates ####  
   geogdata <- input_data
-  # d <- geogdata  
-  
+
   #### Create a matrix containing the pair-wise distances (in km) between all the locations using the fossil package ####
   geog_matrix <- as.matrix(earth.dist(lats=geogdata[,6:7], dist=TRUE))
   
@@ -45,8 +44,13 @@ geog_calc <- function(input_data){
   geog_matrix <- log10(geog_matrix)
   geog_matrix[geog_matrix == -Inf ] <- 0
   max_d <- max(geog_matrix)
-  geog_matrix <- geog_matrix / max_d
-  # geog_matrix <- 1 - geog_matrix
+
+  if(max_d == 0){
+      geog_matrix[1:nrow(geog_matrix), 1:ncol(geog_matrix)] <- 0
+    } else {
+      geog_matrix <- geog_matrix / max_d
+    }
+
   
   #### Import row and column names from the original datafile ####
   colnames(geog_matrix) <- geogdata[, 1]
