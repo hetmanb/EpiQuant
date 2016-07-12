@@ -1,6 +1,6 @@
-# library(reshape2)
-# library(gplots)
-# library(fossil)
+library(reshape2)
+library(gplots)
+library(fossil)
 
 ##########################################################################################
 ######## Function for generating time data from input datafile ###########################
@@ -15,18 +15,27 @@ temp_calc <- function(input_data){
   #### Create an empty matrix and populate it with the pairwise distances ####
   time_matrix <- matrix(data = NA, nrow=nrow(timedata), ncol=nrow(timedata))
   time_matrix <- as.matrix(dist(x=timedata$date, diag=TRUE, upper=TRUE, method = 'euclidean'), nrow=nrow(timedata), ncol=nrow(timedata))
-  
-  #### Convert all the distances to a log value and normalize them based on the max distance ####
-  time_log <- log10(time_matrix) 
+
+  #Make 10 days the startpoint for dropping off in similarity - i.e. 10 days = 100% similar still
+  # time_matrix[time_matrix < 10] <- 10
+  time_matrix <- time_matrix + 10
+  #### Convert all the distances to a log value and normalize them to [0:1] ####
+  time_log <- log(time_matrix, base = 10) 
   time_log[time_log == -Inf ] <- 0
-  max_log <- max(time_log)
-  norm_time_log <- time_log / max_log
+  
+  if(max(time_log) == 0){
+    time_log <- 0
+  } else {
+    time_log <- ((time_log-min(time_log)) / (max(time_log)-min(time_log)))
+  }
+  
+  
   # norm_time_log <- 1 - norm_time_log
   
   #### Import row and column names from the original datafile and melt data for easy reading ####
-  rownames(norm_time_log) <- timedata$Strain
-  colnames(norm_time_log) <- timedata$Strain
-  time_melt <- melt(norm_time_log)
+  rownames(time_log) <- timedata$Strain
+  colnames(time_log) <- timedata$Strain
+  time_melt <- melt(time_log)
   return(time_melt)
 }  
 
@@ -41,17 +50,15 @@ geog_calc <- function(input_data){
   geog_matrix <- as.matrix(earth.dist(lats=geogdata[,6:7], dist=TRUE))
   
   #### Calculate the maximum distance in the matrix and divide all values by it to arrive at a max distance of 1 ####
+  # geog_matrix[geog_matrix < 10] <- 10
+  geog_matrix <- geog_matrix + 10
   geog_matrix <- log10(geog_matrix)
-  geog_matrix[geog_matrix == -Inf ] <- 0
-  max_d <- max(geog_matrix)
-
-  if(max_d == 0){
-      geog_matrix[1:nrow(geog_matrix), 1:ncol(geog_matrix)] <- 0
-    } else {
-      geog_matrix <- geog_matrix / max_d
-    }
-
   
+  if(max(geog_matrix) == 0){
+      geog_matrix <- 0
+    } else {
+      geog_matrix <- ((geog_matrix-min(geog_matrix)) / (max(geog_matrix)-min(geog_matrix)))
+    }
   #### Import row and column names from the original datafile ####
   colnames(geog_matrix) <- geogdata[, 1]
   rownames(geog_matrix) <- geogdata[, 1]
@@ -116,7 +123,7 @@ EpiTable <- function(main_input, source_input, geog_input, temp_input, source_co
   #### Finalize the similarity matrix and calculate the overall similarity between the strains: ####
   str.matrix <- strain_sims
   str.matrix$Total.Dist <- NA
-  str.matrix$Total.Dist <- sqrt( ((str.matrix$Source.Dist^2)*x) + ((str.matrix$Temp.Dist^2)*y) + ((str.matrix$Geog.Dist^2)*z) )
+  str.matrix$Total.Dist <- sqrt( (((str.matrix$Source.Dist^2)*x) + ((str.matrix$Temp.Dist^2)*y) + ((str.matrix$Geog.Dist^2)*z)) )
   str.matrix$Epi.Sym <- 1 - str.matrix$Total.Dist
   return(str.matrix)
 }  
@@ -126,11 +133,11 @@ EpiTable <- function(main_input, source_input, geog_input, temp_input, source_co
 
 EpiMatrix <- function(table){
   epi.matrix <- table
-  epi.matrix <- epi.matrix[,c(1,2,13)]
-  epi.cast <- dcast(epi.matrix, formula= Strain.1 ~ Strain.2, value.var = "Epi.Sym")
+  epi.matrix <- epi.matrix[,c(1,2,12)]
+  epi.cast <- dcast(epi.matrix, formula= Strain.1 ~ Strain.2, value.var = "Total.Dist")
   epi.cast <- as.matrix(epi.cast[,2:ncol(epi.cast)]) 
   rownames(epi.cast) <- colnames(epi.cast)
-  
+#   epi.sym <- 1 - epi.cast
   return(epi.cast)
 }
 
@@ -138,19 +145,54 @@ EpiMatrix <- function(table){
 ##########################################################################################
 ######## Function to return a heatmap of the final EPIMATRIX function ####################
 EpiHeatmap_d3 <- function(m){
-  heatcolor<- colorRampPalette(c("darkgreen","yellowgreen","white"))(512)
+#   heatcolor<- colorRampPalette(c("darkgreen","yellowgreen","white"))(512)
+  heatcolor<- colorRampPalette(c("white","yellowgreen","darkgreen"))(512)
   d3heatmap(m, dendrogram = 'both', colors=rev(heatcolor), Rowv = T, 
             reorderfun = function(d, w) rev(reorder(d, w)),
             revC=TRUE, hclustfun = function(x) hclust(x,method = 'single'))
 }
 
 EpiHeatmap_pdf <- function(m){
-  heatcolor<- colorRampPalette(c("darkgreen","yellowgreen","white"))(512)
-  heatmap.2(m, col=rev(heatcolor), Rowv = TRUE , trace='none',
-            srtCol = 45,
-            revC=T, margins = c(14,14), keysize = 1,
+  heatcolor<- colorRampPalette(c("white","yellowgreen","darkgreen"))(512)
+  # heatcolor<- colorRampPalette(c("#efedf5", "#bcbddc", "#756bb1"))(512)
+  # heatcolor<- colorRampPalette(c('#eff3ff','#bdd7e7','#6baed6','#3182bd','#08519c'))(512)
+  # plot <-   
+    heatmap.2(m, col=rev(heatcolor), Rowv = T, Colv = 'Rowv', trace='none',
+            srtCol = 45, key.title = NA, key.ylab=NA,
+            revC=T, margins = c(10,10), keysize = 1,
+            xlab=NULL, ylab=NULL, 
+            # labRow = NA, labCol = NA,
             hclustfun = function(x) hclust(x,method = 'single'))
-  # data <- m[plot$rowInd, plot$colInd]
-  # return(list(plot, data))
+#   data <- m[plot$rowInd, plot$colInd]
+#   return(list(plot, data))
 }
+
+
+# main_input <- read.table("../../../Salmonella EpiQuant/retro_1000_strain_data.txt", header = T, sep = '\t')
+# source_input <- read.table("../../../Salmonella EpiQuant/Pairwise_Source.txt", header = T, sep = '\t', check.names = F)
+# 
+# s <- 0
+# t <- .5
+# g <- .5
+# 
+# d <- EpiTable(main_input, source_input, geog_calc(main_input), temp_calc(main_input), s, t, g)
+# 
+# d$no.days <- abs(as.Date(d$Date.1) - as.Date(d$Date.2))
+# d$no.km <- abs(as.Date(d$Date.1) - as.Date(d$Date.2))
+# 
+# plot(x = d$no.days[d$no.days < 500], y = d$Temp.Dist[d$no.days < 500])
+# 
+# d2 <- EpiMatrix(d)
+# d3 <- EpiHeatmap_pdf(d2)
+# # 
+# ## too slow to use xlsx - better off to write to txt and import
+# write.table(d3[[2]], "~/Desktop/temp(10_80_10)/epi_heat_data(10_80_10).txt", sep = '\t')
+# 
+# write.table(d, "~/Desktop/Epi_Summary_Long_Table(50_30_20).txt", sep = '\t')
+# write.xlsx2(x = d3[[2]], file = "epi_heat_data.xlsx", sheetName = "Epi(80_10_10)", append = T)
+# 
+# 
+
+
+
 

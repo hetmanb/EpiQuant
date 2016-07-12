@@ -155,39 +155,41 @@ shinyServer(function(input, output, session) {
 ############################ Server functions for EpiMatrix ######################################  
   
 ### Calculate the temporal and geographical relations based upon the epi-input dataset: ##########  
-  temporal <- reactive({
-    inFile <- input$strain_data
-    if ((is.null(inFile)) && (input$epi_demo == TRUE)) {   
-#       print("inFile is null")
-      return(temp_calc(read.table('pub_data/updated_straindata274.txt', header=TRUE, sep='\t')))
-      }
-      temp_calc(read.table(inFile$datapath, header=TRUE, sep='\t'))
-  })      
-  geography <- reactive({
-    inFile <- input$strain_data
-    if ((is.null(inFile)) && (input$epi_demo == TRUE)) { 
-#       print("inFile is null")
-      return(geog_calc(read.table('pub_data/updated_straindata274.txt', header=TRUE, sep='\t')))
-    }
-    geog_calc(read.table(inFile$datapath, header=TRUE, sep='\t'))
-  })  
+#   temporal <- reactive({
+#     inFile <- input$strain_data
+#     if ((is.null(inFile)) && (input$epi_demo == TRUE)) {   
+# #       print("inFile is null")
+#       return(temp_calc(read.table('pub_data/updated_straindata274.txt', header=TRUE, sep='\t')))
+#       }
+#       temp_calc(read.table(inFile$datapath, header=TRUE, sep='\t'))
+#   })      
+#   geography <- reactive({
+#     inFile <- input$strain_data
+#     if ((is.null(inFile)) && (input$epi_demo == TRUE)) { 
+# #       print("inFile is null")
+#       return(geog_calc(read.table('pub_data/updated_straindata274.txt', header=TRUE, sep='\t')))
+#     }
+#     geog_calc(read.table(inFile$datapath, header=TRUE, sep='\t'))
+#   })  
 
 ######## Calculate the epi relations based upon the epi-input and source datasets: ######
   table <- reactive({
-    if(is.null(input$strain_data)) { 
+    # if(is.null(input$strain_data)) && (input$epi_demo == T) 
+    if ((is.null(input$strain_data) && (input$epi_demo == TRUE))) { 
       inFile <- read.table('pub_data/updated_straindata274.txt', header=T, sep='\t')  
     }     
        else { 
          inFile <- read.table(input$strain_data$datapath, header=T, sep='\t') 
        } 
-    if(is.null(input$source_data)) { 
+    if ((is.null(input$source_data) && (input$epi_demo == TRUE))) {
       sinFile <- read.table('pub_data/SourcePairwise_v2.txt', header=T, sep = '\t')  
     }    
         else { 
           sinFile <- read.table(input$source_data$datapath, header=T, sep='\t') 
         }
-    return(EpiTable(inFile, sinFile, geography(), temporal(), input$source_coeff, input$temp_coeff, input$geog_coeff))
-  })  
+    # return(EpiTable(inFile, sinFile, geography(), temporal(), input$source_coeff, input$temp_coeff, input$geog_coeff))
+    return(EpiTable(inFile, sinFile, geog_calc(inFile), temp_calc(inFile), input$source_coeff, input$temp_coeff, input$geog_coeff))
+    })  
 
 
 ######## Generate a heatmap of the results and display on the Main Output : #############
@@ -251,7 +253,7 @@ output$jschord2 <- reactive({
 
 ###########     Generate the CGF Matrix #####################   
   cgf_matrix <- reactive({
-    if (is.null(input$cgf) && (input$cgf_demo == TRUE))  {
+    if ((is.null(input$cgf) && (input$cgf_demo == TRUE)))  {
       return(cgf_calc(data=read.table("data/demo_data/demo_58_hexresults.txt", header=T, sep='\t')))
     }
     cgf_calc(data=read.table(input$cgf$datapath))
@@ -260,7 +262,7 @@ output$jschord2 <- reactive({
 ##########  Generate the Heatmap and display   ##################### 
 
   genHeatmap <- reactive({
-    if ((input$cgf_demo == FALSE) && is.null(input$cgf)){
+    if (((input$cgf_demo == FALSE) && is.null(input$cgf))){
       return(NULL)
     }
     cgf_heatmap_D3(cgf_matrix(), input$gen_type)
