@@ -35,7 +35,7 @@ cgf_heatmap_pdf <- function(m, color){
             revC=T, margins = c(14,14), keysize = 1,
             hclustfun = function(x) hclust(x,method = 'single'))
 }
-# 
+# Extras for offline analysis
 # library(ape)
 # library(gplots)
 # m <- read.FASTA("~/Dropbox/0 - Publications_bh/EpiQuant_Pt_2/roary_out_1460672486/accessory_binary_genes.fa")

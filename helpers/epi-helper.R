@@ -29,9 +29,6 @@ temp_calc <- function(input_data){
     time_log <- ((time_log-min(time_log)) / (max(time_log)-min(time_log)))
   }
   
-  
-  # norm_time_log <- 1 - norm_time_log
-  
   #### Import row and column names from the original datafile and melt data for easy reading ####
   rownames(time_log) <- timedata$Strain
   colnames(time_log) <- timedata$Strain
@@ -141,7 +138,6 @@ EpiMatrix <- function(table){
   return(epi.cast)
 }
 
-
 ##########################################################################################
 ######## Function to return a heatmap of the final EPIMATRIX function ####################
 EpiHeatmap_d3 <- function(m){
@@ -156,43 +152,56 @@ EpiHeatmap_pdf <- function(m){
   heatcolor<- colorRampPalette(c("white","yellowgreen","darkgreen"))(512)
   # heatcolor<- colorRampPalette(c("#efedf5", "#bcbddc", "#756bb1"))(512)
   # heatcolor<- colorRampPalette(c('#eff3ff','#bdd7e7','#6baed6','#3182bd','#08519c'))(512)
-  # plot <-   
-    heatmap.2(m, col=rev(heatcolor), Rowv = T, Colv = 'Rowv', trace='none',
+  plot <-   heatmap.2(m, col=rev(heatcolor), Rowv = T, Colv = 'Rowv', trace='none',
             srtCol = 45, key.title = NA, key.ylab=NA,
             revC=T, margins = c(10,10), keysize = 1,
             xlab=NULL, ylab=NULL, 
-            # labRow = NA, labCol = NA,
+            labRow = NA, labCol = NA,
             hclustfun = function(x) hclust(x,method = 'single'))
-#   data <- m[plot$rowInd, plot$colInd]
-#   return(list(plot, data))
+  data <- m[plot$rowInd, plot$colInd]
+  return(list(plot, data))
 }
-
-
+# Extras for offline analysis - not included in App. 
+# 
 # main_input <- read.table("../../../Salmonella EpiQuant/retro_1000_strain_data.txt", header = T, sep = '\t')
 # source_input <- read.table("../../../Salmonella EpiQuant/Pairwise_Source.txt", header = T, sep = '\t', check.names = F)
 # 
 # s <- 0
-# t <- .5
-# g <- .5
+# t <- .3
+# g <- .7
 # 
 # d <- EpiTable(main_input, source_input, geog_calc(main_input), temp_calc(main_input), s, t, g)
 # 
 # d$no.days <- abs(as.Date(d$Date.1) - as.Date(d$Date.2))
-# d$no.km <- abs(as.Date(d$Date.1) - as.Date(d$Date.2))
 # 
 # plot(x = d$no.days[d$no.days < 500], y = d$Temp.Dist[d$no.days < 500])
+# 
+# 
+# 
+# plot(x = d$no.km, y = d$Geog.Dist)
+# plot(x = d2$value, y = d2$Geog.Dist)
+# 
 # 
 # d2 <- EpiMatrix(d)
 # d3 <- EpiHeatmap_pdf(d2)
 # # 
 # ## too slow to use xlsx - better off to write to txt and import
-# write.table(d3[[2]], "~/Desktop/temp(10_80_10)/epi_heat_data(10_80_10).txt", sep = '\t')
+# write.table(d3[[2]], "~/Dropbox/Salmonella EpiQuant/retro_epi_data(50.50.GeoTemp).txt", sep = '\t')
+# 
+# 
+# 
+# dend_df <- d3[[2]]
+# hc_dend <- hclust(dist(dend_df)) 
+# cut_50 <- cutree(hc_dend, h = .1*max(hc_dend$height))
+# 
+# 
+# 
 # 
 # write.table(d, "~/Desktop/Epi_Summary_Long_Table(50_30_20).txt", sep = '\t')
 # write.xlsx2(x = d3[[2]], file = "epi_heat_data.xlsx", sheetName = "Epi(80_10_10)", append = T)
 # 
 # 
-
+# 
 
 
 
