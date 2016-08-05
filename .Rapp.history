@@ -1,0 +1,3 @@
+setwd("~/Dropbox/0 - Publications_bh/Shiny/EpiQuant/")
+source("install_EpiQuant.R")
+shiny::runApp("../EpiQuant")

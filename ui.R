@@ -126,12 +126,14 @@ shinyUI(
                                            checkboxInput(inputId = "epi_demo", label = "Use demo data", value = FALSE),
                                            br(),
                                            fileInput(inputId="strain_data",label="Upload Strain Data Here:",multiple=FALSE,accept=".txt"),
-                                           fileInput(inputId="source_data",label="Upload Source Reference Here:",multiple=FALSE,accept=".txt"), 
+                                           fileInput(inputId="source_data",label="Upload Source Reference Here:",multiple=FALSE,accept=".txt"),
                                            h4("Make the following sliders add up to 1.0"),
                                            sliderInput(inputId="source_coeff", label="Coefficient for Source Factor", min=0.0, max=1.0, value=0.5, step=0.05),
                                            sliderInput(inputId="temp_coeff", label="Coefficient for Temporal Factor", min=0.0, max=1.0, value=0.3, step=0.05),
-                                           sliderInput(inputId="geog_coeff", label="Coefficient for Geographical Factor", min=0.0, max=1.0, value=0.2, step=0.05)
-                                           ,submitButton("Submit", icon = NULL)
+                                           sliderInput(inputId="geog_coeff", label="Coefficient for Geographical Factor", min=0.0, max=1.0, value=0.2, step=0.05),
+                                           h4("Optional: For outbreak analyses, input the epidemiological window desired (in number of days)"),
+                                           numericInput("outbreak_window", "Outbreak Window:", 0, min = 0, max = 99, step = 1, width = 100),
+                                           submitButton("Submit", icon = NULL)
                                            ),
                               
                               

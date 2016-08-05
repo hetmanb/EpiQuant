@@ -4,7 +4,7 @@ library(fossil)
 
 ##########################################################################################
 ######## Function for generating time data from input datafile ###########################
-temp_calc <- function(input_data){
+temp_calc <- function(input_data, temp_window){
   #### import data from data file ####
   timedata <- as.data.frame(input_data) 
   #timedata <- read.delim(file="datafile.txt", header=TRUE, sep="\t")
@@ -17,12 +17,21 @@ temp_calc <- function(input_data){
   time_matrix <- as.matrix(dist(x=timedata$date, diag=TRUE, upper=TRUE, method = 'euclidean'), nrow=nrow(timedata), ncol=nrow(timedata))
 
   #Make 10 days the startpoint for dropping off in similarity - i.e. 10 days = 100% similar still
-  # time_matrix[time_matrix < 10] <- 10
   time_matrix <- time_matrix + 10
-  #### Convert all the distances to a log value and normalize them to [0:1] ####
+  temp_window <- temp_window + 10
+  
+  
+  # anything less than or equal to temp_window becomes 0 distance
+  time_matrix[time_matrix <= temp_window] <- 10
+  
+  # anything greater than temp_window starts to get distance penalty starting at log10(11) etc 
+  time_matrix[time_matrix > temp_window] <- time_matrix[time_matrix > temp_window] - (temp_window - 10)
+  
+  # logarithmic scale base 10
   time_log <- log(time_matrix, base = 10) 
   time_log[time_log == -Inf ] <- 0
   
+  # rescale everything between 0-1
   if(max(time_log) == 0){
     time_log <- 0
   } else {
@@ -152,29 +161,33 @@ EpiHeatmap_pdf <- function(m){
   heatcolor<- colorRampPalette(c("white","yellowgreen","darkgreen"))(512)
   # heatcolor<- colorRampPalette(c("#efedf5", "#bcbddc", "#756bb1"))(512)
   # heatcolor<- colorRampPalette(c('#eff3ff','#bdd7e7','#6baed6','#3182bd','#08519c'))(512)
-  plot <-   heatmap.2(m, col=rev(heatcolor), Rowv = T, Colv = 'Rowv', trace='none',
+  plot <- heatmap.2(m, col=rev(heatcolor), Rowv = T, Colv = 'Rowv', trace='none',
             srtCol = 45, key.title = NA, key.ylab=NA,
-            revC=T, margins = c(10,10), keysize = 1,
+            revC=T, margins = c(10,10), keysize = 1.3, key = T,
             xlab=NULL, ylab=NULL, 
             labRow = NA, labCol = NA,
             hclustfun = function(x) hclust(x,method = 'single'))
   data <- m[plot$rowInd, plot$colInd]
   return(list(plot, data))
 }
-# Extras for offline analysis - not included in App. 
 # 
-# main_input <- read.table("../../../Salmonella EpiQuant/retro_1000_strain_data.txt", header = T, sep = '\t')
-# source_input <- read.table("../../../Salmonella EpiQuant/Pairwise_Source.txt", header = T, sep = '\t', check.names = F)
 # 
-# s <- 0
+# 
+# 
+# # Extras for offline analysis - not included in App. 
+# # 
+# main_input <- read.table("../../2016_03 EpiQuant Manuscript/EpiQuant_Analysis_2/Can654/Can654_straindata.txt", header = T, sep = '\t')
+# source_input <- read.table("../../../0 - Publications_bh/2016_03 EpiQuant Manuscript/EpiQuant_Analysis_2/Can654/Pairwise_Source.txt", header = T, sep = '\t', check.names = F)
+# 
+# s <- .5
 # t <- .3
-# g <- .7
+# g <- .2
 # 
-# d <- EpiTable(main_input, source_input, geog_calc(main_input), temp_calc(main_input), s, t, g)
+# d <- EpiTable(main_input, source_input, geog_calc(main_input), temp_calc(main_input, 0), s, t, g)
 # 
 # d$no.days <- abs(as.Date(d$Date.1) - as.Date(d$Date.2))
 # 
-# plot(x = d$no.days[d$no.days < 500], y = d$Temp.Dist[d$no.days < 500])
+# plot(x = d$no.days[d$no.days < 300], y = d$Temp.Dist[d$no.days < 300])
 # 
 # 
 # 
@@ -184,9 +197,16 @@ EpiHeatmap_pdf <- function(m){
 # 
 # d2 <- EpiMatrix(d)
 # d3 <- EpiHeatmap_pdf(d2)
+# 
+# 
+# plot.new()
+# tiff("~/Desktop/epi_heat(50_30_20).tiff", width = 20, height = 20, res = 300, units = "cm")
+# EpiHeatmap_pdf(d2)
+# dev.off()
+# 
 # # 
 # ## too slow to use xlsx - better off to write to txt and import
-# write.table(d3[[2]], "~/Dropbox/Salmonella EpiQuant/retro_epi_data(50.50.GeoTemp).txt", sep = '\t')
+# write.table(d3[[2]], "~/Dropbox/0 - Publications_bh/2016_03 EpiQuant Manuscript/EpiQuant_Analysis_2/Can654/epi_slice_folders/Epi(50_30_20)/heatdata_epiSim654(50_30_20).txt", sep = '\t')
 # 
 # 
 # 
@@ -199,7 +219,7 @@ EpiHeatmap_pdf <- function(m){
 # 
 # write.table(d, "~/Desktop/Epi_Summary_Long_Table(50_30_20).txt", sep = '\t')
 # write.xlsx2(x = d3[[2]], file = "epi_heat_data.xlsx", sheetName = "Epi(80_10_10)", append = T)
-# 
+
 # 
 # 
 

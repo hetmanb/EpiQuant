@@ -187,8 +187,7 @@ shinyServer(function(input, output, session) {
         else { 
           sinFile <- read.table(input$source_data$datapath, header=T, sep='\t') 
         }
-    # return(EpiTable(inFile, sinFile, geography(), temporal(), input$source_coeff, input$temp_coeff, input$geog_coeff))
-    return(EpiTable(inFile, sinFile, geog_calc(inFile), temp_calc(inFile), input$source_coeff, input$temp_coeff, input$geog_coeff))
+    return(EpiTable(inFile, sinFile, geog_calc(inFile), temp_calc(inFile, input$outbreak_window), input$source_coeff, input$temp_coeff, input$geog_coeff))
     })  
 
 
