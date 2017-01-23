@@ -1,3 +1,4 @@
+# All credit to Mike Bostock at https://github.com/mbostock for the d3 chord diagram code.
 chord_table <- function(data, low, high){
 
   chord_table <- data

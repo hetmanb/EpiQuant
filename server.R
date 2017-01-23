@@ -75,15 +75,15 @@ shinyServer(function(input, output, session) {
     m = (SourceMatrix(source_data=inFile, mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14 = input$mod14))
     source_heatmap(m)
   })
-  #  ** TEST ** Generates a heatmap displaying source similarities using modified equation ####
-  output$source_heatmap2 <- renderD3heatmap({
-    inFile <- scoreDL()
-    if (is.null(inFile)) {
-      return(NULL)
-    }
-    m = (SourceMatrix2(source_data=inFile, mod8=input$mod8, mod7=input$mod7, mod14=input$mod14))
-    source_heatmap(m)
-  })
+  # #  ** TEST ** Generates a heatmap displaying source similarities using modified equation ####
+  # output$source_heatmap2 <- renderD3heatmap({
+  #   inFile <- scoreDL()
+  #   if (is.null(inFile)) {
+  #     return(NULL)
+  #   }
+  #   m = (SourceMatrix2(source_data=inFile, mod8=input$mod8, mod7=input$mod7, mod14=input$mod14))
+  #   source_heatmap(m)
+  # })
   
 ############ Download Handlers: #############################
   
@@ -148,29 +148,6 @@ shinyServer(function(input, output, session) {
       color = chord_color()
     )
   })
-
-
-
-##################################################################################################
-############################ Server functions for EpiMatrix ######################################  
-  
-### Calculate the temporal and geographical relations based upon the epi-input dataset: ##########  
-#   temporal <- reactive({
-#     inFile <- input$strain_data
-#     if ((is.null(inFile)) && (input$epi_demo == TRUE)) {   
-# #       print("inFile is null")
-#       return(temp_calc(read.table('pub_data/updated_straindata274.txt', header=TRUE, sep='\t')))
-#       }
-#       temp_calc(read.table(inFile$datapath, header=TRUE, sep='\t'))
-#   })      
-#   geography <- reactive({
-#     inFile <- input$strain_data
-#     if ((is.null(inFile)) && (input$epi_demo == TRUE)) { 
-# #       print("inFile is null")
-#       return(geog_calc(read.table('pub_data/updated_straindata274.txt', header=TRUE, sep='\t')))
-#     }
-#     geog_calc(read.table(inFile$datapath, header=TRUE, sep='\t'))
-#   })  
 
 ######## Calculate the epi relations based upon the epi-input and source datasets: ######
   table <- reactive({
@@ -253,7 +230,7 @@ output$jschord2 <- reactive({
 ###########     Generate the CGF Matrix #####################   
   cgf_matrix <- reactive({
     if ((is.null(input$cgf) && (input$cgf_demo == TRUE)))  {
-      return(cgf_calc(data=read.table("data/demo_data/demo_58_hexresults.txt", header=T, sep='\t')))
+      return(cgf_calc(data=read.table("pub_data/demo_58_hexresults.txt", header=T, sep='\t')))
     }
     cgf_calc(data=read.table(input$cgf$datapath))
     })
@@ -297,8 +274,8 @@ output$jschord2 <- reactive({
 
   compareheatmap <- reactive({
     if (input$compare_demo == TRUE){
-      CompareMatrix(cgf_data = read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
-                    epi_data = read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F)
+      CompareMatrix(cgf_data = read.table("pub_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
+                    epi_data = read.table("pub_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F)
                     )}
       else {
         if(is.null(input$cgf_data)|is.null(input$epi_data)){
@@ -319,8 +296,8 @@ output$compare_heatmap <- renderD3heatmap({
   
             if (input$compare_demo == TRUE){
               CompareDisplay(compareheatmap(), 
-                             read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
-                             read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F),
+                             read.table("pub_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
+                             read.table("pub_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F),
                              type = input$clus_type, 
                              sigma_in = input$sigma)}  
             
@@ -338,8 +315,8 @@ output$compare_heatmap <- renderD3heatmap({
 #### Server Code for TanglePlots: ####
 tangle <- reactive({
   if (input$compare_demo == TRUE){
-    gene_data <-  read.table("data/demo_data/Hex-SimTable_58.txt", header = T, sep = '\t', check.names = F)
-    epi_data <-  read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F)
+    gene_data <-  read.table("pub_data/Hex-SimTable_58.txt", header = T, sep = '\t', check.names = F)
+    epi_data <-  read.table("pub_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F)
     tangle_helper(gene_data, epi_data, input$cut_epi, input$cut_cgf)
     }
   else {
@@ -365,8 +342,8 @@ output$downloadCompareHeatmap <- downloadHandler(
     pdf(file, width=15, height=15)
     if (input$compare_demo == TRUE){
       CompareDisplay_pdf(compareheatmap(), 
-                     read.table("data/demo_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
-                     read.table("data/demo_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F),
+                     read.table("pub_data/Hex-SimTable_58.txt",header = T, sep = '\t', check.names = F),
+                     read.table("pub_data/Epi_Sim_Data_58.txt", header = T, sep = '\t', check.names = F),
                      input$clus_type, input$sigma)}  
     
     else {

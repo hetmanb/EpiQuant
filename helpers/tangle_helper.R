@@ -69,18 +69,16 @@ wallace_list <- wallace_list[[1]]
 
 library(RColorBrewer)
 dendo[[1]] <-  color_branches(dendo[[1]], num_k, col = brewer.pal(num_k, "Dark2"))
-col_lines_left2 <- brewer.pal(num_k, "Dark2")[cutree(dendo[[1]], num_k, order_clusters_as_data = F, sort_cluster_numbers = T)]
+col_lines_left2 <- brewer.pal(num_k, "Dark2")[cutree(dendo[[1]], num_k, order_clusters_as_data = F)] #, sort_cluster_numbers = T
 
 tanglegram(dendo[[1]], dendo[[2]], margin_inner = 5,
            color_lines = col_lines_left2, 
            lab.cex = 0.75, 
            main_left = "Epidemiological Tree", 
            main_right = "Genetic Tree", 
-#            sub = paste("Entanglement: ", round(entanglement(dendo[[1]], dendo[[2]]), 2)),
            sub = paste("Adj Wallace A vs. B:", round(wallace_list$Adjusted_Wallace_A_vs_B, 3), "\n", 
                        "Adj Wallace B vs. A:", round(wallace_list$Adjusted_Wallace_B_vs_A, 3), "\n", 
                        "Entanglement:", round(entanglement(dendo[[1]], dendo[[2]]), 2), "\n"),
-                       #,"Spearman's NonParametric Correlation:", cor_cophenetic(tree1 = dendo[[1]], tree2 = dendo[[2]], method = "spearman")),
            cex_sub = 0.9)
 
 }
@@ -99,19 +97,17 @@ tangle_plot2<- function(d, k){
   
   library(RColorBrewer)
   dendo[[1]] <-  color_branches(dendo[[1]], num_k, col = brewer.pal(num_k, "Set2"))
-  col_lines_left2 <- brewer.pal(num_k, "Set2")[cutree(dendo[[1]], num_k, order_clusters_as_data = F, sort_cluster_numbers = T)]
+  col_lines_left2 <- brewer.pal(num_k, "Set2")[cutree(dendo[[1]], num_k, order_clusters_as_data = F)] #,sort_cluster_numbers = T
   
   tanglegram(dendo[[1]], dendo[[2]], margin_inner = 5,
              color_lines = col_lines_left2, 
              lab.cex = 0.75, 
              main_left = "Source-Clustering", 
              main_right = "Temporal-Clustering", 
-             #            sub = paste("Entanglement: ", round(entanglement(dendo[[1]], dendo[[2]]), 2)),
              sub = paste("Adj Wallace A vs. B:", round(wallace_list$Adjusted_Wallace_A_vs_B, 3), "\n", 
                          "Adj Wallace B vs. A:", round(wallace_list$Adjusted_Wallace_B_vs_A, 3), "\n", 
                          "Entanglement:", round(entanglement(dendo[[1]], dendo[[2]]), 2), "\n"),
-             #,"Spearman's NonParametric Correlation:", cor_cophenetic(tree1 = dendo[[1]], tree2 = dendo[[2]], method = "spearman")),
-             cex_sub = 0.9)
+                          cex_sub = 0.9)
   
 }
 
