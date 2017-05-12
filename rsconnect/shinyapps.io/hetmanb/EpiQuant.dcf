@@ -1,9 +1,10 @@
 name: EpiQuant
+title:
 account: hetmanb
 server: shinyapps.io
 appId: 15704
-bundleId: 503176
+bundleId: 793778
 url: https://hetmanb.shinyapps.io/EpiQuant/
-when: 1468359455.14855
+when: 1492543747.01983
 asMultiple: FALSE
 asStatic: FALSE
