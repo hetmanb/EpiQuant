@@ -1,4 +1,4 @@
-prepend_shiny_alert <- function(session, id, message, alert_level="success") 
+prepend_shiny_alert <- function(session, id, message, alert_level) 
 {
   session$sendCustomMessage("shiny_alert_handler", 
                             list(id=id, 
@@ -7,6 +7,10 @@ prepend_shiny_alert <- function(session, id, message, alert_level="success")
   )}
 
 
+
+alert_shiny_start_msg <- renderMarkdown(text=
+'Welcome to epiQuant!
+To get started, click a link on the sidebar.')
 
 
 alert_sourcematrix_start_msg <- renderMarkdown(text=

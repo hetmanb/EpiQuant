@@ -14,6 +14,8 @@ library(dendextend)
 library(d3heatmap)
 library(ape)
 library(twitteR)
+library(DT)
+library(shinyforms)
 source("helpers/cgf-helper.R", local = T)
 source("helpers/chord_helper.R", local = T)
 source("helpers/compare-helper.R", local = T)
@@ -29,7 +31,10 @@ shinyServer(function(input, output, session) {
   
   rv <- reactiveValues()
   
-  
+  isolate(prepend_shiny_alert(session,
+                              'welcome_alert',
+                              alert_shiny_start_msg,
+                              alert_level='danger'))
   isolate(prepend_shiny_alert(session,
                               'sourcematrix_alert',
                               alert_sourcematrix_start_msg,
@@ -52,7 +57,7 @@ shinyServer(function(input, output, session) {
   
   output$menu <- renderMenu({
     sidebarMenu(
-      menuItem("Welcome", icon = icon("dashboard"), tabName = "dashboard"),
+      menuItem("Welcome", icon = icon("hand-spock-o"), tabName = "dashboard"),
       menuItem("Source Analysis", tabName = "source", icon = icon("th")),
       conditionalPanel("input.tabs === 'source'",
         icon = icon("file-excel-o"), 
@@ -64,32 +69,15 @@ shinyServer(function(input, output, session) {
       ),
       menuItem("Epidemiology Summary", icon = icon("th"), tabName = "epimatrix"),
       menuItem("Genomic Similarity Analysis", icon = icon("th"), tabName = "genmatrix"),
-      menuItem("Comparison Analysis", icon = icon("th"), tabName = "comparematrix")
+      menuItem("Comparison Analysis", icon = icon("th"), tabName = "comparematrix"),
+      menuItem("Visit the Repo!", icon = icon("github"), href = "https://github.com/hetmanb/EpiQuant")
     )
   }
   )
   isolate({updateTabItems(session, "tabs", "dashboard")})
   outputOptions(output, "menu", suspendWhenHidden = FALSE)
-  
-  
-  output$abstract <- renderUI({
-    HTML(markdown::markdownToHTML(knit('pub_data/abstract.rmd', quiet = TRUE)))
-  })
-    
- 
-  output$twitter_table <- renderTable(function(){
-    head(rawData()[1],n=5)
-  }) 
-  
-  
-  
-  
-  ##################### Helper Functions: #######################
-  rawData <- function() {
-    tweets <- searchTwitter(input$term, n=input$cant,lang=input$lang)
-    twListToDF(tweets)
-  }
-  
+
+
    
    
 }
