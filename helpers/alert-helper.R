@@ -13,11 +13,10 @@ alert_shiny_start_msg <- renderMarkdown(text=
 To get started, click a link on the sidebar.')
 
 
-alert_sourcematrix_start_msg <- renderMarkdown(text=
-                                                 'To start using **SourceMatrix** either:
- 1. Download and populate the template file with your own data
- 1. Update the table below with the scorings you want to use
- 1. Just hit **Submit!** ')
+alert_shiny_source_msg <- renderMarkdown(text=
+'To start using **SourceMatrix** either:
+ 1. Download and populate the template file with your own data, then upload it as a .csv in the sidebar
+ 1. Update the table below with the source names and scorings you want to use ')
 
 alert_sourcematrix_heat_msg <- renderMarkdown(text=
                                                 'To generate the heatmap, either
