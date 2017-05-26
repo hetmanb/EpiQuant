@@ -4,7 +4,6 @@ Modified shinyalert.js of AnalytixWare/ShinySky by xiaodaigh
 Source: https://github.com/AnalytixWare/ShinySky/blob/master/inst/www/shinyalert.js
 */
 (function(){
-  console.log('in js shinyalert');
   Shiny.addCustomMessageHandler('shiny_alert_handler', function(data){
     var container_el, alert_el, close_button;
     if (data == null) {

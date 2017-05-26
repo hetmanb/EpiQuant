@@ -1,5 +1,4 @@
 # Server-side code for the source-tab 
-library(rhandsontable)
 #This code generates a table that changes depending on what is uploaded in the sidebar  
 output$scoretable <- renderHotable({  
   # inFile <- input$source_scores
@@ -11,103 +10,46 @@ output$scoretable <- renderHotable({
 }, readOnly = F)
 
 # Reactive table for source scores that updates with the hotable input:
-
-scoreDL <- reactive({hot.to.df(input$scoretable)})
+scoreDL <- reactive({
+  m <- hot.to.df(input$scoretable)
+  SourceMatrix(m, mod8=input$mod71, mod7=input$mod70, mod0=input$mod00, mod14 = input$mod77)
+})
 
 #  Generates a heatmap displaying source similarities  ####
 output$source_heatmap <- renderD3heatmap({
-  inFile <- scoreDL()
+  inFile <- as.matrix(scoreDL())
   if (is.null(inFile)) {
     return(NULL)
   }
-  m = (SourceMatrix(source_data=inFile, mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14 = input$mod14))
-  source_heatmap(m)
+  # m = (SourceMatrix(source_data=inFile, mod8=input$mod71, mod7=input$mod70, mod0=input$mod00, mod14 = input$mod77))
+  heatcolor<- colorRampPalette(c("orangered2", "goldenrod1", "white"))(512)
+  # m <- shared_sourcematrix$data()
+  
+  d3heatmap(inFile, dendrogram = 'both', colors = rev(heatcolor),
+            Rowv = T, cexRow = 0.80, cexCol = 0.80,
+            reorderfun = function(d, w) rev(reorder(d, w)),
+            revC=TRUE, hclustfun = function(x) hclust(x,method = 'single'))
+  
 })
-# #  ** TEST ** Generates a heatmap displaying source similarities using modified equation ####
-# output$source_heatmap2 <- renderD3heatmap({
-#   inFile <- scoreDL()
-#   if (is.null(inFile)) {
-#     return(NULL)
-#   }
-#   m = (SourceMatrix2(source_data=inFile, mod8=input$mod8, mod7=input$mod7, mod14=input$mod14))
-#   source_heatmap(m)
-# })
 
-############ Download Handlers: #############################
-
-output$downloadSourceMatrix <- downloadHandler( 
-  filename = c("SourceMatrix.txt"),
-  content = function(file){
-    # write.table(SourceMatrix(source_data = scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14), file)
-    write.table((SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14)), file, sep = '\t')
-  })
-output$downloadSourcePairwise <- downloadHandler( 
-  filename = c("SourcePairwise.txt"),
-  content = function(file){
-    write.table(melt(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14)), sep='\t', file)
-  })  
-output$downloadSourceHeatmap <- downloadHandler( 
-  filename = c("SourceHeatmap.pdf"),
-  content = function(file){
-    pdf(file, width=16, height=16)
-    source_heatmap_pdf(SourceMatrix(scoreDL(), mod8=input$mod8, mod7=input$mod7, mod0=input$mod0, mod14=input$mod14))
-    dev.off()
-  })
-
-
-##################### RHandsonTable ######################
-
-## Handsontable
-# observe({
-#   if (!is.null(input$hot)) {
-#     values[["previous"]] <- isolate(values[["DF"]])
-#     DF = hot_to_r(input$hot)
-#   } else {
-#     if (is.null(values[["DF"]]))
-#       DF <- DF
-#     else
-#       DF <- values[["DF"]]
-#   }
-#   values[["DF"]] <- DF
-# })
-# 
-# output$hot <- renderRHandsontable({
-#   DF <- values[["DF"]]
-#   if (!is.null(DF))
-#     rhandsontable(DF, useTypes = as.logical(input$useType), stretchH = "all")
-# })
-# 
-# ## Save 
-# observeEvent(input$save, {
-#   fileType <- isolate(input$fileType)
-#   finalDF <- isolate(values[["DF"]])
-#   if(fileType == "ASCII"){
-#     dput(finalDF, file=file.path(outdir, sprintf("%s.txt", outfilename)))
-#   }
-#   else{
-#     saveRDS(finalDF, file=file.path(outdir, sprintf("%s.rds", outfilename)))
-#   }
-# }
-# )
-# 
-# ## Cancel last action    
-# observeEvent(input$cancel, {
-#   if(!is.null(isolate(values[["previous"]]))) values[["DF"]] <- isolate(values[["previous"]])
-# })
-# 
-# ## Add column
-# output$ui_newcolname <- renderUI({
-#   textInput("newcolumnname", "Name", sprintf("newcol%s", 1+ncol(values[["DF"]])))
-# })
-# observeEvent(input$addcolumn, {
-#   DF <- isolate(values[["DF"]])
-#   values[["previous"]] <- DF
-#   newcolumn <- eval(parse(text=sprintf('%s(nrow(DF))', isolate(input$newcolumntype))))
-#   values[["DF"]] <- setNames(cbind(DF, newcolumn, stringsAsFactors=FALSE), c(names(DF), isolate(input$newcolumnname)))
-# })
-# 
-# 
-
+output$sourceChord <- renderchordNetwork({
+  inFile <- melt(scoreDL())
+  inFile <- subset(inFile, inFile$value > input$chord_range1[1] & inFile$value < input$chord_range1[2])
+  inFile <- reshape2::recast(inFile, Var1 ~ Var2)
+  row.names(inFile) <- inFile[,1]
+  inFile <- inFile[,-1]
+  if (is.null(inFile)) {
+  return(NULL)
+  }
+  chordNetwork(inFile,
+               labels = colnames(inFile),
+               fontSize = 10,
+               padding = 0.03,
+               labelDistance = 50,
+               width = 400, 
+               height = 400
+               )
+})
 
 
 

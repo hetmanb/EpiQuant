@@ -2,8 +2,7 @@
 
 function drawChords (el, matrix, mmap, colors) {
 
-  var w = 950, h = 800, r1 = h / 2, r0 = r1 - 175;
-
+  var w = 600, h = 600, r1 = h / 2, r0 = r1 - 100;
   var fill = d3.scale.ordinal()
     .range(colors);
 

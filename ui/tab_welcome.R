@@ -1,3 +1,4 @@
+# ui code for the welcome screen
 tabItem(
         tabName = "dashboard",
         shiny_alert_container('welcome_alert'),
